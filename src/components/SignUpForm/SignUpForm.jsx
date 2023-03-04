@@ -1,6 +1,6 @@
 <div>
     <p>
-        Add new client information:
+        Add your account information:
     </p>
     <div className = 'container col-4'>
         <form className="row justify-content-center">
@@ -19,42 +19,21 @@
             type="text" 
             placeholder="Last Name" 
             /> </p>
-            <p>DOB:
+            <p>Username:
             <input 
-            value={dob} 
-            name="dob" 
-            onChange={handleInputChange} 
-            type="Date"
-            placeholder="DOB" 
-            /></p>
-            <p>Height
-            <input value={height} name="height" 
-            onChange={handleInputChange} type="text" 
-            placeholder="in" 
-            /></p>
-            <p>Weight:
-            <input 
-            value={weight} 
-            name="weight" 
+            value={username} 
+            name="username" 
             onChange={handleInputChange} 
             type="text" 
-            placeholder="lbs" 
+            placeholder="Username" 
             /></p>
-            <p>Goals:
+            <p>Password:
             <input 
-            value={goals} 
-            name="goals" 
-            onChange={handleInputChange} 
-            type="text" 
-            placeholder="Goals" 
-            /></p>
-            <p>Notes:
-            <input 
-            value={notes} 
-            name="notes" 
+            value={password} 
+            name="password" 
             onChange={handleInputChange} 
             type="text"
-            placeholder="Notes: (injury history, lifestyle, fun facts, etc.)" 
+            placeholder="Password" 
             /></p>
             <button type="button" onClick={handleFormSubmit}>
                 Submit

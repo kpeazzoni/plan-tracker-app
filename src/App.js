@@ -1,17 +1,16 @@
-// import './App.css';
-import Header from './components/Header/Header';
+import React, { useState } from "react";
+import './App.css';
+import Header from "./components/Header/Header";
 import Footer from './components/Footer/Footer';
-// import Hero from './components/Hero/Hero';
-// import Join from './components/Join/Join';
-import HomepageContainer from './components/pages/HomepageContainer'
+import Home from './components/Home/Home';
+import ClientsContainer from './components/ClientsContainer/ClientsContainer';
 
 function App() {
   return (
-     <div className="">
-      {/* <Hero/>
-      <Join/> */}
+    <div className="App">
       <Header />
-      <HomepageContainer />
+      <Home/>
+      {/* <ClientsContainer /> */}
       <Footer/>
 
     </div>

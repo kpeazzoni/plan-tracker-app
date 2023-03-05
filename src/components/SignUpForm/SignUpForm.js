@@ -3,16 +3,26 @@ import React, { useState } from 'react';
 function SignUpForm(props) {
     const handleInputChange = (e) => {
         // Getting the value and name of the input which triggered the change
-        const { name, value } = e.target;
+        // const { } = e.target;
     }
 
-    const handleSubmit = (e) => {
+    const handleFormSubmit = (e) => {
         e.preventDefault();
       };
 
+const lastName = ""
+const username = ""
+const password = ""
+
+const styles = {
+    sectionStyles: {
+      background: 'orange',
+    },
+  };
+
 return (
     <div>
-      <form className="row justify-content-center" onSubmit={handleSubmit}>
+      <form className="row justify-content-center" onSubmit={handleFormSubmit}>
             <p>Name:
             <input 
             value="{firstName}"
@@ -49,6 +59,7 @@ return (
             </button>
         </form>
     </div>
+
   );
 }
 

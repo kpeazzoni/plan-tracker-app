@@ -1,20 +1,22 @@
-import React, { useState } from 'react';
+import React, { } from 'react';
 
 function NewClientForm(props) {
     const handleInputChange = (e) => {
         // Getting the value and name of the input which triggered the change
-        const { name, value } = e.target;
+        // const { name, value } = e.target;
     }
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
       };
 
+const firstName = ""      
 const lastName = ""
 const dob = ""
 const height =""
 const weight = ""
 const goals = ""
+const injuryHistory = ""
 const notes = ""
 
 
@@ -27,11 +29,11 @@ return (
         <form className="row justify-content-center">
             <p>Name:
             <input 
-            value="{firstName}"
+            value= {firstName}
             name="firstName" 
             onChange={handleInputChange} 
             type="text"
-            placeholder="Last Name" 
+            placeholder="First Name" 
             />
             <input 
             value={lastName} 
@@ -69,13 +71,21 @@ return (
             type="text" 
             placeholder="Goals" 
             /></p>
+            <p>Injury History:
+            <input 
+            value={injuryHistory} 
+            name="injuryHistory" 
+            onChange={handleInputChange} 
+            type="text"
+            placeholder="Injury History" 
+            /></p>
             <p>Notes:
             <input 
             value={notes} 
             name="notes" 
             onChange={handleInputChange} 
             type="text"
-            placeholder="Notes: (injury history, lifestyle, fun facts, etc.)" 
+            placeholder="Notes: (, lifestyle, fun facts, etc.)" 
             /></p>
             <button type="button" onClick={handleFormSubmit}>
                 Submit

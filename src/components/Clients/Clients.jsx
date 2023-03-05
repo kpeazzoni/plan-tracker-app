@@ -3,10 +3,12 @@ import './Clients.css'
 
 function Clients({clients}) {
     return clients.map((client, i) => (
-        <div className='allClients-per' key={i}>
-            <p><b>Name:</b> {client.name}</p>
-            <p><b>DOB:</b> {client.dob}</p>
-            <p><b>Notes:</b> {client.notes}</p>
+        <div class="card allClients-per">
+            <div className='card-body' key={i}>
+                <h5 class="card-title">{client.name}</h5>
+                <p class="card-text"><b>DOB:</b> {client.dob}</p>
+                <p class="card-text"><b>Notes:</b> {client.notes}</p>
+            </div>
         </div>
     ));
 };

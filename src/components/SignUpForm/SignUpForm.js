@@ -1,9 +1,18 @@
-<div>
-    <p>
-        Add your account information:
-    </p>
-    <div className = 'container col-4'>
-        <form className="row justify-content-center" onSubmit={handleSubmit}>
+import React, { useState } from 'react';
+
+function SignUpForm(props) {
+    const handleInputChange = (e) => {
+        // Getting the value and name of the input which triggered the change
+        const { name, value } = e.target;
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+      };
+
+return (
+    <div>
+      <form className="row justify-content-center" onSubmit={handleSubmit}>
             <p>Name:
             <input 
             value="{firstName}"
@@ -40,4 +49,7 @@
             </button>
         </form>
     </div>
-</div>
+  );
+}
+
+export default SignUpForm;

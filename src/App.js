@@ -9,10 +9,10 @@ import HomepageContainer from "./components/HomepageContainer/HomepageContainer"
 
 function App() {
   return (
-    <div className="">
+    <div className="App">
       <Header />
       {/* <Home/> */} 
-      <NewClientForm />
+      {/* <NewClientForm /> */}
       {/* <ClientsContainer /> */}
       <HomepageContainer/>
       <Footer/>

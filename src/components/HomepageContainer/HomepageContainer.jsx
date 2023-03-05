@@ -16,7 +16,22 @@ export default function HomepageContainer() {
     ]);
     return (
         <div className="homepageContainer-wrapper">
+           
+            <aside className="col-md-5">
+                <div className="appointments-container">
+                    <h3 className="card-heading">Today's Appointment</h3>
             <AppointmentsCards appointments={appointments}/>
+            </div>
+            </aside>
+           
+            <aside className="col-md-2"></aside>
+           
+           <aside className="col-md-5">
+                <div className="clients-container">
+                    <h3 className="card-heading">Clients</h3>
             <ClientsCards clients={clients}/>
+            </div>
+            </aside>
+
         </div>
     )}

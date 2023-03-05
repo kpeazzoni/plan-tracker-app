@@ -3,17 +3,20 @@ import './ClientsCards.css'
 
 function ClientsCards ({clients}){
     return clients.map((client, i)=>(
-        <div className='clientsCards' key={i}>
-           <aside>
+        <div className='card clientsCards' key={i}>
+           <div className='card-body'>
            <h3>Name: {client.name}</h3>
            <h3>DOB: {client.dob}</h3>
            <h3>Height: {client.height}</h3>
-           </aside>
+           </div>
         </div>
     ))
 }
 
 export default ClientsCards;
+
+
+
 
 
 

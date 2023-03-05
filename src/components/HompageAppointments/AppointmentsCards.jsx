@@ -3,13 +3,13 @@ import './AppointmentsCards.css'
 
 function AppointmentsCards({appointments}) {
   return appointments.map ((appintment, i)=>(
-    <div className='appointmentsCards' key={i}>
-      <aside>
+    <div className='card appointmentsCards' key={i}>
+      <div className='card-body'>
       <h3>Date: {appintment.date}</h3>
       <h3>Start Time: {appintment.start_time}</h3>
       <h3>End Time: {appintment.end_time}</h3>
       <h3>Exercises: {appintment.exercise}</h3>
-      </aside>    
+      </div>
     </div>
   ))
 }

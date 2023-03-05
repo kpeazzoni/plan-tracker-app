@@ -10,27 +10,27 @@ const styles = {
       borderRadius: '5px',
       margin: '10px 0',
       outline:  'none',
-      boxShadow: '0 2px 2px 0 lightgray',
+      // boxShadow: '0 2px 2px 0 gray',
       cursor: 'pointer',
-      textTransform: 'uppercase'
-    },
-  };
+      textTransform: 'uppercase',
+  }
+};
 
-const handleedit = (e) => {
+const handleviewallclients = (e) => {
     e.preventDefault();
     console.log('form submitted');
 alert('form submitted');
 }
 
 
-function EditButtons() {
+function ViewallclientsButtons() {
     return (
         <div>
-          <button style= {styles} onClick={handleedit}>
-          Edit
+          <button style= {styles.buttonStyle} onClick={handleviewallclients}>
+          View All Clients
           </button> 
         </div>
     )
 }
 
-export default EditButtons;
+export default ViewallclientsButtons;

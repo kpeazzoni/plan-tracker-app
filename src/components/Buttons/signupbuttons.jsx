@@ -26,9 +26,9 @@ alert('form submitted');
 function SignupButtons() {
     return (
         <div>
-          <Buttons styles= {styles} onClick={handleFormSignup}>
+          <button style= {styles} onClick={handleFormSignup}>
           Sign Up
-          </Buttons> 
+          </button> 
         </div>
     )
 }

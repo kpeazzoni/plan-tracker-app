@@ -16,7 +16,7 @@ const styles = {
     },
   };
 
-const handleFormSignup = (e) => {
+const handlefullschedule = (e) => {
     e.preventDefault();
     console.log('form submitted');
 alert('form submitted');
@@ -26,7 +26,7 @@ alert('form submitted');
 function FullscheduleButtons() {
     return (
         <div>
-          <button style= {styles.buttonStyle} onClick={handleFormSignup}>
+          <button style= {styles.buttonStyle} onClick={handlefullschedule}>
           View Full Schedule
           </button> 
         </div>

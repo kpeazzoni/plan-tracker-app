@@ -16,7 +16,7 @@ const styles = {
     },
   };
 
-const handleFormSignup = (e) => {
+const handlescheduleappt = (e) => {
     e.preventDefault();
     console.log('form submitted');
 alert('form submitted');
@@ -26,9 +26,9 @@ alert('form submitted');
 function ScheduleapptButtons() {
     return (
         <div>
-          <Buttons styles= {styles} onClick={handleFormSignup}>
+          <button style= {styles} onClick={handlescheduleappt}>
           Schedule Appt.
-          </Buttons> 
+          </button> 
         </div>
     )
 }

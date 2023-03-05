@@ -16,7 +16,7 @@ const styles = {
     },
   };
 
-const handleFormSignup = (e) => {
+const handleupdate = (e) => {
     e.preventDefault();
     console.log('form submitted');
 alert('form submitted');
@@ -26,9 +26,9 @@ alert('form submitted');
 function UpdateButtons() {
     return (
         <div>
-          <Buttons styles= {styles} onClick={handleFormSignup}>
+          <button style= {styles} onClick={handleupdate}>
           Update Client
-          </Buttons> 
+          </button> 
         </div>
     )
 }

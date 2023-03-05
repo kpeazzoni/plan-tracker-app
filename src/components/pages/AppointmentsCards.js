@@ -1,17 +1,17 @@
-import React from 'react';
+// import React from 'react';
 
-function AppointmentsCards (props){
-    return props.appointements.map((appointment, i)=>(
-        <div className="card text-center">
-          <div className="card-header">
-            <h2>{appointment.appoint_time}</h2>
-          </div>
-          <div className="card-body">{appointment.details}</div>
-        </div>
-    ));
-    }
+// function AppointmentsCards (props){
+//     return props.appointements.map((appointment, i)=>(
+//         <div className="card text-center">
+//           <div className="card-header">
+//             <h2>{appointment.appoint_time}</h2>
+//           </div>
+//           <div className="card-body">{appointment.details}</div>
+//         </div>
+//     ));
+//     }
     
-    export default AppointmentsCards;
+//     export default AppointmentsCards;
 
 
   //   return clients.map((client, i) => (

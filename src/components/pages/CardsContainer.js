@@ -1,11 +1,11 @@
-import React from 'react';
+// import React from 'react';
 
-function CardsContainer(props) {
-  return (
-    <div className={`container${props.fluid ? '-fluid' : ''}`}>
-      {props.children}
-    </div>
-  );
-}
+// function CardsContainer(props) {
+//   return (
+//     <div className={`container${props.fluid ? '-fluid' : ''}`}>
+//       {props.children}
+//     </div>
+//   );
+// }
 
-export default CardsContainer;
+// export default CardsContainer;

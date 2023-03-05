@@ -10,11 +10,11 @@ const styles = {
       borderRadius: '5px',
       margin: '10px 0',
       outline:  'none',
-      boxShadow: '0 2px 2px 0 lightgray',
+      // boxShadow: '0 2px 2px 0 gray',
       cursor: 'pointer',
-      textTransform: 'uppercase'
-    },
-  };
+      textTransform: 'uppercase',
+  }
+};
 
 const handleFormSignup = (e) => {
     e.preventDefault();
@@ -26,9 +26,9 @@ alert('form submitted');
 function AddclientButtons() {
     return (
         <div>
-          <Buttons styles= {styles} onClick={handleFormSignup}>
+          <button style= {styles.buttonStyle} onClick={handleFormSignup}>
           Add Client
-          </Buttons> 
+          </button> 
         </div>
     )
 }

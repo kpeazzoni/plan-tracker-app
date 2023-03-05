@@ -10,7 +10,7 @@ const styles = {
       borderRadius: '5px',
       margin: '10px 0',
       outline:  'none',
-      boxShadow: '0 2px 2px 0 lightgray',
+      // boxShadow: '0 2px 2px 0 lightgray',
       cursor: 'pointer',
       textTransform: 'uppercase'
     },
@@ -26,9 +26,9 @@ alert('form submitted');
 function FullscheduleButtons() {
     return (
         <div>
-          <Buttons styles= {styles} onClick={handleFormSignup}>
+          <button style= {styles.buttonStyle} onClick={handleFormSignup}>
           View Full Schedule
-          </Buttons> 
+          </button> 
         </div>
     )
 }

@@ -2,6 +2,8 @@ import React, { useState} from "react";
 import AppointmentsCards from "../HompageAppointments/AppointmentsCards";
 import ClientsCards from "../HomepageClients/ClientsCards"
 import './HomepageContainer.css'
+import FullscheduleButtons from '../Buttons/fullschedulebuttons';
+import AddclientButtons from '../Buttons/addclientbuttons';
 
 export default function HomepageContainer() {
     const [clients, setclient] = useState([
@@ -19,6 +21,7 @@ export default function HomepageContainer() {
            
             <aside className="col-md-5">
                 <div className="appointments-container">
+                    <FullscheduleButtons />
                     <h3 className="card-heading">Today's Appointment</h3>
             <AppointmentsCards appointments={appointments}/>
             </div>
@@ -28,6 +31,7 @@ export default function HomepageContainer() {
            
            <aside className="col-md-5">
                 <div className="clients-container">
+                    <AddclientButtons />
                     <h3 className="card-heading">Clients</h3>
             <ClientsCards clients={clients}/>
             </div>

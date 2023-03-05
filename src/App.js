@@ -1,20 +1,19 @@
+import React, { useState } from "react";
 import './App.css';
-// import Hero from './components/Hero/Hero';
-// import Join from './components/Join/Join';
-import Header from './components/Header/Header';
+
+import Header from "./components/Header/Header";
 import Footer from './components/Footer/Footer';
-import NewClientForm from './components/NewClientForm/NewClientForm'
-// import SignUpForm from './components/SignUpForm/SignUpForm'
+import Home from './components/Home/Home';
+import ClientsContainer from './components/ClientsContainer/ClientsContainer';
 
 function App() {
   return (
-    <div className= 'App'>
-      {/* <Hero/>
-      <Join/> */}
+    <div className="App">
       <Header />
-      <NewClientForm/>
-      <Footer />
-    
+      <Home/>
+      {/* <ClientsContainer /> */}
+      <Footer/>
+
     </div>
   );
 }

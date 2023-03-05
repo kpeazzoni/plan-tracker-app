@@ -23,14 +23,14 @@ alert('form submitted');
 }
 
 
-function Buttons() {
+function FullscheduleButtons() {
     return (
         <div>
           <Buttons styles= {styles} onClick={handleFormSignup}>
-          Sign Up
+          View Full Schedule
           </Buttons> 
         </div>
     )
 }
 
-export default Buttons;
+export default FullscheduleButtons;

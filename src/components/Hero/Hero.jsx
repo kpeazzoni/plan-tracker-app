@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import "./Hero.css";
 import hero_image from "../../assets/hero_image.png";
 // import { motion } from "framer-motion";
+import Buttons from '../Buttons/buttons';
 import NumberCounter from "number-counter";
 import {Link} from 'react-scroll'
 
@@ -59,6 +60,9 @@ const Hero = () => {
         </div>
       </div>
       {/* Right Side */}
+      <div>
+  <Buttons />
+</div>
       <div className="right-h">
         <button className="btn">
           <Link to = 'join-us' smooth={true} spy={true}>

@@ -6,9 +6,17 @@ function NewClientForm(props) {
         const { name, value } = e.target;
     }
 
-    const handleSubmit = (e) => {
+    const handleFormSubmit = (e) => {
         e.preventDefault();
       };
+
+const lastName = ""
+const dob = ""
+const height =""
+const weight = ""
+const goals = ""
+const notes = ""
+
 
 return (
 <div>

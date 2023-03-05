@@ -60,9 +60,6 @@ const Hero = () => {
         </div>
       </div>
       {/* Right Side */}
-      <div>
-  <Buttons />
-</div>
       <div className="right-h">
         <button className="btn">
           <Link to = 'join-us' smooth={true} spy={true}>

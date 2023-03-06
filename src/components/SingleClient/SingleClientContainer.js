@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SingleClientInfo from './SingleClientInfo';
-// import './ClientsContainer.css'
+import SingleClientAppts from './SingleClientAppts';
+import './SingleClient.css'
 
 function SingleClientContainer() {
     const [client, setClient] = useState(
@@ -8,20 +9,26 @@ function SingleClientContainer() {
     );
 
     const [clientAppts, setClientAppts] = useState([
-        {date: 'Tuesday, March 21th', time: '3:30pm-4:30pm', location: 'Planet Fitness', exercises: ['pushups', 'lunges', 'planking']},
-        {date: 'Thursday, March 23th', time: '3:30pm-4:30pm', location: 'Planet Fitness', exercises: ['pullups', 'benchpress', 'ropes']},
+        {date: 'Tuesday, March 21st', time: '3:30pm-4:30pm', location: 'Planet Fitness', exercises: ['pushups', 'lunges', 'planking']},
+        {date: 'Thursday, March 23rd', time: '3:30pm-4:30pm', location: 'Planet Fitness', exercises: ['pullups', 'benchpress', 'ropes']},
         {date: 'Saturday, March 25th', time: '12:00pm-1:00pm', location: 'LA Fitness', exercises: ['treadmill', 'stair stepper', 'cycling']}
     ]);
 
     return (
-      <div class="container text-center">
-        <h1 className="text-start">{client.name}</h1>
+      <div class="container sc-container text-start">
+        <h1>{client.name}</h1>
         <div class="row">
-          <div className="col card text-start">
+          <div className="col card">
+          <h5 className="card-title">Client Info</h5>
             <SingleClientInfo client={client}/>
           </div>
-          <div className="col card">Column</div>
-          <div className="col card">Column</div>
+          <div className="col card overflow-scroll">
+            <h5 className="card-title">Upcoming Appointments</h5>
+            <SingleClientAppts clientAppts={clientAppts} />
+          </div>
+          <div className="col card">
+          <h5 className="card-title">Workout Plans</h5>
+          </div>
         </div>
       </div>
     );

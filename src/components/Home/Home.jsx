@@ -1,10 +1,11 @@
 import React from "react";
 import Join from "../Join/Join";
 import "./Home.css";
-import hero_image from "../../assets/hero_image.png";
+// import hero_image from "../../assets/hero_image.png";
 // import { motion } from "framer-motion";
 import NumberCounter from "number-counter";
-import {Link} from 'react-scroll'
+import {Link} from 'react-scroll';
+
 
 
 const Home = () => {
@@ -60,14 +61,13 @@ const Home = () => {
         {/* Right Side */}
         <div className="right-h">
           <button className="btn">
-            <Link to = 'join-us' smooth={true} spy={true}>
+            <Link to = '/login' smooth={true} spy={true}>
             Log In
             </Link>
             </button>
           {/* <img className="hero-image" src={hero_image} alt="" /> */}
         </div>
       </div>
-    {/* Render "Join" banner */}
     <Join />
     </div>
   );

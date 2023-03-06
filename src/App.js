@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import ClientsContainer from './components/ClientsContainer/ClientsContainer';
 import HomepageContainer from "./components/HomepageContainer/HomepageContainer";
+import SingleClientContainer from './components/SingleClient/SingleClientContainer'
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       {/* <Home/> */} 
       {/* <NewClientForm /> */}
       {/* <ClientsContainer /> */}
-      <HomepageContainer/>
+      {/* <HomepageContainer/> */}
+      <SingleClientContainer />
       <Footer/>
 
 

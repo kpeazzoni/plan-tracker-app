@@ -1,6 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
-// import './Clients.css'
 
 function SingleClientAppts({clientAppts, setApptIndex}) {
     return clientAppts.map((appt, i) => (

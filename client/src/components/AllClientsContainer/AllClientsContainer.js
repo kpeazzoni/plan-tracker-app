@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Clients from '../Clients/Clients';
-import './ClientsContainer.css'
+import Clients from '../../pages/AllClients';
+import './AllClientsContainer.css'
 
-function ClientsContainer() {
+function AllClientsContainer() {
     const [clients, setClients] = useState([
         {name: 'Jane Doe', dob: '1/01/1911', notes: 'Super old.'}, 
         {name: 'John Doe', dob: '2/02/1922', notes: 'Very old.'}, 
@@ -26,4 +26,4 @@ function ClientsContainer() {
     )
 };
 
-export default ClientsContainer;
+export default AllClientsContainer;

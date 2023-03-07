@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SingleClientInfo from './SingleClientInfo';
 import SingleClientAppts from './SingleClientAppts';
+import SingleClientWorkout from './SingleClientWorkout'
 import './SingleClient.css'
 
 function SingleClientContainer() {
@@ -14,6 +15,9 @@ function SingleClientContainer() {
         {date: 'Saturday, March 25th', time: '12:00pm-1:00pm', location: 'LA Fitness', exercises: ['treadmill', 'stair stepper', 'cycling']}
     ]);
 
+    // create state of selectedAppt with clientAppt index
+    const [apptIndex, setApptIndex] = useState(0);
+
     return (
       <div class="container sc-container text-start">
         <h1>{client.name}</h1>
@@ -24,10 +28,11 @@ function SingleClientContainer() {
           </div>
           <div className="col card overflow-scroll">
             <h5 className="card-title">Upcoming Appointments</h5>
-            <SingleClientAppts clientAppts={clientAppts} />
+            <SingleClientAppts clientAppts={clientAppts} setApptIndex={setApptIndex}/>
           </div>
           <div className="col card">
-          <h5 className="card-title">Workout Plans</h5>
+          <h5 className="card-title">Workout Plan</h5>
+            <SingleClientWorkout clientAppts={clientAppts} apptIndex={apptIndex} />
           </div>
         </div>
       </div>

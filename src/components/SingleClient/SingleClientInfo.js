@@ -4,7 +4,6 @@ import React from 'react';
 function SingleClientInfo({client}) {
     return (
         <div>
-            
             <p className="card-text"><b>Weight:</b> {client.weight}</p>
             <p className="card-text"><b>Height:</b> {client.height}</p>
             <p className="card-text"><b>DOB:</b> {client.dob}</p>

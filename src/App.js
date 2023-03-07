@@ -9,6 +9,7 @@ import HomepageContainer from "./components/HomepageContainer/HomepageContainer"
 import Login from "./components/Auth/Login";
 import LoginBox from "./components/Auth/LoginBox";
 import Register from "./components/Auth/Register";
+import SingleClientContainer from './components/SingleClient/SingleClientContainer'
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
       {/* <Login/>
       <LoginBox/>
       <Register/> */}
-      <HomepageContainer/>
+      {/* <HomepageContainer/> */}
+      <SingleClientContainer />
       <Footer/>
 
 

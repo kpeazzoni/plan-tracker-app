@@ -7,10 +7,10 @@ import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import ClientsContainer from './components/ClientsContainer/ClientsContainer';
 import HomepageContainer from "./components/HomepageContainer/HomepageContainer";
-import Login from "./components/Auth/Login";
+import Login from './pages/Login'
 
-import Register from "./components/Auth/Register";
-import SingleClientContainer from './components/SingleClient/SingleClientContainer'
+import Register from "./pages/Register";
+import SingleClientContainer from './components/SingleClientContainer/SingleClientContainer'
 
 function App() {
   return (
@@ -26,6 +26,8 @@ function App() {
       {/* <Footer/> */}
 
       <Router>
+      <div className="flex-column justify-flex-start min-100-vh">
+          <Header />  
         <Routes>
           {/*  Main Module  paths */}
           <Route exact path='/' element={<Home />} />
@@ -38,6 +40,10 @@ function App() {
           <Route exact path='/footer' element={<Footer />} />
 
         </Routes>
+        </div>
+        <div>
+        <Footer />
+        </div>
       </Router>
     </div>
   );

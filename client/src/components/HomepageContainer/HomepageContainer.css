@@ -1,0 +1,20 @@
+.homepageContainer-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* gap: 4rem; */
+    width: 95vw;
+    align-self: center;
+  }
+
+.card-heading{
+  color: white;
+}
+.appintmentsCards- {
+  width: 18rem;
+  height: 12rem;
+  padding: 15px;
+  background: white;
+  border: 2px solid black;
+  border-radius: 40px;
+}

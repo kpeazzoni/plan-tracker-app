@@ -1,0 +1,28 @@
+.allClients-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 4rem;
+    width: 95vw;
+    align-self: center;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  b {
+    color: var(--darkGrey);
+  }
+  
+  .allClients-per {
+      width: 18rem;
+      height: 12rem;
+      padding: 15px;
+      border-radius: 40px;
+  }
+  
+  .card-title {
+    margin-bottom: 1rem;
+  }

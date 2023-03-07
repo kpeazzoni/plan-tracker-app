@@ -1,0 +1,25 @@
+.formPlacement {
+    margin: auto
+    }
+
+.formCard {
+    border: solid;
+    border-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.pStyle {
+    line-height: 2rem;
+    color: white;
+    font-size: 1.5rem;
+}
+.inputStyle {
+    margin: 5px;
+    height: 2rem;
+}
+.buttonStyle {
+    background: #6CB4AC;
+    height: 2rem;
+    border-radius: .5rem;
+    width: auto;
+}

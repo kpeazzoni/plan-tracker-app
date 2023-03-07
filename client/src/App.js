@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-// import NewClientForm from './components/NewClientForm/NewClientForm'
+import NewClientForm from './components/NewClientForm/NewClientForm'
 import Header from "./components/Header/Header";
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
@@ -36,7 +36,7 @@ function App() {
           <Route exact path='/homepagecontainer' element={<HomepageContainer />} />
           <Route exact path='/allclientscontainer' element={<AllClientsContainer />} />
           <Route exact path='/singleclientscontainer' element={<SingleClientContainer />} />
-          {/* <Route exact path='/newclientform' element={<NewClientForm />} /> */}
+          <Route exact path='/newclientform' element={<NewClientForm />} />
 
         </Routes>
         </div>

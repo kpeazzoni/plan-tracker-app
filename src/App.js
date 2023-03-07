@@ -6,15 +6,21 @@ import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import ClientsContainer from './components/ClientsContainer/ClientsContainer';
 import HomepageContainer from "./components/HomepageContainer/HomepageContainer";
+import Login from "./components/Auth/Login";
+import LoginBox from "./components/Auth/LoginBox";
+import Register from "./components/Auth/Register";
 import SingleClientContainer from './components/SingleClient/SingleClientContainer'
 
 function App() {
   return (
     <div className="App">
       <Header />
-      {/* <Home/> */} 
-      {/* <NewClientForm /> */}
+      <Home/> 
+      {/* <NewClientForm />  */}
       {/* <ClientsContainer /> */}
+      {/* <Login/>
+      <LoginBox/>
+      <Register/> */}
       {/* <HomepageContainer/> */}
       <SingleClientContainer />
       <Footer/>

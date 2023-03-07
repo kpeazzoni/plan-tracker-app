@@ -1,5 +1,4 @@
 import React from 'react';
-// import './Clients.css'
 
 function SingleClientInfo({client}) {
     return (

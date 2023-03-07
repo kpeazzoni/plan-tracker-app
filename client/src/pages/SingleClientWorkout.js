@@ -1,6 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
-// import './Clients.css'
 
 function SingleClientWorkout({clientAppts, apptIndex}) {
     const appt = clientAppts[apptIndex];

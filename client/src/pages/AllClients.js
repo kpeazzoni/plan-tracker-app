@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function Clients({clients}) {
+function AllClients({clients}) {
     return clients.map((client, i) => (
         <div class="card allClients-per">
             <div className='card-body' key={i}>
@@ -13,4 +13,4 @@ function Clients({clients}) {
     ));
 };
 
-export default Clients;
+export default AllClients;

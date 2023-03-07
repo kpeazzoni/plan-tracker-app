@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import SingleClientInfo from './SingleClientInfo';
-import SingleClientAppts from './SingleClientAppts';
-import SingleClientWorkout from './SingleClientWorkout'
-import './SingleClient.css'
+import SingleClientInfo from '../../pages/SingleClientInfo';
+import SingleClientAppts from '../../pages/SingleClientAppts';
+import SingleClientWorkout from '../../pages/SingleClientWorkout'
+import './SingleClientContainer.css'
 
 function SingleClientContainer() {
     const [client, setClient] = useState(

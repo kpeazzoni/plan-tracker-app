@@ -5,7 +5,7 @@ import NewClientForm from './components/NewClientForm/NewClientForm'
 import Header from "./components/Header/Header";
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
-import ClientsContainer from './components/ClientsContainer/ClientsContainer';
+import AllClientsContainer from './components/AllClientsContainer/AllClientsContainer';
 import HomepageContainer from "./components/HomepageContainer/HomepageContainer";
 import Login from './pages/Login'
 
@@ -18,7 +18,7 @@ function App() {
       {/* <Header /> */}
       {/* <Home/>  */}
       {/* <NewClientForm /> */}
-      {/* <ClientsContainer /> */}
+      {/* <AllClientsContainer /> */}
       {/* <HomepageContainer/> */}
       {/* <Login />
       <LoginBox />
@@ -34,7 +34,8 @@ function App() {
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/register' element={<Register />} />
           <Route exact path='/homepagecontainer' element={<HomepageContainer />} />
-          <Route exact path='/clientscontainer' element={<ClientsContainer />} />
+          <Route exact path='/allclientscontainer' element={<AllClientsContainer />} />
+          <Route exact path='/singleclientscontainer' element={<SingleClientContainer />} />
           <Route exact path='/newclientform' element={<NewClientForm />} />
           <Route exact path='/header' element= {<Header />} />
           <Route exact path='/footer' element={<Footer />} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import './AppointmentsCards.css'
+import '../../src/components/HomepageContainer/HomepageContainer.css'
 
 function AppointmentsCards({appointments}) {
   return appointments.map ((appintment, i)=>(

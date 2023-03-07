@@ -1,5 +1,5 @@
 import React from "react";
-import Join from "../Join/Join";
+import Join from "./Join";
 import "./Home.css";
 import hero_image from "../../assets/hero_image.png";
 // import { motion } from "framer-motion";

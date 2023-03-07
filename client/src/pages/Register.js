@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 import { useNavigate, Link } from 'react-router-dom'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
-import NavHompage from '../Home/Home'
+import NavHompage from '../components/Home/Home'
 
 
 const Register = () => {

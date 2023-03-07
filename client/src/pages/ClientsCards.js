@@ -1,5 +1,5 @@
 import React from 'react';
-import './ClientsCards.css'
+import '../components/HomepageContainer/HomepageContainer.css'
 
 function ClientsCards ({clients}){
     return clients.map((client, i)=>(

@@ -1,6 +1,6 @@
 import React, { useState} from "react";
-import AppointmentsCards from "../HompageAppointments/AppointmentsCards";
-import ClientsCards from "../HomepageClients/ClientsCards"
+import AppointmentsCards from "../../pages/AppointmentsCards";
+import ClientsCards from "../../pages/ClientsCards"
 import './HomepageContainer.css'
 import FullscheduleButtons from '../Buttons/fullschedulebuttons';
 import AddclientButtons from '../Buttons/addclientbuttons';

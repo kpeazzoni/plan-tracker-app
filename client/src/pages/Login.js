@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container'
 import NavHomepage from '../components/Home/Home'
-import LoginBox from '../components/LoginBox'
+import LoginBox from '../components/LoginBox/LoginBox'
 import Footer from '../components/Footer/Footer'
 
 import Breadcrumb from 'react-bootstrap/Breadcrumb'

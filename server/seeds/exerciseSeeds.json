@@ -1,334 +1,334 @@
 [
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Front Raise (Dumbbell)"
+      "muscleGroup": "Arms",
+      "exerciseName": "Front Raise (Dumbbell)"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Rope Never Ending"
+      "muscleGroup": "Arms",
+      "exerciseName": "Rope Never Ending"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Sling Shot Incline"
+      "muscleGroup": "Arms",
+      "exerciseName": "Sling Shot Incline"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Bicep Curl (barbell )"
+      "muscleGroup": "Arms",
+      "exerciseName": "Bicep Curl (barbell )"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Bicep Curl (Barbell)"
+      "muscleGroup": "Arms",
+      "exerciseName": "Bicep Curl (Barbell)"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Bicep Curl (Dumbbell)"
+      "muscleGroup": "Arms",
+      "exerciseName": "Bicep Curl (Dumbbell)"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Hammer Curl"
+      "muscleGroup": "Arms",
+      "exerciseName": "Hammer Curl"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Hammer Curl (Dumbbell)"
+      "muscleGroup": "Arms",
+      "exerciseName": "Hammer Curl (Dumbbell)"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Hammer lat pulldown"
+      "muscleGroup": "Arms",
+      "exerciseName": "Hammer lat pulldown"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Hammer seated row"
+      "muscleGroup": "Arms",
+      "exerciseName": "Hammer seated row"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Hammer seated row (CLOSE GRIP)"
+      "muscleGroup": "Arms",
+      "exerciseName": "Hammer seated row (CLOSE GRIP)"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Hammer High Row - 1 Arm"
+      "muscleGroup": "Arms",
+      "exerciseName": "Hammer High Row - 1 Arm"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Curl Dumbbell"
+      "muscleGroup": "Arms",
+      "exerciseName": "Curl Dumbbell"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Hammer Row - Wide Grip"
+      "muscleGroup": "Arms",
+      "exerciseName": "Hammer Row - Wide Grip"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Skullcrusher (Barbell)"
+      "muscleGroup": "Arms",
+      "exerciseName": "Skullcrusher (Barbell)"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Tricep Extension"
+      "muscleGroup": "Arms",
+      "exerciseName": "Tricep Extension"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Tricep pushdown"
+      "muscleGroup": "Arms",
+      "exerciseName": "Tricep pushdown"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Weighted dips"
+      "muscleGroup": "Arms",
+      "exerciseName": "Weighted dips"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "Lat Pulldown Closegrip"
+      "muscleGroup": "Arms",
+      "exerciseName": "Lat Pulldown Closegrip"
     },
     {
-      "Muscle Group": "Arms",
-      "Exercise Name": "lying Skullcrusher"
+      "muscleGroup": "Arms",
+      "exerciseName": "lying Skullcrusher"
     },
     {
-      "Muscle Group": "Back",
-      "Exercise Name": "Face pull"
+      "muscleGroup": "Back",
+      "exerciseName": "Face pull"
     },
     {
-      "Muscle Group": "Back",
-      "Exercise Name": "Hammer Row Stand 1-armed"
+      "muscleGroup": "Back",
+      "exerciseName": "Hammer Row Stand 1-armed"
     },
     {
-      "Muscle Group": "Back",
-      "Exercise Name": "Stairmaster"
+      "muscleGroup": "Back",
+      "exerciseName": "Stairmaster"
     },
     {
-      "Muscle Group": "Back",
-      "Exercise Name": "Bent Over Row (Dumbbell)"
+      "muscleGroup": "Back",
+      "exerciseName": "Bent Over Row (Dumbbell)"
     },
     {
-      "Muscle Group": "Back",
-      "Exercise Name": "Chin Up"
+      "muscleGroup": "Back",
+      "exerciseName": "Chin Up"
     },
     {
-      "Muscle Group": "Back",
-      "Exercise Name": "Hammer back row wide 45 angle"
+      "muscleGroup": "Back",
+      "exerciseName": "Hammer back row wide 45 angle"
     },
     {
-      "Muscle Group": "Back",
-      "Exercise Name": "Lat Pulldown"
+      "muscleGroup": "Back",
+      "exerciseName": "Lat Pulldown"
     },
     {
-      "Muscle Group": "Back",
-      "Exercise Name": "Lat Pulldown"
+      "muscleGroup": "Back",
+      "exerciseName": "Lat Pulldown"
     },
     {
-      "Muscle Group": "Back",
-      "Exercise Name": "Neutral Chin"
+      "muscleGroup": "Back",
+      "exerciseName": "Neutral Chin"
     },
     {
-      "Muscle Group": "Back",
-      "Exercise Name": "Pull Up"
+      "muscleGroup": "Back",
+      "exerciseName": "Pull Up"
     },
     {
-      "Muscle Group": "Back",
-      "Exercise Name": "Rear delt fly"
+      "muscleGroup": "Back",
+      "exerciseName": "Rear delt fly"
     },
     {
-      "Muscle Group": "Back",
-      "Exercise Name": "Seated Cable Row (close Grip)"
+      "muscleGroup": "Back",
+      "exerciseName": "Seated Cable Row (close Grip)"
     },
     {
-      "Muscle Group": "Back",
-      "Exercise Name": "Seated Row"
+      "muscleGroup": "Back",
+      "exerciseName": "Seated Row"
     },
     {
-      "Muscle Group": "Back",
-      "Exercise Name": "T-bar Row"
+      "muscleGroup": "Back",
+      "exerciseName": "T-bar Row"
     },
     {
-      "Muscle Group": "Back",
-      "Exercise Name": "Rack Pull 2 Pin"
+      "muscleGroup": "Back",
+      "exerciseName": "Rack Pull 2 Pin"
     },
     {
-      "Muscle Group": "Back",
-      "Exercise Name": "curl ez bar"
+      "muscleGroup": "Back",
+      "exerciseName": "curl ez bar"
     },
     {
-      "Muscle Group": "Back",
-      "Exercise Name": "Lat Pulldown (Cable)"
+      "muscleGroup": "Back",
+      "exerciseName": "Lat Pulldown (Cable)"
     },
     {
-      "Muscle Group": "Chest",
-      "Exercise Name": "Bench Press (Barbell)"
+      "muscleGroup": "Chest",
+      "exerciseName": "Bench Press (Barbell)"
     },
     {
-      "Muscle Group": "Chest",
-      "Exercise Name": "Hammer Decline Chest Press"
+      "muscleGroup": "Chest",
+      "exerciseName": "Hammer Decline Chest Press"
     },
     {
-      "Muscle Group": "Chest",
-      "Exercise Name": "Incline Bench Press"
+      "muscleGroup": "Chest",
+      "exerciseName": "Incline Bench Press"
     },
     {
-      "Muscle Group": "Chest",
-      "Exercise Name": "Incline Bench Press (Barbell)"
+      "muscleGroup": "Chest",
+      "exerciseName": "Incline Bench Press (Barbell)"
     },
     {
-      "Muscle Group": "Chest",
-      "Exercise Name": "Incline Press (Dumbbell)"
+      "muscleGroup": "Chest",
+      "exerciseName": "Incline Press (Dumbbell)"
     },
     {
-      "Muscle Group": "Chest",
-      "Exercise Name": "Landmine Press"
+      "muscleGroup": "Chest",
+      "exerciseName": "Landmine Press"
     },
     {
-      "Muscle Group": "Chest",
-      "Exercise Name": "Lateral Raise (Dumbbell)"
+      "muscleGroup": "Chest",
+      "exerciseName": "Lateral Raise (Dumbbell)"
     },
     {
-      "Muscle Group": "Chest",
-      "Exercise Name": "Military Press (Standing)"
+      "muscleGroup": "Chest",
+      "exerciseName": "Military Press (Standing)"
     },
     {
-      "Muscle Group": "Chest",
-      "Exercise Name": "Overhead Press (Barbell)"
+      "muscleGroup": "Chest",
+      "exerciseName": "Overhead Press (Barbell)"
     },
     {
-      "Muscle Group": "Chest",
-      "Exercise Name": "Overhead Press (Dumbbell)"
+      "muscleGroup": "Chest",
+      "exerciseName": "Overhead Press (Dumbbell)"
     },
     {
-      "Muscle Group": "Chest",
-      "Exercise Name": "Rotator cuff work."
+      "muscleGroup": "Chest",
+      "exerciseName": "Rotator cuff work."
     },
     {
-      "Muscle Group": "Chest",
-      "Exercise Name": "Seated Military Press"
+      "muscleGroup": "Chest",
+      "exerciseName": "Seated Military Press"
     },
     {
-      "Muscle Group": "Chest",
-      "Exercise Name": "Shoulder Press (Standing)"
+      "muscleGroup": "Chest",
+      "exerciseName": "Shoulder Press (Standing)"
     },
     {
-      "Muscle Group": "Glutes",
-      "Exercise Name": "Glute extension"
+      "muscleGroup": "Glutes",
+      "exerciseName": "Glute extension"
     },
     {
-      "Muscle Group": "Glutes",
-      "Exercise Name": "Good Morning"
+      "muscleGroup": "Glutes",
+      "exerciseName": "Good Morning"
     },
     {
-      "Muscle Group": "Glutes",
-      "Exercise Name": "Good Morning (Barbell)"
+      "muscleGroup": "Glutes",
+      "exerciseName": "Good Morning (Barbell)"
     },
     {
-      "Muscle Group": "Glutes",
-      "Exercise Name": "Romanian Deadlift (Barbell)"
+      "muscleGroup": "Glutes",
+      "exerciseName": "Romanian Deadlift (Barbell)"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "Deadlift - Trap Bar"
+      "muscleGroup": "Legs",
+      "exerciseName": "Deadlift - Trap Bar"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "Hack Squat"
+      "muscleGroup": "Legs",
+      "exerciseName": "Hack Squat"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "high bar squat"
+      "muscleGroup": "Legs",
+      "exerciseName": "high bar squat"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "kettlebell Swings"
+      "muscleGroup": "Legs",
+      "exerciseName": "kettlebell Swings"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "Rack Pull"
+      "muscleGroup": "Legs",
+      "exerciseName": "Rack Pull"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "sumo deadlift"
+      "muscleGroup": "Legs",
+      "exerciseName": "sumo deadlift"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "Low Incline Dumbbell Bench"
+      "muscleGroup": "Legs",
+      "exerciseName": "Low Incline Dumbbell Bench"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "Cycling"
+      "muscleGroup": "Legs",
+      "exerciseName": "Cycling"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "Deadlift"
+      "muscleGroup": "Legs",
+      "exerciseName": "Deadlift"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "Deadlift (Barbell)"
+      "muscleGroup": "Legs",
+      "exerciseName": "Deadlift (Barbell)"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "Front Squat (Barbell)"
+      "muscleGroup": "Legs",
+      "exerciseName": "Front Squat (Barbell)"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "Leg curl"
+      "muscleGroup": "Legs",
+      "exerciseName": "Leg curl"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "Leg Extension (Machine)"
+      "muscleGroup": "Legs",
+      "exerciseName": "Leg Extension (Machine)"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "Leg outward fly"
+      "muscleGroup": "Legs",
+      "exerciseName": "Leg outward fly"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "Leg press"
+      "muscleGroup": "Legs",
+      "exerciseName": "Leg press"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "Leg press (hinge)"
+      "muscleGroup": "Legs",
+      "exerciseName": "Leg press (hinge)"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "Squat"
+      "muscleGroup": "Legs",
+      "exerciseName": "Squat"
     },
     {
-      "Muscle Group": "Legs",
-      "Exercise Name": "Squat (Barbell)"
+      "muscleGroup": "Legs",
+      "exerciseName": "Squat (Barbell)"
     },
     {
-      "Muscle Group": "Shoulders",
-      "Exercise Name": "Sling Shot Bench"
+      "muscleGroup": "Shoulders",
+      "exerciseName": "Sling Shot Bench"
     },
     {
-      "Muscle Group": "Shoulders",
-      "Exercise Name": "Shrugs (dumbbell)"
+      "muscleGroup": "Shoulders",
+      "exerciseName": "Shrugs (dumbbell)"
     },
     {
-      "Muscle Group": "Shoulders",
-      "Exercise Name": "Shrugs"
+      "muscleGroup": "Shoulders",
+      "exerciseName": "Shrugs"
     },
     {
-      "Muscle Group": "Shoulders",
-      "Exercise Name": "Hammer shoulder press"
+      "muscleGroup": "Shoulders",
+      "exerciseName": "Hammer shoulder press"
     },
     {
-      "Muscle Group": "Shoulders",
-      "Exercise Name": "Seated Shoulder  Press (Barbell)"
+      "muscleGroup": "Shoulders",
+      "exerciseName": "Seated Shoulder  Press (Barbell)"
     },
     {
-      "Muscle Group": "Shoulders",
-      "Exercise Name": "Cable Fly"
+      "muscleGroup": "Shoulders",
+      "exerciseName": "Cable Fly"
     },
     {
-      "Muscle Group": "Shoulders",
-      "Exercise Name": "close grip Bench"
+      "muscleGroup": "Shoulders",
+      "exerciseName": "close grip Bench"
     },
     {
-      "Muscle Group": "Shoulders",
-      "Exercise Name": "Lateral Raise"
+      "muscleGroup": "Shoulders",
+      "exerciseName": "Lateral Raise"
     },
     {
-      "Muscle Group": "Shoulders",
-      "Exercise Name": "Lateral Raise (Dumbbell)"
+      "muscleGroup": "Shoulders",
+      "exerciseName": "Lateral Raise (Dumbbell)"
     },
     {
-      "Muscle Group": "Shoulders",
-      "Exercise Name": "Seated Military Press (Dumbbell)"
+      "muscleGroup": "Shoulders",
+      "exerciseName": "Seated Military Press (Dumbbell)"
     },
     {
-      "Muscle Group": "Shoulders",
-      "Exercise Name": "Seated Shoulder Press (Dumbbell)"
+      "muscleGroup": "Shoulders",
+      "exerciseName": "Seated Shoulder Press (Dumbbell)"
     }
   ]

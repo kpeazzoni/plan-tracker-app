@@ -16,14 +16,14 @@ function UpdateClientModal(props) {
     const handleFormSubmit = (e) => {
         e.preventDefault();
       };
-      const firstName = ""      
-      const lastName = ""
-      const dob = ""
-      const height =""
-      const weight = ""
-      const goals = ""
-      const injuryHistory = ""
-      const notes = ""
+      // const firstName = ""      
+      // const lastName = ""
+      // const dob = ""
+      // const height =""
+      // const weight = ""
+      // const goals = ""
+      // const injuryHistory = ""
+      // const notes = ""
     return (
     <>
     <Button variant="primary" onClick={handleShow}>
@@ -39,7 +39,7 @@ function UpdateClientModal(props) {
          <form className="row justify-content-center formCard" >
              <p className=''>Name:
             <input 
-            value= {firstName}
+            // value= {firstName}
             name="firstName" 
             onChange={handleInputChange} 
             type="text"
@@ -47,7 +47,7 @@ function UpdateClientModal(props) {
             className='inputStyle'
             />
             <input 
-            value={lastName} 
+            // value={lastName} 
             name="lastName" 
             onChange={handleInputChange} 
             type="text" 
@@ -56,7 +56,7 @@ function UpdateClientModal(props) {
             /> </p>
             <p className=''>DOB:
             <input 
-            value={dob} 
+            // value={dob} 
             name="dob" 
             onChange={handleInputChange} 
             type="Date"
@@ -64,14 +64,16 @@ function UpdateClientModal(props) {
             className='inputStyle'
             /></p>
             <p className=''>Height:
-            <input value={height} name="height" 
+            <input 
+            // value={height} 
+            name="height" 
             onChange={handleInputChange} type="text" 
             placeholder="in" 
             className='inputStyle'
             /></p>
             <p className=''>Weight:
             <input 
-            value={weight} 
+            // value={weight} 
             name="weight" 
             onChange={handleInputChange} 
             type="text" 
@@ -80,7 +82,7 @@ function UpdateClientModal(props) {
             /></p>
             <p className=''>Goals:
             <input 
-            value={goals} 
+            // value={goals} 
             name="goals" 
             onChange={handleInputChange} 
             type="text" 
@@ -89,7 +91,7 @@ function UpdateClientModal(props) {
             /></p>
             <p className=''>Injury History:
             <input 
-            value={injuryHistory} 
+            // value={injuryHistory} 
             name="injuryHistory" 
             onChange={handleInputChange} 
             type="text"
@@ -98,7 +100,7 @@ function UpdateClientModal(props) {
             /></p>
             <p className=''>Notes:
             <input 
-            value={notes} 
+            // value={notes} 
             name="notes" 
             onChange={handleInputChange} 
             type="text"

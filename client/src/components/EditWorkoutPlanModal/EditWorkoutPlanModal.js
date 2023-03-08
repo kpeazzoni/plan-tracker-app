@@ -16,14 +16,14 @@ function EditWorkoutPlanModal(props) {
     const handleFormSubmit = (e) => {
         e.preventDefault();
       };
-      const muscleGroup = ""      
-      const exerciseName = ""
-      const sets = ""
-      const reps =""
-      const weight = ""
-      const distance = ""
-      const equipmentReq = ""
-      const notes = ""
+      // const muscleGroup = ""      
+      // const exerciseName = ""
+      // const sets = ""
+      // const reps =""
+      // const weight = ""
+      // const distance = ""
+      // const equipmentReq = ""
+      // const notes = ""
     return (
     <>
     <Button variant="primary" onClick={handleShow}>
@@ -36,28 +36,30 @@ function EditWorkoutPlanModal(props) {
       </Modal.Header>
       <Modal.Body>
       <div className = 'container col-8'>
-         <form className="row justify-content-center formCard" >
-             <p className=''>Muscle Group:
-            <input 
-            value= {muscleGroup}
-            name="muscleGroup" 
-            onChange={handleInputChange} 
-            type="text"
-            placeholder="MuscleGroup"
-            className='inputStyle'
-            /></p>
-            <p className=''>Exercise Name:
-            <input 
-            value={exerciseName} 
-            name="exerciseName" 
-            onChange={handleInputChange} 
-            type="text" 
-            placeholder="Exercise Name"
-            className='inputStyle' 
-            /> </p>
+         <form className="row justify-content-center" >
+         <div className="dropdown">
+          <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Muscle Group
+          </button>
+          <ul className="dropdown-menu">
+            <li><a className="dropdown-item" href="">Action</a></li>
+            <li><a className="dropdown-item" href="">Another action</a></li>
+            <li><a className="dropdown-item" href="">Something else here</a></li>
+          </ul>
+        </div>
+        <div className="dropdown">
+          <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Exercise
+          </button>
+          <ul className="dropdown-menu">
+            <li><a className="dropdown-item" href="">Action</a></li>
+            <li><a className="dropdown-item" href="">Another action</a></li>
+            <li><a className="dropdown-item" href="">Something else here</a></li>
+          </ul>
+        </div>
             <p className=''>Sets:
             <input 
-            value={sets} 
+            // value={sets} 
             name="sets" 
             onChange={handleInputChange} 
             type="number"
@@ -65,7 +67,8 @@ function EditWorkoutPlanModal(props) {
             className='inputStyle'
             /></p>
             <p className=''>Reps:
-            <input value={reps} 
+            <input 
+            // value={reps} 
             name="reps" 
             onChange={handleInputChange} type="number" 
             placeholder="reps" 
@@ -73,7 +76,7 @@ function EditWorkoutPlanModal(props) {
             /></p>
             <p className=''>Weight:
             <input 
-            value={weight} 
+            // value={weight} 
             name="weight" 
             onChange={handleInputChange} 
             type="Number" 
@@ -82,7 +85,7 @@ function EditWorkoutPlanModal(props) {
             /></p>
             <p className=''>Distance:
             <input 
-            value={distance} 
+            // value={distance} 
             name="distance" 
             onChange={handleInputChange} 
             type="number" 
@@ -91,7 +94,7 @@ function EditWorkoutPlanModal(props) {
             /></p>
             <p className=''>Equipment Required:
             <input 
-            value={equipmentReq} 
+            // value={equipmentReq} 
             name="equipmentReq" 
             onChange={handleInputChange} 
             type="text"
@@ -100,7 +103,7 @@ function EditWorkoutPlanModal(props) {
             /></p>
             <p className=''>Notes:
             <input 
-            value={notes} 
+            // value={notes} 
             name="notes" 
             onChange={handleInputChange} 
             type="text"

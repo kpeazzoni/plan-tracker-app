@@ -10,6 +10,8 @@ import HomepageContainer from "./components/HomepageContainer/HomepageContainer"
 import Login from './pages/Login'
 import Register from "./pages/Register";
 import SingleClientContainer from './components/SingleClientContainer/SingleClientContainer'
+import UpdateClientModal from "./components/UpdateClientModal/UpdateClientModal";
+import EditWorkoutPlanModal from "./components/EditWorkoutPlanModal/EditWorkoutPlanModal";
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
           <Route exact path='/allclientscontainer' element={<AllClientsContainer />} />
           <Route exact path='/singleclientscontainer' element={<SingleClientContainer />} />
           <Route exact path='/newclientform' element={<NewClientForm />} />
+          <Route exact path='/updateclientmodal' element={<UpdateClientModal />} />
+          <Route exact path='/editworkoutmodal' element={<EditWorkoutPlanModal />} />
 
         </Routes>
         </div>

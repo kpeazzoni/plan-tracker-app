@@ -1,4 +1,4 @@
-.allClients-wrapper {
+.allTrainees-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -16,7 +16,7 @@
     color: var(--darkGrey);
   }
   
-  .allClients-per {
+  .allTrainees-per {
       width: 18rem;
       height: 12rem;
       padding: 15px;

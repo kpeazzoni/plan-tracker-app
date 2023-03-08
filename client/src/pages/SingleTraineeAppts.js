@@ -1,7 +1,7 @@
 import React from 'react';
 
-function SingleClientAppts({clientAppts, setApptIndex}) {
-    return clientAppts.map((appt, i) => (
+function SingleTraineeAppts({traineeAppts, setApptIndex}) {
+    return traineeAppts.map((appt, i) => (
       <div class="card allappts-per" key={i}>
         <button type="button" class="d-grid gap-2" id={i} onClick={()=> setApptIndex(i)}>
           <div className="card-body">
@@ -16,4 +16,4 @@ function SingleClientAppts({clientAppts, setApptIndex}) {
     ));
 };
 
-export default SingleClientAppts;
+export default SingleTraineeAppts;

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Clients from '../../pages/AllClients';
-import './AllClientsContainer.css'
+import AllTrainees from '../../pages/AllTrainees';
+import './AllTraineesContainer.css'
 
-function AllClientsContainer() {
-    const [clients, setClients] = useState([
+function AllTraineesContainer() {
+    const [trainees, setTrainees] = useState([
         {name: 'Jane Doe', dob: '1/01/1911', notes: 'Super old.'}, 
         {name: 'John Doe', dob: '2/02/1922', notes: 'Very old.'}, 
         {name: 'James Doe', dob: '3/03/1933', notes: 'Really old.'},
@@ -20,10 +20,10 @@ function AllClientsContainer() {
     ]);
 
     return (
-        <div className='allClients-wrapper'>
-            <Clients clients={clients} />
+        <div className='allTrainees-wrapper'>
+            <AllTrainees trainees={trainees} />
         </div>
     )
 };
 
-export default AllClientsContainer;
+export default AllTraineesContainer;

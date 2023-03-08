@@ -1,7 +1,7 @@
 import React from 'react';
 
-function SingleClientWorkout({clientAppts, apptIndex}) {
-    const appt = clientAppts[apptIndex];
+function SingleTraineeWorkout({traineeAppts, apptIndex}) {
+    const appt = traineeAppts[apptIndex];
 
     return (
     <div>
@@ -17,4 +17,4 @@ function SingleClientWorkout({clientAppts, apptIndex}) {
     );
 };
 
-export default SingleClientWorkout;
+export default SingleTraineeWorkout;

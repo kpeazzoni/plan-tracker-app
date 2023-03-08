@@ -1,19 +1,19 @@
 import React from 'react';
 import '../components/HomepageContainer/HomepageContainer.css'
 
-function ClientsCards ({clients}){
-    return clients.map((client, i)=>(
-        <div className='card clientsCards' key={i}>
+function TraineesCards ({trainees}){
+    return trainees.map((trainee, i)=>(
+        <div className='card traineesCards' key={i}>
            <div className='card-body'>
-           <h3>Name: {client.name}</h3>
-           <h3>DOB: {client.dob}</h3>
-           <h3>Height: {client.height}</h3>
+           <h3>Name: {trainee.name}</h3>
+           <h3>DOB: {trainee.dob}</h3>
+           <h3>Height: {trainee.height}</h3>
            </div>
         </div>
     ))
 }
 
-export default ClientsCards;
+export default TraineesCards;
 
 
 

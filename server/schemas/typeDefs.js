@@ -115,7 +115,7 @@ type Mutation {
       traineeId: ID!,
       ) : Schedules
 
-   removeAppointment(schedulesId: ID!)
+   removeAppointment(schedulesId: ID!) : Schedules
    }
 `;
 

@@ -32,35 +32,56 @@ const typeDefs = gql`
     location: String
     trainerId:[Trainers]!
     traineeId: [Trainees]!
-    exercises:[Exercises]!
+    workouts:[Workouts]!
+ }
+ type Workouts{
+   muscleGroup: String!
+   exerciseName: String!
+   sets: String
+   reps: String
+   weight: String
+   distance: String
+   equipmentReq: String 
+   notes: String
  }
  type Exercises {
+    _id: ID!
     muscleGroup: String!
     exerciseName: String!
-    sets: String
-    reps: String
-    weight: String
-    distance: String
-    equipmentReq: String 
-    notes: String
  }
 
-type Mutation {
-    addTrainer(email: String!, password: String!): Auth
-    login (email: String!, password: String!): Auth
-    
-    addTrainee (firstName: String!, lastName: String!, dob: String!, demographics:[Demographics]!,traineeSchedule:[Schedules]!): Trainees
-    updateTrainee()
-    removeTrainee()
+type Query {
+   trainers: [Trainers]
+   trainer(trainerId: ID!): Trainers
+   trainees: [Trainees]
+   trainee(traineeId: ID!): Trainees
 
-    addExercise ()
-    updateExercise()
-    removeExercise()
-
-    addAppointment()
-    updateAppointment()
-    removeAppointment()
-
+   schedules: [Schedules]
+   exercises: [Exercises]
+   
 }
 
-`
+`;
+
+module.exports = typeDefs;
+
+// type Mutation {
+//    addTrainer(email: String!, password: String!): Auth
+//    login (email: String!, password: String!): Auth
+   
+//    addTrainee (firstName: String!, lastName: String!, dob: String!, demographics:[Demographics]!,traineeSchedule:[Schedules]!): Trainees
+//    updateTrainee()
+//    removeTrainee()
+
+//    addExercise ()
+//    updateExercise()
+//    removeExercise()
+
+//    addAppointment()
+//    updateAppointment()
+//    removeAppointment() }
+
+// me: Trainers
+
+// trainerSchedules(trainerId: ID!): [Schedules]
+// traineeSchedules(traineeId: ID!): [Schedules]

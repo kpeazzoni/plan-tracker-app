@@ -3,8 +3,10 @@ import Logo from "../../assets/logo.png";
 import "./Header.css";
 import { Link } from "react-scroll";
 import Bars from "../../assets/bars.png";
+import {  useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
   const mobile = window.innerWidth <= 768 ? true : false;
   const [menuOpened, setMenuOpened] = useState(false);
   return (
@@ -73,6 +75,12 @@ const Header = () => {
             >
               Clients
             </Link>
+          </li>
+          <li>
+            <button onClick={(event) => navigate('/login')} className='btn'>Login</button>
+          </li>
+          <li>
+            <button onClick={(event) => navigate('/register')} className='btn'>Register</button>
           </li>
         </ul>
       )}

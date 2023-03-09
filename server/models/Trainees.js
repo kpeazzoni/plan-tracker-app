@@ -1,5 +1,8 @@
 const { Schema, model } = require('mongoose');
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1a5a888a80583b56fa6f2e7755400a3fdff94b49
 
 const traineesSchema = Schema({
     firstName:{
@@ -10,13 +13,14 @@ const traineesSchema = Schema({
         type: String,
         required: true,
     },
+    dob:{
+        type: Date,
+        required: true,
+        get: (timestamp) => dateFormat(timestamp)
+    },
     demographics: [
         {
-            dob:{
-                type: Date,
-                required: true,
-                get: (timestamp) => dateFormat(timestamp)
-            },
+
             height:{ 
                 type: Number,
                 required: true,

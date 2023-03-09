@@ -7,7 +7,7 @@ const typeDefs = gql`
     lastName: String!
     email: String!
     password: String!
-    trainerSchedule: [{Schedules}]!
+    trainerSchedule: [Schedules]!
  }
  type Trainees {
     _id: ID!
@@ -48,8 +48,19 @@ const typeDefs = gql`
 type Mutation {
     addTrainer(email: String!, password: String!): Auth
     login (email: String!, password: String!): Auth
-    addTrainee (firstName: String!, lastName: String!, dob: String!, demographics:[Demographics]!,traineeSchedule:[Schedules]!): Trainees
     
+    addTrainee (firstName: String!, lastName: String!, dob: String!, demographics:[Demographics]!,traineeSchedule:[Schedules]!): Trainees
+    updateTrainee()
+    removeTrainee()
+
+    addExercise ()
+    updateExercise()
+    removeExercise()
+
+    addAppointment()
+    updateAppointment()
+    removeAppointment()
+
 }
 
 `

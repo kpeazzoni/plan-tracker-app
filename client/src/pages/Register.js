@@ -79,8 +79,16 @@ const Register = () => {
               <form onSubmit={handleFormSubmit}>
                 <MDBInput input
                   className="form-input"
-                  placeholder="First and Last Name"
-                  name="username"
+                  placeholder="First Name"
+                  name="firstName"
+                  type="text"
+                  value={formState.name}
+                  onChange={handleChange}
+                />
+                <MDBInput input
+                  className="form-input"
+                  placeholder="Last Name"
+                  name="lastName"
                   type="text"
                   value={formState.name}
                   onChange={handleChange}

@@ -49,6 +49,10 @@ const typeDefs = gql`
     muscleGroup: String!
     exerciseName: String!
  }
+ type Auth {
+    token: ID!
+    user: Trainers
+  }
 
 type Query {
    trainers: [Trainers]
@@ -60,6 +64,10 @@ type Query {
    exercises: [Exercises]
    
 }
+type Mutation {
+    addTrainer(firstName: String!, lastName: String!,email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
+  }
 
 `;
 

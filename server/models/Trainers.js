@@ -42,6 +42,7 @@ trainersSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
+
 const Trainers = model("Trainers", trainersSchema);
 
 module.exports = Trainers;

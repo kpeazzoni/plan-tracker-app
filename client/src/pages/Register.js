@@ -1,125 +1,130 @@
-import React, { useState } from 'react'
-import Container from 'react-bootstrap/Container'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import axios from 'axios'
-import { useNavigate, Link } from 'react-router-dom'
-import Breadcrumb from 'react-bootstrap/Breadcrumb'
-import NavHompage from '../components/Home/Home'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
+import { useMutation } from '@apollo/client';
+import { ADD_TRAINER } from '../utils/mutations';
+
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+  MDBRow,
+  MDBCol,
+  MDBIcon,
+  MDBInput
+}
+from 'mdb-react-ui-kit';
+import logo from '../assets/workout2.jpg';
+import Auth from '../utils/auth';
 
 const Register = () => {
-
-  const history = useNavigate()
-
-  const [formData, setFormData] = useState({
+  const [formState, setFormState] = useState({
     username: '',
-    email: '', 
+    email: '',
     password: '',
-    passwordConfirmation: '',
-  })
-
-  const [errors, setErrors] = useState({
-    username: '',
-    email: '', 
-    password: '',
-    passwordConfirmation: '',
-  })
+  });
+  const [addUser, { error, data }] = useMutation(ADD_TRAINER);
 
   const handleChange = (event) => {
-    const newFormData = { ...formData, [event.target.name]: event.target.value }
-    const newErrors = { ...errors, [event.target.name]: '' }
-    setFormData(newFormData)
-    setErrors(newErrors)
-  }
+    const { name, value } = event.target;
 
-  const handleSubmit = async (event) => {
-    event.preventDefault()
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+
     try {
-      await axios.post('/api/register', formData)
-      history.push('/login')
-    } catch (err) {
-      console.log('error response', err.response.data.errors)
-      console.log('err.response', err.response)
-      setErrors(err.response.data.errors)
-    }
+      const { data } = await addUser({
+        variables: { ...formState },
+      });
 
-    console.log('errors', errors)
-  }
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   return (
-    <>
-      <Container fluid sticky="top" className="nav-container-pages">
-        <NavHompage />
-      </Container>
+    <MDBContainer className="my-5">
 
-      <Breadcrumb className="show-home">
-        <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-        <Breadcrumb.Item active>Register</Breadcrumb.Item>
-      </Breadcrumb>
+      <MDBCard>
+        <MDBRow className='g-0'>
 
-      <Container className = "login-register-outer-box">
-        <h2>Register</h2>
-        <Form onSubmit={handleSubmit}>
-{/* login page will have field for email and PW (NOT username) */}
-          {/* <Form.Group className="mb-3" controlId="fromBasicUsername">
-            <Form.Control 
-              className={`input ${errors.username ? 'danger' : ''}`}
-              type="text" 
-              placeholder="Choose a username" 
-              name="username" 
-              onChange={handleChange}
-              value={formData.username}
-            />
-            {errors && <p className="error">{errors.username}</p>}
-          </Form.Group> */}
-{/* add first name last name form.group */}
-          <Form.Group className="mb-3" controlId="fromBasicEmail">
-            <Form.Control 
-              className={`input ${errors.email ? 'danger' : ''}`}
-              type="email" 
-              placeholder="Email" 
-              name="email" 
-              onChange={handleChange}
-              value={formData.email}
-            />
-            {errors.email && <p className="error">{errors.email}</p>}
-          </Form.Group>
+          <MDBCol md='6'>
+            <MDBCardImage src={logo} width="600" height="600"/>
+          </MDBCol>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Control 
-              className={`input ${errors.password ? 'danger' : ''}`}
-              type="password" 
-              placeholder="Password" 
-              name="password" 
-              onChange={handleChange}
-              value={formData.password}
-            /> 
-            {errors.password && <p className="error">{errors.password.message}</p>}
-          </Form.Group>
+          <MDBCol md='6'>
+            <MDBCardBody className='d-flex flex-column'>
 
-          <Form.Group className="mb-3" controlId="fromBasicPasswordConfirmation">
-            <Form.Control 
-              className={`input ${errors.passwordConfirmation ? 'danger' : ''}`}
-              type="password" 
-              placeholder="Please confirm password" 
-              name="passwordConfirmation" 
-              onChange={handleChange}
-              value={formData.passwordConfirmation}
-            />
-            {errors.passwordConfirmation && <p className="error">{errors.passwordConfirmation.message}</p>}
-          </Form.Group>
+              <div className='d-flex flex-row mt-2'>
+                <MDBIcon fas icon="cubes fa-3x me-3" style={{ color: '#ff6219' }}/>
+                <span className="h1 fw-bold mb-0">PT Haus</span>
+              </div>
 
+              <h5 className="fw-normal my-4 pb-3" style={{letterSpacing: '1px'}}>Register to create a new account</h5>
+            {data ? (
+              <p>
+                Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
+              </p>
+            ) : (
+              <form onSubmit={handleFormSubmit}>
+                <MDBInput input
+                  className="form-input"
+                  placeholder="First and Last Name"
+                  name="username"
+                  type="text"
+                  value={formState.name}
+                  onChange={handleChange}
+                />
+                <MDBInput input
+                  className="form-input"
+                  placeholder="Your email"
+                  name="email"
+                  type="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                />
+                <MDBInput input
+                  className="form-input"
+                  placeholder="password"
+                  name="password"
+                  type="password"
+                  value={formState.password}
+                  onChange={handleChange}
+                />
+                <button
+                  className="btn btn-block btn-primary"
+                  style={{ cursor: 'pointer' }}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </form>
+            )}
 
-          <Button variant="warning" type="Submit" block>Register</Button>
+            {error && (
+              <div className="my-3 p-3 bg-danger text-white">
+                {error.message}
+              </div>
+            )}
+               </MDBCardBody>
+          </MDBCol>
 
-        </Form>
+        </MDBRow>
+      </MDBCard>
 
-        <Link to="/login" className="login-register">Already registered? Login here!</Link>
-
-      </Container> 
-    </>
-  )
+    </MDBContainer>
+  );
 }
+ 
 
-export default Register
+export default Register;

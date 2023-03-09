@@ -1,34 +1,133 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container'
-import NavHomepage from '../components/Home/Home'
-import LoginBox from '../components/LoginBox/LoginBox'
-import Footer from '../components/Footer/Footer'
-
-import Breadcrumb from 'react-bootstrap/Breadcrumb'
-
-
-const Login = () => {
-
-  return (
-    <>
-      <div className='login-wrapper'>
-        <Container fluid sticky="top" className="nav-container-pages">
-          <NavHomepage />
-        </Container>
-
-        <Breadcrumb className="hero">
-          <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-          <Breadcrumb.Item active>Login</Breadcrumb.Item>
-        </Breadcrumb>
-
-        <LoginBox
-          path = '/' 
-        />
-
-        <Footer />
-      </div>
-    </>
-  )
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { LOGIN_TRAINER } from '../utils/mutations';
+import {
+  MDBBtn,
+  MDBContainer,
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+  MDBRow,
+  MDBCol,
+  MDBIcon,
+  MDBInput
 }
+from 'mdb-react-ui-kit';
 
-export default Login
+import logo from '../assets/workout.jpg';
+import Auth from '../utils/auth';
+
+const Login = (props) => {
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [login, { error, data }] = useMutation(LOGIN_TRAINER);
+
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
+
+    // clear form values
+    setFormState({
+      email: '',
+      password: '',
+    });
+  };
+
+  
+  return (
+    <MDBContainer className="my-5">
+
+      <MDBCard>
+        <MDBRow className='g-0'>
+
+          <MDBCol md='6'>
+            <MDBCardImage src= {logo} width="600" height="600"/>
+          </MDBCol>
+
+          <MDBCol md='6'>
+            <MDBCardBody className='d-flex flex-column'>
+
+              <div className='d-flex flex-row mt-2'>
+                <MDBIcon fas icon="cubes fa-3x me-3" style={{ color: '#ff6219' }}/>
+                <span className="h1 fw-bold mb-0">PT Haus</span>
+              </div>
+
+              <h5 className="fw-normal my-4 pb-3" style={{letterSpacing: '1px'}}>Sign into your account</h5>
+
+            {data ? (
+              <p>
+                Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
+              </p>
+            ) : (
+              <form onSubmit={handleFormSubmit}>
+                <MDBInput input="true"
+                  className="form-input"
+                  placeholder="Your email"
+                  name="email"
+                  type="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                />
+                <MDBInput input="true"
+                  className="form-input"
+                  placeholder="password"
+                  name="password"
+                  type="password"
+                  value={formState.password}
+                  onChange={handleChange}
+                />
+                <button
+                  className="btn btn-block btn-primary"
+                  style={{ cursor: 'pointer' }}
+                  type="submit"
+                >
+                  Login
+                </button>
+              </form>
+            )}
+             {/* <MDBBtn className="mb-4 px-5" color='dark' size='lg'>Login</MDBBtn> */}
+              
+              <p className="mb-5 pb-lg-2" style={{color: '#393f81'}}>Don't have an account? <a href="/register" style={{color: '#393f81'}}>Register here</a></p>
+            <div className='d-flex flex-row justify-content-start'>
+                <a href="#!" className="small text-muted me-1">Terms of use.</a>
+                <a href="#!" className="small text-muted">Privacy policy</a>
+              </div>
+
+            {error && (
+              <div className="my-3 p-3 bg-danger text-white">
+                {error.message}
+              </div>
+            )}
+        </MDBCardBody>
+          </MDBCol>
+
+        </MDBRow>
+      </MDBCard>
+
+    </MDBContainer>
+  );
+}
+ 
+
+export default Login;

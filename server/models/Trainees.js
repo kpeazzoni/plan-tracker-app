@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const Schedules = require('./Schedules')
 
 const traineesSchema = Schema({
     firstName:{
@@ -10,13 +9,14 @@ const traineesSchema = Schema({
         type: String,
         required: true,
     },
+    dob:{
+        type: Date,
+        required: true,
+        get: (timestamp) => dateFormat(timestamp)
+    },
     demographics: [
         {
-            dob:{
-                type: Date,
-                required: true,
-                get: (timestamp) => dateFormat(timestamp)
-            },
+
             height:{ 
                 type: Number,
                 required: true,

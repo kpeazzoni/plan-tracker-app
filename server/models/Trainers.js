@@ -1,5 +1,5 @@
-const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
+const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
 
 const trainersSchema = new Schema({
   firstName: {
@@ -14,7 +14,7 @@ const trainersSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    match: [/.+@.+\..+/, 'Must match an email address!'],
+    match: [/.+@.+\..+/, "Must match an email address!"],
   },
   password: {
     type: String,
@@ -24,13 +24,13 @@ const trainersSchema = new Schema({
   trainerSchedule: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Schedules',
+      ref: "Schedules",
     },
   ],
 });
 
-trainersSchema.pre('save', async function (next) {
-  if (this.isNew || this.isModified('password')) {
+trainersSchema.pre("save", async function (next) {
+  if (this.isNew || this.isModified("password")) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
   }
@@ -42,6 +42,6 @@ trainersSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-const Trainers = model('Trainers', trainersSchema);
+const Trainers = model("Trainers", trainersSchema);
 
 module.exports = Trainers;

@@ -16,10 +16,6 @@
     "concurrently": "^5.3.0"
   },
   "dependencies": {
-<<<<<<< Updated upstream
-=======
-    "bcrypt": "^5.1.0",
->>>>>>> Stashed changes
     "dotenv": "^16.0.3"
   }
 }

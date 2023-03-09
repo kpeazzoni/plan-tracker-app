@@ -24,7 +24,7 @@ const scheduleSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Trainees',
     },
-    exercises: [
+    workouts: [
         {
             muscleGroup: {
                 type: String,

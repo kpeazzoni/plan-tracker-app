@@ -1,4 +1,4 @@
-const { gql } = require ('apollo-server-express');
+const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
  type Trainers {
@@ -56,7 +56,7 @@ const typeDefs = gql`
 
 type Query {
    trainers: [Trainers]
-   trainer(trainerId: ID!): Trainers
+   trainer(trainerId: ID!) : Trainers
    trainees: [Trainees]
    trainee(traineeId: ID!): Trainees
    me: Trainers
@@ -72,51 +72,51 @@ type Mutation {
       firstName: String!, 
       lastName: String!, 
       dob: String!, 
-      demographics:[Demographics]!,
-      traineeSchedule:[Schedules]!
-      ): Trainees
-   updateTrainee(
-      fistName: String!,
-      lastName: String!
-      deomographics: [Demographics]!,
-      traineeSchedule: [Schedules]!
+      trainerId: ID!
       ) : Trainees
-   removeTrainee(traneeId: ID!) : Trainees
-   addExercise (muscleGroup: String!, exerciseName: String!) : Exericses
+   
+   addDemographics(
+      height: Int!,
+      weight: Int!,
+      goals: String!,
+      injuryHistory: String!,
+      notes: String!
+      ) : Trainees
+      
+   
+   removeTrainee(traineeId: ID!) : Trainees
+   
    updateWorkouts(
       muscleGroup: String!,
       exerciseName: String!,
-      sets: String, reps: String,
+      sets: String,
+      reps: String,
       weight: String,
       distance: String,
       equipmentReq: String,
       notes: String
-      ) : Workouts
-   removeExercise(workoutsId: ID!) : Workouts
-
+      ) : Schedules
+   
    addAppointment(
       date: String!,
       startTime: String!,
       endTime: String!,
       location: String,
-      trainerId: [Trainers]!,
-      traneeId[Trainees]!,
-      workouts:[Workouts]!
+      trainerId: ID!,
+      traineeId: ID!,
       ) : Schedules
+   
    updateAppointment(
       date: String!,
       startTime: String!,
       endTime: String!,
       location: String,
-      trainerId: [Trainers]!,
-      traneeId[Trainees]!,
-      workouts:[Workouts]!
+      trainerId: ID!,
+      traineeId: ID!,
       ) : Schedules
-   removeAppointment(schedulesId: ID!): Schedules
-   
+
+   removeAppointment(schedulesId: ID!) : Schedules
    }
-
-
 `;
 
 module.exports = typeDefs;

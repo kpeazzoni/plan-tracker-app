@@ -1,8 +1,4 @@
 const { Schema, model } = require('mongoose');
-<<<<<<< HEAD
-
-=======
->>>>>>> 1a5a888a80583b56fa6f2e7755400a3fdff94b49
 
 const traineesSchema = Schema({
     firstName:{

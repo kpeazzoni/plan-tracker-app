@@ -3,8 +3,10 @@ import Logo from "../../assets/logo.png";
 import "./Header.css";
 import { Link } from "react-scroll";
 import Bars from "../../assets/bars.png";
+import {  useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
   const mobile = window.innerWidth <= 768 ? true : false;
   const [menuOpened, setMenuOpened] = useState(false);
   return (
@@ -24,7 +26,7 @@ const Header = () => {
       ) : (
         <ul className="header-menu">
           <li>
-            <Link
+            {/* <Link
               onClick={() => setMenuOpened(false)}
               activeClass="active"
               to="header"
@@ -32,7 +34,8 @@ const Header = () => {
               smooth={true}
             >
               Home
-            </Link>
+            </Link> */}
+            <button onClick={(event) => navigate('/')} className='btn'>Home</button>
           </li>
           <li>
             <Link
@@ -73,6 +76,12 @@ const Header = () => {
             >
               Clients
             </Link>
+          </li>
+          <li>
+          <button onClick={(event) => navigate('/login')} className='btn'>Login</button>
+          </li>
+          <li>
+          <button onClick={(event) => navigate('/register')} className='btn'>Register</button>
           </li>
         </ul>
       )}

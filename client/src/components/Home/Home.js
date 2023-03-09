@@ -1,5 +1,5 @@
 import React from "react";
-import Join from "../Join/Join";
+import Join from "./Join";
 import "./Home.css";
 import hero_image from "../../assets/hero_image.png";
 // import { motion } from "framer-motion";
@@ -7,11 +7,11 @@ import NumberCounter from "number-counter";
 // import {Link} from 'react-scroll'
 
 import { useState } from 'react';
-import { Link,  useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 
 
 const Home = () => {
-
+  const navigate = useNavigate();
     
   return (
     <div>
@@ -64,12 +64,9 @@ const Home = () => {
         </div>
         {/* Right Side */}
         <div className="right-h">
-          <Link>
-          <button className='btn'>Login</button>
-          </Link>
-          
-            
-          {/* <img className="hero-image" src={hero_image} alt="" /> */}
+          {/* <button onClick={(event) => navigate('/login')} className='btn'>Login</button>
+          <button onClick={(event) => navigate('/register')} className='btn'>Register</button> */}
+            {/* <img className="hero-image" src={hero_image} alt="" /> */}
         </div>
       </div>
     {/* Render "Join" banner */}

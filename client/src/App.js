@@ -1,19 +1,51 @@
 import React from "react";
 import './App.css';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 // import NewClientForm from './components/NewClientForm/NewClientForm'
 import Header from "./components/Header/Header";
 import Footer from './components/Footer/Footer';
-// import Home from './components/Home/Home';
+import Home from './components/Home/Home';
 import AllClientsContainer from './components/AllClientsContainer/AllClientsContainer';
 import HomepageContainer from "./components/HomepageContainer/HomepageContainer";
-// import Login from './pages/Login'
+import Login from './pages/Login'
+import { setContext } from '@apollo/client/link/context';
 
-// import Register from "./pages/Register";
+import Register from "./pages/Register";
 import SingleClientContainer from './components/SingleClientContainer/SingleClientContainer'
 
+
+// Construct our main GraphQL API endpoint
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+// Construct request middleware that will attach the JWT token to every request as an `authorization` header
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem('id_token');
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 function App() {
   return (
+    <ApolloProvider client={client}>
     <div className="App">
       {/* <Header /> */}
       {/* <Home/>  */}
@@ -31,9 +63,9 @@ function App() {
           <Header />  
         <Routes>
           {/*  Main Module  paths */}
-          {/* <Route exact path='/' element={<Home />} />
+          <Route exact path='/' element={<Home />} />
           <Route exact path='/login' element={<Login />} />
-          <Route exact path='/register' element={<Register />} /> */}
+          <Route exact path='/register' element={<Register />} />
           <Route exact path='/homepagecontainer' element={<HomepageContainer />} />
           <Route exact path='/allclientscontainer' element={<AllClientsContainer />} />
           <Route exact path='/singleclientscontainer' element={<SingleClientContainer />} />
@@ -48,6 +80,7 @@ function App() {
         </div>
       </Router>
     </div>
+  </ApolloProvider>
   );
   // return <HomepageContainer/>
 }

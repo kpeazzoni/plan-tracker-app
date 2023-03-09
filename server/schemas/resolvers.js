@@ -29,6 +29,13 @@ const resolvers = {
 
         return Schedules.find(params).populate('workouts');
     },
+
+    me: async (parent, args, context) => {
+      if (context.trainer) {
+        return Trainers.findOne({ _id: context.trainer._id }).populate('/');
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
     // trainerSchedules: async () => {
     //     return Schedules.find().populate('workouts');
     // },

@@ -59,37 +59,67 @@ type Query {
    trainer(trainerId: ID!): Trainers
    trainees: [Trainees]
    trainee(traineeId: ID!): Trainees
-
+   me: Trainers
    schedules: [Schedules]
    exercises: [Exercises]
-   
 }
+
 type Mutation {
     addTrainer(firstName: String!, lastName: String!,email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-  }
+
+   addTrainee (
+      firstName: String!, 
+      lastName: String!, 
+      dob: String!, 
+      demographics:[Demographics]!,
+      traineeSchedule:[Schedules]!
+      ): Trainees
+   updateTrainee(
+      fistName: String!,
+      lastName: String!
+      deomographics: [Demographics]!,
+      traineeSchedule: [Schedules]!
+      ) : Trainees
+   removeTrainee(traneeId: ID!) : Trainees
+   addExercise (muscleGroup: String!, exerciseName: String!) : Exericses
+   updateWorkouts(
+      muscleGroup: String!,
+      exerciseName: String!,
+      sets: String, reps: String,
+      weight: String,
+      distance: String,
+      equipmentReq: String,
+      notes: String
+      ) : Workouts
+   removeExercise(workoutsId: ID!) : Workouts
+
+   addAppointment(
+      date: String!,
+      startTime: String!,
+      endTime: String!,
+      location: String,
+      trainerId: [Trainers]!,
+      traneeId[Trainees]!,
+      workouts:[Workouts]!
+      ) : Schedules
+   updateAppointment(
+      date: String!,
+      startTime: String!,
+      endTime: String!,
+      location: String,
+      trainerId: [Trainers]!,
+      traneeId[Trainees]!,
+      workouts:[Workouts]!
+      ) : Schedules
+   removeAppointment(schedulesId: ID!)
+   
+   }
+
 
 `;
 
 module.exports = typeDefs;
-
-// type Mutation {
-//    addTrainer(email: String!, password: String!): Auth
-//    login (email: String!, password: String!): Auth
-   
-//    addTrainee (firstName: String!, lastName: String!, dob: String!, demographics:[Demographics]!,traineeSchedule:[Schedules]!): Trainees
-//    updateTrainee()
-//    removeTrainee()
-
-//    addExercise ()
-//    updateExercise()
-//    removeExercise()
-
-//    addAppointment()
-//    updateAppointment()
-//    removeAppointment() }
-
-// me: Trainers
 
 // trainerSchedules(trainerId: ID!): [Schedules]
 // traineeSchedules(traineeId: ID!): [Schedules]

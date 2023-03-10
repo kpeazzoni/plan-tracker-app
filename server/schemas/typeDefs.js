@@ -36,6 +36,7 @@ const typeDefs = gql`
     workouts:[Workouts]!
  }
  type Workouts{
+   _id: ID!
    muscleGroup: String!
    exerciseName: String!
    sets: String
@@ -62,6 +63,7 @@ const typeDefs = gql`
       trainee(traineeId: ID!): Trainees
       me: Trainers
       schedules: [Schedules]
+      schedule(scheduleId: ID!): Schedules
       exercises: [Exercises]
    }
 
@@ -85,6 +87,7 @@ type Mutation {
       ) : Trainees   
    
    addDemographics(
+      traineeId: ID!
       height: Int!,
       weight: Int!,
       goals: String!,
@@ -96,6 +99,8 @@ type Mutation {
    removeTrainee(traineeId: ID!) : Trainees
    
    updateWorkouts(
+      workoutId: ID!
+      scheduleId: ID!
       muscleGroup: String!,
       exerciseName: String!,
       sets: String,
@@ -107,6 +112,7 @@ type Mutation {
       ) : Schedules
 
    addWorkouts(
+      scheduleId: ID!
       muscleGroup: String!,
       exerciseName: String!,
       sets: String,
@@ -117,7 +123,7 @@ type Mutation {
       notes: String
       ) : Schedules
    
-   deleteWorkouts(scheduleId: ID!, workoutsId: ID!) : Schedules
+   removeWorkouts(scheduleId: ID!, workoutId: ID!) : Schedules
    
    addAppointment(
       date: String!,
@@ -129,6 +135,7 @@ type Mutation {
       ) : Schedules
    
    updateAppointment(
+      scheduleId: ID!
       date: String!,
       startTime: String!,
       endTime: String!,
@@ -137,7 +144,7 @@ type Mutation {
       traineeId: ID!,
       ) : Schedules
 
-   removeAppointment(schedulesId: ID!) : Schedules
+   removeAppointment(scheduleId: ID!) : Schedules
    }
 `;
 

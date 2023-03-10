@@ -2,13 +2,13 @@ import React from 'react';
 import '../../src/components/HomepageContainer/HomepageContainer.css'
 
 function AppointmentsCards({appointments}) {
-  return appointments.map ((appintment, i)=>(
+  return appointments.map ((appointment, i)=>(
     <div className='card appointmentsCards' key={i}>
       <div className='card-body'>
-      <h3>Date: {appintment.date}</h3>
-      <h3>Start Time: {appintment.start_time}</h3>
-      <h3>End Time: {appintment.end_time}</h3>
-      <h3>Exercises: {appintment.exercise}</h3>
+      <h3>Date: {appointment.date}</h3>
+      <h3>Start Time: {appointment.start_time}</h3>
+      <h3>End Time: {appointment.end_time}</h3>
+      <h3>Exercises: {appointment.exercise}</h3>
       </div>
     </div>
   ))

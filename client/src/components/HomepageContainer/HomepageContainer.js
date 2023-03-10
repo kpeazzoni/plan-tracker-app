@@ -1,13 +1,13 @@
 import React, { useState} from "react";
 import AppointmentsCards from "../../pages/AppointmentsCards";
-import ClientsCards from "../../pages/ClientsCards"
+import TraineesCards from "../../pages/TraineesCards"
 import './HomepageContainer.css'
 import FullscheduleButtons from '../Buttons/fullschedulebuttons';
 import AddclientButtons from '../Buttons/addclientbuttons';
 import ViewallclientsButtons from '../Buttons/viewallclientsbuttons';
 
 export default function HomepageContainer() {
-    const [clients, setclient] = useState([
+    const [trainee, setclient] = useState([
         { name: "Karen", dob: "8/19/1989", height:"5'7" },
         { name: "Chris", dob: "1/20/1987", height:"5'6"},
         { name: "Erin", dob: "5/17/2002", height:"5'3"},
@@ -31,12 +31,12 @@ export default function HomepageContainer() {
             <aside className="col-md-2"></aside>
            
            <aside className="col-md-5">
-                <div className="clients-container">
+                <div className="trainees-container">
                 <div class="d-flex flex-row mb-3">
                 <AddclientButtons /> <ViewallclientsButtons />
                </div>
-                    <h3 className="card-heading">Clients</h3>
-            <ClientsCards clients={clients}/>
+                    <h3 className="card-heading">Trainees</h3>
+            <TraineesCards trainees={trainee}/>
             </div>
             </aside>
 

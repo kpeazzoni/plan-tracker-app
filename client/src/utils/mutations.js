@@ -16,7 +16,7 @@ export const LOGIN_TRAINER = gql`
 
 export const ADD_TRAINER = gql`
   mutation addTrainer($firstName: String!,$lastName: String!, $email: String!, $password: String!) {
-    addTrainer(fistName: $firstName, lastName: $lastName, email: $email, password: $password) {
+    addTrainer(firstName: $firstName, lastName: $lastName, email: $email, password: $password) {
       token
       user {
         _id

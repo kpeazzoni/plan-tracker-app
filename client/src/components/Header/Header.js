@@ -26,7 +26,7 @@ const Header = () => {
       ) : (
         <ul className="header-menu">
           <li>
-            <Link
+            {/* <Link
               onClick={() => setMenuOpened(false)}
               activeClass="active"
               to="header"
@@ -34,7 +34,8 @@ const Header = () => {
               smooth={true}
             >
               Home
-            </Link>
+            </Link> */}
+            <button onClick={(event) => navigate('/')} className='btn'>Home</button>
           </li>
           <li>
             <Link

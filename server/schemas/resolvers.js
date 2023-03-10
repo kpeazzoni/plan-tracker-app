@@ -226,23 +226,6 @@ const resolvers = {
       }
       // throw new AuthenticationError('You need to be logged in!');
     },
-
-    removeWorkouts:  async (parent, { scheduleId, workoutId }, context) => {
-      if (context) {
-        return Schedules.findOneAndUpdate(
-          { _id: scheduleId },
-          {
-            $pull: {
-              workouts: {
-                _id: workoutId,              
-              },
-            },
-          },
-          { new: true }
-        );
-      }
-      // throw new AuthenticationError('You need to be logged in!');
-    },
     
     updateWorkouts: async (parent, { scheduleId, workoutId, muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes }, context) => {
       if (context) {

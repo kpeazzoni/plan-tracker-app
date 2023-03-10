@@ -117,7 +117,7 @@ const resolvers = {
         if (context) {
           return Trainees.findOneAndUpdate(
             { _id: traineeId },
-            // the aboove works with hardcoded '640a8f6a98d6c288181eb740'
+            // the above works with hardcoded 'traineeId'
             {
               $addToSet: {
                 demographics: { height, weight, goals, injuryHistory, notes },
@@ -150,32 +150,13 @@ const resolvers = {
       // throw new AuthenticationError('You need to be logged in!');
     },
 
-
-
-    // addWorkouts: async (parent, { scheduleId, muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes }, context) => {
-    //   if (context.user) {
-    //     return Schedules.findOneAndUpdate(
-    //       { _id: scheduleId },
-    //       {
-    //         $addToSet: {
-    //           workouts: { muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes },
-    //         },
-    //       },
-    //       {
-    //         new: true,
-    //         runValidators: true,
-    //       }
-    //     );
-    //   }
-    //   throw new AuthenticationError('You need to be logged in!');
-    // },
-
-    updateWorkouts: async (parent, { scheduleId, muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes }, context) => {
-      if (context.user) {
+    addWorkouts: async (parent, { scheduleId, muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes }, context) => {
+      if (context) {
         return Schedules.findOneAndUpdate(
-          { _id: scheduleId },
+          { _id: "640abceb6ebec88730d4f6dd" },
+          // the above works with hardcoded 'scheduleId'
           {
-            $set: {
+            $addToSet: {
               workouts: { muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes },
             },
           },
@@ -185,56 +166,21 @@ const resolvers = {
           }
         );
       }
-      throw new AuthenticationError('You need to be logged in!');
+      // throw new AuthenticationError('You need to be logged in!');
     },
 
-    // removeWorkouts:  async (parent, { scheduleId, workoutId }, context) => {
-    //   if (context.user) {
-    //     return Schedules.findOneAndUpdate(
-    //       { _id: scheduleId },
-    //       {
-    //         $pull: {
-    //           workouts: {
-    //             _id: workoutId,              
-    //           },
-    //         },
-    //       },
-    //       { new: true }
-    //     );
-    //   }
-    //   throw new AuthenticationError('You need to be logged in!');
-    // },
-
-
-    updateAppointment: async (parent, { date, startTime, endTime, location }, context) => {
-      if (context.user) {
-        return Schedules.findOneAndUpdate(
-          { _id: appointment.Id },
-          {
-            $set: {
-              date,
-              startTime,
-              endTime,
-              location
-            },
-          },
-        );
-      }
-      throw new AuthenticationError('You need to be logged in!');
-    },
-
-    removeAppointment: async (parent, { appointmentId }, context) => {
-      if (context.user) {
+    removeAppointment: async (parent, { scheduleId }, context) => {
+      if (context) {
         const appointment = await Schedules.findOneAndDelete({
-          _id: appointmentId,
+          _id: scheduleId,
         });
 
         await Trainers.findOneAndUpdate(
-          { _id: context.user._id },
+          { _id: appointment.trainerId },
           { $pull: { trainerSchedule: appointment._id } }
         );
         await Trainees.findOneAndUpdate(
-          { _id: context.user._id },
+          { _id: appointment.traineeId },
           { $pull: { traineeSchedule: appointment._id } }
         );
 
@@ -242,6 +188,82 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+
+    updateAppointment: async (parent, { scheduleId, date, startTime, endTime, location, trainerId, traineeId }, context) => {
+      if (context) {
+        return Schedules.findOneAndUpdate(
+          { _id: scheduleId },
+          //the above works with hardcoded 'scheduleId'
+          {
+            $set: {
+              date,
+              startTime,
+              endTime,
+              location,
+              trainerId,
+              traineeId
+//make trainerId and traineeId not required???
+            },
+          },
+        );
+      }
+      // throw new AuthenticationError('You need to be logged in!');
+    },
+
+    removeWorkouts:  async (parent, { scheduleId, workoutId }, context) => {
+      if (context) {
+        return Schedules.findOneAndUpdate(
+          { _id: scheduleId },
+          {
+            $pull: {
+              workouts: {
+                _id: workoutId,              
+              },
+            },
+          },
+          { new: true }
+        );
+      }
+      // throw new AuthenticationError('You need to be logged in!');
+    },
+
+    removeWorkouts:  async (parent, { scheduleId, workoutId }, context) => {
+      if (context) {
+        return Schedules.findOneAndUpdate(
+          { _id: scheduleId },
+          {
+            $pull: {
+              workouts: {
+                _id: workoutId,              
+              },
+            },
+          },
+          { new: true }
+        );
+      }
+      // throw new AuthenticationError('You need to be logged in!');
+    },
+    
+    updateWorkouts: async (parent, { scheduleId, workoutId, muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes }, context) => {
+      if (context) {
+        return Schedules.updateOne(
+          {   _id: scheduleId, workouts_id: workoutId
+           },
+          {
+            $set: {
+              muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      // throw new AuthenticationError('You need to be logged in!');
+    },
+
+
   }
 };
 

@@ -10,9 +10,9 @@ const traineesSchema = Schema({
         required: true,
     },
     dob:{
-        type: Date,
+        type: String,
         required: true,
-        get: (timestamp) => dateFormat(timestamp)
+        // get: (timestamp) => dateFormat(timestamp)
     },
     demographics: [
         {
@@ -39,6 +39,11 @@ const traineesSchema = Schema({
             }
         }
     ],
+    trainerId: {
+        type: Schema.Types.ObjectId,
+        ref: 'Trainers',
+    },
+
     traineeSchedule:[
         {
          type: Schema.Types.ObjectId,

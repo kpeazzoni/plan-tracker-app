@@ -14,6 +14,7 @@ const typeDefs = gql`
     firstName: String!
     lastName: String!
     dob: String!  
+    trainerId: Trainers
     demographics:[Demographics]!
     traineeSchedule:[Schedules]!
  }
@@ -30,8 +31,8 @@ const typeDefs = gql`
     startTime: String!
     endTime: String!
     location: String
-    trainerId:[Trainers]!
-    traineeId: [Trainees]!
+    trainerId:Trainers!
+    traineeId: Trainees!
     workouts:[Workouts]!
  }
  type Workouts{

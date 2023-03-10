@@ -21,6 +21,10 @@ const trainersSchema = new Schema({
     required: true,
     minlength: 8,
   },
+  trainees: [
+    {type: Schema.Types.ObjectId,
+    ref: 'Trainees',}
+  ],
   trainerSchedule: [
     {
       type: Schema.Types.ObjectId,

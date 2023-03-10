@@ -55,26 +55,34 @@ const typeDefs = gql`
     user: Trainers
   }
 
-type Query {
-   trainers: [Trainers]
-   trainer(trainerId: ID!) : Trainers
-   trainees: [Trainees]
-   trainee(traineeId: ID!): Trainees
-   me: Trainers
-   schedules: [Schedules]
-   exercises: [Exercises]
-}
+   type Query {
+      trainers: [Trainers]
+      trainer(trainerId: ID!) : Trainers
+      trainees: [Trainees]
+      trainee(traineeId: ID!): Trainees
+      me: Trainers
+      schedules: [Schedules]
+      exercises: [Exercises]
+   }
 
 type Mutation {
-    addTrainer(firstName: String!, lastName: String!,email: String!, password: String!): Auth
-    login(email: String!, password: String!): Auth
+   addTrainer(
+      firstName: String!
+      lastName: String!
+      email: String!
+      password: String!
+      ) : Auth
+    
+   login(email: String!, password: String!): Auth
+
+
 
    addTrainee (
       firstName: String!, 
       lastName: String!, 
       dob: String!, 
       trainerId: ID!
-      ) : Trainees
+      ) : Trainees   
    
    addDemographics(
       height: Int!,
@@ -97,6 +105,19 @@ type Mutation {
       equipmentReq: String,
       notes: String
       ) : Schedules
+
+   addWorkouts(
+      muscleGroup: String!,
+      exerciseName: String!,
+      sets: String,
+      reps: String,
+      weight: String,
+      distance: String,
+      equipmentReq: String,
+      notes: String
+      ) : Schedules
+   
+   deleteWorkouts(scheduleId: ID!, workoutsId: ID!) : Schedules
    
    addAppointment(
       date: String!,

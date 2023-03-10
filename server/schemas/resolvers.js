@@ -32,7 +32,7 @@ const resolvers = {
 
     me: async (parent, args, context) => {
       if (context.trainer) {
-        return Trainers.findOne({ _id: context.trainer._id }).populate('schedules');
+        return Trainers.findOne({ _id: context.trainer._id }).populate('/');
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -52,6 +52,7 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+   
     login: async (parent, { email, password }) => {
       const user = await Trainers.findOne({ email });
 

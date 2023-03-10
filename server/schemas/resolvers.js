@@ -4,18 +4,57 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
+    //trainers:[Trainers]
     trainers: async () => {
-      return Trainers.find().populate('trainerSchedule');
+      return Trainers.find().populate('trainerSchedule')
+      // .populate({path: 'trainerSchedule', populate: 'trainerId'})
+      .populate({
+        path: 'trainerSchedule',
+        populate: [
+          { path: 'trainerId' },
+          { path: 'traineeId' }
+        ]
+      });
     },
+    //trainer:Trainers
     trainer: async (parent, { trainerId }) => {
-        return Trainers.findOne({ _id: trainerId }).populate('trainerSchedule');
+        return Trainers.findOne({ _id: trainerId })
+        .populate('trainerSchedule')
+        .populate({
+          path: 'trainerSchedule',
+          populate: [
+            { path: 'trainerId' },
+            { path: 'traineeId' }
+          ]
+        });
     },
+    //trainees:[Trainees]
     trainees: async () => {
-        return Trainees.find().populate('demographics').populate('traineeSchedule');
+      return Trainees.find().populate('demographics')
+        .populate('traineeSchedule')
+        .populate({
+          path: 'traineeSchedule',
+          populate: [
+            { path: 'trainerId' },
+            { path: 'traineeId' }
+          ]
+        });
+        // console.log(trainees[0].traineeSchedule)
+        // return trainees
     },
+    //trainee:Trainees
     trainee: async (parent, { traineeId }) => {
-        return Trainees.findOne({ _id: traineeId }).populate('traineeSchedule');
+        return Trainees.findOne({ _id: traineeId }).populate('traineeSchedule')
+        .populate({
+          path: 'traineeSchedule',
+          populate: [
+            { path: 'trainerId' },
+            { path: 'traineeId' }
+          ]
+        });;
     },
+
+    
     schedules: async (parent, { traineeId, trainerId }) => {
         let params = {};
 
@@ -30,11 +69,11 @@ const resolvers = {
         return Schedules.find(params).populate('workouts');
     },
 
-    me: async (parent, { trainerId }, context) => {
-      if (context) {
-        return Trainers.findOne({ _id: trainerId });
+    me: async (parent, arg, context) => {
+      if (context.user) {
+        return Trainers.findOne({ _id: context.user._id });
       }
-      // throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError('You need to be logged in!');
     },
     // trainerSchedules: async () => {
     //     return Schedules.find().populate('workouts');
@@ -224,7 +263,7 @@ const resolvers = {
       // throw new AuthenticationError('You need to be logged in!');
     },
     
-    updateWorkouts: async (parent, { scheduleId, workoutId, muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes }, context) => {
+    updateWorkouts: async (parent, { scheduleId, workoutId, muscleGroup, exerciseName, sets, reps, weight, distance, equipmentReq, notes }, context) => {
       if (context) {
         return Schedules.findOneAndUpdate(
           {   _id: scheduleId
@@ -238,7 +277,7 @@ const resolvers = {
               reps,
               weight, 
               distance,
-              equipementReq,
+              equipmentReq,
               notes
             }},
           },

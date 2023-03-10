@@ -8,13 +8,13 @@ const resolvers = {
       return Trainers.find().populate('trainerSchedule');
     },
     trainer: async (parent, { trainerId }) => {
-        return Trainers.findOne({ _id: trainerId }).populate('trainerSchedule');
+        return Trainers.findOne({ _id: trainerId });
     },
     trainees: async () => {
         return Trainees.find().populate('demographics').populate('traineeSchedule');
     },
     trainee: async (parent, { traineeId }) => {
-        return Trainees.findOne({ _id: traineeId }).populate('traineeSchedule');
+        return Trainees.findOne({ _id: traineeId });
     },
     schedules: async (parent, { traineeId, trainerId }) => {
         let params = {};
@@ -30,9 +30,9 @@ const resolvers = {
         return Schedules.find(params).populate('workouts');
     },
 
-    me: async (parent, { trainerId }, context) => {
-      if (context.user) {
-        return Trainers.findOne({ _id: context.user._Id });
+    me: async (parent, args, context) => {
+      if (context.trainer) {
+        return Trainers.findOne({ _id: context.trainer._id }).populate('/');
       }
       throw new AuthenticationError('You need to be logged in!');
     },

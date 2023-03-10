@@ -70,8 +70,179 @@ const resolvers = {
 
       return { token, user };
     },
-  }
 
+    addTrainee: async (parent, {firstName, lastName, dob, trainerId }, context) => {
+      if (context) {
+        const trainee = await Trainees.create({
+          firstName, 
+          lastName, 
+          dob,
+          trainerId
+        });
+        await Trainers.findOneAndUpdate(
+          {_id: trainerId},
+          {$addToSet: { trainees: trainee._id}}
+        );
+        return trainee;
+      }
+      // throw new AuthenticationError('You need to be logged in!');
+      },
+
+      addAppointment: async (parent, { date, startTime, endTime, location, trainerId, traineeId }, context) => {
+        if (context) {
+          const appointment = await Schedules.create({
+            date,
+            startTime,
+            endTime,
+            location,
+            trainerId, 
+            traineeId
+          });
+  
+          await Trainers.findOneAndUpdate(
+            { _id: trainerId },
+            { $addToSet: { trainerSchedule: appointment._id } }
+          );
+          await Trainees.findOneAndUpdate(
+            { _id: traineeId },
+            { $addToSet: { traineeSchedule: appointment._id } }
+          );
+  
+          return appointment;
+        }
+        throw new AuthenticationError('You need to be logged in!');
+      },
+  
+      addDemographics: async (parent, { traineeId, height, weight, goals, injuryHistory, notes }, context) => {
+        if (context) {
+          return Trainees.findOneAndUpdate(
+            { _id: traineeId },
+            // the aboove works with hardcoded '640a8f6a98d6c288181eb740'
+            {
+              $addToSet: {
+                demographics: { height, weight, goals, injuryHistory, notes },
+              },
+            },
+            {
+              new: true,
+              runValidators: true,
+            }
+          );
+        }
+        // throw new AuthenticationError('You need to be logged in!');
+      },
+
+      
+    removeTrainee: async (parent, { traineeId }, context) => {
+      if (context) {
+        const trainee = await Trainees.findOneAndDelete({
+          _id: traineeId,
+        }
+        );
+
+        await Trainers.findOneAndUpdate(
+          { _id: trainee.trainerId },
+          { $pull: { trainees: trainee._id } }
+        );
+
+        return trainee;
+      }
+      // throw new AuthenticationError('You need to be logged in!');
+    },
+
+
+
+    // addWorkouts: async (parent, { scheduleId, muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes }, context) => {
+    //   if (context.user) {
+    //     return Schedules.findOneAndUpdate(
+    //       { _id: scheduleId },
+    //       {
+    //         $addToSet: {
+    //           workouts: { muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes },
+    //         },
+    //       },
+    //       {
+    //         new: true,
+    //         runValidators: true,
+    //       }
+    //     );
+    //   }
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
+
+    updateWorkouts: async (parent, { scheduleId, muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes }, context) => {
+      if (context.user) {
+        return Schedules.findOneAndUpdate(
+          { _id: scheduleId },
+          {
+            $set: {
+              workouts: { muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes },
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
+    // removeWorkouts:  async (parent, { scheduleId, workoutId }, context) => {
+    //   if (context.user) {
+    //     return Schedules.findOneAndUpdate(
+    //       { _id: scheduleId },
+    //       {
+    //         $pull: {
+    //           workouts: {
+    //             _id: workoutId,              
+    //           },
+    //         },
+    //       },
+    //       { new: true }
+    //     );
+    //   }
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
+
+
+    updateAppointment: async (parent, { date, startTime, endTime, location }, context) => {
+      if (context.user) {
+        return Schedules.findOneAndUpdate(
+          { _id: appointment.Id },
+          {
+            $set: {
+              date,
+              startTime,
+              endTime,
+              location
+            },
+          },
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
+    removeAppointment: async (parent, { appointmentId }, context) => {
+      if (context.user) {
+        const appointment = await Schedules.findOneAndDelete({
+          _id: appointmentId,
+        });
+
+        await Trainers.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { trainerSchedule: appointment._id } }
+        );
+        await Trainees.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { traineeSchedule: appointment._id } }
+        );
+
+        return appointment;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+  }
 };
 
 module.exports = resolvers;

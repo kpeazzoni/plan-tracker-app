@@ -191,13 +191,13 @@ const resolvers = {
       // throw new AuthenticationError('You need to be logged in!');
     },
 
-    addWorkouts: async (parent, { scheduleId, muscleGroup, exerciseName, sets, reps, weight, distance, equipmentReq, notes }, context) => {
+    addWorkouts: async (parent, { scheduleId, muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes }, context) => {
       if (context) {
         return Schedules.findOneAndUpdate(
           { _id: scheduleId},
           {
             $addToSet: {
-              workouts: { muscleGroup, exerciseName, sets, reps, weight, distance, equipmentReq, notes },
+              workouts: { muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes },
             },
           },
           {
@@ -266,7 +266,7 @@ const resolvers = {
       // throw new AuthenticationError('You need to be logged in!');
     },
     
-    updateWorkouts: async (parent, { scheduleId, workoutId, muscleGroup, exerciseName, sets, reps, weight, distance, equipmentReq, notes }, context) => {
+    updateWorkouts: async (parent, { scheduleId, workoutId, muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes }, context) => {
       if (context) {
         return Schedules.findOneAndUpdate(
           {   _id: scheduleId
@@ -280,7 +280,7 @@ const resolvers = {
               reps,
               weight, 
               distance,
-              equipmentReq,
+              equipementReq,
               notes
             }},
           },

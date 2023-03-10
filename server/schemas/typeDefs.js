@@ -87,6 +87,7 @@ type Mutation {
       ) : Trainees   
    
    addDemographics(
+      traineeId: ID!
       height: Int!,
       weight: Int!,
       goals: String!,
@@ -111,6 +112,7 @@ type Mutation {
       ) : Schedules
 
    addWorkouts(
+      scheduleId: ID!
       muscleGroup: String!,
       exerciseName: String!,
       sets: String,
@@ -133,6 +135,7 @@ type Mutation {
       ) : Schedules
    
    updateAppointment(
+      scheduleId: ID!
       date: String!,
       startTime: String!,
       endTime: String!,

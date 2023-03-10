@@ -1,30 +1,47 @@
-.header{
+.header {
     display: flex;
     justify-content: space-between;
 }
-.logo{
+
+.logo {
     width: 10rem;
     height: 3rem;
 }
-.header-menu{
+
+.header-menu {
     list-style: none;
     display: flex;
     gap: 2rem;
-    color:white;
+    color: white;
 }
-.header-menu>li:hover{
+
+.header-menu>li:hover {
     color: var(--orange);
     cursor: pointer
 }
 
+#logout {
+    background-color: rgb(210, 82, 82);
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+
+}
+
 @media screen and (max-width: 767px) {
-    .header>:nth-child(2)
-    {
+    .header>:nth-child(2) {
         position: fixed;
         right: 2rem;
         z-index: 99;
     }
-    .header-menu{
+
+    .header-menu {
         flex-direction: column;
         background-color: var(--appColor);
         padding: 2rem;

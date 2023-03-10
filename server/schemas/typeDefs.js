@@ -68,6 +68,8 @@ type Mutation {
     addTrainer(firstName: String!, lastName: String!,email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
 
+
+
    addTrainee (
       firstName: String!, 
       lastName: String!, 

@@ -52,6 +52,7 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+   
     login: async (parent, { email, password }) => {
       const user = await Trainers.findOne({ email });
 

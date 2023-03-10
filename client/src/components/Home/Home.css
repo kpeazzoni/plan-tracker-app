@@ -7,11 +7,17 @@
   filter: blur(150px);
 }
 .btn {
-  background-color: white;
-  padding: 0.5rem;
-  font-weight: bold;
-  border: 4px solid transparent;
-  transition: 300ms all;
+  background-color: #6cb4ac;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px 0;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+  
 }
 .btn:hover {
   cursor: pointer;

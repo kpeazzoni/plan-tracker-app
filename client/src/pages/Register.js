@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { useMutation } from '@apollo/client';
 import { ADD_TRAINER } from '../utils/mutations';
 
@@ -21,11 +20,12 @@ import Auth from '../utils/auth';
 
 const Register = () => {
   const [formState, setFormState] = useState({
-    username: '',
+    firstName: '',
+    lastName: '',
     email: '',
     password: '',
   });
-  const [addUser, { error, data }] = useMutation(ADD_TRAINER);
+  const [addTrainer, { error, data }] = useMutation(ADD_TRAINER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -41,11 +41,11 @@ const Register = () => {
     console.log(formState);
 
     try {
-      const { data } = await addUser({
+      const { data } = await addTrainer({
         variables: { ...formState },
       });
 
-      Auth.login(data.addUser.token);
+      Auth.login(data.addTrainer.token);
     } catch (e) {
       console.error(e);
     }
@@ -66,7 +66,7 @@ const Register = () => {
 
               <div className='d-flex flex-row mt-2'>
                 <MDBIcon fas icon="cubes fa-3x me-3" style={{ color: '#ff6219' }}/>
-                <span className="h1 fw-bold mb-0">PT Haus</span>
+                <span className="h1 fw-bold mb-0">Plan Tracker</span>
               </div>
 
               <h5 className="fw-normal my-4 pb-3" style={{letterSpacing: '1px'}}>Register to create a new account</h5>
@@ -109,13 +109,13 @@ const Register = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <button
+                <MDBBtn
                   className="btn btn-block btn-primary"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
                   Submit
-                </button>
+                </MDBBtn>
               </form>
             )}
 

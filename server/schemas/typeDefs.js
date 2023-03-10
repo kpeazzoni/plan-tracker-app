@@ -18,14 +18,14 @@ const typeDefs = gql`
     demographics:[Demographics]!
     traineeSchedule:[Schedules]!
  }
- type Demographics{
+ type Demographics {
     height: Int!
     weight: Int!
     goals: String!
     injuryHistory: String!
     notes: String!
  }
- type Schedules{
+ type Schedules {
     _id: ID!
     date: String!
     startTime: String!
@@ -35,7 +35,7 @@ const typeDefs = gql`
     traineeId: Trainees!
     workouts:[Workouts]!
  }
- type Workouts{
+ type Workouts {
    _id: ID!
    muscleGroup: String!
    exerciseName: String!

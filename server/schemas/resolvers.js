@@ -32,7 +32,7 @@ const resolvers = {
 
     me: async (parent, args, context) => {
       if (context.trainer) {
-        return Trainers.findOne({ _id: context.trainer._id }).populate('schedules');
+        return Trainers.findOne({ _id: context.trainer._id }).populate('/');
       }
       throw new AuthenticationError('You need to be logged in!');
     },

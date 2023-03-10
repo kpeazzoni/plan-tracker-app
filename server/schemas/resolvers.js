@@ -1,4 +1,4 @@
-const { AuthenticationError } = require('apollo-server-express');
+  const { AuthenticationError } = require('apollo-server-express');
 const { Exercises, Schedules, Trainees, Trainers } = require('../models');
 const { signToken } = require('../utils/auth');
 
@@ -108,7 +108,7 @@ const resolvers = {
             { $addToSet: { traineeSchedule: appointment._id } }
           );
   
-          return appointment;
+          return appointment; 
         }
         throw new AuthenticationError('You need to be logged in!');
       },

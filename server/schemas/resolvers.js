@@ -117,7 +117,6 @@ const resolvers = {
         if (context) {
           return Trainees.findOneAndUpdate(
             { _id: traineeId },
-            // the above works with hardcoded 'traineeId'
             {
               $addToSet: {
                 demographics: { height, weight, goals, injuryHistory, notes },
@@ -153,8 +152,7 @@ const resolvers = {
     addWorkouts: async (parent, { scheduleId, muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes }, context) => {
       if (context) {
         return Schedules.findOneAndUpdate(
-          { _id: "640abceb6ebec88730d4f6dd" },
-          // the above works with hardcoded 'scheduleId'
+          { _id: scheduleId},
           {
             $addToSet: {
               workouts: { muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes },
@@ -193,7 +191,6 @@ const resolvers = {
       if (context) {
         return Schedules.findOneAndUpdate(
           { _id: scheduleId },
-          //the above works with hardcoded 'scheduleId'
           {
             $set: {
               date,
@@ -229,13 +226,21 @@ const resolvers = {
     
     updateWorkouts: async (parent, { scheduleId, workoutId, muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes }, context) => {
       if (context) {
-        return Schedules.updateOne(
-          {   _id: scheduleId, workouts_id: workoutId
+        return Schedules.findOneAndUpdate(
+          {   _id: scheduleId
            },
           {
-            $set: {
-              muscleGroup, exerciseName, sets, reps, weight, distance, equipementReq, notes
-            },
+            $set: { workouts: {
+              _id: workoutId,
+              muscleGroup,
+              exerciseName,
+              sets, 
+              reps,
+              weight, 
+              distance,
+              equipementReq,
+              notes
+            }},
           },
           {
             new: true,

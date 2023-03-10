@@ -31,10 +31,10 @@ const resolvers = {
     },
 
     me: async (parent, { trainerId }, context) => {
-      if (context) {
-        return Trainers.findOne({ _id: trainerId });
+      if (context.user) {
+        return Trainers.findOne({ _id: context.user._Id });
       }
-      // throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError('You need to be logged in!');
     },
     // trainerSchedules: async () => {
     //     return Schedules.find().populate('workouts');

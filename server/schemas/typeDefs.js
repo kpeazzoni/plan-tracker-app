@@ -62,7 +62,7 @@ const typeDefs = gql`
       trainees: [Trainees]
       trainee(traineeId: ID!): Trainees
       me: Trainers
-      schedules: [Schedules]
+      schedules(trainerId: ID, traineeId: ID): [Schedules]
       schedule(scheduleId: ID!): Schedules
       exercises: [Exercises]
    }

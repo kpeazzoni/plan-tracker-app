@@ -12,21 +12,33 @@ db.once('open', async () => {
     await Trainers.deleteMany({});
     await Trainees.deleteMany({});
 
-    await Exercises.create(exerciseSeeds);
-    await Trainers.create(trainerSeeds);
-    await Trainees.create(traineeSeeds);
+    // const schools = await School.insertMany(schoolData);
+    // const classes = await Class.insertMany(classData);
+    // const professors = await Professor.insertMany(professorData);
+    await Exercises.insertMany(exerciseSeeds);
+    const schedules = await Schedules.insertMany(scheduleSeeds);
+    const trainers = await Trainers.insertMany(trainerSeeds);
+    const trainees = await Trainees.insertMany(traineeSeeds);
 
-    for (let i = 0; i < scheduleSeeds.length; i++) {
-      const { _id,  } = await Schedules.create([...scheduleSeeds[i], ]);
-      const user = await Trainer.findOneAndUpdate(
-        { username: thoughtAuthor },
-        {
-          $addToSet: {
-            thoughts: _id,
-          },
-        }
-      );
-    };
+    for (newSchedule of schedules) {
+      // randomly add a trainer to each schedule
+      const tempTrainer = trainers[Math.floor(Math.random() * trainers.length)];
+      newSchedule.trainerId = tempTrainer._id;
+
+      // reference schedule on trainer model, too
+      tempTrainer.trainerSchedule.push(newSchedule._id);
+      await tempTrainer.save();
+
+      // randomly add a trainee to each schedule
+      const tempTrainee = trainees[Math.floor(Math.random() * trainees.length)];
+      newSchedule.traineeId = tempTrainee._id;
+
+      // reference schedule on trainee model, too
+      tempTrainee.traineeSchedule.push(newSchedule._id);
+      await tempTrainee.save();
+
+      await newSchedule.save();
+    }
 
     console.log('all done!');
     process.exit(0);

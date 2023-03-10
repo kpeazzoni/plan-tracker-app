@@ -5,8 +5,8 @@
         "dob": "01/01/1911",
         "demographics": [
             {
-                "height": "66in",
-                "weight": "100lb",
+                "height": 66,
+                "weight": 100,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
                 "notes": "Weak calves"
@@ -20,8 +20,8 @@
         "dob": "02/02/1922",
         "demographics": [
             {
-                "height": "66in",
-                "weight": "110lb",
+                "height": 66,
+                "weight": 110,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
                 "notes": "Weak calves"
@@ -35,8 +35,8 @@
         "dob": "03/03/1933",
         "demographics": [
             {
-                "height": "66in",
-                "weight": "120lb",
+                "height": 66,
+                "weight": 120,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
                 "notes": "Weak calves"
@@ -50,8 +50,8 @@
         "dob": "04/04/1944",
         "demographics": [
             {
-                "height": "66in",
-                "weight": "130lb",
+                "height": 66,
+                "weight": 130,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
                 "notes": "Weak calves"
@@ -65,8 +65,8 @@
         "dob": "05/05/1955",
         "demographics": [
             {
-                "height": "66in",
-                "weight": "140lb",
+                "height": 66,
+                "weight": 140,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
                 "notes": "Weak calves"
@@ -80,8 +80,8 @@
         "dob": "06/06/1966",
         "demographics": [
             {
-                "height": "66in",
-                "weight": "150lb",
+                "height": 66,
+                "weight": 150,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
                 "notes": "Weak calves"
@@ -95,8 +95,8 @@
         "dob": "07/07/1977",
         "demographics": [
             {
-                "height": "66in",
-                "weight": "160lb",
+                "height": 66,
+                "weight": 160,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
                 "notes": "Weak calves"
@@ -110,8 +110,8 @@
         "dob": "08/08/1988",
         "demographics": [
             {
-                "height": "66in",
-                "weight": "170lb",
+                "height": 66,
+                "weight": 170,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
                 "notes": "Weak calves"
@@ -125,8 +125,8 @@
         "dob": "09/09/1999",
         "demographics": [
             {
-                "height": "66in",
-                "weight": "180lb",
+                "height": 66,
+                "weight": 180,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
                 "notes": "Weak calves"
@@ -140,8 +140,8 @@
         "dob": "10/10/2000",
         "demographics": [
             {
-                "height": "66in",
-                "weight": "190lb",
+                "height": 66,
+                "weight": 190,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
                 "notes": "Weak calves"
@@ -155,8 +155,8 @@
         "dob": "11/11/2011",
         "demographics": [
             {
-                "height": "66in",
-                "weight": "200lb",
+                "height": 66,
+                "weight": 200,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
                 "notes": "Weak calves"

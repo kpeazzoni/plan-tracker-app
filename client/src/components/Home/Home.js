@@ -1,5 +1,5 @@
 import React from "react";
-import Join from "./Join";
+// import Join from "./Join";
 import "./Home.css";
 // import hero_image from "../../assets/hero_image.png";
 // import { motion } from "framer-motion";
@@ -21,6 +21,7 @@ const Home = () => {
           {/* Hero text */}
           <div className="hero-text">
             <div>
+              
               <span className="stroke-text">Trainers </span>
               <span>Meet</span>
             </div>
@@ -65,7 +66,7 @@ const Home = () => {
         {/* Right Side */}
       </div>
     {/* Render "Join" banner */}
-    <Join />
+    {/* <Join /> */}
     </div>
   );
 };

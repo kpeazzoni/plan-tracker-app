@@ -1,53 +1,58 @@
 import React, { useState } from "react";
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/PlanTracker.png";
 import "./Header.css";
-// import { Link } from "react-scroll";
-
-import Bars from "../../assets/bars.png";
+// import Bars from "../../assets/PlanTracker.png";
 import { useNavigate } from 'react-router-dom';
 import Auth from '../../utils/auth';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
+// import { Link } from 'react-bootstrap';
+import Join from "../Home/Join";
 
 
 
-// import { NavLink } from "react-router-dom";
+
+
 
 const Header = () => {
 
   const navigate = useNavigate();
-  const mobile = window.innerWidth <= 768 ? true : false;
-  // const [menuOpened, setMenuOpened] = useState(false);
+
   return (
-    // <div className="header" id="header">
-    //   <img src={Logo} alt="" className="logo" />
-    //   {(menuOpened===false && mobile===true)? (
-    //     <div
-    //       style={{ backgroundColor: "var(--appColor)", padding: "0.5rem", borderRadius: "5px" }}
-    //       onClick={() => setMenuOpened(true)}
-    //     >
-    //       <img
-    //         src={Bars}
-    //         alt="bars"
-    //         style={{ width: "1.5rem", height: "1.5rem" }}
-    //       />
-    //     </div>
-    <ul className="navbar">
-      <li>
-        
-        <button onClick={(event) => navigate('/')} className='btn'>Home</button>
-        <button onClick={(event) => navigate('/register')} className='btn'>Register</button>
+    <div className="header" id="header">
       
+      < img src={Logo} alt="logo" className="logo"
+      style={{ width: "10rem", height: "10rem", cursor: "pointer" }} 
+      onClick={() => navigate('/')}
+       />
 
-      {!localStorage.id_token ? (
-        <button onClick={(event) => navigate('/login')} className='btn'>Login</button>
+      <div
+        style={{ backgroundColor: "transparency", padding: "1rem", borderRadius: "1rem" }}
+        
+      >
+        {/* <img
+          src={Bars}
+          alt="Plantracker"
+          style={{ width: "10rem", height: "10rem" }}
+        /> */}
+      </div>
+      <ul className="navbar">
+        <li>
+        <Join />
+          <button onClick={(event) => navigate('/')} className='btn'>Home</button>
+          <button onClick={(event) => navigate('/register')} className='btn'>Register</button>
 
-      ) : (
-        <button onClick={Auth.logout} className='btn' id="logout">Logout</button>
-      )}
-      </li>
-    </ul>
-  );
-};
+
+          {!localStorage.id_token ? (
+            <button onClick={(event) => navigate('/login')} className='btn'>Login</button>
+
+          ) : (
+            <button onClick={Auth.logout} className='btn' id="logout">Logout</button>
+          )}
+        </li>
+      </ul>
+    </div>
+  )
+}
 
 
 export default Header;

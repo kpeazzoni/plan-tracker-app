@@ -7,6 +7,7 @@ const typeDefs = gql`
     lastName: String!
     email: String!
     password: String!
+    trainees: [Trainees]!
     trainerSchedule: [Schedules]!
  }
  type Trainees {
@@ -59,7 +60,7 @@ const typeDefs = gql`
    type Query {
       trainers: [Trainers]
       trainer(trainerId: ID!) : Trainers
-      trainees: [Trainees]
+      trainees(trainerId: ID!): [Trainees]
       trainee(traineeId: ID!): Trainees
       me: Trainers
       schedules(trainerId: ID, traineeId: ID): [Schedules]

@@ -17,6 +17,14 @@ db.once('open', async () => {
     const trainers = await Trainers.insertMany(trainerSeeds);
     const trainees = await Trainees.insertMany(traineeSeeds);
 
+    for (newTrainer of trainers) {
+      newTrainer.newSeed = true;
+      await newTrainer.save();
+
+      newTrainer.newSeed = false;
+      await newTrainer.save();
+    }
+
     for (newTrainee of trainees) {
       // randomly add a trainer to each new trainee's 'trainerId' field
       const tempTrainer = trainers[Math.floor(Math.random() * trainers.length)];

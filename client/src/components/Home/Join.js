@@ -23,11 +23,11 @@ const Join = () => {
     }
   return (
    <div className="Join" id='join-us'>
-    <div className="left-j">
+    {/* <div className="left-j">
         <hr />
         <div><span className='stroke-text'>Ready to</span><span>Maximize</span></div>
         <div><span>your body's</span><span className='stroke-text'>Potential?</span></div>
-    </div>
+    </div> */}
     <div className="right-j">
         <form className="email-container" ref={form} onSubmit={handleJoin}>
             <input type="email" name='user_email' placeholder='Enter your Email Address here...'/>

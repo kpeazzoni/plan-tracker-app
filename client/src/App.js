@@ -19,6 +19,7 @@ import Register from "./pages/Register";
 import SingleTraineeContainer from './components/SingleTraineeContainer/SingleTraineeContainer'
 import UpdateClientModal from "./components/UpdateClientModal/UpdateClientModal";
 import EditWorkoutPlanModal from "./components/EditWorkoutPlanModal/EditWorkoutPlanModal";
+import ScheduleAppointmentModal from "./components/ScheduleAppointmentModal/ScheduleAppointmentModal";
 import { setContext } from '@apollo/client/link/context';
 
 // Construct our main GraphQL API endpoint
@@ -74,6 +75,8 @@ function App() {
           <Route exact path='/newclientform' element={<NewClientForm />} />
           <Route exact path='/updateclientmodal' element={<UpdateClientModal />} />
           <Route exact path='/editworkoutmodal' element={<EditWorkoutPlanModal />} />
+          <Route exact path='/scheduleappointmentmodal' element={<ScheduleAppointmentModal />} />
+
 
         </Routes>
         </div>

@@ -4,6 +4,7 @@
     "lastName": "Anderson",
     "email": "anderson@techfriends.dev",
     "password": "password01",
+    "trainees": [],
     "trainerSchedule": []
   },
   {
@@ -11,6 +12,7 @@
     "lastName": "Brown",
     "email": "brown@techfriends.dev",
     "password": "password02",
+    "trainees": [],
     "trainerSchedule": []
   },
   {
@@ -18,6 +20,7 @@
     "lastName": "Cincinatti",
     "email": "cincinatti@techfriends.dev",
     "password": "password03",
+    "trainees": [],
     "trainerSchedule": []
   },
   {
@@ -25,6 +28,7 @@
     "lastName": "Darson",
     "email": "darson@techfriends.dev",
     "password": "password04",
+    "trainees": [],
     "trainerSchedule": []
   },
   {
@@ -32,6 +36,7 @@
     "lastName": "Emerson",
     "email": "emerson@techfriends.dev",
     "password": "password05",
+    "trainees": [],
     "trainerSchedule": []
   }
 ]

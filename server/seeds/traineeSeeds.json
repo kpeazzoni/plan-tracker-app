@@ -5,11 +5,11 @@
         "dob": "01/01/1911",
         "demographics": [
             {
-                "height": 66,
+                "height": 60,
                 "weight": 100,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
-                "notes": "Weak calves"
+                "notes": "Sneezes alot"
             }
         ],
         "traineeSchedule": []
@@ -20,11 +20,11 @@
         "dob": "02/02/1922",
         "demographics": [
             {
-                "height": 66,
+                "height": 61,
                 "weight": 110,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
-                "notes": "Weak calves"
+                "notes": "Has a cute dog"
             }
         ],
         "traineeSchedule": []
@@ -35,11 +35,11 @@
         "dob": "03/03/1933",
         "demographics": [
             {
-                "height": 66,
+                "height": 62,
                 "weight": 120,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
-                "notes": "Weak calves"
+                "notes": "Asthma"
             }
         ],
         "traineeSchedule": []
@@ -50,11 +50,11 @@
         "dob": "04/04/1944",
         "demographics": [
             {
-                "height": 66,
+                "height": 63,
                 "weight": 130,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
-                "notes": "Weak calves"
+                "notes": "Afraid of heights"
             }
         ],
         "traineeSchedule": []
@@ -65,11 +65,11 @@
         "dob": "05/05/1955",
         "demographics": [
             {
-                "height": 66,
+                "height": 64,
                 "weight": 140,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
-                "notes": "Weak calves"
+                "notes": "Weak ankles"
             }
         ],
         "traineeSchedule": []
@@ -80,11 +80,11 @@
         "dob": "06/06/1966",
         "demographics": [
             {
-                "height": 66,
+                "height": 65,
                 "weight": 150,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
-                "notes": "Weak calves"
+                "notes": "Gets dizzy really fast"
             }
         ],
         "traineeSchedule": []
@@ -99,7 +99,7 @@
                 "weight": 160,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
-                "notes": "Weak calves"
+                "notes": "Really hates the taste of protein powder"
             }
         ],
         "traineeSchedule": []
@@ -110,11 +110,11 @@
         "dob": "08/08/1988",
         "demographics": [
             {
-                "height": 66,
+                "height": 67,
                 "weight": 170,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
-                "notes": "Weak calves"
+                "notes": "Social Anxiety"
             }
         ],
         "traineeSchedule": []
@@ -125,11 +125,11 @@
         "dob": "09/09/1999",
         "demographics": [
             {
-                "height": 66,
+                "height": 68,
                 "weight": 180,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
-                "notes": "Weak calves"
+                "notes": "Preffers verbal communication, no touching"
             }
         ],
         "traineeSchedule": []
@@ -140,11 +140,11 @@
         "dob": "10/10/2000",
         "demographics": [
             {
-                "height": 66,
+                "height": 69,
                 "weight": 190,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",
-                "notes": "Weak calves"
+                "notes": "Scared of loud noises"
             }
         ],
         "traineeSchedule": []
@@ -155,7 +155,7 @@
         "dob": "11/11/2011",
         "demographics": [
             {
-                "height": 66,
+                "height": 70,
                 "weight": 200,
                 "goals": "Getting fit",
                 "injuryHistory": "N/A",

@@ -12,28 +12,40 @@ db.once('open', async () => {
     await Trainers.deleteMany({});
     await Trainees.deleteMany({});
 
-    // const schools = await School.insertMany(schoolData);
-    // const classes = await Class.insertMany(classData);
-    // const professors = await Professor.insertMany(professorData);
     await Exercises.insertMany(exerciseSeeds);
     const schedules = await Schedules.insertMany(scheduleSeeds);
     const trainers = await Trainers.insertMany(trainerSeeds);
     const trainees = await Trainees.insertMany(traineeSeeds);
+
+    for (newTrainee of trainees) {
+      // randomly add a trainer to each new trainee's 'trainerId' field
+      const tempTrainer = trainers[Math.floor(Math.random() * trainers.length)];
+      newTrainee.trainerId = tempTrainer._id;
+
+      // reference the trainee in the trainer's 'trainees' array
+      tempTrainer.trainees.push(newTrainee._id);
+      await tempTrainer.save();
+
+      await newTrainee.save();
+    }
 
     for (newSchedule of schedules) {
       // randomly add a trainer to each schedule
       const tempTrainer = trainers[Math.floor(Math.random() * trainers.length)];
       newSchedule.trainerId = tempTrainer._id;
 
-      // reference schedule on trainer model, too
+      // reference the schedule in the trainer's 'trainerSchedule' array
       tempTrainer.trainerSchedule.push(newSchedule._id);
       await tempTrainer.save();
 
-      // randomly add a trainee to each schedule
-      const tempTrainee = trainees[Math.floor(Math.random() * trainees.length)];
-      newSchedule.traineeId = tempTrainee._id;
+      // randomly add a trainee id from the trainers 'trainees' array to each schedule
+      const tempTraineeId = tempTrainer.trainees[Math.floor(Math.random() * tempTrainer.trainees.length)];
+      newSchedule.traineeId = tempTraineeId;
 
-      // reference schedule on trainee model, too
+      // filter through trainees to find one that matches the trainee id
+      const tempTrainee = trainees.find((trainee)=> trainee._id === tempTraineeId );
+
+      // reference the schedule in the trainee's 'traineeSchedule' array
       tempTrainee.traineeSchedule.push(newSchedule._id);
       await tempTrainee.save();
 

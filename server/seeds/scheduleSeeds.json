@@ -39,8 +39,8 @@
     },
     {
         "date": "05/01/2023",
-        "startTime": "4:00pm",
-        "endTime": "5:00pm",
+        "startTime": "2:00pm",
+        "endTime": "3:00pm",
         "workouts": [
             {
                 "muscleGroup": "Arms",
@@ -114,8 +114,8 @@
     },
     {
         "date": "05/02/2023",
-        "startTime": "4:00pm",
-        "endTime": "5:00pm",
+        "startTime": "2:00pm",
+        "endTime": "3:00pm",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -190,8 +190,8 @@
     },
     {
         "date": "05/03/2023",
-        "startTime": "4:00pm",
-        "endTime": "5:00pm",
+        "startTime": "2:00pm",
+        "endTime": "3:00pm",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -265,8 +265,8 @@
     },
     {
         "date": "05/04/2023",
-        "startTime": "4:00pm",
-        "endTime": "5:00pm",
+        "startTime": "2:00pm",
+        "endTime": "3:00pm",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -331,8 +331,8 @@
     },
     {
         "date": "05/05/2023",
-        "startTime": "4:00pm",
-        "endTime": "5:00pm",
+        "startTime": "2:00pm",
+        "endTime": "3:00pm",
         "workouts": [
             {
                 "muscleGroup": "Legs",
@@ -406,8 +406,8 @@
     },
     {
         "date": "05/06/2023",
-        "startTime": "4:00pm",
-        "endTime": "5:00pm",
+        "startTime": "2:00pm",
+        "endTime": "3:00pm",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -481,8 +481,8 @@
     },
     {
         "date": "05/07/2023",
-        "startTime": "4:00pm",
-        "endTime": "5:00pm",
+        "startTime": "2:00pm",
+        "endTime": "3:00pm",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -557,8 +557,8 @@
     },
     {
         "date": "05/08/2023",
-        "startTime": "4:00pm",
-        "endTime": "5:00pm",
+        "startTime": "2:00pm",
+        "endTime": "3:00pm",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -633,8 +633,8 @@
     },
     {
         "date": "05/09/2023",
-        "startTime": "4:00pm",
-        "endTime": "5:00pm",
+        "startTime": "2:00pm",
+        "endTime": "3:00pm",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -677,8 +677,8 @@
     },
     {
         "date": "05/10/2023",
-        "startTime": "4:00pm",
-        "endTime": "5:00pm",
+        "startTime": "2:00pm",
+        "endTime": "3:00pm",
         "location": "LA Fitness",
         "workouts": []
     }

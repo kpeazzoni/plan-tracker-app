@@ -192,13 +192,13 @@ const resolvers = {
       // throw new AuthenticationError('You need to be logged in!');
     },
 
-    addWorkouts: async (parent, { scheduleId, muscleGroup, exerciseName, sets, reps, weight, distanceOrTime, equipementReq, notes }, context) => {
+    addWorkouts: async (parent, { scheduleId, muscleGroup, exerciseName, sets, reps, weight, distanceOrTime, equipmentReq, notes }, context) => {
       if (context) {
         return Schedules.findOneAndUpdate(
           { _id: scheduleId},
           {
             $addToSet: {
-              workouts: { muscleGroup, exerciseName, sets, reps, weight, distanceOrTime, equipementReq, notes },
+              workouts: { muscleGroup, exerciseName, sets, reps, weight, distanceOrTime, equipmentReq, notes },
             },
           },
           {

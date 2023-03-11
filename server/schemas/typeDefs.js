@@ -42,7 +42,7 @@ const typeDefs = gql`
    sets: String
    reps: String
    weight: String
-   distance: String
+   distanceOrTime: String
    equipmentReq: String 
    notes: String
  }
@@ -106,7 +106,7 @@ type Mutation {
       sets: String,
       reps: String,
       weight: String,
-      distance: String,
+      distanceOrTime: String,
       equipmentReq: String,
       notes: String
       ) : Schedules
@@ -118,7 +118,7 @@ type Mutation {
       sets: String,
       reps: String,
       weight: String,
-      distance: String,
+      distanceOrTime: String,
       equipmentReq: String,
       notes: String
       ) : Schedules

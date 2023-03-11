@@ -53,7 +53,7 @@ mutation AddTrainee($firstName: String!, $lastName: String!, $dob: String!, $tra
       }
       workouts {
         _id
-        distance
+        distanceOrTime
         equipmentReq
         exerciseName
         muscleGroup
@@ -92,7 +92,7 @@ mutation Mutation($date: String!, $startTime: String!, $endTime: String!, $train
     }
     workouts {
       _id
-      distance
+      distanceOrTime
       equipmentReq
       exerciseName
       muscleGroup
@@ -140,7 +140,7 @@ mutation Mutation($muscleGroup: String!, $exerciseName: String!) {
     }
     workouts {
       _id
-      distance
+      distanceOrTime
       equipmentReq
       notes
       reps

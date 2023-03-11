@@ -51,7 +51,7 @@ const resolvers = {
             { path: 'trainerId' },
             { path: 'traineeId' }
           ]
-        });;
+        });
     },
 
     
@@ -66,7 +66,10 @@ const resolvers = {
             params = { trainerId }
         };
 
-        return Schedules.find(params).populate('workouts');
+        return Schedules.find(params)
+        .populate('workouts')
+        .populate('trainerId')
+        .populate('traineeId');
     },
 
     me: async (parent, arg, context) => {

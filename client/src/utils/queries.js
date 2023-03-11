@@ -20,15 +20,28 @@ query Trainers($trainerId: ID!) {
 `
 
 export const QUERY_TRAINER = gql `
-query Query {
-  trainer {
-    _id
+  query Trainers($trainerId: ID!) {
+    trainer(trainerId: $trainerId) {
+        _id
     firstName
     lastName
     email
     password
+    trainerSchedule {
+      _id
+      date
+      startTime
+      endTime
+      location
+    }
+    trainees {
+      _id
+      lastName
+      firstName
+      dob
+    }
+    }
   }
-}
 `
 
 export const QUERY_TRAINEE = gql `
@@ -60,31 +73,14 @@ query Trainees($traineeId: ID!) {
 
 
 export const QUERY_TRAINEES = gql `
-query Trainees {
-  trainees {
+query Query($trainerId: ID!) {
+  trainees(trainerId: $trainerId) {
     _id
-    dob
     firstName
     lastName
-    demographics {
-      goals
-      height
-      injuryHistory
-      notes
-      weight
-    }
-    traineeSchedule {
-      _id
-      date
-      endTime
-      startTime
-      trainerId {
-        _id
-      }
-    }
+    dob
   }
 }
-
 `
 
 export const QUERY_SCEHDULES = gql`

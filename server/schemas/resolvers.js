@@ -26,11 +26,12 @@ const resolvers = {
             { path: 'trainerId' },
             { path: 'traineeId' }
           ]
-        });
+        })
+        .populate('trainees')
     },
     //trainees:[Trainees]
-    trainees: async () => {
-      return Trainees.find().populate('demographics')
+    trainees: async (parent, { trainerId }) => {
+      return Trainees.find({ trainerId: trainerId }).populate('demographics')
         .populate('traineeSchedule')
         .populate({
           path: 'traineeSchedule',

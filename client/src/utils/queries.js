@@ -102,7 +102,7 @@ query Schedules {
     }
     workouts {
       _id
-      distance
+      distanceOrTime
       equipmentReq
       exerciseName
       muscleGroup

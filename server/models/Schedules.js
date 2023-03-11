@@ -37,7 +37,7 @@ const scheduleSchema = new Schema({
             sets: { type: String },
             reps: { type: String },
             weight: { type: String },
-            distance: { type: String },
+            distanceOrTime: { type: String },
             equipmentReq: { type: String },
             notes: { type: String },
         },

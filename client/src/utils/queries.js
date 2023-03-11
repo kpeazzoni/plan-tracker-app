@@ -96,9 +96,13 @@ query Schedules {
     startTime
     traineeId {
       _id
+      firstName
+      lastName
     }
     trainerId {
       _id
+      firstName
+      lastName
     }
     workouts {
       _id

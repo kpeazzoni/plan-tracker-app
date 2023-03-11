@@ -1,0 +1,167 @@
+[
+    {
+        "firstName": "Ferrah",
+        "lastName": "Finch",
+        "dob": "01/01/1911",
+        "demographics": [
+            {
+                "height": 60,
+                "weight": 100,
+                "goals": "Getting fit",
+                "injuryHistory": "N/A",
+                "notes": "Sneezes alot"
+            }
+        ],
+        "traineeSchedule": []
+    },
+    {
+        "firstName": "Gabriel",
+        "lastName": "Grayson",
+        "dob": "02/02/1922",
+        "demographics": [
+            {
+                "height": 61,
+                "weight": 110,
+                "goals": "Getting fit",
+                "injuryHistory": "N/A",
+                "notes": "Has a cute dog"
+            }
+        ],
+        "traineeSchedule": []
+    },
+    {
+        "firstName": "Henry",
+        "lastName": "Harrison",
+        "dob": "03/03/1933",
+        "demographics": [
+            {
+                "height": 62,
+                "weight": 120,
+                "goals": "Getting fit",
+                "injuryHistory": "N/A",
+                "notes": "Asthma"
+            }
+        ],
+        "traineeSchedule": []
+    },
+    {
+        "firstName": "Ian",
+        "lastName": "Iverson",
+        "dob": "04/04/1944",
+        "demographics": [
+            {
+                "height": 63,
+                "weight": 130,
+                "goals": "Getting fit",
+                "injuryHistory": "N/A",
+                "notes": "Afraid of heights"
+            }
+        ],
+        "traineeSchedule": []
+    },
+    {
+        "firstName": "Jaimie",
+        "lastName": "Jamison",
+        "dob": "05/05/1955",
+        "demographics": [
+            {
+                "height": 64,
+                "weight": 140,
+                "goals": "Getting fit",
+                "injuryHistory": "N/A",
+                "notes": "Weak ankles"
+            }
+        ],
+        "traineeSchedule": []
+    },
+    {
+        "firstName": "Kacy",
+        "lastName": "Killian",
+        "dob": "06/06/1966",
+        "demographics": [
+            {
+                "height": 65,
+                "weight": 150,
+                "goals": "Getting fit",
+                "injuryHistory": "N/A",
+                "notes": "Gets dizzy really fast"
+            }
+        ],
+        "traineeSchedule": []
+    },
+    {
+        "firstName": "Lacy",
+        "lastName": "Lancelot",
+        "dob": "07/07/1977",
+        "demographics": [
+            {
+                "height": 66,
+                "weight": 160,
+                "goals": "Getting fit",
+                "injuryHistory": "N/A",
+                "notes": "Really hates the taste of protein powder"
+            }
+        ],
+        "traineeSchedule": []
+    },
+    {
+        "firstName": "Mason",
+        "lastName": "Murdoch",
+        "dob": "08/08/1988",
+        "demographics": [
+            {
+                "height": 67,
+                "weight": 170,
+                "goals": "Getting fit",
+                "injuryHistory": "N/A",
+                "notes": "Social Anxiety"
+            }
+        ],
+        "traineeSchedule": []
+    },
+    {
+        "firstName": "Nancy",
+        "lastName": "Nickelson",
+        "dob": "09/09/1999",
+        "demographics": [
+            {
+                "height": 68,
+                "weight": 180,
+                "goals": "Getting fit",
+                "injuryHistory": "N/A",
+                "notes": "Preffers verbal communication, no touching"
+            }
+        ],
+        "traineeSchedule": []
+    },
+    {
+        "firstName": "Olivia",
+        "lastName": "Olliphant",
+        "dob": "10/10/2000",
+        "demographics": [
+            {
+                "height": 69,
+                "weight": 190,
+                "goals": "Getting fit",
+                "injuryHistory": "N/A",
+                "notes": "Scared of loud noises"
+            }
+        ],
+        "traineeSchedule": []
+    },
+    {
+        "firstName": "Penelope",
+        "lastName": "Peterson",
+        "dob": "11/11/2011",
+        "demographics": [
+            {
+                "height": 70,
+                "weight": 200,
+                "goals": "Getting fit",
+                "injuryHistory": "N/A",
+                "notes": "Weak calves"
+            }
+        ],
+        "traineeSchedule": []
+    }
+]

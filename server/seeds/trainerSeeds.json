@@ -1,0 +1,42 @@
+[
+  {
+    "firstName": "Andy",
+    "lastName": "Anderson",
+    "email": "anderson@techfriends.dev",
+    "password": "password01",
+    "trainees": [],
+    "trainerSchedule": []
+  },
+  {
+    "firstName": "Brian",
+    "lastName": "Brown",
+    "email": "brown@techfriends.dev",
+    "password": "password02",
+    "trainees": [],
+    "trainerSchedule": []
+  },
+  {
+    "firstName": "Cindy",
+    "lastName": "Cincinatti",
+    "email": "cincinatti@techfriends.dev",
+    "password": "password03",
+    "trainees": [],
+    "trainerSchedule": []
+  },
+  {
+    "firstName": "Dalia",
+    "lastName": "Darson",
+    "email": "darson@techfriends.dev",
+    "password": "password04",
+    "trainees": [],
+    "trainerSchedule": []
+  },
+  {
+    "firstName": "Emily",
+    "lastName": "Emerson",
+    "email": "emerson@techfriends.dev",
+    "password": "password05",
+    "trainees": [],
+    "trainerSchedule": []
+  }
+]

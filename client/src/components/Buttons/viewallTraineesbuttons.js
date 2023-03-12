@@ -16,21 +16,21 @@ import './buttons.css';
 //   }
 // };
 
-const handleaddclient = (e) => {
+const handleviewallclients = (e) => {
     e.preventDefault();
     console.log('form submitted');
 alert('form submitted');
 }
 
 
-function AddclientButtons() {
+function ViewallTraineesButtons() {
     return (
         <div>
-          <button className='buttons'  onClick={handleaddclient}>
-          Add Client
+          <button className='buttons' onClick={handleviewallclients}>
+          View All Clients
           </button> 
         </div>
     )
 }
 
-export default AddclientButtons;
+export default ViewallTraineesButtons;

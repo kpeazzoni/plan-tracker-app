@@ -2,6 +2,7 @@
 const { Exercises, Schedules, Trainees, Trainers } = require('../models');
 const { signToken } = require('../utils/auth');
 
+
 const resolvers = {
   Query: {
     //trainers:[Trainers]
@@ -76,7 +77,13 @@ const resolvers = {
     me: async (parent, arg, context) => {
       if (context.user) {
         return Trainers.findOne({ _id: context.user._id })
-        .populate('trainerSchedule')
+        .populate({
+          path: 'trainerSchedule',
+          populate: [
+            { path: 'trainerId' },
+            { path: 'traineeId' }
+          ]
+        })
         .populate('trainees');
       }
       throw new AuthenticationError('You need to be logged in!');

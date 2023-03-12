@@ -128,11 +128,17 @@ query Query {
         startTime
         endTime
         location
+        traineeId{
+          _id
+          firstName
+          lastName
+        }
       }
       trainees {
         _id
         firstName
         lastName
+        dob
       }
     }
   }

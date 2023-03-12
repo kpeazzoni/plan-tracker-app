@@ -1,4 +1,7 @@
 import React from 'react';
+import { useQuery } from '@apollo/client';
+import { QUERY_SCEHDULES } from '../utils/queries'
+
 import '../../src/components/HomepageContainer/HomepageContainer.css'
 
 function AppointmentsCards({appointments}) {

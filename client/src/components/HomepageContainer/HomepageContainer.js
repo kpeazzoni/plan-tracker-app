@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { QUERY_SCEHDULES, QUERY_TRAINEES } from "../../utils/queries";
+import { Link } from 'react-router-dom';
+import { QUERY_SCHEDULES, QUERY_ME, QUERY_TRAINEES } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
 
 import AppointmentsCards from "../../pages/AppointmentsCards";
@@ -10,14 +11,13 @@ import AddTraineeButtons from "../Buttons/addTraineebuttons";
 import ViewallTraineesButtons from "../Buttons/viewallTraineesbuttons";
 
 export default function HomepageContainer() {
-const { loading, data } = useQuery(QUERY_TRAINEES, {
-    variables: 
-    { trainerId: localStorage.getItem("trainer_id") },
-   
-  });
-  const schedules = data?.schedules || [];
-  const trainees = data?.trainees || [];
+const { loading, data } = useQuery(QUERY_ME);
+
+  const schedules = data?.me.trainerSchedule || [];
+  const trainees = data?.me.trainees || [];
   console.log(data);
+  console.log('schedules', schedules)
+  console.log('trainees',trainees)
   //   const [trainees, setTrainees] = useState(
   //     []
   //         [

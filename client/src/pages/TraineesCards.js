@@ -65,7 +65,7 @@ import '../components/HomepageContainer/HomepageContainer.css'
     // ))
 }
 
-// export default TraineesCards;
+export default TraineesCards;
 
 
 

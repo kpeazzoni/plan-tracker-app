@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { QUERY_SCEHDULES, QUERY_TRAINEES } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
-
 import AppointmentsCards from "../../pages/AppointmentsCards";
 import TraineesCards from "../../pages/TraineesCards";
 import "./HomepageContainer.css";

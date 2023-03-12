@@ -83,9 +83,9 @@ query Query($trainerId: ID!) {
 }
 `
 
-export const QUERY_SCEHDULES = gql`
-query Schedules {
-  schedules {
+export const QUERY_SCHEDULES = gql`
+query Schedules($trainerId: ID!) {
+  schedules(trainerId: $trainerId) {
     _id
     date
     endTime
@@ -122,6 +122,18 @@ query Query {
       firstName
       lastName
       email
+      trainerSchedule {
+        _id
+        date
+        startTime
+        endTime
+        location
+      }
+      trainees {
+        _id
+        firstName
+        lastName
+      }
     }
   }
   `

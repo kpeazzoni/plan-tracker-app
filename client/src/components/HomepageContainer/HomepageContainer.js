@@ -6,8 +6,8 @@ import AppointmentsCards from "../../pages/AppointmentsCards";
 import TraineesCards from "../../pages/TraineesCards";
 import "./HomepageContainer.css";
 import FullscheduleButtons from "../Buttons/fullschedulebuttons";
-import AddclientButtons from "../Buttons/addclientbuttons";
-import ViewallclientsButtons from "../Buttons/viewallclientsbuttons";
+import AddTraineeButtons from "../Buttons/addTraineebuttons";
+import ViewallTraineesButtons from "../Buttons/viewallTraineesbuttons";
 
 export default function HomepageContainer() {
 const { loading, data } = useQuery(QUERY_TRAINEES, {
@@ -45,8 +45,8 @@ const { loading, data } = useQuery(QUERY_TRAINEES, {
     <div className="homepageContainer-wrapper">
       <aside className="col-md-5">
         <div className="appointments-container">
-          <FullscheduleButtons />
-          <h3 className="card-heading">Today's Appointment</h3>
+        <Link to="/appointmentscard"><FullscheduleButtons /></Link>
+        <h3 className="card-heading">Today's Appointment</h3>
           <AppointmentsCards appointments={schedules} />
         </div>
       </aside>
@@ -55,8 +55,9 @@ const { loading, data } = useQuery(QUERY_TRAINEES, {
 
       <aside className="col-md-5">
         <div className="trainees-container">
-          <div class="d-flex flex-row mb-3">
-            <AddclientButtons /> <ViewallclientsButtons />
+        <div className="d-flex flex-row mb-3">
+          <Link to="/newclientform"><AddTraineeButtons /></Link>
+          <Link to="/alltrainees"><ViewallTraineesButtons /></Link>
           </div>
           <h3 className="card-heading">Trainees</h3>
           {loading ? (

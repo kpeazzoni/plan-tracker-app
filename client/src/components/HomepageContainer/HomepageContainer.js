@@ -45,7 +45,7 @@ const { loading, data } = useQuery(QUERY_ME);
       <aside className="col-md-5">
         <div className="appointments-container">
         <Link to="/appointmentscard"><FullscheduleButtons /></Link>
-        <h3 className="card-heading">Today's Appointment</h3>
+        <h3 className="card-heading">Upcoming Appointments</h3>
           <AppointmentsCards appointments={schedules} />
         </div>
       </aside>

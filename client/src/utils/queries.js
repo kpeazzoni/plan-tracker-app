@@ -122,19 +122,6 @@ query Query {
       firstName
       lastName
       email
-      password
-      trainerSchedule {
-        _id
-        date
-        startTime
-        endTime
-        location
-        traineeId {
-          _id
-          firstName
-          lastName
-        }
-      }
     }
   }
   `

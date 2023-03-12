@@ -1,6 +1,5 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import { QUERY_SCEHDULES } from '../utils/queries'
+
 
 import '../../src/components/HomepageContainer/HomepageContainer.css'
 
@@ -9,9 +8,8 @@ function AppointmentsCards({appointments}) {
     <div className='card appointmentsCards' key={i}>
       <div className='card-body'>
       <h3>Date: {appointment.date}</h3>
-      <h3>Start Time: {appointment.start_time}</h3>
-      <h3>End Time: {appointment.end_time}</h3>
-      <h3>Exercises: {appointment.exercise}</h3>
+      <h3>Start Time: {appointment.startTime}</h3>
+      <h3>End Time: {appointment.endTime}</h3>
       </div>
     </div>
   ))

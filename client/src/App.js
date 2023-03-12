@@ -6,7 +6,7 @@ import {
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from '@apollo/client';
+} from '@apollo/client';z
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import NewClientForm from './components/NewClientForm/NewClientForm'
 import Header from "./components/Header/Header";

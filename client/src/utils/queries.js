@@ -83,7 +83,7 @@ query Query($trainerId: ID!) {
 }
 `
 
-export const QUERY_SCEHDULES = gql`
+export const QUERY_SCHEDULES = gql`
 query Schedules {
   schedules {
     _id

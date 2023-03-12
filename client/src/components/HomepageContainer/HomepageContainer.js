@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { QUERY_SCEHDULES, QUERY_TRAINEES } from "../../utils/queries";
+import { QUERY_SCHEDULES, QUERY_TRAINEES } from "../../utils/queries";
+import { Navigate } from 'react-router-dom';
+import Auth from "../../utils/auth";
+import { Link } from 'react-router-dom';
+
 import { useQuery } from "@apollo/client";
 
 import AppointmentsCards from "../../pages/AppointmentsCards";
@@ -10,14 +14,28 @@ import AddclientButtons from "../Buttons/addclientbuttons";
 import ViewallclientsButtons from "../Buttons/viewallclientsbuttons";
 
 export default function HomepageContainer() {
-const { loading, data } = useQuery(QUERY_TRAINEES, {
-    variables: 
-    { trainerId: localStorage.getItem("trainer_id") },
-   
-  });
+    const { loading, data } = useQuery(QUERY_SCHEDULES, {
+        variables: { 
+            trainerId: localStorage.getItem('schedules_id'),
+            trainerId: localStorage.getItem("trainer_id") 
+        },
+        onCompleted: (data) => {
+            console.log(data);
+        },
+    });
+    
   const schedules = data?.schedules || [];
   const trainees = data?.trainees || [];
-  console.log(data);
+
+
+  const user = data?.me || data?.user || {};
+  // navigate to personal profile page if username is yours
+//   if (Auth.loggedIn().data.login.user._id === user._id) {
+//     return <Navigate to="/me" />;
+//   }
+
+//   const trainees = data?.trainees || data?.schedules || {};
+//   console.log(data);
   //   const [trainees, setTrainees] = useState(
   //     []
   //         [
@@ -47,7 +65,7 @@ const { loading, data } = useQuery(QUERY_TRAINEES, {
         <div className="appointments-container">
           <FullscheduleButtons />
           <h3 className="card-heading">Today's Appointment</h3>
-          <AppointmentsCards appointments={schedules} />
+          <AppointmentsCards schedules={schedules} />
         </div>
       </aside>
 

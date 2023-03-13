@@ -41,49 +41,8 @@ export const QUERY_TRAINER = gql `
     }
   }
 `
-// export const QUERY_SINGLETRAINEE = gql `
-// query Trainees($traineeId: ID!) {
-//   trainees(traineeId: $traineeId) {
-//     _id
-//     firstName
-//     lastName
-//     dob
-//   }
-// }
-// `
-export const QUERY_SINGLETRAINEE = gql ` 
-query Query($traineeId: ID!) {
-  trainee(traineeId: $traineeId) {
-    _id
-    dob
-    firstName
-    lastName
-    traineeSchedule {
-      _id
-      endDate
-      startDate
-      workouts {
-        _id
-        distanceOrTime
-        equipmentReq
-        exerciseName
-        muscleGroup
-        notes
-        reps
-        sets
-        weight
-      }
-      location
-      trainerId {
-        _id
-        lastName
-        firstName
-      }
-    }
-  }
-}
-`
-export const QUERY_TRAINEE = gql `
+
+export const QUERY_TRAINEES = gql `
 query Trainees($trainerId: ID!) {
   trainees(trainerId: $trainerId) {
     _id
@@ -119,18 +78,53 @@ query Trainees($trainerId: ID!) {
   }
 }
   `
-
-
-export const QUERY_TRAINEES = gql `
-query Query($trainerId: ID!) {
-  trainees(trainerId: $trainerId) {
+export const QUERY_TRAINEE = gql `
+query Trainees($traineeId: ID!) {
+  trainee(traineeId: $traineeId) {
     _id
     firstName
     lastName
     dob
+    traineeSchedule {
+      _id
+      startDate
+      endDate
+      workouts {
+        _id
+        distanceOrTime
+        equipmentReq
+        exerciseName
+        muscleGroup
+        notes
+        reps
+        sets
+        weight
+      }
+      trainerId {
+        _id
+      }
+    }
+    demographics {
+      height
+      weight
+      goals
+      notes
+      injuryHistory
+    }
   }
 }
-`
+  `
+
+// export const QUERY_TRAINEES = gql `
+// query Query($trainerId: ID!) {
+//   trainees(trainerId: $trainerId) {
+//     _id
+//     firstName
+//     lastName
+//     dob
+//   }
+// }
+// `
 
 export const QUERY_SCHEDULES = gql`
 query Schedules($trainerId: ID!) {

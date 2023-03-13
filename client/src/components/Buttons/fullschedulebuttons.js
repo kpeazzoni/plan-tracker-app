@@ -1,6 +1,6 @@
 import React from 'react';
 import './buttons.css';
-
+import {useNavigate} from "react-router-dom";
 // const styles = {
 //     buttonStyle: {
 //       backgroundColor: '#6cb4ac',
@@ -16,17 +16,21 @@ import './buttons.css';
 //     },
 //   };
 
-const handlefullschedule = (e) => {
-    e.preventDefault();
-    console.log('form submitted');
-alert('form submitted');
-}
-
+// const handlefullschedule = (e) => {
+//     e.preventDefault();
+//     console.log('form submitted');
+// alert('form submitted');
+// }
 
 function FullscheduleButtons() {
+    let navigate = useNavigate(); 
+    const routeChange = () =>{ 
+      let path = `Schedule`; 
+      navigate(path);
+    }
     return (
         <div>
-          <button className='buttons' onClick={handlefullschedule}>
+          <button className='buttons' onClick={routeChange}>
           View Full Schedule
           </button> 
         </div>

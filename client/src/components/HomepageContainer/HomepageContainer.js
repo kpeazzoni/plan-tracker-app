@@ -48,7 +48,7 @@ const { loading, data } = useQuery(QUERY_ME);
     <div className="homepageContainer-wrapper">
       <aside className="col-md-5">
         <div className="appointments-container">
-        <Link to="/appointmentscard"><FullscheduleButtons /></Link>
+        <Link to="/schedule"><FullscheduleButtons /></Link>
         <h3 className="card-heading">Today's Appointments</h3>
         {todaysSchedule ? (<AppointmentsCards appointments={todaysSchedule}/>) : (<h2>Your Schedule is Clear!</h2>)}
         </div>
@@ -59,8 +59,10 @@ const { loading, data } = useQuery(QUERY_ME);
       <aside className="col-md-5">
         <div className="trainees-container">
         <div className="d-flex flex-row mb-3">
-          <Link to="/newclientform"><AddTraineeButtons /></Link>
-          <Link to="/alltrainees"><ViewallTraineesButtons /></Link>
+          <Link to="/newclientform"><AddTraineeButtons />
+          </Link>
+          <Link to="/AllTraineesContainer"><ViewallTraineesButtons />
+          </Link>
           </div>
           <h3 className="card-heading">Trainees</h3>
           {loading ? (

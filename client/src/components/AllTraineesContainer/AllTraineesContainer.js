@@ -4,11 +4,14 @@ import { useQuery } from '@apollo/client';
 
 import AllTrainees from '../../pages/AllTrainees';
 import './AllTraineesContainer.css'
+import { useParams } from 'react-router-dom';
 
 function AllTraineesContainer() {
     const { loading, data } = useQuery(QUERY_TRAINEES, {
-        variables: 
-        {trainerId: localStorage.getItem("trainer_id")},
+        variables: {
+            trainerId: localStorage.getItem("trainer_id"),
+            traineeId: useParams()._id
+        }
     })
     const allTrainees = data?.trainees || [];
 

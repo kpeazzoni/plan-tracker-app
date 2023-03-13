@@ -74,8 +74,8 @@ function App() {
           <Route exact path='/register' element={<Register />} />
           <Route exact path='/homepagecontainer' element={<HomepageContainer />} />
           <Route exact path='/alltraineescontainer' element={<AllTraineesContainer />} />
-          <Route exact path='/singletraineecontainer' element={<SingleTraineeContainer />} />
-          {/* <Route exact path='/singletraineecontainer/:traineeId' element={<SingleTraineeContainer />} /> */}
+          {/* <Route exact path='/singletraineecontainer' element={<SingleTraineeContainer />} /> */}
+          <Route exact path='/singletraineecontainer/:traineeId' element={<SingleTraineeContainer />} />
           <Route exact path='/newclientform' element={<NewClientForm />} />
           <Route exact path='/updateclientmodal' element={<UpdateClientModal />} />
           <Route exact path='/editworkoutmodal' element={<EditWorkoutPlanModal />} />

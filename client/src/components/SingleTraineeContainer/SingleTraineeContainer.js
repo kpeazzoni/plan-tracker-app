@@ -5,6 +5,7 @@ import SingleTraineeWorkout from "../../pages/SingleTraineeWorkout";
 import "./SingleTraineeContainer.css";
 import { useQuery } from "@apollo/client";
 import { QUERY_TRAINEE } from "../../utils/queries";
+import {useParams} from "react-router-dom";
 // import { QUERY_SCHEDULES } from "../../utils/queries";
 // import { QUERY_TRAINEE } from '../../utils/queries';
 
@@ -15,7 +16,7 @@ function SingleTraineeContainer(props) {
 
   const { data, error } = useQuery(QUERY_TRAINEE, {
     variables: {
-      traineeId: "640f4bb12861ce0bb16fe05c",
+      traineeId: useParams().traineeId
       //  props.trainerId
     },
   });

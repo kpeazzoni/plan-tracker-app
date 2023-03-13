@@ -3,36 +3,48 @@ import SingleTraineeInfo from '../../pages/SingleTraineeInfo';
 import SingleTraineeAppts from '../../pages/SingleTraineeAppts';
 import SingleTraineeWorkout from '../../pages/SingleTraineeWorkout'
 import './SingleTraineeContainer.css'
+import {useQuery} from "@apollo/client";
+import {QUERY_TRAINEE} from "../../utils/queries";
+import {QUERY_SCHEDULES} from "../../utils/queries";
 
 function SingleTraineeContainer() {
-    const [trainee, setTrainee] = useState(
-        {id: 1, name: 'Jane Doe', dob: '1/01/1911', notes: 'Super old.', weight: '130lbs', height: '66in', goals: 'Live even longer!', injuryHistory: 'Every bone has been broken.'}
-    );
+  const [trainee, setTrainee] = useState();
 
-    const [traineeAppts, setTraineeAppts] = useState([
-        {date: 'Tuesday, March 21st', time: '3:30pm-4:30pm', location: 'Planet Fitness', exercises: ['pushups', 'lunges', 'planking']},
-        {date: 'Thursday, March 23rd', time: '3:30pm-4:30pm', location: 'Planet Fitness', exercises: ['pullups', 'benchpress', 'ropes']},
-        {date: 'Saturday, March 25th', time: '12:00pm-1:00pm', location: 'LA Fitness', exercises: ['treadmill', 'stair stepper', 'cycling']}
-    ]);
-
+  const [traineeAppts, setTraineeAppts] = useState();
+  
+  const {data, error} = useQuery(QUERY_TRAINEE, {
+    variables: {
+     traineeId: "640e2b36c562d19f83a72a02"
+    }
+  });
+  // const {data: singleTraineeInfo, error: singleTraineeError} = useQuery(QUERY_TRAINEE)
+    
+  // const {data: singleTraineeAppts, error: singleTraineeApptError} = useQuery(QUERY_SCHEDULES);
+  // const {data: singleTraineeWorkout, error: singleTraineeWorkoutError} = useQuery(QUERY_SCHEDULES);
+  const singleTraineeData = data?.trainee || {};
+  
+// setTrainee(singleTraineeData);
+console.log(trainee); 
+// console.log(singleTraineeAppts);
     // create state of index of selected appt
     const [apptIndex, setApptIndex] = useState(0);
 
     return (
       <div class="container singleTrainee-container text-start">
-        <h1>{trainee.name}</h1>
+        {/* <h1>{trainee.firstName}</h1> */}
         <div class="row">
           <div className="col card">
           <h5 className="card-title">Trainee Info</h5>
-            <SingleTraineeInfo trainee={trainee}/>
+          {singleTraineeData && (<SingleTraineeInfo trainee={singleTraineeData}/>)}
+            {/* <SingleTraineeInfo trainee={trainee}/> */}
           </div>
           <div className="col card overflow-scroll">
             <h5 className="card-title">Upcoming Appointments</h5>
-            <SingleTraineeAppts traineeAppts={traineeAppts} setApptIndex={setApptIndex}/>
+            {/* <SingleTraineeAppts traineeAppts={trainee.schedules} setApptIndex={setApptIndex}/> */}
           </div>
           <div className="col card">
           <h5 className="card-title">Workout Plan</h5>
-            <SingleTraineeWorkout traineeAppts={traineeAppts} apptIndex={apptIndex} />
+            {/* <SingleTraineeWorkout traineeAppts={traineeAppts} apptIndex={apptIndex} /> */}
           </div>
         </div>
       </div>

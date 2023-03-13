@@ -8,15 +8,18 @@ import "./HomepageContainer.css";
 import FullscheduleButtons from "../Buttons/fullschedulebuttons";
 import AddTraineeButtons from "../Buttons/addTraineebuttons";
 import ViewallTraineesButtons from "../Buttons/viewallTraineesbuttons";
+import dayjs from "dayjs";
 
 export default function HomepageContainer() {
 const { loading, data } = useQuery(QUERY_ME);
 
   const schedules = data?.me.trainerSchedule || [];
   const trainees = data?.me.trainees || [];
+  const todaysDate=dayjs().format('MM/DD/YYYY');
+  const todaysSchedule=schedules.filter(appointment=>appointment.date === todaysDate);
   console.log(data);
   console.log('schedules', schedules)
-  console.log('trainees',trainees)
+  console.log('trainees', trainees)
   //   const [trainees, setTrainees] = useState(
   //     []
   //         [
@@ -45,8 +48,8 @@ const { loading, data } = useQuery(QUERY_ME);
       <aside className="col-md-5">
         <div className="appointments-container">
         <Link to="/appointmentscard"><FullscheduleButtons /></Link>
-        <h3 className="card-heading">Upcoming Appointments</h3>
-          <AppointmentsCards appointments={schedules} />
+        <h3 className="card-heading">Today's Appointments</h3>
+        {todaysSchedule ? (<AppointmentsCards appointments={todaysSchedule}/>) : (<h2>Your Schedule is Clear!</h2>)}
         </div>
       </aside>
 

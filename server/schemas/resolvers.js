@@ -1,4 +1,4 @@
-  const { AuthenticationError } = require('apollo-server-express');
+const { AuthenticationError } = require('apollo-server-express');
 const { Exercises, Schedules, Trainees, Trainers } = require('../models');
 const { signToken } = require('../utils/auth');
 
@@ -140,12 +140,11 @@ const resolvers = {
       // throw new AuthenticationError('You need to be logged in!');
       },
 
-      addAppointment: async (parent, { date, startTime, endTime, location, trainerId, traineeId }, context) => {
+      addAppointment: async (parent, { startDate, endDate, location, trainerId, traineeId }, context) => {
         if (context) {
           const appointment = await Schedules.create({
-            date,
-            startTime,
-            endTime,
+            startDate,
+            endDate,
             location,
             trainerId, 
             traineeId
@@ -239,15 +238,14 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
 
-    updateAppointment: async (parent, { scheduleId, date, startTime, endTime, location, trainerId, traineeId }, context) => {
+    updateAppointment: async (parent, { scheduleId, startDate, endDate, location, trainerId, traineeId }, context) => {
       if (context) {
         return Schedules.findOneAndUpdate(
           { _id: scheduleId },
           {
             $set: {
-              date,
-              startTime,
-              endTime,
+              startDate,
+              endDate,
               location,
               trainerId,
               traineeId

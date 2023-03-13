@@ -8,9 +8,9 @@ function AppointmentsCards({appointments}) {
     <div className='card appointmentsCards' key={i}>
       <div className='card-body'>
         <h3>Trainee: {appointment.traineeId.firstName} {appointment.traineeId.lastName}</h3>
-      <h3>Date: {appointment.date}</h3>
-      <h3>Start Time: {appointment.startTime}</h3>
-      <h3>End Time: {appointment.endTime}</h3>
+      <h3>Date: {appointment.startDate}</h3>
+      <h3>Start Time: {appointment.startDate}</h3>
+      <h3>End Time: {appointment.endDate}</h3>
       </div>
     </div>
   ))

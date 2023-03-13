@@ -1,3 +1,4 @@
+import 'devextreme/dist/css/dx.light.css';
 import React from "react";
 import { useState } from "react";
 import './App.css';
@@ -7,8 +8,8 @@ import {
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import NewClientForm from './components/NewClientForm/NewClientForm'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import NewClientForm from './components/NewClientForm/NewClientForm';
 import Header from "./components/Header/Header";
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
@@ -20,6 +21,7 @@ import SingleTraineeContainer from './components/SingleTraineeContainer/SingleTr
 import UpdateClientModal from "./components/UpdateClientModal/UpdateClientModal";
 import EditWorkoutPlanModal from "./components/EditWorkoutPlanModal/EditWorkoutPlanModal";
 import ScheduleAppointmentModal from "./components/ScheduleAppointmentModal/ScheduleAppointmentModal";
+import Schedule from './components/Schedule';
 import { setContext } from '@apollo/client/link/context';
 
 // Construct our main GraphQL API endpoint
@@ -44,6 +46,7 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+
 
 function App() {
 
@@ -76,7 +79,7 @@ function App() {
           <Route exact path='/updateclientmodal' element={<UpdateClientModal />} />
           <Route exact path='/editworkoutmodal' element={<EditWorkoutPlanModal />} />
           <Route exact path='/scheduleappointmentmodal' element={<ScheduleAppointmentModal />} />
-
+          <Route exact path='/schedule' element={<Schedule/>} />
 
         </Routes>
         </div>
@@ -85,7 +88,7 @@ function App() {
         </div>
       </Router>
     </div>
-    </ApolloProvider>
+   </ApolloProvider>
   );
  
 }

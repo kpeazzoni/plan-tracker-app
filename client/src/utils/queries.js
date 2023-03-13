@@ -43,26 +43,37 @@ export const QUERY_TRAINER = gql `
 `
 
 export const QUERY_TRAINEE = gql `
-query Trainees($traineeId: ID!) {
-  trainee(traineeId: $traineeId) {
+query Trainees($trainerId: ID!) {
+  trainees(trainerId: $trainerId) {
     _id
     firstName
     lastName
     dob
     traineeSchedule {
       _id
-      endDate
       startDate
+      endDate
+      workouts {
+        _id
+        distanceOrTime
+        equipmentReq
+        exerciseName
+        muscleGroup
+        notes
+        reps
+        sets
+        weight
+      }
       trainerId {
         _id
       }
     }
     demographics {
-      goals
       height
-      injuryHistory
-      notes
       weight
+      goals
+      notes
+      injuryHistory
     }
   }
 }

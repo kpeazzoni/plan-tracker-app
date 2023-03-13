@@ -143,3 +143,13 @@ query Query {
     }
   }
   `
+
+  export const QUERY_EXERCISES = gql`
+  query Query {
+    exercises {
+      _id
+      muscleGroup 
+      exerciseName
+    }
+  }
+  `

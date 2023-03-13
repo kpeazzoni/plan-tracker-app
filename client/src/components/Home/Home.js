@@ -58,10 +58,10 @@ const Home = () => {
           </div>
 
           {/* hero buttons */}
-          <div className="hero-buttons">
+          {/* <div className="hero-buttons">
             <button className="btn">Get Started</button>
             <button className="btn">Learn More</button>
-          </div>
+          </div> */}
         </div>
         {/* Right Side */}
       </div>

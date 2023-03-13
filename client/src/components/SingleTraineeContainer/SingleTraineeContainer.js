@@ -45,7 +45,7 @@ console.log(singleTraineeData);
           </div>
           <div className="col card">
           <h5 className="card-title">Workout Plan</h5>
-            <SingleTraineeWorkout trainee={singleTraineeData} apptIndex={apptIndex} />
+            {/* <SingleTraineeWorkout trainee={singleTraineeData} apptIndex={apptIndex} /> */}
           </div>
         </div>
       </div>

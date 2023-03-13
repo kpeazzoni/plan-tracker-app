@@ -16,7 +16,7 @@ const NewClientForm = () => {
             injuryHistory: '',
             notes: '',
         });
-        const [addTrainee, { error, data }] = useMutation(ADD_TRAINEE);
+        const [addTrainee] = useMutation(ADD_TRAINEE);
       
         const handleChange = (event) => {
           const { name, value } = event.target;

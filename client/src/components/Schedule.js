@@ -37,11 +37,11 @@ console.log(schedules)
 
 const currentDate = Date.now();
 const views = ['week', 'month'];
-
+const state = {timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,}
 
     return (
         <Scheduler
-        timeZone="America/Los_Angeles"
+        timeZone={state.timeZone}
         dataSource={schedules}
         views={views}
         defaultCurrentView="week"

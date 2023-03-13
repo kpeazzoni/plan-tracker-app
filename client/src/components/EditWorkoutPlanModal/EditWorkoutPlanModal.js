@@ -26,7 +26,6 @@ function EditWorkoutPlanModal(props) {
   optionsArr = [];
   populateExercises(selectedGroup);
 }
-console.log("25", selectedGroup.musclegroup)
 const exercisesArr = [];
 const optionsArr = [];
 exerciseList.map((exercise) => {
@@ -37,102 +36,88 @@ exerciseList.map((exercise) => {
 populateExercises(selectedGroup)
 
 
-  console.log("36", selectedGroup.musclegroup);  
 function populateExercises (selectedGroup) {
-    console.log("38", selectedGroup)
       switch (selectedGroup.musclegroup) {
       case 'Arms':
         isArms();
-        
-        console.log("43", selectedGroup)
+        optionsArr.sort()
         break;
       case 'Back':
         isBack();
-       console.log(selectedGroup.musclegroup)
+        optionsArr.sort()
         break;
       case 'Chest':
         isChest();
-        console.log(selectedGroup.musclegroup)
+        optionsArr.sort()
         break;
       case 'Glutes':
         isGlutes();
-        console.log(selectedGroup.musclegroup)
+        optionsArr.sort()
         break;
       case 'Legs':
         isLegs();
-        console.log(selectedGroup.musclegroup)
+        optionsArr.sort()
         break;
       case 'Shoulders':
         isShoulders();
-        console.log(selectedGroup.musclegroup)
+        optionsArr.sort()
         break;
       default:
-        // console.log(exercisesArr)
+        exercisesArr.map((options) => {
+          optionsArr.push(options.exerciseName)
+          optionsArr.sort()
+        })
     }}
   // }
   // );
   
-console.log("70", selectedGroup.musclegroup)
-
 async function isArms() {
-  console.log("isArms", selectedGroup.musclegroup)
   const arms = exercisesArr.filter(function (a) {
     return a.muscleGroup === "Arms";});
     arms.map((options) => {
       optionsArr.push(options.exerciseName)
     })
     ;
-  console.log(optionsArr);
 }
 
 async function isBack() {
-  console.log("isBack", selectedGroup)
   const back = exercisesArr.filter(function (b) {
     return b.muscleGroup === "Back";});
     back.map((options) => {
       optionsArr.push(options.exerciseName)
     })
-  console.log(back);
 };
 
 async function isChest() {
-  console.log("isChest", selectedGroup)
   const chest = exercisesArr.filter(function (c) {
     return c.muscleGroup === "Chest";});
     chest.map((options) => {
       optionsArr.push(options.exerciseName)
     })
-  console.log(chest);
 };
 
 async function isGlutes() {
-  console.log("isGlutes", selectedGroup)
   const glutes = exercisesArr.filter(function (g) {
     return g.muscleGroup === "Glutes";});
     glutes.map((options) => {
       optionsArr.push(options.exerciseName)
     })
-  console.log(glutes);
 };
 
 async function isLegs() {
-  console.log("isLegs", selectedGroup)
   const legs = exercisesArr.filter(function (l) {
     return l.muscleGroup === "Legs";})
     legs.map((options) => {
       optionsArr.push(options.exerciseName)
     })
-  console.log(legs);
 };
 
 async function isShoulders() {
-  console.log("isShoulders", selectedGroup)
   const shoulders = exercisesArr.filter(function (s) {
     return s.muscleGroup === "Shoulders";});
     shoulders.map((options) => {
       optionsArr.push(options.exerciseName)
     })
-  console.log(shoulders);
 };
 
 
@@ -177,6 +162,7 @@ async function isShoulders() {
             //  onChange={handleInputChange}
              >
               <option>Select Exercise</option>
+              {optionsArr.sort()}
               {optionsArr.map((option) => {
                 return (
                   <option key={option} value={option}>

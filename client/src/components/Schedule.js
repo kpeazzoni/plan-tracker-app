@@ -37,7 +37,7 @@ console.log(schedules)
 
 const currentDate = Date.now();
 const views = ['week', 'month'];
-
+const state = {timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,}
 
     return (
         <Scheduler

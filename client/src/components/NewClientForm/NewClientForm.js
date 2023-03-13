@@ -1,25 +1,46 @@
-import React, { } from 'react';
+import React, { useState } from 'react';
 import './NewClientForm.css';
+import { useMutation } from '@apollo/client';
+import { ADD_TRAINEE } from '../../utils/mutations';
+import Auth from '../../utils/auth'
 
-function NewClientForm(props) {
-    const handleInputChange = (e) => {
-        // Getting the value and name of the input which triggered the change
-        // const { name, value } = e.target;
-    }
-
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-      };
-
-
-const firstName = ""      
-const lastName = ""
-const dob = ""
-const height =""
-const weight = ""
-const goals = ""
-const injuryHistory = ""
-const notes = ""
+const NewClientForm = () => {
+   
+        const [formState, setFormState] = useState({
+            firstName:'',      
+            lastName: '',
+            dob: '',
+            height: '',
+            weight: '',
+            goals: '',
+            injuryHistory: '',
+            notes: '',
+        });
+        const [addTrainee, { error, data }] = useMutation(ADD_TRAINEE);
+      
+        const handleChange = (event) => {
+          const { name, value } = event.target;
+      
+          setFormState({
+            ...formState,
+            [name]: value,
+          });
+        };
+      
+        const handleFormSubmit = async (event) => {
+          event.preventDefault();
+          console.log(formState);
+      
+          try {
+            const { data } = await addTrainee({
+              variables: { ...formState },
+            });
+      
+            Auth.login(data.login.token);
+          } catch (e) {
+            console.error(e);
+          }
+        };
 
 return (
 <div className='formPlacement'>
@@ -30,68 +51,68 @@ return (
         <form className="row justify-content-center formCard" >
             <p className='pStyle'>Name:
             <input 
-            value= {firstName}
+            value= {formState.firstName}
             name="firstName" 
-            onChange={handleInputChange} 
+            onChange={handleChange} 
             type="text"
             placeholder="First Name"
             className='inputStyle'
             />
             <input 
-            value={lastName} 
+            value={formState.lastName} 
             name="lastName" 
-            onChange={handleInputChange} 
+            onChange={handleChange} 
             type="text" 
             placeholder="Last Name"
             className='inputStyle' 
             /> </p>
             <p className='pStyle'>DOB:
             <input 
-            value={dob} 
+            value={formState.dob} 
             name="dob" 
-            onChange={handleInputChange} 
+            onChange={handleChange} 
             type="Date"
             placeholder="DOB" 
             className='inputStyle'
             /></p>
             <p className='pStyle'>Height:
-            <input value={height} name="height" 
-            onChange={handleInputChange} type="text" 
+            <input value={formState.height} name="height" 
+            onChange={handleChange} type="text" 
             placeholder="in" 
             className='inputStyle'
             /></p>
             <p className='pStyle'>Weight:
             <input 
-            value={weight} 
+            value={formState.weight} 
             name="weight" 
-            onChange={handleInputChange} 
+            onChange={handleChange} 
             type="text" 
             placeholder="lbs" 
             className='inputStyle'
             /></p>
             <p className='pStyle'>Goals:
             <input 
-            value={goals} 
+            value={formState.goal} 
             name="goals" 
-            onChange={handleInputChange} 
+            onChange={handleChange} 
             type="text" 
             placeholder="Goals" 
             className='inputStyle'
             /></p>
             <p className='pStyle'>Injury History:
             <input 
-            value={injuryHistory} 
+            value={formState.injuryHistory} 
             name="injuryHistory" 
-            onChange={handleInputChange} 
+            onChange={handleChange} 
             type="text"
             placeholder="Injury History" 
             className='inputStyle'
             /></p>
             <p className='pStyle'>Notes:
             <input 
-            value={notes} 
+            value={formState.notes} 
             name="notes" 
-            onChange={handleInputChange} 
+            onChange={handleChange} 
             type="text"
             placeholder="Notes: (lifestyle, fun facts, etc.)" 
             className='inputStyle'

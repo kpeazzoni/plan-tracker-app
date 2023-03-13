@@ -37,7 +37,8 @@ class AuthService {
     // Saves user token to localStorage and reloads the application for logged in status to take effect
     localStorage.setItem("id_token", data.login.token);
     localStorage.setItem("trainer_id", data.login.user._id);
-    window.location.assign("/");
+    //if we have issues deploying to the heroku server it might start here with /homepagecontainer and not using / 
+    window.location.assign("/homepagecontainer");
   }
 
   logout() {

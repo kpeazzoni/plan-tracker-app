@@ -30,7 +30,7 @@ export const ADD_TRAINER = gql`
 
 export const ADD_TRAINEE = gql`
 mutation AddTrainee($firstName: String!, $lastName: String!, $dob: String!, $trainerId: ID!) {
-  addTrainee(firstName: $firstName, lastName: $lastName, dob: $dob, trainerId: $trainerId) {
+  addTrainee(firstName: $firstName, lastName: $lastName, dob: $dob, height: $height, weight: $weight, goals: $goals injuryHistory: $injuryHistory, notes: $notes, trainerId: $trainerId) {
     _id
     firstName
     lastName

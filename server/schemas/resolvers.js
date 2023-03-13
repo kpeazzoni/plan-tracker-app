@@ -38,20 +38,23 @@ const resolvers = {
           path: 'traineeSchedule',
           populate: [
             { path: 'trainerId' },
-            { path: 'traineeId' }
+            { path: 'traineeId' },
+            { path: 'workouts'}
           ]
-        });
+        })
         // console.log(trainees[0].traineeSchedule)
         // return trainees
     },
     //trainee:Trainees
     trainee: async (parent, { traineeId }) => {
-        return Trainees.findOne({ _id: traineeId }).populate('traineeSchedule')
+        return Trainees.findOne({ _id: traineeId })
+        .populate('traineeSchedule')
         .populate({
           path: 'traineeSchedule',
           populate: [
             { path: 'trainerId' },
-            { path: 'traineeId' }
+            { path: 'traineeId' },
+            { path: 'workouts'}
           ]
         });
     },

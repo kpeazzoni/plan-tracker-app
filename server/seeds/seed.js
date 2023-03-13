@@ -54,8 +54,8 @@ db.once('open', async () => {
       const tempTrainee = await trainees.find((trainee)=> trainee._id === tempTraineeId );
 
       // reference the schedule in the trainee's 'traineeSchedule' array
-      await tempTrainee.traineeSchedule.push(newSchedule._id);
-      await tempTrainee.save();
+       tempTrainee.traineeSchedule.push(newSchedule._id);
+       tempTrainee.save();
 
       await newSchedule.save();
     }

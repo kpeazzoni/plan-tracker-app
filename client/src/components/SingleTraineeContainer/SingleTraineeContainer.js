@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SingleTraineeInfo from "../../pages/SingleTraineeInfo";
 import SingleTraineeAppts from "../../pages/SingleTraineeAppts";
 import SingleTraineeWorkout from "../../pages/SingleTraineeWorkout";
@@ -9,9 +9,9 @@ import { QUERY_TRAINEE } from "../../utils/queries";
 // import { QUERY_TRAINEE } from '../../utils/queries';
 
 function SingleTraineeContainer(props) {
-  // const [trainee, setTrainee] = useState();
-
-  // const [traineeAppts, setTraineeAppts] = useState();
+  const [trainee, setTrainee] = useState();
+  const [traineeAppts, setTraineeAppts] = useState();
+  
 
   const { data, error } = useQuery(QUERY_TRAINEE, {
     variables: {
@@ -19,17 +19,20 @@ function SingleTraineeContainer(props) {
       //  props.trainerId
     },
   });
-// useEffect(() => setTrainee(data.trainee),[data]);
+useEffect(() => {
+  setTrainee(data?.trainee)
+  setTraineeAppts(data?.trainee.traineeSchedule)
+},[data]);
   // const {data: singleTraineeInfo, error: singleTraineeError} = useQuery(QUERY_TRAINEE)
-  console.log(data, "this is data");
+  // console.log(data, "this is data");
   // const {data: singleTraineeAppts, error: singleTraineeApptError} = useQuery(QUERY_SCHEDULES);
   // const {data: singleTraineeWorkout, error: singleTraineeWorkoutError} = useQuery(QUERY_SCHEDULES);
-  const singleTraineeData = data?.trainee || {};
-  // const singleTraineeSchedule = data?.traineeSchedule || {};
+  // const singleTraineeData = data?.trainee || {};
+  const singleTraineeSchedule = data?.trainee.traineeSchedule || {};
   // const singleTraineeWorkout = data?.traineeSchedule.workouts || {};
   // setTrainee(singleTraineeData);
 
-  console.log(singleTraineeData, "this is singletraineeData");
+  // console.log(trainee, "this is singletraineeData");
   // console.log(singleTraineeAppts);
   // create state of index of selected appt
   const [apptIndex, setApptIndex] = useState(0);
@@ -40,22 +43,22 @@ function SingleTraineeContainer(props) {
       <div class="row">
         <div className="col card">
           <h5 className="card-title">Trainee Info</h5>
-          {singleTraineeData && (
-            <SingleTraineeInfo trainee={singleTraineeData} />
+          {trainee && (
+            <SingleTraineeInfo trainee={trainee} />
           )}
           {/* <SingleTraineeInfo trainee={singleTraineeData}/> */}
         </div>
         <div className="col card overflow-scroll">
           <h5 className="card-title">Upcoming Appointments</h5>
           <SingleTraineeAppts
-            traineeAppts={singleTraineeData}
+            traineeAppts={traineeAppts}
             setApptIndex={setApptIndex}
           />
         </div>
         <div className="col card">
           <h5 className="card-title">Workout Plan</h5>
           <SingleTraineeWorkout
-            traineeAppts={singleTraineeData}
+            traineeAppts={traineeAppts}
             apptIndex={apptIndex}
           />
         </div>

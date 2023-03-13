@@ -1,8 +1,8 @@
 import React from 'react';
 
-function SingleTraineeAppts({trainee, setApptIndex}) {
-  console.log(trainee)
-    return <>{trainee?.traineeSchedule?.map((appt, i) => (
+function SingleTraineeAppts({traineeAppts, setApptIndex}) {
+  console.log(traineeAppts);
+    return (<>{traineeAppts?.map((appt, i) => (
       <div class="card allappts-per" key={i}>
         <button type="button" class="d-grid gap-2" id={i} onClick={()=> setApptIndex(i)}>
           <div className="card-body">
@@ -15,7 +15,7 @@ function SingleTraineeAppts({trainee, setApptIndex}) {
         </button>
       </div>
     ))}
-    </>
+    </>)
 };
 
 export default SingleTraineeAppts;

@@ -41,7 +41,48 @@ export const QUERY_TRAINER = gql `
     }
   }
 `
-
+// export const QUERY_SINGLETRAINEE = gql `
+// query Trainees($traineeId: ID!) {
+//   trainees(traineeId: $traineeId) {
+//     _id
+//     firstName
+//     lastName
+//     dob
+//   }
+// }
+// `
+export const QUERY_SINGLETRAINEE = gql ` 
+query Query($traineeId: ID!) {
+  trainee(traineeId: $traineeId) {
+    _id
+    dob
+    firstName
+    lastName
+    traineeSchedule {
+      _id
+      endDate
+      startDate
+      workouts {
+        _id
+        distanceOrTime
+        equipmentReq
+        exerciseName
+        muscleGroup
+        notes
+        reps
+        sets
+        weight
+      }
+      location
+      trainerId {
+        _id
+        lastName
+        firstName
+      }
+    }
+  }
+}
+`
 export const QUERY_TRAINEE = gql `
 query Trainees($trainerId: ID!) {
   trainees(trainerId: $trainerId) {

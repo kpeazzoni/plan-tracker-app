@@ -1,5 +1,6 @@
 import React from 'react';
 import './buttons.css';
+import {useNavigate} from 'react-router-dom';
 
 // const styles = {
 //     buttonStyle: {
@@ -16,17 +17,22 @@ import './buttons.css';
 //   }
 // };
 
-const handleaddclient = (e) => {
-    e.preventDefault();
-    console.log('form submitted');
-alert('form submitted');
-}
+// const handleaddclient = (e) => {
+//     e.preventDefault();
+//     console.log('form submitted');
+// alert('form submitted');
+// }
 
 
 function AddTraineeButtons() {
+    let navigate = useNavigate(); 
+    const routeChange = () =>{ 
+      let path = `NewClientForm`; 
+      navigate(path);
+    }
     return (
         <div>
-          <button className='buttons'  onClick={handleaddclient}>
+          <button className='buttons'  onClick={routeChange}>
           Add Trainee
           </button> 
         </div>

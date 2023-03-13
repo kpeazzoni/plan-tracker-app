@@ -1,15 +1,15 @@
 import React from 'react';
 
-function SingleTraineeWorkout({traineeAppts, apptIndex}) {
-    const appt = traineeAppts[apptIndex];
-
+function SingleTraineeWorkout({trainee, apptIndex}) {
+    const appt = trainee.traineeSchedule[apptIndex];
+console.log(appt);
     return (
     <div>
-        <h5>{appt.date}</h5>
+        <h5>{appt.startDate}</h5>
         <ul>
-            {appt.exercises.map((exercise) => (
+            {appt.workouts.map((workout) => (
             <li>
-                <p className="card-text">{exercise}</p>
+                <p className="card-text">{workout.exerciseName}</p>
             </li>
             ))}
         </ul>

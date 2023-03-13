@@ -48,7 +48,7 @@ db.once('open', async () => {
 
       // randomly add a trainee id from the trainers 'trainees' array to each schedule
       const tempTraineeId = await tempTrainer.trainees[Math.floor(Math.random() * tempTrainer.trainees.length)];
-      newSchedule.traineeId = tempTraineeId;
+      newSchedule.traineeId = tempTraineeId;z
 
       // filter through trainees to find one that matches the trainee id
       const tempTrainee = await trainees.find((trainee)=> trainee._id === tempTraineeId );

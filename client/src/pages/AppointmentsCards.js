@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 import '../../src/components/HomepageContainer/HomepageContainer.css'
 
@@ -7,12 +7,15 @@ function AppointmentsCards({appointments}) {
   return appointments.map ((appointment, i)=>(
     <div className='card appointmentsCards' key={i}>
       <div className='card-body'>
-        <h3>Trainee: {appointment.traineeId.firstName} {appointment.traineeId.lastName}</h3>
+      <Link to={`/SingleTraineeContainer/${appointment.traineeId._id}`} > 
+      <h3>Trainee: {appointment.traineeId.firstName} {appointment.traineeId.lastName}</h3>
       <h3>Date: {appointment.startDate}</h3>
       <h3>Start Time: {appointment.startDate}</h3>
       <h3>End Time: {appointment.endDate}</h3>
+      </Link>
       </div>
     </div>
+      
   ))
 }
 

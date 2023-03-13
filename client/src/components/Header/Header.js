@@ -36,19 +36,18 @@ const Header = () => {
         /> */}
       </div>
       <ul className="navbar">
-        <li>
-        <Join />
+        {/* <li> */}
+        {/* <Join /> */}
           <button onClick={(event) => navigate('/')} className='btn'>Home</button>
           <button onClick={(event) => navigate('/register')} className='btn'>Register</button>
-
-
+          
           {!localStorage.id_token ? (
             <button onClick={(event) => navigate('/login')} className='btn'>Login</button>
 
           ) : (
             <button onClick={Auth.logout} className='btn' id="logout">Logout</button>
           )}
-        </li>
+        {/* </li> */}
       </ul>
     </div>
   )

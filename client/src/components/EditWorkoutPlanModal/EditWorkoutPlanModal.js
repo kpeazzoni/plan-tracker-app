@@ -23,7 +23,7 @@ function EditWorkoutPlanModal(props) {
   const handleInputChange =  (e) => {
   const { name, value } = e.target;
   setSelectedGroup({ [name]: value });
-  optionsArr = [];
+  optionsArr.length = 0;
   populateExercises(selectedGroup);
 }
 const exercisesArr = [];

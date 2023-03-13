@@ -13,10 +13,6 @@
     },
     {
       "muscleGroup": "Arms",
-      "exerciseName": "Bicep Curl (barbell )"
-    },
-    {
-      "muscleGroup": "Arms",
       "exerciseName": "Bicep Curl (Barbell)"
     },
     {
@@ -33,15 +29,15 @@
     },
     {
       "muscleGroup": "Arms",
-      "exerciseName": "Hammer lat pulldown"
+      "exerciseName": "Hammer Lat Pulldown"
     },
     {
       "muscleGroup": "Arms",
-      "exerciseName": "Hammer seated row"
+      "exerciseName": "Hammer Seated Row"
     },
     {
       "muscleGroup": "Arms",
-      "exerciseName": "Hammer seated row (CLOSE GRIP)"
+      "exerciseName": "Hammer Seated Row (Close Grip)"
     },
     {
       "muscleGroup": "Arms",
@@ -65,11 +61,11 @@
     },
     {
       "muscleGroup": "Arms",
-      "exerciseName": "Tricep pushdown"
+      "exerciseName": "Tricep Pushdown"
     },
     {
       "muscleGroup": "Arms",
-      "exerciseName": "Weighted dips"
+      "exerciseName": "Weighted Dips"
     },
     {
       "muscleGroup": "Arms",
@@ -77,11 +73,11 @@
     },
     {
       "muscleGroup": "Arms",
-      "exerciseName": "lying Skullcrusher"
+      "exerciseName": "Lying Skullcrusher"
     },
     {
       "muscleGroup": "Back",
-      "exerciseName": "Face pull"
+      "exerciseName": "Face Pull"
     },
     {
       "muscleGroup": "Back",
@@ -101,7 +97,7 @@
     },
     {
       "muscleGroup": "Back",
-      "exerciseName": "Hammer back row wide 45 angle"
+      "exerciseName": "Hammer Back Row Wide 45 Angle"
     },
     {
       "muscleGroup": "Back",
@@ -117,11 +113,11 @@
     },
     {
       "muscleGroup": "Back",
-      "exerciseName": "Rear delt fly"
+      "exerciseName": "Rear Delt Fly"
     },
     {
       "muscleGroup": "Back",
-      "exerciseName": "Seated Cable Row (close Grip)"
+      "exerciseName": "Seated Cable Row (Close Grip)"
     },
     {
       "muscleGroup": "Back",
@@ -137,7 +133,7 @@
     },
     {
       "muscleGroup": "Back",
-      "exerciseName": "curl ez bar"
+      "exerciseName": "Curl EZ Bar"
     },
     {
       "muscleGroup": "Back",
@@ -169,10 +165,6 @@
     },
     {
       "muscleGroup": "Chest",
-      "exerciseName": "Lateral Raise (Dumbbell)"
-    },
-    {
-      "muscleGroup": "Chest",
       "exerciseName": "Military Press (Standing)"
     },
     {
@@ -185,7 +177,7 @@
     },
     {
       "muscleGroup": "Chest",
-      "exerciseName": "Rotator cuff work."
+      "exerciseName": "Rotator Cuff work."
     },
     {
       "muscleGroup": "Chest",
@@ -197,7 +189,7 @@
     },
     {
       "muscleGroup": "Glutes",
-      "exerciseName": "Glute extension"
+      "exerciseName": "Glute Extension"
     },
     {
       "muscleGroup": "Glutes",
@@ -221,11 +213,11 @@
     },
     {
       "muscleGroup": "Legs",
-      "exerciseName": "high bar squat"
+      "exerciseName": "High Bar Squat"
     },
     {
       "muscleGroup": "Legs",
-      "exerciseName": "kettlebell Swings"
+      "exerciseName": "Kettlebell Swings"
     },
     {
       "muscleGroup": "Legs",
@@ -233,7 +225,7 @@
     },
     {
       "muscleGroup": "Legs",
-      "exerciseName": "sumo deadlift"
+      "exerciseName": "Sumo Deadlift"
     },
     {
       "muscleGroup": "Legs",
@@ -257,7 +249,7 @@
     },
     {
       "muscleGroup": "Legs",
-      "exerciseName": "Leg curl"
+      "exerciseName": "Leg Curl"
     },
     {
       "muscleGroup": "Legs",
@@ -265,15 +257,15 @@
     },
     {
       "muscleGroup": "Legs",
-      "exerciseName": "Leg outward fly"
+      "exerciseName": "Leg Outward Fly"
     },
     {
       "muscleGroup": "Legs",
-      "exerciseName": "Leg press"
+      "exerciseName": "Leg Press"
     },
     {
       "muscleGroup": "Legs",
-      "exerciseName": "Leg press (hinge)"
+      "exerciseName": "Leg Press (Hinge)"
     },
     {
       "muscleGroup": "Legs",
@@ -289,7 +281,7 @@
     },
     {
       "muscleGroup": "Shoulders",
-      "exerciseName": "Shrugs (dumbbell)"
+      "exerciseName": "Shrugs (Dumbbell)"
     },
     {
       "muscleGroup": "Shoulders",
@@ -297,11 +289,11 @@
     },
     {
       "muscleGroup": "Shoulders",
-      "exerciseName": "Hammer shoulder press"
+      "exerciseName": "Hammer Shoulder Press"
     },
     {
       "muscleGroup": "Shoulders",
-      "exerciseName": "Seated Shoulder  Press (Barbell)"
+      "exerciseName": "Seated Shoulder Press (Barbell)"
     },
     {
       "muscleGroup": "Shoulders",
@@ -309,7 +301,7 @@
     },
     {
       "muscleGroup": "Shoulders",
-      "exerciseName": "close grip Bench"
+      "exerciseName": "Close Grip Bench"
     },
     {
       "muscleGroup": "Shoulders",

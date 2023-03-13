@@ -12,7 +12,7 @@ import {useParams} from "react-router-dom";
 function SingleTraineeContainer(props) {
   const [trainee, setTrainee] = useState();
   const [traineeAppts, setTraineeAppts] = useState();
-  const [traineeDemo, setDemo] = useState();
+
 
   const { data, error } = useQuery(QUERY_TRAINEE, {
     variables: {
@@ -23,7 +23,7 @@ function SingleTraineeContainer(props) {
 useEffect(() => {
   setTrainee(data?.trainee)
   setTraineeAppts(data?.trainee.traineeSchedule)
-  setDemo(data?.trainee.demographics)
+
 },[data]);
   // const {data: singleTraineeInfo, error: singleTraineeError} = useQuery(QUERY_TRAINEE)
   // console.log(data, "this is data");
@@ -46,7 +46,7 @@ useEffect(() => {
         <div className="col card">
           <h5 className="card-title">Trainee Info</h5>
           {trainee && (
-            <SingleTraineeInfo trainee={trainee} traineeDemo= {traineeDemo} />
+            <SingleTraineeInfo trainee={trainee} />
           )}
           {/* <SingleTraineeInfo trainee={singleTraineeData}/> */}
         </div>

@@ -44,10 +44,9 @@ mutation AddTrainee($firstName: String!, $lastName: String!, $dob: String!, $tra
     dob
     traineeSchedule {
       _id
-      date
-      endTime
+      endDate
       location
-      startTime
+      startDate
       trainerId {
         _id
       }
@@ -67,13 +66,12 @@ mutation AddTrainee($firstName: String!, $lastName: String!, $dob: String!, $tra
 }
 `;
 export const ADD_APPOINTMENT = gql`
-mutation Mutation($date: String!, $startTime: String!, $endTime: String!, $trainerId: ID!, $traineeId: ID!) {
-  addAppointment(date: $date, startTime: $startTime, endTime: $endTime, trainerId: $trainerId, traineeId: $traineeId) {
+mutation Mutation($startDate: String!, $endDate: String!, $trainerId: ID!, $traineeId: ID!) {
+  addAppointment(startDate: $startDate, endDate: $endDate, trainerId: $trainerId, traineeId: $traineeId) {
     _id
-    date
-    endTime
+    endDate
     location
-    startTime
+    startDate
     traineeId {
       _id
     }
@@ -81,10 +79,9 @@ mutation Mutation($date: String!, $startTime: String!, $endTime: String!, $train
       _id
       trainerSchedule {
         _id
-        date
-        endTime
+        endDate
         location
-        startTime
+        startDate
         traineeId {
           _id
         }
@@ -128,10 +125,9 @@ export const ADD_WORKOUTS = gql`
 mutation Mutation($muscleGroup: String!, $exerciseName: String!) {
   addWorkouts(muscleGroup: $muscleGroup, exerciseName: $exerciseName) {
     _id
-    date
-    endTime
+    endDate
     location
-    startTime
+    startDate
     traineeId {
       _id
     }
@@ -175,8 +171,8 @@ mutation Mutation($scheduleId: ID!, $workoutId: ID!) {
 }
 `;
 export const UPDATE_APPOINTMENT = gql`
-mutation Mutation($date: String!, $startTime: String!, $endTime: String!, $trainerId: ID!, $traineeId: ID!) {
-  updateAppointment(date: $date, startTime: $startTime, endTime: $endTime, trainerId: $trainerId, traineeId: $traineeId) {
+mutation Mutation($startDate: String!, $endDate: String!, $trainerId: ID!, $traineeId: ID!) {
+  updateAppointment(startDate: $startDate, endDate: $endDate, trainerId: $trainerId, traineeId: $traineeId) {
     _id
     traineeId {
       _id

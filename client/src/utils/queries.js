@@ -10,9 +10,8 @@ query Trainers($trainerId: ID!) {
     password
     trainerSchedule {
       _id
-      date
-      startTime
-      endTime
+      startDate
+      endDate
       location
     }
     }
@@ -29,9 +28,8 @@ export const QUERY_TRAINER = gql `
     password
     trainerSchedule {
       _id
-      date
-      startTime
-      endTime
+      startDate
+      endDate
       location
     }
     trainees {
@@ -53,9 +51,8 @@ query Trainees($traineeId: ID!) {
     dob
     traineeSchedule {
       _id
-      date
-      endTime
-      startTime
+      endDate
+      startDate
       trainerId {
         _id
       }
@@ -87,9 +84,8 @@ export const QUERY_SCHEDULES = gql`
 query Schedules($trainerId: ID!) {
   schedules(trainerId: $trainerId) {
     _id
-    date
-    endTime
-    startTime
+    endDate
+    startDate
     traineeId {
       _id
       firstName
@@ -124,9 +120,8 @@ query Query {
       email
       trainerSchedule {
         _id
-        date
-        startTime
-        endTime
+        startDate
+        endDate
         location
         traineeId{
           _id

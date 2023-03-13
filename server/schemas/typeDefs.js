@@ -28,9 +28,8 @@ const typeDefs = gql`
  }
  type Schedules {
     _id: ID!
-    date: String!
-    startTime: String!
-    endTime: String!
+    startDate: String!
+    endDate: String!
     location: String
     trainerId:Trainers!
     traineeId: Trainees!
@@ -127,9 +126,8 @@ type Mutation {
    removeWorkouts(scheduleId: ID!, workoutId: ID!) : Schedules
    
    addAppointment(
-      date: String!,
-      startTime: String!,
-      endTime: String!,
+      startDate: String!,
+      endDate: String!,
       location: String,
       trainerId: ID!,
       traineeId: ID!,
@@ -137,9 +135,8 @@ type Mutation {
    
    updateAppointment(
       scheduleId: ID!
-      date: String!,
-      startTime: String!,
-      endTime: String!,
+      startDate: String!,
+      endDate: String!,
       location: String,
       trainerId: ID!,
       traineeId: ID!,

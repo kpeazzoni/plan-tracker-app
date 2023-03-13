@@ -1,15 +1,11 @@
 const { Schema, model } = require('mongoose');
 
 const scheduleSchema = new Schema({
-    date: {
+    startDate: {
         type: String,
         required: true,
     },
-    startTime: {
-        type: String,
-        required: true,
-    },
-    endTime: {
+    endDate: {
         type: String,
         required: true,
     },

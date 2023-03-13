@@ -48,6 +48,7 @@ const resolvers = {
     //trainee:Trainees
     trainee: async (parent, { traineeId }) => {
         return Trainees.findOne({ _id: traineeId })
+        .populate('demographics')
         .populate('traineeSchedule')
         .populate({
           path: 'traineeSchedule',

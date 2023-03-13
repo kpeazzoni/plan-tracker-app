@@ -1,6 +1,7 @@
 import React from 'react';
 
 function SingleTraineeInfo({trainee}) {
+    console.log(trainee, "====")
     return (
         <div>
            <p className="card-text"><b>First Name:</b> {trainee.firstName}</p>

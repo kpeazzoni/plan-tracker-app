@@ -27,11 +27,11 @@ db.once('open', async () => {
 
     for (newTrainee of trainees) {
       // randomly add a trainer to each new trainee's 'trainerId' field
-      const tempTrainer = trainers[Math.floor(Math.random() * trainers.length)];
+      const tempTrainer = await trainers[Math.floor(Math.random() * trainers.length)];
       newTrainee.trainerId = tempTrainer._id;
 
       // reference the trainee in the trainer's 'trainees' array
-      tempTrainer.trainees.push(newTrainee._id);
+      await tempTrainer.trainees.push(newTrainee._id);
       await tempTrainer.save();
 
       await newTrainee.save();
@@ -39,22 +39,22 @@ db.once('open', async () => {
 
     for (newSchedule of schedules) {
       // randomly add a trainer to each schedule
-      const tempTrainer = trainers[Math.floor(Math.random() * trainers.length)];
+      const tempTrainer = await trainers[Math.floor(Math.random() * trainers.length)];
       newSchedule.trainerId = tempTrainer._id;
 
       // reference the schedule in the trainer's 'trainerSchedule' array
-      tempTrainer.trainerSchedule.push(newSchedule._id);
+      await tempTrainer.trainerSchedule.push(newSchedule._id);
       await tempTrainer.save();
 
       // randomly add a trainee id from the trainers 'trainees' array to each schedule
-      const tempTraineeId = tempTrainer.trainees[Math.floor(Math.random() * tempTrainer.trainees.length)];
+      const tempTraineeId = await tempTrainer.trainees[Math.floor(Math.random() * tempTrainer.trainees.length)];
       newSchedule.traineeId = tempTraineeId;
 
       // filter through trainees to find one that matches the trainee id
-      const tempTrainee = trainees.find((trainee)=> trainee._id === tempTraineeId );
+      const tempTrainee = await trainees.find((trainee)=> trainee._id === tempTraineeId );
 
       // reference the schedule in the trainee's 'traineeSchedule' array
-      tempTrainee.traineeSchedule.push(newSchedule._id);
+      await tempTrainee.traineeSchedule.push(newSchedule._id);
       await tempTrainee.save();
 
       await newSchedule.save();

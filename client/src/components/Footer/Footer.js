@@ -5,7 +5,7 @@ import Instagram from "../../assets/instagram.png";
 import LinkedIn from "../../assets/linkedin.png";
 import Facebook from "../../assets/facebook.png";
 
-import Logo from '../../assets/PlanTracker.png'
+import Logo from "../../assets/logoGray.png";
 const Footer = () => {
   return (
     <div className="Footer-container">

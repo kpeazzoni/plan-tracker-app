@@ -26,7 +26,7 @@
 .logo-f>img{
     width: 10rem;
 }
-.Footer-container>:nth-child(3)
+/* .Footer-container>:nth-child(3)
 {
     bottom: 0;
     right: 15%;
@@ -43,4 +43,4 @@
     height: 12rem;
     filter: blur(200px);
     background: #6cb4ac;
-}
+} */

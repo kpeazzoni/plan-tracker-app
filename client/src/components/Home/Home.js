@@ -22,7 +22,6 @@ const Home = () => {
           <div className="hero-text">
             <div>
               <span>Plan | schedule | track <br></br>in one place</span>
-              <br></br>
               <h2>Elevate your client tracking </h2>
             </div>
             <div>

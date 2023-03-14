@@ -127,16 +127,16 @@ const resolvers = {
       return { token, user };
     },
 
-    addTrainee: async (parent, {firstName, lastName, dob, trainerId, goals, height, injuryHistory, notes, weight }, context) => {
-      if (context) {
+    addTrainee: async (parent, {firstName, lastName, dob, goals, height, injuryHistory, notes, weight }, context) => {
+      if (context.user) {
         const trainee = await Trainees.create({
           firstName, 
           lastName, 
           dob,
-          trainerId,
+          trainerId: context.user._id,
         });
         await Trainers.findOneAndUpdate(
-          {_id: trainerId},
+          {_id: context.user._id},
           {$addToSet: { trainees: trainee._id}}
         );
         await Trainees.findOneAndUpdate(

@@ -12,7 +12,7 @@
   margin: 1rem;
 }
 
-a:Link, a:active, a:hover, a:focus {
+a:link, a:active, a:hover, a:visited {
   text-decoration: none;
   color: black
 }

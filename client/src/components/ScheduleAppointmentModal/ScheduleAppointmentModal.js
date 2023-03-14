@@ -34,17 +34,24 @@ function ScheduleAppointmentModal(props) {
         <Modal.Body>
           <div className='container col-8'>
             <form className="row justify-content-center formCard" >
-              <p className=''>Date:
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon3">Date</span>
                 <input
-                  // value={Date} 
-                  name="Date"
+                  name="date"
                   onChange={handleInputChange}
                   type="Date"
                   placeholder="Date"
-                  className='inputStyle'
-                /></p>
-              <p className=''> Start Time:
-                <select class="form-control" id="exampleFormControlSelect1">
+                  className="form-control" />
+              </div>
+              <div class="input-group">
+                <span class="input-group-text">Time</span>
+                <select
+                  name="startTime"
+                  onChange={handleInputChange}
+                  type="text"
+                  placeholder="Start"
+                  className="form-control"
+                >
                   <option>5:00am</option>
                   <option>5:30am</option>
                   <option>6:00am</option>
@@ -80,9 +87,13 @@ function ScheduleAppointmentModal(props) {
                   <option>9:00pm</option>
                   <option>9:30pm</option>
                 </select>
-              </p>
-              <p className=''>End Time:
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select
+                  name="EndTime"
+                  onChange={handleInputChange}
+                  type="text"
+                  placeholder="End"
+                  className="form-control"
+                >
                   <option>5:00am</option>
                   <option>5:30am</option>
                   <option>6:00am</option>
@@ -118,24 +129,26 @@ function ScheduleAppointmentModal(props) {
                   <option>9:00pm</option>
                   <option>9:30pm</option>
                 </select>
-              </p>
-              <p className=''>Location:
+              </div>
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon3">Location</span>
                 <input
-                  // value={location} 
                   name="location"
                   onChange={handleInputChange}
                   type="text"
-                  placeholder="Location"
-                  className='inputStyle'
-                /></p>
+                  className="form-control" />
+              </div>
+              <button type="btn onWhite" onClick={handleFormSubmit} className='buttonStyle'>
+                Submit
+              </button>
             </form>
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button className="btn onWhite" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleFormSubmit}>
+          <Button className="btn onWhite" onClick={handleFormSubmit}>
             Save Changes
           </Button>
         </Modal.Footer>

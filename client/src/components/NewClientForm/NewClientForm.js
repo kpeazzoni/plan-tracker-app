@@ -60,8 +60,9 @@ const NewClientForm = () => {
   };
 
   return (
-<div className='formPlacement'>
-    <p className='pStyle'>
+    <div className='formPlacement'>
+      <p className='pStyle'>
+>>>>>>>>> Temporary merge branch 2
         Add new client information:
       </p>
 

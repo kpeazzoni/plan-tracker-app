@@ -84,6 +84,11 @@ type Mutation {
       lastName: String!, 
       dob: String!, 
       trainerId: ID!
+      goals: String!
+      height: Int!
+      injuryHistory: String!
+      notes: String!
+      weight: Int!
       ) : Trainees   
    
    addDemographics(

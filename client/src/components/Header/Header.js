@@ -9,10 +9,6 @@ import Auth from '../../utils/auth';
 import Join from "../Home/Join";
 
 
-
-
-
-
 const Header = () => {
 
   const navigate = useNavigate();
@@ -21,7 +17,7 @@ const Header = () => {
     <div className="header" id="header">
       
       < img src={Logo} alt="logo" className="logo"
-      style={{ width: "10rem", height: "10rem", cursor: "pointer" }} 
+      style={{ cursor: "pointer" }} 
       onClick={() => navigate('/')}
        />
 

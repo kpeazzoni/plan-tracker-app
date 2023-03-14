@@ -7,6 +7,11 @@
     align-self: center;
   }
 
+.traineesCards {
+  width: 20rem;
+  margin: 1rem;
+}
+
 a:Link, a:active, a:hover, a:focus {
   text-decoration: none;
   color: black
@@ -15,7 +20,7 @@ a:Link, a:active, a:hover, a:focus {
 .card-heading{
   color: white;
 }
-.appintmentsCards- {
+.appintmentsCards {
   width: 18rem;
   height: 12rem;
   padding: 15px;

@@ -11,12 +11,12 @@ import ViewallTraineesButtons from "../Buttons/viewallTraineesbuttons";
 import dayjs from "dayjs";
 
 export default function HomepageContainer() {
-const { loading, data } = useQuery(QUERY_ME);
+  const { loading, data } = useQuery(QUERY_ME);
 
   const schedules = data?.me.trainerSchedule || [];
   const trainees = data?.me.trainees || [];
-  const todaysDate=dayjs().format('YYYY-MM-DD');
-  const todaysSchedule=schedules.filter(appointment=>appointment.startDate.slice(0, -9) === todaysDate);
+  const todaysDate = dayjs().format('YYYY-MM-DD');
+  const todaysSchedule = schedules.filter(appointment => appointment.startDate.slice(0, -9) === todaysDate);
 
   console.log(data);
   console.log('schedules', schedules)
@@ -30,39 +30,36 @@ const { loading, data } = useQuery(QUERY_ME);
   //     ]
   //   );
 
-  
-//   const [appointments, setAppotintments] = useState(
-//     [
-//     { date: "3/5/23", start_time: "9AM", end_time: "10AM", exercise: "arm" },
-//     { date: "3/5/23", start_time: "10AM", end_time: "11AM", exercise: "leg" },
-//     {
-//       date: "3/5/23",
-//       start_time: "6AM",
-//       end_time: "7AM",
-//       exercise: "shoulder",
-//     },
-//   ]
-//   );
+
+  //   const [appointments, setAppotintments] = useState(
+  //     [
+  //     { date: "3/5/23", start_time: "9AM", end_time: "10AM", exercise: "arm" },
+  //     { date: "3/5/23", start_time: "10AM", end_time: "11AM", exercise: "leg" },
+  //     {
+  //       date: "3/5/23",
+  //       start_time: "6AM",
+  //       end_time: "7AM",
+  //       exercise: "shoulder",
+  //     },
+  //   ]
+  //   );
 
   return (
     <div className="homepageContainer-wrapper">
-      <aside className="col-md-5">
+      <aside className="col-md-4">
         <div className="appointments-container">
-        <Link to="/schedule"><FullscheduleButtons /></Link>
-        <h3 className="card-heading">Today's Appointments</h3>
-        {todaysSchedule ? (<AppointmentsCards appointments={todaysSchedule}/>) : (<h2>Your Schedule is Clear!</h2>)}
+
+          <h3 className="card-heading">Today's Appointments</h3>
+          {todaysSchedule ? (<AppointmentsCards appointments={todaysSchedule} />) : (<h2>Your Schedule is Clear!</h2>)}
         </div>
       </aside>
 
-      <aside className="col-md-2"></aside>
 
-      <aside className="col-md-5">
+      <aside className="col-md-4">
         <div className="trainees-container">
-        <div className="d-flex flex-row mb-3">
-          <Link to="/newclientform"><AddTraineeButtons />
-          </Link>
-          <Link to="/AllTraineesContainer"><ViewallTraineesButtons />
-          </Link>
+          <div className="d-flex flex-row mb-3">
+
+
           </div>
           <h3 className="card-heading">Trainees</h3>
           {loading ? (
@@ -71,6 +68,13 @@ const { loading, data } = useQuery(QUERY_ME);
             <TraineesCards trainees={trainees} />
           )}
         </div>
+      </aside>
+      <aside className="col-md-3">
+        <Link to="/schedule"><FullscheduleButtons /></Link>
+        <Link to="/newclientform"><AddTraineeButtons />
+        </Link>
+        <Link to="/AllTraineesContainer"><ViewallTraineesButtons />
+            </Link>
       </aside>
     </div>
   );

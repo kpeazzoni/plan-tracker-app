@@ -30,8 +30,8 @@ function FullscheduleButtons() {
     }
     return (
         <div>
-          <button className='buttons' onClick={routeChange}>
-          View Full Schedule
+          <button className='btn onWhite' onClick={routeChange}>
+          Full Schedule
           </button> 
         </div>
     )

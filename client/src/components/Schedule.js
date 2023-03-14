@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { QUERY_ME } from "../utils/queries";
 import { useQuery } from "@apollo/client";
 import 'devextreme/dist/css/dx.light.css';
@@ -7,30 +8,7 @@ import { Scheduler } from 'devextreme-react/scheduler';
 
 
 function Schedule() {
-//   const appointments = [
-//     {
-//         text: 'Website Re-Design Plan',
-//         startDate: new Date('2021-03-29T16:30:00.000Z'),
-//         endDate: new Date('2021-03-29T18:30:00.000Z'),
-//       }, {
-//         text: 'Book Flights to San Fran for Sales Trip',
-//         startDate: new Date('2021-03-29T19:00:00.000Z'),
-//         endDate: new Date('2021-03-29T20:00:00.000Z'),
-//         allDay: true,
-//       }, {
-//         text: 'Install New Router in Dev Room',
-//         startDate: new Date('2021-03-29T21:30:00.000Z'),
-//         endDate: new Date('2021-03-29T22:30:00.000Z'),
-//       }, {
-//         text: 'Approve Personal Computer Upgrade Plan',
-//         startDate: new Date('2021-03-30T17:00:00.000Z'),
-//         endDate: new Date('2021-03-30T18:00:00.000Z'),
-//       }
-// ];
-// console.log(appointments[0].startDate)
-// const currentDate = new Date(2021, 2, 28);
-// console.log(currentDate)
-
+const navigate = useNavigate();
 const [schedules, setSchedules] = useState([]);
 
 const { data, error } = useQuery(QUERY_ME);
@@ -40,9 +18,23 @@ useEffect(() => {
 
 console.log(schedules);
 
+function onAppointmentClick(e) {
+    if(e.appointmentData) {
+        navigate(`/singleTraineeContainer/${e.appointmentData.traineeId._id}`);
+    }
+}
+
 const currentDate = Date.now();
 const views = ['week', 'month'];
 const state = {timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,}
+const editingState = {
+    allowAdding: false,
+    allowDeleting: false,
+    allowResizing: false,
+    allowDragging: false,
+    allowUpdating: false,
+}
+
 
     return (
         <>
@@ -53,7 +45,9 @@ const state = {timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,}
         defaultCurrentView="week"
         defaultCurrentDate={currentDate}
         height={700}
-        startDayHour={9} />
+        startDayHour={9}
+        editing={editingState}
+        onAppointmentClick={onAppointmentClick} />
         </>
     );
 }

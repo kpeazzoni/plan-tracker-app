@@ -127,18 +127,23 @@ const resolvers = {
       return { token, user };
     },
 
-    addTrainee: async (parent, {firstName, lastName, dob, trainerId }, context) => {
+    addTrainee: async (parent, {firstName, lastName, dob, trainerId, goals, height, injuryHistory, notes, weight }, context) => {
       if (context) {
         const trainee = await Trainees.create({
           firstName, 
           lastName, 
           dob,
-          trainerId
+          trainerId,
         });
         await Trainers.findOneAndUpdate(
           {_id: trainerId},
           {$addToSet: { trainees: trainee._id}}
         );
+        await Trainees.findOneAndUpdate(
+          {_id: trainee._id},
+          
+          {$push: { demographics: {goals, height, injuryHistory, notes, weight}}
+        });
         return trainee;
       }
       // throw new AuthenticationError('You need to be logged in!');

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_TRAINER } from '../utils/mutations';
 import {
@@ -19,6 +19,11 @@ import logo from '../assets/workout.jpg';
 import Auth from '../utils/auth';
 
 const Login = (props) => {
+  // let navigate = useNavigate();
+  //   const routeChange = () =>{
+  //     let path = `AllTraineesContainer`;
+  //     navigate(path);
+  //   }
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_TRAINER);
 
@@ -77,7 +82,7 @@ const Login = (props) => {
             {data ? (
               <p>
                 Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
+                <Link to='/'>back to the homepage.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>

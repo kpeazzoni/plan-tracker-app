@@ -21,22 +21,22 @@ const Home = () => {
           {/* Hero text */}
           <div className="hero-text">
             <div>
-              
-              <span className="stroke-text">Trainers </span>
-              <span>Meet</span>
+              <span>Plan | schedule | track <br></br>in one place</span>
+              <br></br>
+              <h2>Elevate your client tracking </h2>
             </div>
             <div>
-              <span>Your Clients Today</span>
+
             </div>
             <div>
-              <span>
-                Trainers are here for you to give you a personalized
-                training experience.
-              </span>
+
+              <p>
+              Plan Tracker is a web-based client management platform for personal trainers. This is an all-in-one space to track clients, schedule appointments, and build workout plans. The efficient layout allows for quick and easy navigation for the busy personal trainer.
+              </p>
             </div>
           </div>
           {/* experience figures */}
-          <div className="figures">
+          {/* <div className="figures">
             <div>
               <span>
                 <NumberCounter end={140} start={100} delay={4} preFix="+" />
@@ -55,7 +55,7 @@ const Home = () => {
               </span>
               <span>fitness plans</span>
             </div>
-          </div>
+          </div> */}
 
           {/* hero buttons */}
           {/* <div className="hero-buttons">

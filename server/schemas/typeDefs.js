@@ -83,7 +83,6 @@ type Mutation {
       firstName: String!, 
       lastName: String!, 
       dob: String!, 
-      trainerId: ID!
       goals: String!
       height: Int!
       injuryHistory: String!

@@ -69,8 +69,8 @@ const NewClientForm = () => {
 
       <div className='container col-8'>
         <form className="row justify-content-center formCard" >
-          <div class="input-group">
-            <span class="input-group-text">Full Name</span>
+          <div className="input-group">
+            <span className="input-group-text">Full Name</span>
             <input
               value={formState.firstName}
               name="firstName"
@@ -84,10 +84,10 @@ const NewClientForm = () => {
               onChange={handleChange}
               type="text"
               placeholder="Last"
-              class="form-control" />
+              className="form-control" />
           </div>
-          <div class="input-group">
-            <span class="input-group-text" id="basic-addon3">DOB</span>
+          <div className="input-group">
+            <span className="input-group-text" id="basic-addon3">DOB</span>
             <input
               value={formState.dob}
               name="dob"
@@ -96,8 +96,8 @@ const NewClientForm = () => {
               placeholder="DOB"
               className="form-control" />
           </div>
-          <div class="input-group">
-            <span class="input-group-text" id="basic-addon3">Height</span>
+          <div className="input-group">
+            <span className="input-group-text" id="basic-addon3">Height</span>
             <input
               value={formState.height}
               name="height"
@@ -106,8 +106,8 @@ const NewClientForm = () => {
               placeholder="in"
               className="form-control" />
           </div>
-          <div class="input-group">
-            <span class="input-group-text" id="basic-addon3">Weight</span>
+          <div className="input-group">
+            <span className="input-group-text" id="basic-addon3">Weight</span>
             <input
               value={formState.weight}
               name="weight"
@@ -116,8 +116,8 @@ const NewClientForm = () => {
               placeholder="lbs"
               className="form-control" />
           </div>
-          <div class="input-group">
-            <span class="input-group-text" >Goals</span>
+          <div className="input-group">
+            <span className="input-group-text" >Goals</span>
             <textarea
               value={formState.goal}
               name="goals"
@@ -125,8 +125,8 @@ const NewClientForm = () => {
               type="text"
               className="form-control" />
           </div>
-          <div class="input-group">
-            <span class="input-group-text" id="basic-addon3">Injury History</span>
+          <div className="input-group">
+            <span className="input-group-text" id="basic-addon3">Injury History</span>
             <textarea
               value={formState.injuryHistory}
               name="injuryHistory"
@@ -134,8 +134,8 @@ const NewClientForm = () => {
               type="text"
               className="form-control" />
           </div>
-          <div class="input-group">
-            <span class="input-group-text" id="basic-addon3">Notes</span>
+          <div className="input-group">
+            <span className="input-group-text" id="basic-addon3">Notes</span>
             <textarea
               value={formState.notes}
               name="notes"

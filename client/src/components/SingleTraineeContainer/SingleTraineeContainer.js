@@ -44,9 +44,9 @@ useEffect(() => {
   const [apptIndex, setApptIndex] = useState(0);
 
   return (
-    <div class="container singleTrainee-container text-start">
+    <div className="container singleTrainee-container text-start">
       {/* <h1>{trainee.firstName}</h1> */}
-      <div class="row">
+      <div className="row">
         <div className="col card">
         <UpdateTraineeModal />
           <h5 className="card-title">Trainee Info</h5>

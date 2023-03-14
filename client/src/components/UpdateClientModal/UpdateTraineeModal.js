@@ -70,7 +70,7 @@ function UpdateTraineeModal(props) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button className = "btn onWhite" onClick={handleShow}>
         Update Trainee
       </Button>
 
@@ -81,9 +81,9 @@ function UpdateTraineeModal(props) {
         <Modal.Body>
           <div className='container col-12'>
             <form className="row formCard" >
-              {/* <div class="mb-3"> */}
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon3">Height</span>
+              {/* <div className="mb-3"> */}
+              <div className="input-group">
+                <span className="input-group-text" id="basic-addon3">Height</span>
                 <input onChange={handleChange}
                   placeholder="in"
                   type="text"
@@ -92,8 +92,8 @@ function UpdateTraineeModal(props) {
                 />
               </div>
               {/* </div> */}
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon3">Weight</span>
+              <div className="input-group">
+                <span className="input-group-text" id="basic-addon3">Weight</span>
                 <input onChange={handleChange}
                   placeholder="lbs"
                   type="text"
@@ -101,8 +101,8 @@ function UpdateTraineeModal(props) {
                   name="weight"
                 />
               </div>
-              <div class="input-group">
-                <span class="input-group-text" >Goals</span>
+              <div className="input-group">
+                <span className="input-group-text" >Goals</span>
                 <textarea onChange={handleChange}
                   placeholder=""
                   type="text"
@@ -110,8 +110,8 @@ function UpdateTraineeModal(props) {
                   name="goals"
                 />
               </div>
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon3">Injury History</span>
+              <div className="input-group">
+                <span className="input-group-text" id="basic-addon3">Injury History</span>
                 <textarea onChange={handleChange}
                   placeholder=""
                   type="text"
@@ -119,8 +119,8 @@ function UpdateTraineeModal(props) {
                   name="injuryHistory"
                 />
               </div>
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon3">Notes</span>
+              <div className="input-group">
+                <span className="input-group-text" id="basic-addon3">Notes</span>
                 <textarea onChange={handleChange}
                   placeholder=""
                   type="text"

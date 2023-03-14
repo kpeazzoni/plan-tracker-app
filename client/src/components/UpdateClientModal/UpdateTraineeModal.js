@@ -6,7 +6,7 @@ import {useMutation} from '@apollo/client'
 import Auth from '../../utils/auth'
 
 
-function UpdateClientModal(props) {
+function UpdateTraineeModal(props) {
   const [formState, setFormState] = useState({
     firstName: '',      
     lastName: '',
@@ -76,7 +76,7 @@ function UpdateClientModal(props) {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Update Client</Modal.Title>
+          <Modal.Title>Update Trainee</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className='container col-12'>
@@ -144,5 +144,5 @@ function UpdateClientModal(props) {
   );
 }
 
-export default UpdateClientModal;
+export default UpdateTraineeModal;
 

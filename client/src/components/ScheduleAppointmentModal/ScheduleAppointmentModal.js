@@ -24,7 +24,7 @@ function ScheduleAppointmentModal(props) {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        ScheduleAppointmentModal
+        Schedule Appointment
       </Button>
 
       <Modal show={show} onHide={handleClose}>

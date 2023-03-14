@@ -16,7 +16,7 @@ const { loading, data } = useQuery(QUERY_ME);
   const schedules = data?.me.trainerSchedule || [];
   const trainees = data?.me.trainees || [];
   const todaysDate=dayjs().format('YYYY-MM-DD');
-  const todaysSchedule=schedules.filter(appointment=>appointment.startDate.slice(0, -15) == todaysDate);
+  const todaysSchedule=schedules.filter(appointment=>appointment.startDate.slice(0, -9) === todaysDate);
 
   console.log(data);
   console.log('schedules', schedules)

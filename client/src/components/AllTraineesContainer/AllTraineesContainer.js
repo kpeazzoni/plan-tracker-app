@@ -7,17 +7,20 @@ import './AllTraineesContainer.css'
 import { useParams } from 'react-router-dom';
 
 function AllTraineesContainer() {
-    const [allTrainees, setAllTrainees] = useState();
+    // const [allTrainees, setAllTrainees] = useState([]);
+
     const { loading, data } = useQuery(QUERY_TRAINEES, {
         variables: {
             trainerId: localStorage.getItem("trainer_id"),
         }
     })
-   useEffect(() =>{
-    setAllTrainees(data?.trainees)
-   }, [data]);
+//    useEffect(() =>{
+//     setAllTrainees(data?.trainees)
+//     return
+//    }, [data]);
 
-    // const allTrainees = data?.trainees || [];
+//    console.log(data)
+    const allTrainees = data?.trainees || [];
 
 
     // const [trainees, setTrainees] = useState(
@@ -40,7 +43,11 @@ function AllTraineesContainer() {
 
     return (
         <div className='allTrainees-wrapper'>
-            <AllTrainees trainees={allTrainees} />
+            {loading ? (
+                <p>Loading ....</p>
+            ) : (
+                <AllTrainees trainees={allTrainees} />
+            )}
         </div>
     )
 };

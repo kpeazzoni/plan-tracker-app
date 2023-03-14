@@ -7,6 +7,8 @@ import { useQuery } from "@apollo/client";
 import { QUERY_TRAINEE } from "../../utils/queries";
 import {useParams} from "react-router-dom";
 import UpdateTraineeModal from '../UpdateClientModal/UpdateTraineeModal'
+import ScheduleAppointmentModal from "../ScheduleAppointmentModal/ScheduleAppointmentModal";
+import EditWorkoutPlanModal from "../EditWorkoutPlanModal/EditWorkoutPlanModal";
 
 // import { QUERY_SCHEDULES } from "../../utils/queries";
 // import { QUERY_TRAINEE } from '../../utils/queries';
@@ -54,6 +56,7 @@ useEffect(() => {
           {/* <SingleTraineeInfo trainee={singleTraineeData}/> */}
         </div>
         <div className="col card overflow-scroll">
+          <ScheduleAppointmentModal />
           <h5 className="card-title">Upcoming Appointments</h5>
           <SingleTraineeAppts
             traineeAppts={traineeAppts}
@@ -61,6 +64,7 @@ useEffect(() => {
           />
         </div>
         <div className="col card">
+          <EditWorkoutPlanModal />
           <h5 className="card-title">Workout Plan</h5>
           <SingleTraineeWorkout
             traineeAppts={traineeAppts}

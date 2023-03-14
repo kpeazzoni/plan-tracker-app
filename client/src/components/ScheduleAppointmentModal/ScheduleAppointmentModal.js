@@ -34,8 +34,8 @@ function ScheduleAppointmentModal(props) {
         <Modal.Body>
           <div className='container col-8'>
             <form className="row justify-content-center formCard" >
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon3">Date</span>
+              <div className="input-group">
+                <span className="input-group-text" id="basic-addon3">Date</span>
                 <input
                   name="date"
                   onChange={handleInputChange}
@@ -43,8 +43,8 @@ function ScheduleAppointmentModal(props) {
                   placeholder="Date"
                   className="form-control" />
               </div>
-              <div class="input-group">
-                <span class="input-group-text">Time</span>
+              <div className="input-group">
+                <span className="input-group-text">Time</span>
                 <select
                   name="startTime"
                   onChange={handleInputChange}
@@ -130,8 +130,8 @@ function ScheduleAppointmentModal(props) {
                   <option>9:30pm</option>
                 </select>
               </div>
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon3">Location</span>
+              <div className="input-group">
+                <span className="input-group-text" id="basic-addon3">Location</span>
                 <input
                   name="location"
                   onChange={handleInputChange}

@@ -6,7 +6,7 @@ import Auth from '../../utils/auth'
 
 const NewClientForm = () => {
   const [formState, setFormState] = useState({
-    firstName: '',
+    firstName: '',      
     lastName: '',
     dob: '',
     height: '',
@@ -21,17 +21,17 @@ const NewClientForm = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     let intValue = value;
-
+  
     if (name === 'weight' || name === 'height') {
       intValue = parseInt(value);
     }
-
+  
     setFormState({
       ...formState,
       [name]: intValue,
     });
   };
-
+  
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
@@ -42,17 +42,17 @@ const NewClientForm = () => {
       });
 
       console.log(data);
-      // Reset the form state to clear the input data
-      setFormState({
-        firstName: '',
-        lastName: '',
-        dob: '',
-        height: '',
-        weight: '',
-        goals: '',
-        injuryHistory: '',
-        notes: '',
-      });
+    // Reset the form state to clear the input data
+    setFormState({
+      firstName: '',      
+      lastName: '',
+      dob: '',
+      height: '',
+      weight: '',
+      goals: '',
+      injuryHistory: '',
+      notes: '',
+    });
 
     } catch (e) {
       console.error(e);
@@ -62,6 +62,7 @@ const NewClientForm = () => {
   return (
     <div className='formPlacement'>
       <p className='pStyle'>
+>>>>>>>>> Temporary merge branch 2
         Add new client information:
       </p>
 

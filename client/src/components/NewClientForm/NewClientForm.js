@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './NewClientForm.css';
 import { useMutation } from '@apollo/client';
 import { ADD_TRAINEE } from '../../utils/mutations';
+import Auth from '../../utils/auth'
 
 const NewClientForm = () => {
   const [formState, setFormState] = useState({

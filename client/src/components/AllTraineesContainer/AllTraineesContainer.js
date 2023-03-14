@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { QUERY_TRAINEES } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
 
@@ -7,13 +7,17 @@ import './AllTraineesContainer.css'
 import { useParams } from 'react-router-dom';
 
 function AllTraineesContainer() {
+    const [allTrainees, setAllTrainees] = useState();
     const { loading, data } = useQuery(QUERY_TRAINEES, {
         variables: {
             trainerId: localStorage.getItem("trainer_id"),
-            traineeId: useParams()._id
         }
     })
-    const allTrainees = data?.trainees || [];
+   useEffect(() =>{
+    setAllTrainees(data?.trainees)
+   }, [data]);
+
+    // const allTrainees = data?.trainees || [];
 
 
     // const [trainees, setTrainees] = useState(

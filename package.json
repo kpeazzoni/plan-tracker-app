@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "dayjs": "^1.11.7",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "react-bootstrap-time-picker": "^2.0.1"
   }
 }

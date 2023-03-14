@@ -8,6 +8,7 @@ import { QUERY_TRAINEE } from "../../utils/queries";
 import {useParams} from "react-router-dom";
 import UpdateTraineeButtons from "../Buttons/updateTraineebuttons";
 import {Link} from 'react-router-dom'
+import UpdateClientModal from '../../components/UpdateClientModal/UpdateClientModal'
 
 // import { QUERY_SCHEDULES } from "../../utils/queries";
 // import { QUERY_TRAINEE } from '../../utils/queries';
@@ -47,7 +48,7 @@ useEffect(() => {
       {/* <h1>{trainee.firstName}</h1> */}
       <div class="row">
         <div className="col card">
-        <Link to="/updateclientmodal"><UpdateTraineeButtons /></Link>
+        <UpdateClientModal />
           <h5 className="card-title">Trainee Info</h5>
           {trainee && (
             <SingleTraineeInfo trainee={trainee} />

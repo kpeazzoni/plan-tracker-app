@@ -71,7 +71,7 @@ function UpdateClientModal(props) {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        UpdateClientModal
+        Update Trainee
       </Button>
 
       <Modal show={show} onHide={handleClose}>

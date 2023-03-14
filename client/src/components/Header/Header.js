@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import Logo from "../../assets/logoGray.png";
 import "./Header.css";
 // import Bars from "../../assets/PlanTracker.png";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Auth from '../../utils/auth';
 // import Button from 'react-bootstrap/Button';
-// import { Link } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -13,7 +12,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 
 
 const Header = () => {
-
+  const [expanded, setExpanded] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -25,28 +24,32 @@ const Header = () => {
        />
 
       
-      <ul className="navbar">
           {Auth.loggedIn() ? (
-            <Navbar expand="false" className="mb-3">
+            <Navbar expand="false" expanded={expanded} className="mb-3">
             <Container fluid>
-              <button onClick={(event) => navigate('/homepagecontainer')} className='btn'>Home</button>
-              <button onClick={Auth.logout} className='btn' id="logout">Logout</button>
-              <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-false`} />
+              <button onClick={(event) => navigate('/homepagecontainer')} className='btn hide-on-md'>Home</button>
+              <button onClick={Auth.logout} className='btn hide-on-md' id="logout">Logout</button>
+              <Navbar.Toggle aria-controls="offcanvasNavbar-expand-false"  onClick={() => setExpanded(expanded ? false : "expanded")} />
               <Navbar.Offcanvas
-                id={`offcanvasNavbar-expand-false`}
-                aria-labelledby={`offcanvasNavbarLabel-expand-false`}
+                id="offcanvasNavbar-expand-false"
+                aria-labelledby="offcanvasNavbarLabel-expand-false"
                 placement="end"
               >
-                <Offcanvas.Header closeButton>
-                  <Offcanvas.Title id={`offcanvasNavbarLabel-expand-false`}>
+                <Offcanvas.Header>
+                  <Offcanvas.Title id="offcanvasNavbarLabel-expand-false">
                     Navigation
                   </Offcanvas.Title>
+                  <button className="btn-close" onClick={() => setExpanded(false)} />
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                  <Nav className="justify-content-end flex-grow-1 pe-3">
-                    <Nav.Link href="/newclientform">Add Client</Nav.Link>
-                    <Nav.Link href="/alltraineescontainer">View All Clients</Nav.Link>
-                    <Nav.Link href="/schedule">View Full Schedule</Nav.Link>
+                  <Nav className="justify-content-end flex-grow-1 pe-3" onClick={() => setExpanded(false)}>
+                    <Nav.Link as={Link} to="/newclientform">Add Client</Nav.Link>
+                    <Nav.Link as={Link} to="/alltraineescontainer">View All Clients</Nav.Link>
+                    <Nav.Link as={Link} to="/schedule">View Full Schedule</Nav.Link>
+                    <div>
+                    <Link to="/homepagecontainer"><button className='btn show-on-md'>Home</button></Link>
+                    <button onClick={Auth.logout} className='btn show-on-md' id="logout">Logout</button>
+                    </div>
                   </Nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
@@ -58,7 +61,6 @@ const Header = () => {
             <button onClick={(event) => navigate('/login')} className='btn'>Login</button>
             </>
           )}
-      </ul>
       
     </div>
   )

@@ -56,7 +56,9 @@
     transition: all 150ms ease-in-out;
   }
 
-
+  .show-on-md {
+    display: none;
+}
 
 #logout {
     background-color: rgb(210, 82, 82);
@@ -72,15 +74,10 @@
 }
 
 @media screen and (max-width: 767px) {
-    .header>:nth-child(2) {
-        position: fixed;
-        right: 2rem;
-        z-index: 99;
+    .hide-on-md {
+        display: none;
     }
-
-    .header-menu {
-        flex-direction: column;
-        background-color: var(--appColor);
-        padding: 2rem;
+    .show-on-md {
+        display: inline-block;
     }
 }

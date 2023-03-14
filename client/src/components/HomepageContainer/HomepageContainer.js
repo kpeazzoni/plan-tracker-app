@@ -15,6 +15,7 @@ export default function HomepageContainer() {
 
   const schedules = data?.me.trainerSchedule || [];
   const trainees = data?.me.trainees || [];
+  const firstName = data?.me.firstName || "";
   const todaysDate = dayjs().format('YYYY-MM-DD');
   const todaysSchedule = schedules.filter(appointment => appointment.startDate.slice(0, -9) === todaysDate);
 
@@ -45,23 +46,26 @@ export default function HomepageContainer() {
   //   );
 
   return (
-    <div className="homepageContainer-wrapper">
-      <aside className="col-md-4">
+   <main>
+    <h1 className="welcome">Welcome,{firstName}!</h1>
+    <h3 className="date">{todaysDate}</h3>
+    <div className="homepageContainer-wrapper ">
+      
+      <aside className="col-md-4 mb-auto mx-auto">
+      {/* <div className="col-align-self-center"> */}
         <div className="appointments-container">
-
+          
           <h3 className="card-heading">Today's Appointments</h3>
           {todaysSchedule ? (<AppointmentsCards appointments={todaysSchedule} />) : (<h2>Your Schedule is Clear!</h2>)}
         </div>
+      {/* </div> */}
       </aside>
 
 
-      <aside className="col-md-4">
+      <aside className="col-md-4 mb-auto mx-auto">
         <div className="trainees-container">
-          <div className="d-flex flex-row mb-3">
-
-
-          </div>
-          <h3 className="card-heading">Trainees</h3>
+         
+          <h3 className="card-heading">Clients</h3>
           {loading ? (
             <div>Loading...</div>
           ) : (
@@ -69,13 +73,25 @@ export default function HomepageContainer() {
           )}
         </div>
       </aside>
-      <aside className="col-md-3">
-        <Link to="/schedule"><FullscheduleButtons /></Link>
-        <Link to="/newclientform"><AddTraineeButtons />
-        </Link>
-        <Link to="/AllTraineesContainer"><ViewallTraineesButtons />
-            </Link>
+      
+      
+      
+      <aside className="col-md-4 mb-auto mx-auto">
+       <div className= "action-container">
+
+        <h3 className="card-heading">Action Center</h3>
+          
+          <div className="links">
+           <Link to="/schedule"><FullscheduleButtons /></Link>
+           <Link to="/newclientform"><AddTraineeButtons /></Link>
+           <Link to="/AllTraineesContainer"><ViewallTraineesButtons /></Link>
+          </div>
+
+       </div>
+
       </aside>
+  
     </div>
+  </main>
   );
 }

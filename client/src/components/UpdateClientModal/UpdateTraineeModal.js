@@ -1,38 +1,82 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { ADD_DEMOGRAPHICS } from '../../utils/mutations';
+import {useMutation} from '@apollo/client'
+import Auth from '../../utils/auth'
 
 
-function UpdateClientModal(props) {
+function UpdateTraineeModal(props) {
+  const [formState, setFormState] = useState({
+    firstName: '',      
+    lastName: '',
+    dob: '',
+    height: '',
+    weight: '',
+    goals: '',
+    injuryHistory: '',
+    notes: '',
+  });
+  
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const handleInputChange = (e) => {
-    // Getting the value and name of the input which triggered the change
-    // const { name, value } = e.target;
-  }
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+  // const handleInputChange = (e) => {
+  //   // Getting the value and name of the input which triggered the change
+  //   // const { name, value } = e.target;
+  // }
+  const [addDemographics] = useMutation(ADD_DEMOGRAPHICS)
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    let intValue = value;
+  
+    if (name === 'weight' || name === 'height') {
+      intValue = parseInt(value);
+    }
+  
+    setFormState({
+      ...formState,
+      [name]: intValue,
+    });
   };
-  // const firstName = ""      
-  // const lastName = ""
-  // const dob = ""
-  // const height =""
-  // const weight = ""
-  // const goals = ""
-  // const injuryHistory = ""
-  // const notes = ""
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+
+    try {
+      const { data } = await addDemographics({
+        variables: { ...formState },
+      });
+
+      console.log(data);
+    // Reset the form state to clear the input data
+    setFormState({
+      firstName: '',      
+      lastName: '',
+      dob: '',
+      height: '',
+      weight: '',
+      goals: '',
+      injuryHistory: '',
+      notes: '',
+    });
+
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        UpdateClientModal
+        Update Trainee
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Update Client</Modal.Title>
+          <Modal.Title>Update Trainee</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className='container col-12'>
@@ -40,7 +84,7 @@ function UpdateClientModal(props) {
               {/* <div class="mb-3"> */}
               <div class="input-group">
                 <span class="input-group-text" id="basic-addon3">Height</span>
-                <input onChange={handleInputChange}
+                <input onChange={handleChange}
                   placeholder="in"
                   type="text"
                   className="form-control"
@@ -50,7 +94,7 @@ function UpdateClientModal(props) {
               {/* </div> */}
               <div class="input-group">
                 <span class="input-group-text" id="basic-addon3">Weight</span>
-                <input onChange={handleInputChange}
+                <input onChange={handleChange}
                   placeholder="lbs"
                   type="text"
                   className="form-control"
@@ -59,7 +103,7 @@ function UpdateClientModal(props) {
               </div>
               <div class="input-group">
                 <span class="input-group-text" >Goals</span>
-                <textarea onChange={handleInputChange}
+                <textarea onChange={handleChange}
                   placeholder=""
                   type="text"
                   className="form-control"
@@ -68,7 +112,7 @@ function UpdateClientModal(props) {
               </div>
               <div class="input-group">
                 <span class="input-group-text" id="basic-addon3">Injury History</span>
-                <textarea onChange={handleInputChange}
+                <textarea onChange={handleChange}
                   placeholder=""
                   type="text"
                   className="form-control"
@@ -77,7 +121,7 @@ function UpdateClientModal(props) {
               </div>
               <div class="input-group">
                 <span class="input-group-text" id="basic-addon3">Notes</span>
-                <textarea onChange={handleInputChange}
+                <textarea onChange={handleChange}
                   placeholder=""
                   type="text"
                   className="form-control"
@@ -100,5 +144,5 @@ function UpdateClientModal(props) {
   );
 }
 
-export default UpdateClientModal;
+export default UpdateTraineeModal;
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './NewClientForm.css';
 import { useMutation } from '@apollo/client';
 import { ADD_TRAINEE } from '../../utils/mutations';
+
 import Auth from '../../utils/auth'
 
 const NewClientForm = () => {
@@ -62,7 +63,6 @@ const NewClientForm = () => {
   return (
     <div className='formPlacement'>
       <p className='pStyle'>
->>>>>>>>> Temporary merge branch 2
         Add new client information:
       </p>
 
@@ -147,7 +147,7 @@ const NewClientForm = () => {
           </div>
 
 
-          <button type="button" onClick={handleFormSubmit} className='buttonStyle'>
+          <button type="btn" onClick={handleFormSubmit} className='buttonStyle'>
             Submit
           </button>
         </form>

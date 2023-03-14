@@ -32,7 +32,7 @@ function ViewallTraineesButtons() {
     }
     return (
         <div>
-          <button className='buttons' onClick={routeChange}>
+          <button className='btn onWhite' onClick={routeChange}>
           View All Trainees
           </button> 
         </div>

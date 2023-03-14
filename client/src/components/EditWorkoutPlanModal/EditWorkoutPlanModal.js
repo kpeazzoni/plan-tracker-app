@@ -135,7 +135,7 @@ async function isShoulders() {
     return (
     <>
     <Button variant="primary" onClick={handleShow}>
-      EditWorkoutPlanModal
+      Edit Workout Plan
     </Button>
 
     <Modal show={show} onHide={handleClose}>

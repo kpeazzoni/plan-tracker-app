@@ -53,7 +53,7 @@ const state = {timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,}
         defaultCurrentView="week"
         defaultCurrentDate={currentDate}
         height={700}
-        startDayHour={13} />
+        startDayHour={9} />
         </>
     );
 }

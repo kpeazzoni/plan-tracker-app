@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { QUERY_ME } from "../utils/queries";
 import { useQuery } from "@apollo/client";
 import 'devextreme/dist/css/dx.light.css';
@@ -30,16 +30,22 @@ function Schedule() {
 // console.log(appointments[0].startDate)
 // const currentDate = new Date(2021, 2, 28);
 // console.log(currentDate)
-const { loading, data } = useQuery(QUERY_ME);
 
-const schedules = data?.me.trainerSchedule || [];
-console.log(schedules)
+const [schedules, setSchedules] = useState([]);
+
+const { data, error } = useQuery(QUERY_ME);
+useEffect(() => {
+    setSchedules(data?.me.trainerSchedule)
+}, [data]);
+
+console.log(schedules);
 
 const currentDate = Date.now();
 const views = ['week', 'month'];
 const state = {timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,}
 
     return (
+        <>
         <Scheduler
         timeZone={state.timeZone}
         dataSource={schedules}
@@ -47,7 +53,8 @@ const state = {timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,}
         defaultCurrentView="week"
         defaultCurrentDate={currentDate}
         height={700}
-        startDayHour={9} />
+        startDayHour={13} />
+        </>
     );
 }
  

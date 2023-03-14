@@ -1,7 +1,7 @@
 [
     {
-        "startDate": "2023-03-13T16:00:00+06:00",
-        "endDate": "2023-03-13T17:00:00+06:00",
+        "startDate": "2023-03-13T16:00:00",
+        "endDate": "2023-03-13T17:00:00",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -37,8 +37,8 @@
         ]
     },
     {
-        "startDate": "2023-03-13T14:00:00+06:00",
-        "endDate": "2023-03-13T15:00:00+06:00",
+        "startDate": "2023-03-13T14:00:00",
+        "endDate": "2023-03-13T15:00:00",
         "workouts": [
             {
                 "muscleGroup": "Arms",
@@ -73,8 +73,8 @@
         ]
     },
     {
-        "startDate": "2023-03-14T16:00:00+06:00",
-        "endDate": "2023-03-14T17:00:00+06:00",
+        "startDate": "2023-03-14T16:00:00",
+        "endDate": "2023-03-14T17:00:00",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -110,82 +110,8 @@
         ]
     },
     {
-        "startDate": "2023-03-14T14:00:00+06:00",
-        "endDate": "2023-03-14T15:00:00+06:00",
-        "location": "LA Fitness",
-        "workouts": [
-            {
-                "muscleGroup": "Arms",
-                "exerciseName": "Sling Shot Incline",
-                "sets": "2",
-                "reps": "4",
-                "weight": "",
-                "distanceOrTime": "",
-                "equipmentReq": "",
-                "notes": ""
-            },
-            {
-                "muscleGroup": "Arms",
-                "exerciseName": "Bicep Curl (barbell )",
-                "sets": "6",
-                "reps": "3",
-                "weight": "",
-                "distanceOrTime": "",
-                "equipmentReq": "",
-                "notes": ""
-            },
-            {
-                "muscleGroup": "Arms",
-                "exerciseName": "Rope Never Ending",
-                "sets": "5",
-                "reps": "2",
-                "weight": "",
-                "distanceOrTime": "",
-                "equipmentReq": "",
-                "notes": ""
-            }
-        ]
-    },
-    {
-        "startDate": "2023-03-15T16:00:00+06:00",
-        "endDate": "2023-03-15T17:00:00+06:00",
-        "location": "LA Fitness",
-        "workouts": [
-            {
-                "muscleGroup": "Legs",
-                "exerciseName": "Cycling",
-                "sets": "2",
-                "reps": "4",
-                "weight": "",
-                "distanceOrTime": "",
-                "equipmentReq": "",
-                "notes": ""
-            },
-            {
-                "muscleGroup": "Legs",
-                "exerciseName": "Deadlift",
-                "sets": "6",
-                "reps": "3",
-                "weight": "",
-                "distanceOrTime": "",
-                "equipmentReq": "",
-                "notes": ""
-            },
-            {
-                "muscleGroup": "Legs",
-                "exerciseName": "Rack Pull",
-                "sets": "5",
-                "reps": "2",
-                "weight": "",
-                "distanceOrTime": "",
-                "equipmentReq": "",
-                "notes": ""
-            }
-        ]
-    },
-    {
-        "startDate": "2023-03-15T14:00:00+06:00",
-        "endDate": "2023-03-15T15:00:00+06:00",
+        "startDate": "2023-03-14T14:00:00",
+        "endDate": "2023-03-14T15:00:00",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -221,8 +147,9 @@
         ]
     },
     {
-        "startDate": "2023-03-16T16:00:00+06:00",
-        "endDate": "2023-03-16T17:00:00+06:00",
+        "startDate": "2023-03-15T16:00:00",
+        "endDate": "2023-03-15T17:00:00",
+        "location": "LA Fitness",
         "workouts": [
             {
                 "muscleGroup": "Legs",
@@ -257,8 +184,81 @@
         ]
     },
     {
-        "startDate": "2023-03-16T14:00:00+06:00",
-        "endDate": "2023-03-16T15:00:00+06:00",
+        "startDate": "2023-03-15T14:00:00",
+        "endDate": "2023-03-15T15:00:00",
+        "location": "LA Fitness",
+        "workouts": [
+            {
+                "muscleGroup": "Arms",
+                "exerciseName": "Sling Shot Incline",
+                "sets": "2",
+                "reps": "4",
+                "weight": "",
+                "distanceOrTime": "",
+                "equipmentReq": "",
+                "notes": ""
+            },
+            {
+                "muscleGroup": "Arms",
+                "exerciseName": "Bicep Curl (barbell )",
+                "sets": "6",
+                "reps": "3",
+                "weight": "",
+                "distanceOrTime": "",
+                "equipmentReq": "",
+                "notes": ""
+            },
+            {
+                "muscleGroup": "Arms",
+                "exerciseName": "Rope Never Ending",
+                "sets": "5",
+                "reps": "2",
+                "weight": "",
+                "distanceOrTime": "",
+                "equipmentReq": "",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "startDate": "2023-03-16T16:00:00",
+        "endDate": "2023-03-16T17:00:00",
+        "workouts": [
+            {
+                "muscleGroup": "Legs",
+                "exerciseName": "Cycling",
+                "sets": "2",
+                "reps": "4",
+                "weight": "",
+                "distanceOrTime": "",
+                "equipmentReq": "",
+                "notes": ""
+            },
+            {
+                "muscleGroup": "Legs",
+                "exerciseName": "Deadlift",
+                "sets": "6",
+                "reps": "3",
+                "weight": "",
+                "distanceOrTime": "",
+                "equipmentReq": "",
+                "notes": ""
+            },
+            {
+                "muscleGroup": "Legs",
+                "exerciseName": "Rack Pull",
+                "sets": "5",
+                "reps": "2",
+                "weight": "",
+                "distanceOrTime": "",
+                "equipmentReq": "",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "startDate": "2023-03-16T14:00:00",
+        "endDate": "2023-03-16T15:00:00",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -294,8 +294,8 @@
         ]
     },
     {
-        "startDate": "2023-03-17T16:00:00+06:00",
-        "endDate": "2023-03-17T17:00:00+06:00",
+        "startDate": "2023-03-17T16:00:00",
+        "endDate": "2023-03-17T17:00:00",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -321,8 +321,8 @@
         ]
     },
     {
-        "startDate": "2023-03-17T14:00:00+06:00",
-        "endDate": "2023-03-17T15:00:00+06:00",
+        "startDate": "2023-03-17T14:00:00",
+        "endDate": "2023-03-17T15:00:00",
         "workouts": [
             {
                 "muscleGroup": "Legs",
@@ -357,8 +357,8 @@
         ]
     },
     {
-        "startDate": "2023-03-18T16:00:00+06:00",
-        "endDate": "2023-03-18T17:00:00+06:00",
+        "startDate": "2023-03-18T16:00:00",
+        "endDate": "2023-03-18T17:00:00",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -394,8 +394,8 @@
         ]
     },
     {
-        "startDate": "2023-03-18T14:00:00+06:00",
-        "endDate": "2023-03-18T15:00:00+06:00",
+        "startDate": "2023-03-18T14:00:00",
+        "endDate": "2023-03-18T15:00:00",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -431,8 +431,8 @@
         ]
     },
     {
-        "startDate": "2023-03-19T16:00:00+06:00",
-        "endDate": "2023-03-19T17:00:00+06:00",
+        "startDate": "2023-03-19T16:00:00",
+        "endDate": "2023-03-19T17:00:00",
         "workouts": [
             {
                 "muscleGroup": "Legs",
@@ -467,8 +467,8 @@
         ]
     },
     {
-        "startDate": "2023-03-19T14:00:00+06:00",
-        "endDate": "2023-03-19T15:00:00+06:00",
+        "startDate": "2023-03-19T14:00:00",
+        "endDate": "2023-03-19T15:00:00",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -504,8 +504,8 @@
         ]
     },
     {
-        "startDate": "2023-03-20T16:00:00+06:00",
-        "endDate": "2023-03-20T17:00:00+06:00",
+        "startDate": "2023-03-20T16:00:00",
+        "endDate": "2023-03-20T17:00:00",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -541,8 +541,8 @@
         ]
     },
     {
-        "startDate": "2023-03-20T14:00:00+06:00",
-        "endDate": "2023-03-20T15:00:00+06:00",
+        "startDate": "2023-03-20T14:00:00",
+        "endDate": "2023-03-20T15:00:00",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -578,8 +578,8 @@
         ]
     },
     {
-        "startDate": "2023-03-21T16:00:00+06:00",
-        "endDate": "2023-03-21T17:00:00+06:00",
+        "startDate": "2023-03-21T16:00:00",
+        "endDate": "2023-03-21T17:00:00",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -615,8 +615,8 @@
         ]
     },
     {
-        "startDate": "2023-03-21T14:00:00+06:00",
-        "endDate": "2023-03-21T15:00:00+06:00",
+        "startDate": "2023-03-21T14:00:00",
+        "endDate": "2023-03-21T15:00:00",
         "location": "LA Fitness",
         "workouts": [
             {
@@ -652,13 +652,13 @@
         ]
     },
     {
-        "startDate": "2023-03-22T16:00:00+06:00",
-        "endDate": "2023-03-22T17:00:00+06:00",
+        "startDate": "2023-03-22T16:00:00",
+        "endDate": "2023-03-22T17:00:00",
         "workouts": []
     },
     {
-        "startDate": "2023-03-22T14:00:00+06:00",
-        "endDate": "2023-03-22T15:00:00+06:00",
+        "startDate": "2023-03-22T14:00:00",
+        "endDate": "2023-03-22T15:00:00",
         "location": "LA Fitness",
         "workouts": []
     }

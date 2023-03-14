@@ -25,7 +25,8 @@
     background-color: #0A99B1;
     border: 2px solid #0A99B1;
     color: white;
-    width: 109px;
+    /* width: 109px; */
+    width: auto;
     font-size: 16px;
     font-weight: 600;
     padding: 10px 20px;
@@ -46,6 +47,17 @@
     transition: all 150ms ease-in-out;
   }
   
+  .onWhite:hover {
+    cursor: pointer;
+    background-color: transparent;
+    color: black;
+    border: 2px solid #0A99B1;
+    box-shadow: 0 0 10px 0 #0A99B1 inset, 0 0 10px 4px #0A99B1;
+    transition: all 150ms ease-in-out;
+  }
+
+
+
 #logout {
     background-color: rgb(210, 82, 82);
     border: 2px solid rgb(210, 82, 82);

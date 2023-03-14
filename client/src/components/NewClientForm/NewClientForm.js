@@ -63,6 +63,7 @@ const NewClientForm = () => {
   return (
     <div className='formPlacement'>
       <p className='pStyle'>
+        Add new client information:
       </p>
 
 

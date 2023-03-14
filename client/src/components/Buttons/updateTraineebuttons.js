@@ -1,6 +1,7 @@
 import React from 'react';
 import './buttons.css';
 
+
 // const styles = {
 //     buttonStyle: {
 //       backgroundColor: '#6cb4ac',
@@ -23,7 +24,7 @@ alert('form submitted');
 }
 
 
-function UpdateButtons() {
+function UpdateTraineeButtons() {
     return (
         <div>
           <button className='buttons' onClick={handleupdate}>
@@ -33,4 +34,4 @@ function UpdateButtons() {
     )
 }
 
-export default UpdateButtons;
+export default UpdateTraineeButtons;

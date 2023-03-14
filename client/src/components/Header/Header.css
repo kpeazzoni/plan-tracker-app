@@ -8,7 +8,7 @@
     width: 10rem;
     height: 3rem;
 } */
-
+/* 
 .header-menu {
     list-style: none;
     display: flex;
@@ -19,7 +19,29 @@
 .header-menu>li:hover {
     color: var(--orange);
     cursor: pointer
+} */
+
+.navbar-toggler {
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    font-size: 24px;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+    margin: 1rem;
+    color: #00000069;
 }
+
+.navbar-toggler:focus {
+    box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.6);
+}
+
+.navbar-toggler:hover {
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px 0 #fff inset, 0 0 10px 4px #fff;
+    transition: all 150ms ease-in-out;
+  }
 
 .btn {
     background-color: #0A99B1;

@@ -138,17 +138,14 @@ function ScheduleAppointmentModal(props) {
                   type="text"
                   className="form-control" />
               </div>
-              <button type="btn onWhite" onClick={handleFormSubmit} className='buttonStyle'>
-                Submit
-              </button>
             </form>
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button className="btn onWhite" onClick={handleClose}>
+          <Button className= "btn onWhite" onClick={handleClose}>
             Close
           </Button>
-          <Button className="btn onWhite" onClick={handleFormSubmit}>
+          <Button className = "btn onWhite" onClick={handleFormSubmit}>
             Save Changes
           </Button>
         </Modal.Footer>

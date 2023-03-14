@@ -8,8 +8,8 @@ const NewClientForm = () => {
     firstName: '',      
     lastName: '',
     dob: '',
-    height: 0,
-    weight: 0,
+    height: '',
+    weight: '',
     goals: '',
     injuryHistory: '',
     notes: '',
@@ -17,14 +17,22 @@ const NewClientForm = () => {
 
   const [addTrainee] = useMutation(ADD_TRAINEE);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    let intValue = value;
+  
+    if (name === 'weight' || name === 'height') {
+      intValue = parseInt(value);
+    }
+  
     setFormState({
       ...formState,
-      [name]: value,
+      [name]: intValue,
     });
   };
+  
+
+    
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -76,7 +84,7 @@ const NewClientForm = () => {
             /></p>
             <p className='pStyle'>Height:
             <input value={formState.height} name="height" 
-            onChange={handleChange} type="number" 
+            onChange={handleChange} type="text" 
             placeholder="in" 
             className='inputStyle'
             /></p>
@@ -85,7 +93,7 @@ const NewClientForm = () => {
             value={formState.weight} 
             name="weight" 
             onChange={handleChange} 
-            type="number" 
+            type="text" 
             placeholder="lbs" 
             className='inputStyle'
             /></p>

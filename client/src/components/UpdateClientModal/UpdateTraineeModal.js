@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { ADD_DEMOGRAPHICS } from '../../utils/mutations';
 import {useMutation} from '@apollo/client'
 import Auth from '../../utils/auth'
-
+import {useParams} from 'react-router-dom';
+import {useQuery} from '@apollo/client';
+import {QUERY_TRAINEE} from '../../utils/queries'
 
 function UpdateTraineeModal(props) {
+  const [trainee, setTrainee] = useState();
+
   const [formState, setFormState] = useState({
     firstName: '',      
     lastName: '',
@@ -17,14 +21,18 @@ function UpdateTraineeModal(props) {
     injuryHistory: '',
     notes: '',
   });
+  const { data, error } = useQuery(QUERY_TRAINEE, {
+    variables: {
+      traineeId: useParams().traineeId
+    },
+  });
+  useEffect(() => {
+    setTrainee(data?.trainee)
+  }, [data]);
   
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  // const handleInputChange = (e) => {
-  //   // Getting the value and name of the input which triggered the change
-  //   // const { name, value } = e.target;
-  // }
   const [addDemographics] = useMutation(ADD_DEMOGRAPHICS)
   
   const handleChange = (e) => {

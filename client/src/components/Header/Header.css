@@ -9,20 +9,16 @@
     height: 3rem;
 } */
 
-/* .header-menu {
+.header-menu {
     list-style: none;
     display: flex;
     gap: 2rem;
     color: white;
-} */
+}
 
-/* .header-menu>li:hover {
+.header-menu>li:hover {
     color: var(--orange);
     cursor: pointer
-} */
-
-.show-on-md {
-    display: none;
 }
 
 .btn {
@@ -60,7 +56,9 @@
     transition: all 150ms ease-in-out;
   }
 
-
+  .show-on-md {
+    display: none;
+}
 
 #logout {
     background-color: rgb(210, 82, 82);

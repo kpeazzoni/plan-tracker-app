@@ -4,10 +4,10 @@
     margin: 1rem;
 }
 
-.logo {
+/* .logo {
     width: 10rem;
     height: 3rem;
-}
+} */
 
 .header-menu {
     list-style: none;
@@ -21,18 +21,42 @@
     cursor: pointer
 }
 
-#logout {
-    background-color: rgb(210, 82, 82);
+.btn {
+    background-color: #0A99B1;
+    border: 2px solid #0A99B1;
     color: white;
+    width: 109px;
     font-size: 16px;
+    font-weight: 600;
     padding: 10px 20px;
     border-radius: 5px;
-    margin: 10px 0;
+    margin: 1rem;
     outline: none;
     cursor: pointer;
     text-transform: uppercase;
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+    
+  }
+  .btn:hover {
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: 2px solid #0A99B1;
+    box-shadow: 0 0 10px 0 #0A99B1 inset, 0 0 10px 4px #0A99B1;
+    transition: all 150ms ease-in-out;
+  }
+  
+#logout {
+    background-color: rgb(210, 82, 82);
+    border: 2px solid rgb(210, 82, 82);
+}
 
+#logout:hover {
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgb(210, 82, 82);
+    box-shadow: 0 0 10px 0 rgb(210, 82, 82) inset, 0 0 10px 4px rgb(210, 82, 82);
 }
 
 @media screen and (max-width: 767px) {

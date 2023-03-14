@@ -8,6 +8,11 @@ body {
 
 }
 
+.logo {
+  width: 12rem;
+  height: 4rem;
+}
+
 h1, h2, h3 {
   font-family: 'Bebas Neue', cursive;
   text-align: start;
@@ -16,6 +21,7 @@ h1, h2, h3 {
 p, ul, li {
   text-align: start;
 }
-code {
-  /* font-family:'Fredoka One' !important; */
-}
+
+/* code {
+  font-family:'Fredoka One' !important;
+} */

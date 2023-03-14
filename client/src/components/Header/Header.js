@@ -45,7 +45,7 @@ const Header = () => {
                 <Offcanvas.Body>
                   <Nav className="justify-content-end flex-grow-1 pe-3">
                     <Nav.Link href="/newclientform">Add Client</Nav.Link>
-                    <Nav.Link href="/alltraineecontainer">View All Clients</Nav.Link>
+                    <Nav.Link href="/alltraineescontainer">View All Clients</Nav.Link>
                     <Nav.Link href="/schedule">View Full Schedule</Nav.Link>
                   </Nav>
                 </Offcanvas.Body>

@@ -6,7 +6,8 @@
     border: 1px solid var(--lightgray);
 }
 .footer {
-  padding: 1rem 2rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -23,9 +24,9 @@
   height: 2rem;
   cursor: pointer;
 }
-.logo-f>img{
+/* .logo-f>img{
     width: 10rem;
-}
+} */
 /* .Footer-container>:nth-child(3)
 {
     bottom: 0;

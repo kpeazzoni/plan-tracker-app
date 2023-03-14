@@ -36,7 +36,7 @@
     padding: 1rem 2rem;
 }
 .email-container>input{
-    background-color: transparent;
+    /* background-color: transparent; */
     border: none;
     outline: none;
     color: var(--lightgray)

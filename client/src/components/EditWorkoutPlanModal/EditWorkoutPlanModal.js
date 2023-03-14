@@ -134,7 +134,7 @@ async function isShoulders() {
       // const notes = ""
     return (
     <>
-    <Button variant="primary" onClick={handleShow}>
+    <Button className = 'btn onWhite' onClick={handleShow}>
       Edit Workout Plan
     </Button>
 

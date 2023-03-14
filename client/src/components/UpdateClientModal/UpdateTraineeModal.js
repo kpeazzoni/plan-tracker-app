@@ -70,7 +70,7 @@ function UpdateTraineeModal(props) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button className = "btn onWhite" onClick={handleShow}>
         Update Trainee
       </Button>
 

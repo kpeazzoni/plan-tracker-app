@@ -23,7 +23,7 @@ function ScheduleAppointmentModal(props) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button className = 'btn onWhite' onClick={handleShow}>
         Schedule Appointment
       </Button>
 

@@ -12,7 +12,7 @@ class AuthService {
   // return `true` or `false` if token exists (does not verify if it's expired yet)
   loggedIn() {
     const token = this.getToken();
-    return token ? true : false;
+    return token && !this.isTokenExpired(token) ? true : false;
   }
 
   getToken() {
@@ -42,13 +42,11 @@ class AuthService {
   }
 
   logout() {
-    // const navigate = useNavigate();
-    // // Clear user token and profile data from localStorage
+    // Clear user token and profile data from localStorage
     localStorage.removeItem("id_token");
     localStorage.removeItem("trainer_id");
-    // this will reload the page and reset the state of the application
-    window.location.reload();
-    // navigate('/login');
+    // this will relocate to the home page
+    window.location.assign("/");
   }
 }
 

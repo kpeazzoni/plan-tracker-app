@@ -2,63 +2,47 @@ import React, { useState } from 'react';
 import './NewClientForm.css';
 import { useMutation } from '@apollo/client';
 import { ADD_TRAINEE } from '../../utils/mutations';
+import Auth from '../../utils/auth'
 
 const NewClientForm = () => {
-  const [formState, setFormState] = useState({
-    firstName: '',      
-    lastName: '',
-    dob: '',
-    height: '',
-    weight: '',
-    goals: '',
-    injuryHistory: '',
-    notes: '',
-  });
+   
+        const [formState, setFormState] = useState({
+            firstName:'',      
+            lastName: '',
+            dob: '',
+            height: '',
+            weight: '',
+            goals: '',
+            injuryHistory: '',
+            notes: '',
+        });
+        const [addTrainee] = useMutation(ADD_TRAINEE);
+      
+        const handleChange = (event) => {
+          const { name, value } = event.target;
+      
+          setFormState({
+            ...formState,
+            [name]: value,
+          });
+        };
+      
+        const handleFormSubmit = async (event) => {
+          event.preventDefault();
+          console.log(formState);
+      
+          try {
+            const { data } = await addTrainee({
+              variables: { ...formState },
+            });
+      
+            Auth.login(data.login.token);
+          } catch (e) {
+            console.error(e);
+          }
+        };
 
-  const [addTrainee] = useMutation(ADD_TRAINEE);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    let intValue = value;
-  
-    if (name === 'weight' || name === 'height') {
-      intValue = parseInt(value);
-    }
-  
-    setFormState({
-      ...formState,
-      [name]: intValue,
-    });
-  };
-  
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    console.log(formState);
-
-    try {
-      const { data } = await addTrainee({
-        variables: { ...formState },
-      });
-
-      console.log(data);
-    // Reset the form state to clear the input data
-    setFormState({
-      firstName: '',      
-      lastName: '',
-      dob: '',
-      height: '',
-      weight: '',
-      goals: '',
-      injuryHistory: '',
-      notes: '',
-    });
-
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
-  return (
+return (
 <div className='formPlacement'>
     <p className='pStyle'>
         Add new client information:

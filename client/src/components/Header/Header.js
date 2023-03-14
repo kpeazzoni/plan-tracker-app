@@ -34,14 +34,9 @@ const Header = () => {
       <ul className="navbar">
         {/* <li> */}
         {/* <Join /> */}
-          {/* <button onClick={(event) => navigate('/homepagecontainer')} className='btn'>Home</button>
-          <button onClick={(event) => navigate('/register')} className='btn'>Register</button> */}
-          {!localStorage.id_token ? (
-            <button onClick={(event) => navigate('/register')} className='btn'>Register</button>
-
-          ) : (
-            <button onClick={(event) => navigate('/homepagecontainer')} className='btn'>Home</button>
-          )}          
+          <button onClick={(event) => navigate('/homepagecontainer')} className='btn'>Home</button>
+          <button onClick={(event) => navigate('/register')} className='btn'>Register</button>
+          
           {!localStorage.id_token ? (
             <button onClick={(event) => navigate('/login')} className='btn'>Login</button>
 

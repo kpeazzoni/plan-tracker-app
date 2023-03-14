@@ -37,32 +37,6 @@ function UpdateClientModal(props) {
       <Modal.Body>
       <div className = 'container col-8'>
          <form className="row justify-content-center formCard" >
-             <p className=''>Name:
-            <input 
-            // value= {firstName}
-            name="firstName" 
-            onChange={handleInputChange} 
-            type="text"
-            placeholder="First Name"
-            className='inputStyle'
-            />
-            <input 
-            // value={lastName} 
-            name="lastName" 
-            onChange={handleInputChange} 
-            type="text" 
-            placeholder="Last Name"
-            className='inputStyle' 
-            /> </p>
-            <p className=''>DOB:
-            <input 
-            // value={dob} 
-            name="dob" 
-            onChange={handleInputChange} 
-            type="Date"
-            placeholder="DOB" 
-            className='inputStyle'
-            /></p>
             <p className=''>Height:
             <input 
             // value={height} 

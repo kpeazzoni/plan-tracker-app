@@ -5,26 +5,65 @@ import Modal from 'react-bootstrap/Modal';
 
 function UpdateClientModal(props) {
   const [show, setShow] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    dob: '',
+    height: '',
+    weight: '',
+    goals: '',
+    injuryHistory: '',
+    notes: ''
+  });
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-    const handleInputChange = (e) => {
-        // Getting the value and name of the input which triggered the change
-        // const { name, value } = e.target;
-    }
 
-    const handleFormSubmit = (e) => {
-        e.preventDefault();
-      };
-      // const firstName = ""      
-      // const lastName = ""
-      // const dob = ""
-      // const height =""
-      // const weight = ""
-      // const goals = ""
-      // const injuryHistory = ""
-      // const notes = ""
-    return (
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    let intValue = value;
+  
+    if (name === 'weight' || name === 'height') {
+      intValue = parseInt(value);
+    }
+  
+    setFormData({
+      ...formData,
+      [name]: intValue,
+    });
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  
+    try {
+      //here I think we might need an updateTrainee mutation here for this to update. 
+      // const { data } = await updateTrainee({
+      //   variables: { ...formData },
+      // });
+      // You can access the updated user information in the formData object here
+      // console.log(data);
+      //Reset the form state to clear the input data
+      // setFormData({
+      //   firstName: '',      
+      //   lastName: '',
+      //   dob: '',
+      //   height: '',
+      //   weight: '',
+      //   goals: '',
+      //   injuryHistory: '',
+      //   notes: '',
+      // });
+    } catch (e) {
+      console.error(e);
+    }
+  };
+  
+  
+
+
+  return (
     <>
     <Button variant="primary" onClick={handleShow}>
       UpdateClientModal
@@ -39,7 +78,7 @@ function UpdateClientModal(props) {
          <form className="row justify-content-center formCard" >
              <p className=''>Name:
             <input 
-            // value= {firstName}
+            value={formData.firstName}
             name="firstName" 
             onChange={handleInputChange} 
             type="text"
@@ -47,7 +86,7 @@ function UpdateClientModal(props) {
             className='inputStyle'
             />
             <input 
-            // value={lastName} 
+            value={formData.lastName} 
             name="lastName" 
             onChange={handleInputChange} 
             type="text" 
@@ -56,7 +95,7 @@ function UpdateClientModal(props) {
             /> </p>
             <p className=''>DOB:
             <input 
-            // value={dob} 
+            value={formData.dob}
             name="dob" 
             onChange={handleInputChange} 
             type="Date"
@@ -65,7 +104,7 @@ function UpdateClientModal(props) {
             /></p>
             <p className=''>Height:
             <input 
-            // value={height} 
+            value={formData.height} 
             name="height" 
             onChange={handleInputChange} type="text" 
             placeholder="in" 
@@ -73,7 +112,7 @@ function UpdateClientModal(props) {
             /></p>
             <p className=''>Weight:
             <input 
-            // value={weight} 
+            value={formData.weight} 
             name="weight" 
             onChange={handleInputChange} 
             type="text" 
@@ -82,7 +121,7 @@ function UpdateClientModal(props) {
             /></p>
             <p className=''>Goals:
             <input 
-            // value={goals} 
+             value={formData.goals} 
             name="goals" 
             onChange={handleInputChange} 
             type="text" 
@@ -91,7 +130,7 @@ function UpdateClientModal(props) {
             /></p>
             <p className=''>Injury History:
             <input 
-            // value={injuryHistory} 
+             value={formData.injuryHistory} 
             name="injuryHistory" 
             onChange={handleInputChange} 
             type="text"
@@ -100,7 +139,7 @@ function UpdateClientModal(props) {
             /></p>
             <p className=''>Notes:
             <input 
-            // value={notes} 
+             value={formData.notes} 
             name="notes" 
             onChange={handleInputChange} 
             type="text"

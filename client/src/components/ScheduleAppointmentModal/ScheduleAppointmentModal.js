@@ -10,20 +10,17 @@ function ScheduleAppointmentModal(props) {
   const handleShow = () => setShow(true);
     const handleInputChange = (e) => {
         // Getting the value and name of the input which triggered the change
-        // const { name, value } = e.target;
+        const { name, value } = e.target;
     }
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
       };
-      // const firstName = ""      
-      // const lastName = ""
-      // const dob = ""
-      // const height =""
-      // const weight = ""
-      // const goals = ""
-      // const injuryHistory = ""
-      // const notes = ""
+      // date: '',
+      // startTime: '',
+      // endTime: '',
+      // location: '',
+      
     return (
     <>
     <Button variant="primary" onClick={handleShow}>

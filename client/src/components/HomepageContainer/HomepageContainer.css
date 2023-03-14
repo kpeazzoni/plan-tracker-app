@@ -7,6 +7,11 @@
     align-self: center;
   }
 
+a:Link, a:active, a:hover, a:focus {
+  text-decoration: none;
+  color: black
+}
+
 .card-heading{
   color: white;
 }

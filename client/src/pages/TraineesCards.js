@@ -2,17 +2,19 @@ import React from 'react';
 
 import { useQuery } from '@apollo/client';
 import { QUERY_TRAINEES } from '../utils/queries'
-
+import {Link} from 'react-router-dom';
 import '../components/HomepageContainer/HomepageContainer.css'
 
 function TraineesCards ({trainees}){
        
    return trainees.map((trainee, i)=>(
       <div className='card traineesCards' key={i}>
+         <Link to={`/SingleTraineeContainer/${trainee._id}`} > 
          <div className='card-body'>
          <h3>Name: {trainee.firstName} {trainee.lastName}</h3>
          <h3>DOB: {trainee.dob}</h3>
          </div>
+         </Link>  
       </div>
   ))
 };

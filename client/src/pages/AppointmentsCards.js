@@ -15,7 +15,7 @@ function AppointmentsCards({appointments}) {
       </Link>
       </div>
     </div>
-      
+
   ))
 }
 

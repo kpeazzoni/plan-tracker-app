@@ -31,9 +31,6 @@ const NewClientForm = () => {
     });
   };
   
-
-    
-
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
@@ -44,6 +41,18 @@ const NewClientForm = () => {
       });
 
       console.log(data);
+    // Reset the form state to clear the input data
+    setFormState({
+      firstName: '',      
+      lastName: '',
+      dob: '',
+      height: '',
+      weight: '',
+      goals: '',
+      injuryHistory: '',
+      notes: '',
+    });
+
     } catch (e) {
       console.error(e);
     }

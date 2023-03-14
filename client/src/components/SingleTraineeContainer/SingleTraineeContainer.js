@@ -18,6 +18,7 @@ function SingleTraineeContainer(props) {
   const [traineeAppts, setTraineeAppts] = useState();
 
 
+
   const { data, error } = useQuery(QUERY_TRAINEE, {
     variables: {
       traineeId: useParams().traineeId
@@ -42,35 +43,57 @@ useEffect(() => {
   // console.log(singleTraineeAppts);
   // create state of index of selected appt
   const [apptIndex, setApptIndex] = useState(0);
-
+  const firstName = data?.trainee.firstName || "";
+  const lastName = data?.trainee.lastName || "";
   return (
-    <div class="container singleTrainee-container text-start">
+  <main>
+    <h1 className="oneTrainee">{firstName} {lastName}</h1>
+    <div class="singleTrainee-container">
+    {/* <div class="container singleTrainee-container text-start"> */}
       {/* <h1>{trainee.firstName}</h1> */}
-      <div class="row">
+
+      {/* <div class="row"> */}
+
+      <aside className="col-md-4 mb-auto mx-auto">
+       <div className="clientinfo-container">
+
         <div className="col card">
-        <UpdateClientModal />
-          <h5 className="card-title">Trainee Info</h5>
+        {/* <UpdateClientModal /> */}
+          <h1 className="card-title">Client Info</h1>
           {trainee && (
             <SingleTraineeInfo trainee={trainee} />
           )}
           {/* <SingleTraineeInfo trainee={singleTraineeData}/> */}
+          <UpdateClientModal />
+         </div>
+
         </div>
+       </aside>
+
+       <aside className="col-md-4 mb-auto mx-auto">
         <div className="col card overflow-scroll">
-          <h5 className="card-title">Upcoming Appointments</h5>
+          <h1 className="card-title">Upcoming Appointments</h1>
           <SingleTraineeAppts
             traineeAppts={traineeAppts}
             setApptIndex={setApptIndex}
           />
         </div>
+        </aside>
+
+      <aside className="col-md-4 mb-auto mx-auto">
         <div className="col card">
-          <h5 className="card-title">Workout Plan</h5>
+          <h1 className="card-title">Workout Plan</h1>
           <SingleTraineeWorkout
             traineeAppts={traineeAppts}
             apptIndex={apptIndex}
           />
         </div>
+      </aside>
+
       </div>
-    </div>
+
+    {/* </div> */}
+  </main>
   );
 }
 

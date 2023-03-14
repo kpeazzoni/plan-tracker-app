@@ -10,6 +10,8 @@ import AddTraineeButtons from "../Buttons/addTraineebuttons";
 import ViewallTraineesButtons from "../Buttons/viewallTraineesbuttons";
 import dayjs from "dayjs";
 
+
+
 export default function HomepageContainer() {
   const { loading, data } = useQuery(QUERY_ME);
 
@@ -17,7 +19,29 @@ export default function HomepageContainer() {
   const trainees = data?.me.trainees || [];
   const firstName = data?.me.firstName || "";
   const todaysDate = dayjs().format('YYYY-MM-DD');
+  // let currentTime = displayTime()
+  // dayjs().format('YYYY-MM-DD hh:mm:ss A');
   const todaysSchedule = schedules.filter(appointment => appointment.startDate.slice(0, -9) === todaysDate);
+
+  const [currentTime, setCurrentTime] = useState(displayTime());
+
+  useEffect(()=>{
+    const intervalId = setInterval(()=>{
+      setCurrentTime(displayTime());
+    }, 1000)
+  })
+
+  function displayTime(){
+    return dayjs().format('MMMM DD, YYYY [at] hh:mm:ss A');
+  }
+
+//   function displayTime() {
+//    let currentTime = dayjs().format('MMMM DD, YYYY [at] hh:mm:ss A');
+//    return currentTime;
+//    }
+//  displayTime()
+//  setInterval(displayTime, 1000); 
+
 
   console.log(data);
   console.log('schedules', schedules)
@@ -47,8 +71,8 @@ export default function HomepageContainer() {
 
   return (
    <main>
-    <h1 className="welcome">Welcome,{firstName}!</h1>
-    <h3 className="date">{todaysDate}</h3>
+    <h1 className="welcome">Welcome, {firstName}!</h1>
+    <h3 className="date">{currentTime}</h3>
     <div className="homepageContainer-wrapper ">
       
       <aside className="col-md-4 mb-auto mx-auto">

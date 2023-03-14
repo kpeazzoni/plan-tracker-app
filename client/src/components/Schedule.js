@@ -33,16 +33,12 @@ function Schedule() {
 
 const [schedules, setSchedules] = useState([]);
 
-
 const { data, error } = useQuery(QUERY_ME);
 useEffect(() => {
     setSchedules(data?.me.trainerSchedule)
 }, [data]);
 
-console.log(schedules)
-
-const state = {timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,}
-
+console.log(schedules);
 
 const currentDate = Date.now();
 const views = ['week', 'month'];

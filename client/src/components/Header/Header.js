@@ -6,7 +6,10 @@ import { useNavigate } from 'react-router-dom';
 import Auth from '../../utils/auth';
 // import Button from 'react-bootstrap/Button';
 // import { Link } from 'react-bootstrap';
-import Join from "../Home/Join";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
 
 const Header = () => {
@@ -21,35 +24,42 @@ const Header = () => {
       onClick={() => navigate('/')}
        />
 
-      <div
-        style={{ backgroundColor: "transparency", padding: "1rem", borderRadius: "1rem" }}
-        
-      >
-        {/* <img
-          src={Bars}
-          alt="Plantracker"
-          style={{ width: "10rem", height: "10rem" }}
-        /> */}
-      </div>
+      
       <ul className="navbar">
-        {/* <li> */}
-        {/* <Join /> */}
-          {/* <button onClick={(event) => navigate('/homepagecontainer')} className='btn'>Home</button>
-          <button onClick={(event) => navigate('/register')} className='btn'>Register</button> */}
-          {!localStorage.id_token ? (
+          {Auth.loggedIn() ? (
+            <Navbar expand="false" className="mb-3">
+            <Container fluid>
+              <button onClick={(event) => navigate('/homepagecontainer')} className='btn'>Home</button>
+              <button onClick={Auth.logout} className='btn' id="logout">Logout</button>
+              <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-false`} />
+              <Navbar.Offcanvas
+                id={`offcanvasNavbar-expand-false`}
+                aria-labelledby={`offcanvasNavbarLabel-expand-false`}
+                placement="end"
+              >
+                <Offcanvas.Header closeButton>
+                  <Offcanvas.Title id={`offcanvasNavbarLabel-expand-false`}>
+                    Navigation
+                  </Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                  <Nav className="justify-content-end flex-grow-1 pe-3">
+                    <Nav.Link href="/newclientform">Add Client</Nav.Link>
+                    <Nav.Link href="/alltraineecontainer">View All Clients</Nav.Link>
+                    <Nav.Link href="/schedule">View Full Schedule</Nav.Link>
+                  </Nav>
+                </Offcanvas.Body>
+              </Navbar.Offcanvas>
+            </Container>
+          </Navbar>
+          ) : (
+            <>
             <button onClick={(event) => navigate('/register')} className='btn'>Register</button>
-
-          ) : (
-            <button onClick={(event) => navigate('/homepagecontainer')} className='btn'>Home</button>
-          )}          
-          {!localStorage.id_token ? (
             <button onClick={(event) => navigate('/login')} className='btn'>Login</button>
-
-          ) : (
-            <button onClick={Auth.logout} className='btn' id="logout">Logout</button>
+            </>
           )}
-        {/* </li> */}
       </ul>
+      
     </div>
   )
 }

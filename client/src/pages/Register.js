@@ -116,7 +116,7 @@ const Register = () => {
                     onChange={handleChange}
                   />
                   <MDBBtn
-                    className="btn on-white"
+                    className="btn onWhite"
                     style={{ cursor: 'pointer' }}
                     type="submit"
                   >

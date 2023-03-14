@@ -2,19 +2,19 @@ import React from 'react';
 import './buttons.css';
 import {useNavigate} from 'react-router-dom';
 
-function UpdateTraineeButtons() {
+function HomeButton() {
     let navigate = useNavigate(); 
     const routeChange = () =>{ 
-      let path = `updateclientmodal`; 
+      let path = `homepagecontainer`; 
       navigate(path);
     }
     return (
         <div>
           <button className='buttons' onClick={routeChange}>
-          Update Trainee
+          Home
           </button> 
         </div>
     )
 }
 
-export default UpdateTraineeButtons;
+export default HomeButton;

@@ -6,9 +6,9 @@ import "./SingleTraineeContainer.css";
 import { useQuery } from "@apollo/client";
 import { QUERY_TRAINEE } from "../../utils/queries";
 import {useParams} from "react-router-dom";
-import UpdateTraineeButtons from "../Buttons/updateTraineebuttons";
-import {Link} from 'react-router-dom'
-import UpdateClientModal from '../../components/UpdateClientModal/UpdateClientModal'
+import UpdateTraineeModal from '../UpdateClientModal/UpdateTraineeModal'
+import ScheduleAppointmentModal from "../ScheduleAppointmentModal/ScheduleAppointmentModal";
+import EditWorkoutPlanModal from "../EditWorkoutPlanModal/EditWorkoutPlanModal";
 
 // import { QUERY_SCHEDULES } from "../../utils/queries";
 // import { QUERY_TRAINEE } from '../../utils/queries';
@@ -58,8 +58,8 @@ useEffect(() => {
        <div className="clientinfo-container">
 
         <div className="col card">
-        {/* <UpdateClientModal /> */}
-          <h1 className="card-title">Client Info</h1>
+        <UpdateTraineeModal />
+          <h5 className="card-title">Trainee Info</h5>
           {trainee && (
             <SingleTraineeInfo trainee={trainee} />
           )}
@@ -72,7 +72,8 @@ useEffect(() => {
 
        <aside className="col-md-4 mb-auto mx-auto">
         <div className="col card overflow-scroll">
-          <h1 className="card-title">Upcoming Appointments</h1>
+          <ScheduleAppointmentModal />
+          <h5 className="card-title">Upcoming Appointments</h5>
           <SingleTraineeAppts
             traineeAppts={traineeAppts}
             setApptIndex={setApptIndex}
@@ -82,7 +83,8 @@ useEffect(() => {
 
       <aside className="col-md-4 mb-auto mx-auto">
         <div className="col card">
-          <h1 className="card-title">Workout Plan</h1>
+          <EditWorkoutPlanModal />
+          <h5 className="card-title">Workout Plan</h5>
           <SingleTraineeWorkout
             traineeAppts={traineeAppts}
             apptIndex={apptIndex}

@@ -29,8 +29,8 @@ export const ADD_TRAINER = gql`
 `;
 
 export const ADD_TRAINEE = gql`
-mutation Mutation($firstName: String!, $lastName: String!, $dob: String!, $trainerId: ID!, $goals: String!, $height: Int!, $injuryHistory: String!, $notes: String!, $weight: Int!) {
-  addTrainee(firstName: $firstName, lastName: $lastName, dob: $dob, trainerId: $trainerId, goals: $goals, height: $height, injuryHistory: $injuryHistory, notes: $notes, weight: $weight) {
+mutation Mutation($firstName: String!, $lastName: String!, $dob: String!,  $goals: String!, $height: Int!, $injuryHistory: String!, $notes: String!, $weight: Int!) {
+  addTrainee(firstName: $firstName, lastName: $lastName, dob: $dob, goals: $goals, height: $height, injuryHistory: $injuryHistory, notes: $notes, weight: $weight) {
     _id
     firstName
     lastName

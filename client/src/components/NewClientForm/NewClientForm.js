@@ -2,47 +2,46 @@ import React, { useState } from 'react';
 import './NewClientForm.css';
 import { useMutation } from '@apollo/client';
 import { ADD_TRAINEE } from '../../utils/mutations';
-import Auth from '../../utils/auth'
 
 const NewClientForm = () => {
-   
-        const [formState, setFormState] = useState({
-            firstName:'',      
-            lastName: '',
-            dob: '',
-            height: '',
-            weight: '',
-            goals: '',
-            injuryHistory: '',
-            notes: '',
-        });
-        const [addTrainee] = useMutation(ADD_TRAINEE);
-      
-        const handleChange = (event) => {
-          const { name, value } = event.target;
-      
-          setFormState({
-            ...formState,
-            [name]: value,
-          });
-        };
-      
-        const handleFormSubmit = async (event) => {
-          event.preventDefault();
-          console.log(formState);
-      
-          try {
-            const { data } = await addTrainee({
-              variables: { ...formState },
-            });
-      
-            Auth.login(data.login.token);
-          } catch (e) {
-            console.error(e);
-          }
-        };
+  const [formState, setFormState] = useState({
+    firstName: '',      
+    lastName: '',
+    dob: '',
+    height: 0,
+    weight: 0,
+    goals: '',
+    injuryHistory: '',
+    notes: '',
+  });
 
-return (
+  const [addTrainee] = useMutation(ADD_TRAINEE);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+
+    try {
+      const { data } = await addTrainee({
+        variables: { ...formState },
+      });
+
+      console.log(data);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  return (
 <div className='formPlacement'>
     <p className='pStyle'>
         Add new client information:
@@ -77,7 +76,7 @@ return (
             /></p>
             <p className='pStyle'>Height:
             <input value={formState.height} name="height" 
-            onChange={handleChange} type="text" 
+            onChange={handleChange} type="number" 
             placeholder="in" 
             className='inputStyle'
             /></p>
@@ -86,7 +85,7 @@ return (
             value={formState.weight} 
             name="weight" 
             onChange={handleChange} 
-            type="text" 
+            type="number" 
             placeholder="lbs" 
             className='inputStyle'
             /></p>

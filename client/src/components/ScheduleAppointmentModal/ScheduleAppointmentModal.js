@@ -46,46 +46,79 @@ function ScheduleAppointmentModal(props) {
               <p className=''> Start Time:
                 <select class="form-control" id="exampleFormControlSelect1">
                   <option>5:00am</option>
-                  <option>5:15am</option>
                   <option>5:30am</option>
-                  <option>5:45am</option>
                   <option>6:00am</option>
-                  <option>6:15am</option>
                   <option>6:30am</option>
-                  <option>6:45am</option>
                   <option>7:00am</option>
-                  <option>7:15am</option>
                   <option>7:30am</option>
-                  <option>7:45am</option>
                   <option>8:00am</option>
-                  <option>8:15am</option>
                   <option>8:30am</option>
-                  <option>8:45am</option>
                   <option>9:00am</option>
-                  <option>9:15am</option>
                   <option>9:30am</option>
-                  <option>9:45am</option>
                   <option>10:00am</option>
-                  <option>10:15am</option>
                   <option>10:30am</option>
-                  <option>10:45am</option>
+                  <option>11:00am</option>
+                  <option>11:30am</option>
+                  <option>12:00pm</option>
+                  <option>12:30pm</option>
+                  <option>1:00pm</option>
+                  <option>1:30pm</option>
+                  <option>2:00pm</option>
+                  <option>2:30pm</option>
+                  <option>3:00pm</option>
+                  <option>3:30pm</option>
+                  <option>4:00pm</option>
+                  <option>4:30pm</option>
+                  <option>5:00pm</option>
+                  <option>5:30pm</option>
+                  <option>6:00pm</option>
+                  <option>6:30pm</option>
+                  <option>7:00pm</option>
+                  <option>7:30pm</option>
+                  <option>8:00pm</option>
+                  <option>8:30pm</option>
+                  <option>9:00pm</option>
+                  <option>9:30pm</option>
                 </select>
-                <input
-                  // value={startTime} 
-                  name="startTime"
-                  onChange={handleInputChange}
-                  placeholder="Start Time"
-                  className='inputStyle'
-                /> </p>
-              <p className=''>End Time::
-                <input
-                  // value={endTime} 
-                  name="endTime"
-                  onChange={handleInputChange}
-                  type="text"
-                  placeholder="End Time"
-                  className='inputStyle'
-                /></p>
+              </p>
+              <p className=''>End Time:
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>5:00am</option>
+                  <option>5:30am</option>
+                  <option>6:00am</option>
+                  <option>6:30am</option>
+                  <option>7:00am</option>
+                  <option>7:30am</option>
+                  <option>8:00am</option>
+                  <option>8:30am</option>
+                  <option>9:00am</option>
+                  <option>9:30am</option>
+                  <option>10:00am</option>
+                  <option>10:30am</option>
+                  <option>11:00am</option>
+                  <option>11:30am</option>
+                  <option>12:00pm</option>
+                  <option>12:30pm</option>
+                  <option>1:00pm</option>
+                  <option>1:30pm</option>
+                  <option>2:00pm</option>
+                  <option>2:30pm</option>
+                  <option>3:00pm</option>
+                  <option>3:30pm</option>
+                  <option>4:00pm</option>
+                  <option>4:30pm</option>
+                  <option>5:00pm</option>
+                  <option>5:30pm</option>
+                  <option>6:00pm</option>
+                  <option>6:30pm</option>
+                  <option>7:00pm</option>
+                  <option>7:30pm</option>
+                  <option>8:00pm</option>
+                  <option>8:30pm</option>
+                  <option>9:00pm</option>
+                  <option>9:30pm</option>
+                </select>
+              </p>
               <p className=''>Location:
                 <input
                   // value={location} 

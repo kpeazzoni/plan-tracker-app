@@ -77,8 +77,8 @@ function ScheduleAppointmentModal(props) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        ScheduleAppointmentModal
+      <Button className= "btn onWhite" variant="primary" onClick={handleShow}>
+        Schedule Appointment
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -185,10 +185,10 @@ function ScheduleAppointmentModal(props) {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button className="btn onWhite" variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleFormSubmit}>
+          <Button className="btn onWhite" variant="primary" onClick={handleFormSubmit}>
             Save Changes
           </Button>
         </Modal.Footer>

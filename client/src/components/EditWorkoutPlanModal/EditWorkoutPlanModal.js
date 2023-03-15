@@ -152,7 +152,7 @@ function EditWorkoutPlanModal(props) {
     });
   };
   const {traineeSchedule} = props.trainee
-console.log(traineeSchedule);
+  console.log(traineeSchedule);
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {

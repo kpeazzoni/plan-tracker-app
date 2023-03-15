@@ -57,38 +57,41 @@ useEffect(() => {
       <aside className="col-md-4 mb-auto mx-auto">
        <div className="clientinfo-container">
 
-        <div className="col card">
+        {/* <div className="col card"> */}
         <UpdateTraineeModal />
-          <h5 className="card-title">Trainee Info</h5>
+          <h3 className="card-title">Trainee Info</h3>
           {trainee && (
             <SingleTraineeInfo trainee={trainee} />
           )}
           {/* <SingleTraineeInfo trainee={singleTraineeData}/> */}
-          <UpdateClientModal />
-         </div>
+          {/* <UpdateClientModal /> */}
+         {/* </div> */}
 
         </div>
        </aside>
 
        <aside className="col-md-4 mb-auto mx-auto">
-        <div className="col card overflow-scroll">
+        {/* <div className="col card overflow-scroll"> */}
+         <div className="clientAppt-container">
           <ScheduleAppointmentModal />
-          <h5 className="card-title">Upcoming Appointments</h5>
+          <h3 className="card-title">Upcoming Appointments</h3>
           <SingleTraineeAppts
             traineeAppts={traineeAppts}
             setApptIndex={setApptIndex}
           />
-        </div>
+        {/* </div> */}
+         </div> 
         </aside>
 
       <aside className="col-md-4 mb-auto mx-auto">
-        <div className="col card">
-          <EditWorkoutPlanModal />
-          <h5 className="card-title">Workout Plan</h5>
+        {/* <div className="col card"> */}
+        <div className="clientWorkOuts-container">
+          <h3 className="card-title">Workout Plan</h3>
           <SingleTraineeWorkout
             traineeAppts={traineeAppts}
             apptIndex={apptIndex}
           />
+        {/* </div> */}
         </div>
       </aside>
 

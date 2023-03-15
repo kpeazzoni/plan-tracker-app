@@ -4,15 +4,15 @@ function SingleTraineeWorkout({traineeAppts, apptIndex}) {
     const appt = traineeAppts && traineeAppts [apptIndex];
 // console.log(appt);
     return (
-    <div>
+    <div >
         {/* <h5>{appt.startDate}</h5> */}
-        <ul>
+        
             {appt?.workouts.map((workout) => (
-            <li>
-                <p className="card-text">{workout.exerciseName}</p>
-            </li>
+            <div className='clientWorkOuts-cards'>
+                <h3 className="card-text">{workout.exerciseName}</h3>
+            </div>
             ))}
-        </ul>
+        
     </div>
     );
 };

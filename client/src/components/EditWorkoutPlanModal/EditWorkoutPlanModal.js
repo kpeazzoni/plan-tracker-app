@@ -22,23 +22,29 @@ function EditWorkoutPlanModal(props) {
   });
   const isolatedGroups = [...new Set(muscleGroups)];
   const [selectedGroup, setSelectedGroup] = useState("");
-  const handleInputChange = (e) => {
+  const optionsArr = [];
+  
+useEffect( () => populateExercises(selectedGroup),[selectedGroup])
+
+  const handleInputChange = async (e) => {
     const { name, value } = e.target;
-    setSelectedGroup({ [name]: value });
+    await setSelectedGroup({ [name]: value });
     optionsArr.length = 0;
-    populateExercises(selectedGroup);
+// populateExercises(selectedGroup);
   }
   const exercisesArr = [];
-  const optionsArr = [];
+
   exerciseList.map((exercise) => {
     return (exercisesArr.push(exercise)
     );
   });
-  populateExercises(selectedGroup)
+
+populateExercises(selectedGroup)
 
 
   function populateExercises(selectedGroup) {
-    switch (selectedGroup.musclegroup) {
+// console.log("44", selectedGroup.muscleGroup)
+switch (selectedGroup.muscleGroup) {
       case 'Arms':
         isArms();
         optionsArr.sort()
@@ -206,8 +212,8 @@ console.log(traineeSchedule);
                   })}
                 </select>
                 <select
-                  name="muscleGroup"
-                  onChange={handleInputChange}
+                  name="exercises"
+                  // onChange={handleInputChange}
                   className="form-control"
                 >
                   <option>Exercises</option>
@@ -291,7 +297,9 @@ console.log(traineeSchedule);
           <Button className='btn onWhite' onClick={handleClose}>
             Close
           </Button>
-          <Button className='btn onWhite' onClick={handleFormSubmit}>
+          <Button className='btn onWhite' 
+          onClick={handleFormSubmit}
+          >
             Add Exercise
           </Button>
         </Modal.Footer>

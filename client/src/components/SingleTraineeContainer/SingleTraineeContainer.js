@@ -41,31 +41,45 @@ useEffect(() => {
   // console.log(trainee, "this is singletraineeData");
   // console.log(singleTraineeAppts);
   // create state of index of selected appt
+  const firstName = data?.trainee.firstName || "";
+  const lastName = data?.trainee.lastName || "";
   const [apptIndex, setApptIndex] = useState(0);
 
   return (
-    <div className="container singleTrainee-container text-start">
+    <main>
+      <h1 className="oneTrainee">{firstName} {lastName}</h1>
+        <div className="singleTrainee-container">
       {/* <h1>{trainee.firstName}</h1> */}
-      <div className="row">
-        <div className="col card">
+      
+    
+      <aside className="col-md-4 mb-auto mx-auto">
+      <div className="clientinfo-container">
          {trainee && (<UpdateTraineeModal trainee = {trainee} />)}
-          <h5 className="card-title">Trainee Info</h5>
+          <h3 className="card-title">Trainee Info</h3>
           {trainee && (
             <SingleTraineeInfo trainee={trainee} />
           )}
           {/* <SingleTraineeInfo trainee={singleTraineeData}/> */}
-        </div>
-        <div className="col card overflow-scroll">
+          </div>
+       </aside>
+
+
+       <aside className="col-md-4 mb-auto mx-auto">
+        <div className="clientAppt-container">
           {trainee && (<ScheduleAppointmentModal trainee = {trainee} />)}
-          <h5 className="card-title">Upcoming Appointments</h5>
+          <h3 className="card-title">Upcoming Appointments</h3>
           {trainee && (<SingleTraineeAppts
             traineeAppts={traineeAppts}
             setApptIndex={setApptIndex}
           />)}
-        </div>
-        <div className="col card">
+         </div>
+        </aside>
+
+
+        <aside className="col-md-4 mb-auto mx-auto">
+        <div className="trainees-container">
           {trainee && (<EditWorkoutPlanModal trainee = {trainee} />)}
-          <h5 className="card-title">Workout Plan</h5>
+          <h3 className="card-title">Workout Plan</h3>
          {trainee && (<SingleTraineeWorkout
             traineeAppts={traineeAppts}
             apptIndex={apptIndex}
@@ -76,8 +90,12 @@ useEffect(() => {
           />)}
           
         </div>
-      </div>
+        </aside>
+
+
+
     </div>
+    </main>
   );
 }
 

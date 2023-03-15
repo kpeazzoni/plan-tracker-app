@@ -48,7 +48,7 @@ useEffect(() => {
       {/* <h1>{trainee.firstName}</h1> */}
       <div className="row">
         <div className="col card">
-        <UpdateTraineeModal />
+         {trainee && (<UpdateTraineeModal trainee = {trainee} />)}
           <h5 className="card-title">Trainee Info</h5>
           {trainee && (
             <SingleTraineeInfo trainee={trainee} />
@@ -56,20 +56,25 @@ useEffect(() => {
           {/* <SingleTraineeInfo trainee={singleTraineeData}/> */}
         </div>
         <div className="col card overflow-scroll">
-          <ScheduleAppointmentModal />
+          {trainee && (<ScheduleAppointmentModal trainee = {trainee} />)}
           <h5 className="card-title">Upcoming Appointments</h5>
-          <SingleTraineeAppts
+          {trainee && (<SingleTraineeAppts
             traineeAppts={traineeAppts}
             setApptIndex={setApptIndex}
-          />
+          />)}
         </div>
         <div className="col card">
-          <EditWorkoutPlanModal />
+          {trainee && (<EditWorkoutPlanModal trainee = {trainee} />)}
           <h5 className="card-title">Workout Plan</h5>
-          <SingleTraineeWorkout
+         {trainee && (<SingleTraineeWorkout
             traineeAppts={traineeAppts}
             apptIndex={apptIndex}
-          />
+          />)}
+          {trainee && (<SingleTraineeWorkout
+            traineeAppts={traineeAppts}
+            apptIndex={apptIndex}
+          />)}
+          
         </div>
       </div>
     </div>

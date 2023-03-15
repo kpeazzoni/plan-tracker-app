@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+  import { gql } from '@apollo/client';
 
 export const LOGIN_TRAINER = gql`
   mutation login($email: String!, $password: String!) {
@@ -66,8 +66,8 @@ mutation Mutation($firstName: String!, $lastName: String!, $dob: String!,  $goal
 }
 `;
 export const ADD_APPOINTMENT = gql`
-mutation Mutation($startDate: String!, $endDate: String!, $trainerId: ID!, $traineeId: ID!) {
-  addAppointment(startDate: $startDate, endDate: $endDate, trainerId: $trainerId, traineeId: $traineeId) {
+mutation Mutation($traineeId: ID!, $startDate: String!, $endDate: String!, $trainerId: ID!, $traineeId: ID!) {
+  addAppointment(traineeId: $traineeId, startDate: $startDate, endDate: $endDate, trainerId: $trainerId, traineeId: $traineeId) {
     _id
     endDate
     location
@@ -102,8 +102,8 @@ mutation Mutation($startDate: String!, $endDate: String!, $trainerId: ID!, $trai
 }
 `;
 export const ADD_DEMOGRAPHICS = gql`
-mutation Mutation($height: Int!, $weight: Int!, $goals: String!, $injuryHistory: String!, $notes: String!) {
-  addDemographics(height: $height, weight: $weight, goals: $goals, injuryHistory: $injuryHistory, notes: $notes) {
+mutation Mutation($traineeId: ID!, $height: Int!, $weight: Int!, $goals: String!, $injuryHistory: String!, $notes: String!) {
+  addDemographics(traineeId: $traineeId, height: $height, weight: $weight, goals: $goals, injuryHistory: $injuryHistory, notes: $notes) {
     _id
     demographics {
       goals
@@ -171,7 +171,7 @@ mutation Mutation($scheduleId: ID!, $workoutId: ID!) {
 }
 `;
 export const UPDATE_APPOINTMENT = gql`
-mutation Mutation($startDate: String!, $endDate: String!, $trainerId: ID!, $traineeId: ID!) {
+mutation Mutation($traineeId: ID!, $startDate: String!, $endDate: String!, $trainerId: ID!, $traineeId: ID!) {
   updateAppointment(startDate: $startDate, endDate: $endDate, trainerId: $trainerId, traineeId: $traineeId) {
     _id
     traineeId {
@@ -184,8 +184,8 @@ mutation Mutation($startDate: String!, $endDate: String!, $trainerId: ID!, $trai
 }
 `;
 export const UPDATE_WORKOUTS = gql`
-mutation Mutation($workoutId: ID!, $scheduleId: ID!, $muscleGroup: String!, $exerciseName: String!) {
-  updateWorkouts(workoutId: $workoutId, scheduleId: $scheduleId, muscleGroup: $muscleGroup, exerciseName: $exerciseName) {
+mutation updateWorkouts($scheduleId: ID!, $muscleGroup: String!, $exerciseName: String!, $sets: String, $reps: String, $weight: String, $distanceOrTime: String, $equipmentReq: String, $notes: String) {
+  updateWorkouts(scheduleId: $scheduleId, muscleGroup: $muscleGroup, exerciseName: $exerciseName, sets: $sets, reps: $reps, weight: $weight, distanceOrTime: $distanceOrTime, equipmentReq: $equipmentReq, notes: $notes) {
     _id
     traineeId {
       _id

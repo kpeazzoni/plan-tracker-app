@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-
+import {useMutation, useQuery} from '@apollo/client';
+import {useParams} from 'react-router-dom';
+import {ADD_APPOINTMENT} from '../../utils/mutations';
+import {QUERY_TRAINEE} from '../../utils/queries';
 
 function ScheduleAppointmentModal(props) {
   const [show, setShow] = useState(false);
@@ -13,14 +16,51 @@ function ScheduleAppointmentModal(props) {
     const { name, value } = e.target;
   }
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-  };
-  // date: '',
-  // startTime: '',
-  // endTime: '',
-  // location: '',
 
+  const [trainee, setTrainee] = useState();
+  const [addAppointment] = useMutation(ADD_APPOINTMENT);
+
+  const [formState, setFormState] = useState({
+    muscleGroup: '',
+    exerciseName: '',
+    sets: '',
+    reps: '',
+    weight: '',
+    distanceOrTime: '',
+    equipmentReq: '',
+    notes: '',
+  });
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    let intValue = value;
+
+    setFormState({
+      ...formState,
+      [name]: intValue,
+    });
+  };
+  const {_id} = props.trainee
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await addAppointment({
+        variables: { traineeId:_id, ...formState }
+      })
+      setFormState({
+        muscleGroup: '',
+        exerciseName: '',
+        sets: '',
+        reps: '',
+        weight: '',
+        distanceOrTime: '',
+        equipmentReq: '',
+        notes: '',  
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <Button className = 'btn onWhite' onClick={handleShow}>

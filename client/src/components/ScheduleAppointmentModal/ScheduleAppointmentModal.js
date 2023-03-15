@@ -1,91 +1,84 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import {useMutation, useQuery} from '@apollo/client';
-import {useParams} from 'react-router-dom';
-import {ADD_APPOINTMENT} from '../../utils/mutations';
-import {QUERY_TRAINEE} from '../../utils/queries';
+import { ADD_APPOINTMENT } from '../../utils/mutations';
+import { useMutation } from '@apollo/client';
 
 function ScheduleAppointmentModal(props) {
-  const [show, setShow] = useState(false);
+  const [formState, setFormState] = useState({
+    startDate: '',
+    endDate: '',
+    location: '',
+  });
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const handleInputChange = (e) => {
-    // Getting the value and name of the input which triggered the change
-    const { name, value } = e.target;
-  }
+  const [dayState, setDayState] = useState('');
 
+  const [formattedTimestamps, setFormattedTimestamps] = useState({
+    start: '',
+    end: '',
+  });
 
-  const [trainee, setTrainee] = useState();
   const [addAppointment] = useMutation(ADD_APPOINTMENT);
 
-  const [formState, setFormState] = useState({
-    muscleGroup: '',
-    exerciseName: '',
-    sets: '',
-    reps: '',
-    weight: '',
-    distanceOrTime: '',
-    equipmentReq: '',
-    notes: '',
-  });
-  
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    let intValue = value;
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-    setFormState({
-      ...formState,
-      [name]: intValue,
-    });
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    if (name === 'dayState') {
+      setDayState(value);
+    } else {
+      setFormState({
+        ...formState,
+        [name]: value,
+      });
+    }
   };
-  // const {_id} = props.trainee
+
+  useEffect(() => {
+    const { startDate, endDate } = formState;
+    if (startDate && endDate && dayState) {
+      const formattedStart = `${dayState}T${startDate}`;
+      const formattedEnd = `${dayState}T${endDate}`;
+      setFormattedTimestamps({
+        start: formattedStart,
+        end: formattedEnd,
+      });
+    }
+  }, [formState, dayState]);
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
       const { data } = await addAppointment({
-        variables: { 
-          // traineeId:_id,
-           ...formState }
-      })
-      setFormState({
-        muscleGroup: '',
-        exerciseName: '',
-        sets: '',
-        reps: '',
-        weight: '',
-        distanceOrTime: '',
-        equipmentReq: '',
-        notes: '',  
+        variables: {
+          ...formState,
+          startDate: formattedTimestamps.start,
+          endDate: formattedTimestamps.end,
+          traineeId: props.trainee._id
+        },
       });
-    } catch (error) {
-      console.log(error);
-    }
-    try {
-      const { data } = await addAppointment({
-        variables: { 
-          // traineeId:_id,
-           ...formState }
-      })
+      console.log('data', data);
       setFormState({
-        muscleGroup: '',
-        exerciseName: '',
-        sets: '',
-        reps: '',
-        weight: '',
-        distanceOrTime: '',
-        equipmentReq: '',
-        notes: '',  
+        startDate: '',
+        endDate: '',
+        location: '',
       });
-    } catch (error) {
-      console.log(error);
+      setDayState('');
+      setFormattedTimestamps({
+        start: '',
+        end: '',
+      });
+    } catch (e) {
+      console.error(e);
     }
   };
+
   return (
     <>
-      <Button className = 'btn onWhite' onClick={handleShow}>
-        Schedule Appointment
+      <Button variant="primary" onClick={handleShow}>
+        ScheduleAppointmentModal
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -95,118 +88,107 @@ function ScheduleAppointmentModal(props) {
         <Modal.Body>
           <div className='container col-8'>
             <form className="row justify-content-center formCard" >
-              <div className="input-group">
-                <span className="input-group-text" id="basic-addon3">Date</span>
+              <p className=''>Date:
                 <input
-                  name="date"
+                  value={dayState}
+                  name="dayState"
                   onChange={handleInputChange}
                   type="Date"
                   placeholder="Date"
-                  className="form-control" />
-              </div>
-              <div className="input-group">
-                <span className="input-group-text">Time</span>
-                <select
-                  name="startTime"
-                  onChange={handleInputChange}
-                  type="text"
-                  placeholder="Start"
-                  className="form-control"
-                >
-                  <option>5:00am</option>
-                  <option>5:30am</option>
-                  <option>6:00am</option>
-                  <option>6:30am</option>
-                  <option>7:00am</option>
-                  <option>7:30am</option>
-                  <option>8:00am</option>
-                  <option>8:30am</option>
-                  <option>9:00am</option>
-                  <option>9:30am</option>
-                  <option>10:00am</option>
-                  <option>10:30am</option>
-                  <option>11:00am</option>
-                  <option>11:30am</option>
-                  <option>12:00pm</option>
-                  <option>12:30pm</option>
-                  <option>1:00pm</option>
-                  <option>1:30pm</option>
-                  <option>2:00pm</option>
-                  <option>2:30pm</option>
-                  <option>3:00pm</option>
-                  <option>3:30pm</option>
-                  <option>4:00pm</option>
-                  <option>4:30pm</option>
-                  <option>5:00pm</option>
-                  <option>5:30pm</option>
-                  <option>6:00pm</option>
-                  <option>6:30pm</option>
-                  <option>7:00pm</option>
-                  <option>7:30pm</option>
-                  <option>8:00pm</option>
-                  <option>8:30pm</option>
-                  <option>9:00pm</option>
-                  <option>9:30pm</option>
+                  className='inputStyle'
+                /></p>
+
+              <p className=''>Start Time:
+                <select className="form-control" onChange={handleInputChange} name="startDate" id="exampleFormControlSelect1">
+                  <option value={`05:00:00`}>5:00am</option>
+                  <option value={`05:30:00`}>5:30am</option>
+                  <option value={`06:00:00`}>6:00am</option>
+                  <option value={`06:30:00`}>6:30am</option>
+                  <option value={`07:00:00`}>7:00am</option>
+                  <option value={`07:30:00`}>7:30am</option>
+                  <option value={`08:30:00`}>8:00am</option>
+                  <option value={`08:30:00`}>8:30am</option>
+                  <option value={`08:30:00`}>9:00am</option>
+                  <option value={`09:30:00`}>9:30am</option>
+                  <option value={`10:00:00`}>10:00am</option>
+                  <option value={`10:30:00`}>10:30am</option>
+                  <option value={`11:00:00`}>11:00am</option>
+                  <option value={`11:30:00`}>11:30am</option>
+                  <option value={`12:00:00`}>12:00pm</option>
+                  <option value={`12:30:00`}>12:30pm</option>
+                  <option value={`01:00:00`}>1:00pm</option>
+                  <option value={`01:30:00`}>1:30pm</option>
+                  <option value={`02:00:00`}>2:00pm</option>
+                  <option value={`02:30:00`}>2:30pm</option>
+                  <option value={`03:00:00`}>3:00pm</option>
+                  <option value={`03:30:00`}>3:30pm</option>
+                  <option value={`04:00:00`}>4:00pm</option>
+                  <option value={`04:30:00`}>4:30pm</option>
+                  <option value={`05:00:00`}>5:00pm</option>
+                  <option value={`05:30:00`}>5:30pm</option>
+                  <option value={`06:00:00`}>6:00pm</option>
+                  <option value={`06:30:00`}>6:30pm</option>
+                  <option value={`07:00:00`}>7:00pm</option>
+                  <option value={`07:30:00`}>7:30pm</option>
+                  <option value={`08:00:00`}>8:00pm</option>
+                  <option value={`08:30:00`}>8:30pm</option>
+                  <option value={`09:00:00`}>9:00pm</option>
                 </select>
-                <select
-                  name="EndTime"
-                  onChange={handleInputChange}
-                  type="text"
-                  placeholder="End"
-                  className="form-control"
-                >
-                  <option>5:00am</option>
-                  <option>5:30am</option>
-                  <option>6:00am</option>
-                  <option>6:30am</option>
-                  <option>7:00am</option>
-                  <option>7:30am</option>
-                  <option>8:00am</option>
-                  <option>8:30am</option>
-                  <option>9:00am</option>
-                  <option>9:30am</option>
-                    <option>10:00am</option>
-                  <option>10:30am</option>
-                  <option>11:00am</option>
-                  <option>11:30am</option>
-                  <option>12:00pm</option>
-                  <option>12:30pm</option>
-                  <option>1:00pm</option>
-                  <option>1:30pm</option>
-                  <option>2:00pm</option>
-                  <option>2:30pm</option>
-                  <option>3:00pm</option>
-                  <option>3:30pm</option>
-                  <option>4:00pm</option>
-                  <option>4:30pm</option>
-                  <option>5:00pm</option>
-                  <option>5:30pm</option>
-                  <option>6:00pm</option>
-                  <option>6:30pm</option>
-                  <option>7:00pm</option>
-                  <option>7:30pm</option>
-                  <option>8:00pm</option>
-                  <option>8:30pm</option>
-                  <option>9:00pm</option>
-                  <option>9:30pm</option>
+              </p>
+              <p className=''>End Time:
+                <select className="form-control" onChange={handleInputChange} name="endDate" id="exampleFormControlSelect1">
+                <option value={`05:00:00`}>5:00am</option>
+                  <option value={`05:30:00`}>5:30am</option>
+                  <option value={`06:00:00`}>6:00am</option>
+                  <option value={`06:30:00`}>6:30am</option>
+                  <option value={`07:00:00`}>7:00am</option>
+                  <option value={`07:30:00`}>7:30am</option>
+                  <option value={`08:30:00`}>8:00am</option>
+                  <option value={`08:30:00`}>8:30am</option>
+                  <option value={`08:30:00`}>9:00am</option>
+                  <option value={`09:30:00`}>9:30am</option>
+                  <option value={`10:00:00`}>10:00am</option>
+                  <option value={`10:30:00`}>10:30am</option>
+                  <option value={`11:00:00`}>11:00am</option>
+                  <option value={`11:30:00`}>11:30am</option>
+                  <option value={`12:00:00`}>12:00pm</option>
+                  <option value={`12:30:00`}>12:30pm</option>
+                  <option value={`01:00:00`}>1:00pm</option>
+                  <option value={`01:30:00`}>1:30pm</option>
+                  <option value={`02:00:00`}>2:00pm</option>
+                  <option value={`02:30:00`}>2:30pm</option>
+                  <option value={`03:00:00`}>3:00pm</option>
+                  <option value={`03:30:00`}>3:30pm</option>
+                  <option value={`04:00:00`}>4:00pm</option>
+                  <option value={`04:30:00`}>4:30pm</option>
+                  <option value={`05:00:00`}>5:00pm</option>
+                  <option value={`05:30:00`}>5:30pm</option>
+                  <option value={`06:00:00`}>6:00pm</option>
+                  <option value={`06:30:00`}>6:30pm</option>
+                  <option value={`07:00:00`}>7:00pm</option>
+                  <option value={`07:30:00`}>7:30pm</option>
+                  <option value={`08:00:00`}>8:00pm</option>
+                  <option value={`08:30:00`}>8:30pm</option>
+                  <option value={`09:00:00`}>9:00pm</option>
                 </select>
-              </div>
-              <div className="input-group">
-                <span className="input-group-text" id="basic-addon3">Location</span>
+              </p>
+              <p className=''>Location:
                 <input
+                  // value={location} 
                   name="location"
                   onChange={handleInputChange}
                   type="text"
-                  className="form-control" />
-              </div>
+                  placeholder="Location"
+                  className='inputStyle'
+                /></p>
             </form>
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button className= "btn onWhite" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button className = "btn onWhite" onClick={handleFormSubmit}>
+          <Button variant="primary" onClick={handleFormSubmit}>
             Save Changes
           </Button>
         </Modal.Footer>

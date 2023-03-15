@@ -18,57 +18,59 @@
 }
 .clientinfo-container{
     background: white;
-    width: 20rem;
+    width: 70%;
     border: 1px solid black;
     border-radius: 30px;
     padding: 2.25rem;
     margin: auto;
+    height: 40vw;   
 }
 
 .singleTraineeCards{
-    width: 15rem;
+    width: 20rem;
     /* height: 12rem; */
     padding: 0.25rem;
     background: white;
     border: 1px solid black;
     border-radius: 30px;
+    margin:auto;
 }
 .clientAppt-container{
     background: white;
-    width: 20rem;
+    width: 70%;
     border: 1px solid black;
     border-radius: 30px;
     padding: 2.25rem;
     margin: auto;
+    height: 40vw;
 }
 .clientAppt-card{
     background: white;
-    width: 12rem;
-    border: 1px solid black;
-    border-radius: 30px;
-    padding: 2.25rem;
-    margin: 1.75rem;
-
-}
-
-
-
-.clientWorkOuts-container{
-    background: white;
     width: 20rem;
     border: 1px solid black;
     border-radius: 30px;
     padding: 2.25rem;
     margin: auto;
+
+}
+
+.clientWorkOuts-container{
+    background: white;
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 2.25rem;
+    margin: auto;
+    height: 40vw;
 }
 
 .clientWorkOuts-cards{
     background: white;
-    width: 12rem;
+    width: 20rem;
     border: 1px solid black;
     border-radius: 30px;
     padding: 2.25rem;
-    margin: 1.75rem;
+    margin: auto;
 
 }
 

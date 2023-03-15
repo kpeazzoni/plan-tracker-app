@@ -4,7 +4,7 @@ function SingleTraineeWorkout({traineeAppts, apptIndex}) {
     const appt = traineeAppts && traineeAppts [apptIndex];
 // console.log(appt);
     return (
-    <div >
+    <div className='overflow-auto'style={{height: 540}}>
         {/* <h5>{appt.startDate}</h5> */}
         
             {appt?.workouts.map((workout) => (
@@ -13,7 +13,9 @@ function SingleTraineeWorkout({traineeAppts, apptIndex}) {
                 <h4 className="card-text">{workout.exerciseName}</h4>
                 <h5 className="card-text">Reps: {workout.reps} Sets: {workout.sets}</h5>
                 <h5 className="card-text">Weight: {workout.weight} Equipment: {workout.equipmentReq}</h5>
-                <h5 className="card-text">Distance/Time: {workout.distanceOrTime} Notes: {workout.notes}</h5>
+                <h5 className="card-text">Distance/Time: {workout.distanceOrTime}</h5>
+                <h5 className="card-text">Notes: {workout.notes}</h5>
+
         
             </div>
             ))}

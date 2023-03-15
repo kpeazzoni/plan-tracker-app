@@ -147,7 +147,7 @@ const NewClientForm = () => {
           </div>
 
 
-          <button type="btn" onClick={handleFormSubmit} className='buttonStyle'>
+          <button type="btn" onClick={handleFormSubmit} className='btn onWhite'>
             Submit
           </button>
         </form>
@@ -157,74 +157,3 @@ const NewClientForm = () => {
 }
 
 export default NewClientForm;
-{/* <p className='pStyle'>Name:
-            <input
-              value={formState.firstName}
-              name="firstName"
-              onChange={handleChange}
-              type="text"
-              placeholder="First Name"
-              className='inputStyle'
-            />
-            <input
-              value={formState.lastName}
-              name="lastName"
-              onChange={handleChange}
-              type="text"
-              placeholder="Last Name"
-              className='inputStyle'
-            /> </p>
-          <p className='pStyle'>DOB:
-            <input
-              value={formState.dob}
-              name="dob"
-              onChange={handleChange}
-              type="Date"
-              placeholder="DOB"
-              className='inputStyle'
-            /></p>
-          <p className='pStyle'>Height:
-            <input
-              value={formState.height}
-              name="height"
-              onChange={handleChange}
-              type="text"
-              placeholder="in"
-              className='inputStyle'
-            /></p>
-          <p className='pStyle'>Weight:
-            <input
-              value={formState.weight}
-              name="weight"
-              onChange={handleChange}
-              type="text"
-              placeholder="lbs"
-              className='inputStyle'
-            /></p>
-          <p className='pStyle'>Goals:
-            <input
-              value={formState.goal}
-              name="goals"
-              onChange={handleChange}
-              type="text"
-              placeholder="Goals"
-              className='inputStyle'
-            /></p>
-          <p className='pStyle'>Injury History:
-            <input
-              value={formState.injuryHistory}
-              name="injuryHistory"
-              onChange={handleChange}
-              type="text"
-              placeholder="Injury History"
-              className='inputStyle'
-            /></p>
-          <p className='pStyle'>Notes:
-            <input
-              value={formState.notes}
-              name="notes"
-              onChange={handleChange}
-              type="text"
-              placeholder="Notes: (lifestyle, fun facts, etc.)"
-              className='inputStyle'
-            /></p> */}

@@ -79,7 +79,7 @@ const Register = () => {
                 <p>
                   Success! You may now head{' '}
                   {/* the link is actually getting handled in auth and changing the route there.  */}
-                  <Link to="/">back to the homepage.</Link>
+                  <Link to="./homepagecontainer">Thanks for registering!</Link>
                 </p>
               ) : (
                 <form onSubmit={handleFormSubmit}>

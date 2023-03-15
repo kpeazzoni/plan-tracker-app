@@ -7,7 +7,8 @@ import '../components/HomepageContainer/HomepageContainer.css'
 
 function TraineesCards ({trainees}){
        
-   return trainees.map((trainee, i)=>(
+   return (<div className ='overflow-auto' style={{height: 540}}> 
+      {trainees.map((trainee, i)=>(
       <div className='card traineesCards' key={i}>
          <Link to={`/SingleTraineeContainer/${trainee._id}`} > 
          <div className='card-body'>
@@ -16,7 +17,8 @@ function TraineesCards ({trainees}){
          </div>
          </Link>  
       </div>
-  ))
+  ))}
+   </div>)
 };
 
     // function TraineesCards({ traineeId }) {

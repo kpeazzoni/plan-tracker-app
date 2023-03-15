@@ -32,51 +32,52 @@ a:Link, a:active, a:hover, a:focus, a:visited {
 
 .appointments-container{
   background: white;
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 2.25rem;
+    margin: auto;
+    height: 40vw;
+
+}
+
+.appointmentsCards {
+  background: white;
   width: 20rem;
   border: 1px solid black;
   border-radius: 30px;
   padding: 2.25rem;
   margin: auto;
-
-}
-
-.appointmentsCards {
-  width: 15rem;
-  /* height: 12rem; */
-  padding: 0.25rem;
-  background: white;
-  border: 1px solid black;
-  border-radius: 30px;
   
 }
 
 .trainees-container{
   background: white;
+  width: 70%;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 2.25rem;
+  margin: auto;
+  height: 40vw;
+}
+
+.traineesCards {
+  background: white;
   width: 20rem;
   border: 1px solid black;
   border-radius: 30px;
   padding: 2.25rem;
   margin: auto;
-}
-
-.traineesCards {
-  width: 15rem;
-  /* height: 12rem; */
-  padding: 0.25rem;
-  background: white;
-  border: 1px solid black;
-  border-radius: 30px;
-  margin-bottom: 1rem;
-  
 }
 
 .action-container{
   background: white;
-  width: 20rem;
-  border: 1px solid black;
-  border-radius: 30px;
-  padding: 2.25rem;
-  margin: auto;
+    width: 70%;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 2.25rem;
+    margin: auto;
+    height: 20vw; 
 }
 
 .links{

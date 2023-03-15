@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import '../components/HomepageContainer/HomepageContainer.css'
 
 function AppointmentsCards({appointments}) {
-  return appointments.map ((appointment, i)=>(
-    <div className='card appointmentsCards' key={i}>
+  return (<div className ='overflow-auto' style={{height: 540}}> 
+  {appointments?.map ((appointment, i)=>(
+    <div className='card appointmentsCards'key={i}>
       <div className='card-body'>
       <Link to={`/SingleTraineeContainer/${appointment.traineeId._id}`} > 
       <h3>Trainee: {appointment.traineeId.firstName} {appointment.traineeId.lastName}</h3>
@@ -15,8 +16,8 @@ function AppointmentsCards({appointments}) {
       </Link>
       </div>
     </div>
-
-  ))
+  ))}
+  </div> )
 }
 
 export default AppointmentsCards;

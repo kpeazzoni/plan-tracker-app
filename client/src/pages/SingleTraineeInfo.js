@@ -4,7 +4,7 @@ function SingleTraineeInfo({trainee},{traineeDemo}) {
     console.log(trainee, "====")
     const demo= trainee.demographics.length-1
     return (
-        <div className='card singleTraineeCards'>
+        <div className='card singleTraineeCards overflow-auto'style={{height: 500}}>
             <div className='card-body'>
            <h3 className="card-text"><b>First Name:</b> {trainee.firstName}</h3>
             <h3 className="card-text"><b>Last Name:</b> {trainee.lastName}</h3>

@@ -29,6 +29,9 @@ a:Link, a:active, a:hover, a:focus, a:visited {
     text-align: center;
   }
 
+.scrollHP {
+  height: 28vw;
+}
 
 .appointments-container{
   background: white;
@@ -37,19 +40,20 @@ a:Link, a:active, a:hover, a:focus, a:visited {
     border-radius: 30px;
     padding: 2.25rem;
     margin: auto;
-    height: 40vw;
+    height: auto;
 
 }
 
 .appointmentsCards {
   background: white;
-  width: 20rem;
+  width: auto;
   border: 1px solid black;
   border-radius: 30px;
-  padding: 2.25rem;
+  padding: .25rem;
   margin: auto;
-  
 }
+
+
 
 .trainees-container{
   background: white;
@@ -58,15 +62,15 @@ a:Link, a:active, a:hover, a:focus, a:visited {
   border-radius: 30px;
   padding: 2.25rem;
   margin: auto;
-  height: 40vw;
+  height: auto;
 }
 
 .traineesCards {
   background: white;
-  width: 20rem;
+  width: auto;
   border: 1px solid black;
   border-radius: 30px;
-  padding: 2.25rem;
+  padding: .25rem;
   margin: auto;
 }
 
@@ -77,15 +81,21 @@ a:Link, a:active, a:hover, a:focus, a:visited {
     border-radius: 30px;
     padding: 2.25rem;
     margin: auto;
-    height: 20vw; 
+    height: auto; 
 }
 
 .links{
-  width: 15rem;
+  width: 40%;
   /* height: 12rem; */
   padding: 0.25rem;
   background: white;
   border: 1px;
   border-radius: 30px;
   margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+  .homepageContainer-wrapper {
+    flex-direction: column;
+  }
 }

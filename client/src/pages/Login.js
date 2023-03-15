@@ -81,8 +81,7 @@ const Login = (props) => {
 
             {data ? (
               <p>
-                Success! You may now head{' '}
-                <Link to='/'>back to the homepage.</Link>
+                Success! Logging you in!
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
@@ -102,22 +101,22 @@ const Login = (props) => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <MDBBtn
+                <button
                   className="btn btn-block btn-primary"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
                   Login
-                </MDBBtn>
+                </button>
               </form>
             )}
              {/* <MDBBtn className="mb-4 px-5" color='dark' size='lg'>Login</MDBBtn> */}
               
               <p className="mb-5 pb-lg-2" style={{color: '#393f81'}}>Don't have an account? <a href="/register" style={{color: '#393f81'}}>Register here</a></p>
-            <div className='d-flex flex-row justify-content-start'>
+            {/* <div className='d-flex flex-row justify-content-start'>
                 <a href="#!" className="small text-muted me-1">Terms of use.</a>
                 <a href="#!" className="small text-muted">Privacy policy</a>
-              </div>
+              </div> */}
 
             {error && (
               <div className="my-3 p-3 bg-danger text-white">

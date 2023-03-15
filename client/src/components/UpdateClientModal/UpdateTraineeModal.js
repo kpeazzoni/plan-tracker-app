@@ -66,12 +66,12 @@ function UpdateTraineeModal(props) {
   return (
     <>
       <Button className = "btn onWhite" onClick={handleShow}>
-        Update Trainee
+        Update Client
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Update Trainee</Modal.Title>
+          <Modal.Title>Update Client</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className='container col-12'>

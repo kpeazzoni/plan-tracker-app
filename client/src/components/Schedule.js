@@ -44,8 +44,8 @@ const editingState = {
         views={views}
         defaultCurrentView="week"
         defaultCurrentDate={currentDate}
-        height={700}
-        startDayHour={9}
+        height={800}
+        startDayHour={5}
         editing={editingState}
         onAppointmentClick={onAppointmentClick} />
         </>

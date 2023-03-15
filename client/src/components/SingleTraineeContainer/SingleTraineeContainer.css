@@ -11,6 +11,16 @@
     color: #0A99B1;
     text-align: center;
 }
+
+.scroll {
+    height: 42vh;
+}
+
+.cardBtn {
+    display: flex;
+    justify-content: center;
+}
+
 .singleTrainee-container{
     display: flex;
     flex-wrap: wrap;
@@ -23,11 +33,11 @@
     border-radius: 30px;
     padding: 2.25rem;
     margin: auto;
-    height: 40vw;   
+    height: auto;   
 }
 
 .singleTraineeCards{
-    width: 20rem;
+    width: auto;
     /* height: 12rem; */
     padding: 0.25rem;
     background: white;
@@ -42,11 +52,11 @@
     border-radius: 30px;
     padding: 2.25rem;
     margin: auto;
-    height: 40vw;
+    height: auto;
 }
 .clientAppt-card{
     background: white;
-    width: 20rem;
+    width: auto;
     border: 1px solid black;
     border-radius: 30px;
     padding: 2.25rem;
@@ -61,12 +71,12 @@
     border-radius: 30px;
     padding: 2.25rem;
     margin: auto;
-    height: 40vw;
+    height: auto;
 }
 
 .clientWorkOuts-cards{
     background: white;
-    width: 20rem;
+    width: auto;
     border: 1px solid black;
     border-radius: 30px;
     padding: 2.25rem;

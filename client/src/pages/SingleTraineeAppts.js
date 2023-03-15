@@ -3,7 +3,7 @@ import React from 'react';
 function SingleTraineeAppts({traineeAppts, setApptIndex}) {
   console.log(traineeAppts);
   
-    return (<div className ='overflow-auto' style={{height: 540}}>{traineeAppts?.map((appt, i) => (
+    return (<div className ='overflow-auto scroll'>{traineeAppts?.map((appt, i) => (
       
       <div className="clientAppt-card" key={i}>
           <div className="card-body"id={i} onClick={()=> setApptIndex(i)}>

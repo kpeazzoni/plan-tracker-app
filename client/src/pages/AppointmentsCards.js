@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import '../components/HomepageContainer/HomepageContainer.css'
 
 function AppointmentsCards({appointments}) {
-  return (<div className ='overflow-auto' style={{height: 540}}> 
+  return (<div className ='overflow-auto scrollHP'> 
   {appointments?.map ((appointment, i)=>(
     <div className='card appointmentsCards'key={i}>
       <div className='card-body'>
       <Link to={`/SingleTraineeContainer/${appointment.traineeId._id}`} > 
       <h3>Trainee: {appointment.traineeId.firstName} {appointment.traineeId.lastName}</h3>
-      <h3>Date: {appointment.startDate}</h3>
+      {/* <h3>Date: {appointment.startDate}</h3> */}
       <h3>Start Time: {appointment.startDate}</h3>
       <h3>End Time: {appointment.endDate}</h3>
       </Link>

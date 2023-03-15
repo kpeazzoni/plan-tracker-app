@@ -54,8 +54,10 @@ useEffect(() => {
     
       <aside className="col-md-4 mb-auto mx-auto">
       <div className="clientinfo-container">
+        <div className = "cardBtn">
          {trainee && (<UpdateTraineeModal trainee = {trainee} />)}
-          <h3 className="card-title">Trainee Info</h3>
+         </div>
+          <h3 className="card-title">Client Info</h3>
           {trainee && (
             <SingleTraineeInfo trainee={trainee} />
           )}
@@ -66,7 +68,9 @@ useEffect(() => {
 
        <aside className="col-md-4 mb-auto mx-auto">
         <div className="clientAppt-container">
+        <div className = "cardBtn">
           {trainee && (<ScheduleAppointmentModal trainee = {trainee} />)}
+          </div>
           <h3 className="card-title">Upcoming Appointments</h3>
           {trainee && (<SingleTraineeAppts
             traineeAppts={traineeAppts}
@@ -78,7 +82,9 @@ useEffect(() => {
 
         <aside className="col-md-4 mb-auto mx-auto">
         <div className="clientWorkOuts-container">
+        <div className = "cardBtn">
           {trainee && (<EditWorkoutPlanModal trainee = {trainee} traineeAppts = {traineeAppts} traineeApptIndex ={apptIndex} />)}
+          </div>
           <h3 className="card-title">Workout Plan</h3>
          {trainee && (<SingleTraineeWorkout
             traineeAppts={traineeAppts}

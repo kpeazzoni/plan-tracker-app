@@ -5,7 +5,8 @@ body {
   font-family: 'M PLUS 2', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  background-color: var(--appColor)!important;
+  height: 100vh;
 }
 
 .logo {

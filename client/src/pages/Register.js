@@ -115,13 +115,13 @@ const Register = () => {
                     value={formState.password}
                     onChange={handleChange}
                   />
-                  <MDBBtn
+                  <button
                     className="btn onWhite"
                     style={{ cursor: 'pointer' }}
                     type="submit"
                   >
                     Submit
-                  </MDBBtn>
+                  </button>
                 </form>
               )}
 

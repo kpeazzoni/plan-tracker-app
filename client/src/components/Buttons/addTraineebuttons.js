@@ -32,8 +32,8 @@ function AddTraineeButtons() {
     }
     return (
         <div>
-          <button className='btn onWhite'  onClick={routeChange}>
-          Add Trainee
+          <button className='btn onWhite actionCenter'  onClick={routeChange}>
+          Add Client
           </button> 
         </div>
     )

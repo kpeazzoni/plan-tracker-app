@@ -7,7 +7,7 @@ import '../components/HomepageContainer/HomepageContainer.css'
 
 function TraineesCards ({trainees}){
        
-   return (<div className ='overflow-auto' style={{height: 540}}> 
+   return (<div className ='overflow-auto scrollHP'> 
       {trainees.map((trainee, i)=>(
       <div className='card traineesCards' key={i}>
          <Link to={`/SingleTraineeContainer/${trainee._id}`} > 

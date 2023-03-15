@@ -32,8 +32,8 @@ function ViewallTraineesButtons() {
     }
     return (
         <div>
-          <button className='btn onWhite' onClick={routeChange}>
-          View All Trainees
+          <button className='btn onWhite actionCenter' onClick={routeChange}>
+          View All Clients
           </button> 
         </div>
     )

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import '../../src/components/HomepageContainer/HomepageContainer.css'
+import '../components/HomepageContainer/HomepageContainer.css'
 
 function AppointmentsCards({appointments}) {
   return appointments.map ((appointment, i)=>(

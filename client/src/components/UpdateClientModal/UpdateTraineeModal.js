@@ -140,4 +140,3 @@ function UpdateTraineeModal(props) {
 }
 
 export default UpdateTraineeModal;
-

@@ -103,7 +103,6 @@ type Mutation {
    removeTrainee(traineeId: ID!) : Trainees
    
    updateWorkouts(
-      workoutId: ID!
       scheduleId: ID!
       muscleGroup: String!,
       exerciseName: String!,

@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import { QUERY_EXERCISES, QUERY_TRAINEE } from '../../utils/queries';
 import { useMutation } from '@apollo/client';
 import { useParams } from 'react-router-dom';
-import {UPDATE_WORKOUTS} from "../../utils/mutations"
+import {ADD_WORKOUTS} from "../../utils/mutations"
 
 
 function EditWorkoutPlanModal(props) {
@@ -138,7 +138,7 @@ switch (selectedGroup.muscleGroup) {
     })
   };
   const [trainee, setTrainee] = useState();
-  const [updateWorkouts] = useMutation(UPDATE_WORKOUTS);
+  const [addWorkouts] = useMutation(ADD_WORKOUTS);
 
 
   const [formState, setFormState] = useState({
@@ -168,7 +168,7 @@ console.log(_id);
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data ,error } = await updateWorkouts({
+      const { data ,error } = await addWorkouts({
         variables: { scheduleId: appointment._id, traineeId: _id, ...formState },
       }); 
 console.log(error)

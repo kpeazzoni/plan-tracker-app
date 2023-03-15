@@ -122,26 +122,21 @@ mutation Mutation($traineeId: ID!, $height: Int!, $weight: Int!, $goals: String!
 }
 `;
 export const ADD_WORKOUTS = gql`
-mutation Mutation($muscleGroup: String!, $exerciseName: String!) {
-  addWorkouts(muscleGroup: $muscleGroup, exerciseName: $exerciseName) {
+mutation AddWorkouts($traineeId: ID!, $scheduleId: ID!, $muscleGroup: String!, $exerciseName: String!, $sets: String, $reps: String, $weight: String, $distanceOrTime: String, $equipmentReq: String, $notes: String) {
+  addWorkouts(traineeId: $traineeId, scheduleId: $scheduleId, muscleGroup: $muscleGroup, exerciseName: $exerciseName, sets: $sets, reps: $reps, weight: $weight, distanceOrTime: $distanceOrTime, equipmentReq: $equipmentReq, notes: $notes) {
     _id
-    endDate
-    location
-    startDate
-    traineeId {
-      _id
-    }
-    trainerId {
-      _id
-    }
     workouts {
-      _id
       distanceOrTime
       equipmentReq
+      exerciseName
+      muscleGroup
       notes
       reps
       sets
       weight
+    }
+    traineeId {
+      _id
     }
   }
 }

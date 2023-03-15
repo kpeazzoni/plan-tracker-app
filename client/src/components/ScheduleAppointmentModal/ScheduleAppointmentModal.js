@@ -1,48 +1,70 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import {useMutation, useQuery} from '@apollo/client';
-import {useParams} from 'react-router-dom';
-import {ADD_APPOINTMENT} from '../../utils/mutations';
-import {QUERY_TRAINEE} from '../../utils/queries';
+import { ADD_APPOINTMENT } from '../../utils/mutations';
+import { useMutation } from '@apollo/client';
+
 
 function ScheduleAppointmentModal(props) {
-  const [show, setShow] = useState(false);
+  const [formState, setFormState] = useState({
+    
+    startDate: '',
+    endDate: '',
+    location: '',
+  });
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const handleInputChange = (e) => {
-    // Getting the value and name of the input which triggered the change
-    const { name, value } = e.target;
-  }
-
-
-  const [trainee, setTrainee] = useState();
   const [addAppointment] = useMutation(ADD_APPOINTMENT);
 
-  const [formState, setFormState] = useState({
-    muscleGroup: '',
-    exerciseName: '',
-    sets: '',
-    reps: '',
-    weight: '',
-    distanceOrTime: '',
-    equipmentReq: '',
-    notes: '',
-  });
-  
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    let intValue = value;
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    console.log('name', name, 'value', value)
     setFormState({
       ...formState,
-      [name]: intValue,
+      [name]: value,
     });
   };
-  const {_id} = props.trainee
+
+  const handleDateFormat = () => {
+    const formattedTimeStampStart = `${formState}T${formState.startDate}:00`;
+    const formattedTimeStampEnd = `${formState}T${formState.endDate}:00`;
+  
+    const formattedStartDateTime = (formattedTimeStampStart, "isoDateTime");
+    const formattedEndDateTime = (formattedTimeStampEnd, "isoDateTime");
+  
+    return { 
+      startDate: formattedStartDateTime, 
+      endDate: formattedEndDateTime 
+    };
+  };
+  
+  
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    console.log(formState);
+    try {
+      const { startDate, endDate } = handleDateFormat(); // destructure start and end date
+      const { data } = await addAppointment({
+        variables: { 
+          ...formState,
+          startDate, // use destructured values directly
+          endDate
+        },
+      });
+  
+      console.log('data', data);
+      // Reset the form state to clear the input data
+      setFormState({
+        startDate: '',
+        endDate: '',
+        location: '',
+      });
+    } catch (e) {
+      console.error(e);
+    }
     try {
       const { data } = await addAppointment({
         variables: { traineeId:_id, ...formState }
@@ -61,10 +83,12 @@ function ScheduleAppointmentModal(props) {
       console.log(error);
     }
   };
+  
+
   return (
     <>
-      <Button className = 'btn onWhite' onClick={handleShow}>
-        Schedule Appointment
+      <Button variant="primary" onClick={handleShow}>
+        ScheduleAppointmentModal
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -74,118 +98,63 @@ function ScheduleAppointmentModal(props) {
         <Modal.Body>
           <div className='container col-8'>
             <form className="row justify-content-center formCard" >
-              <div className="input-group">
-                <span className="input-group-text" id="basic-addon3">Date</span>
+              <p className=''>Date:
                 <input
-                  name="date"
+                  value={formState.date}
+                  name="Date"
                   onChange={handleInputChange}
                   type="Date"
                   placeholder="Date"
-                  className="form-control" />
-              </div>
-              <div className="input-group">
-                <span className="input-group-text">Time</span>
-                <select
-                  name="startTime"
-                  onChange={handleInputChange}
-                  type="text"
-                  placeholder="Start"
-                  className="form-control"
-                >
-                  <option>5:00am</option>
-                  <option>5:30am</option>
-                  <option>6:00am</option>
-                  <option>6:30am</option>
-                  <option>7:00am</option>
-                  <option>7:30am</option>
-                  <option>8:00am</option>
-                  <option>8:30am</option>
-                  <option>9:00am</option>
-                  <option>9:30am</option>
-                  <option>10:00am</option>
-                  <option>10:30am</option>
-                  <option>11:00am</option>
-                  <option>11:30am</option>
-                  <option>12:00pm</option>
-                  <option>12:30pm</option>
-                  <option>1:00pm</option>
-                  <option>1:30pm</option>
-                  <option>2:00pm</option>
-                  <option>2:30pm</option>
-                  <option>3:00pm</option>
-                  <option>3:30pm</option>
-                  <option>4:00pm</option>
-                  <option>4:30pm</option>
-                  <option>5:00pm</option>
-                  <option>5:30pm</option>
-                  <option>6:00pm</option>
-                  <option>6:30pm</option>
-                  <option>7:00pm</option>
-                  <option>7:30pm</option>
-                  <option>8:00pm</option>
-                  <option>8:30pm</option>
-                  <option>9:00pm</option>
-                  <option>9:30pm</option>
+                  className='inputStyle'
+                /></p>
+         
+              <p className=''>Start Time:
+                <select className="form-control" onChange={handleInputChange} name ="startDate" id="exampleFormControlSelect1">
+                  <option value={`05:00:00`}>5:00am</option>
+                  <option value={`05:30:00`}>5:30am</option>
+                  <option value={`06:00:00`}>6:00am</option>
+                  <option value={`06:30:00`}>6:30am</option>
+                  <option value={`07:00:00`}>7:00am</option>
+                  <option value={`07:30:00`}>7:30am</option>
+                  <option value={`08:30:00`}>8:00am</option>
+                  <option value={`08:30:00`}>8:30am</option>
+                  <option value={`08:30:00`}>9:00am</option>
+                  <option value={`09:30:00`}>9:30am</option>
                 </select>
-                <select
-                  name="EndTime"
-                  onChange={handleInputChange}
-                  type="text"
-                  placeholder="End"
-                  className="form-control"
-                >
-                  <option>5:00am</option>
-                  <option>5:30am</option>
-                  <option>6:00am</option>
-                  <option>6:30am</option>
-                  <option>7:00am</option>
-                  <option>7:30am</option>
-                  <option>8:00am</option>
-                  <option>8:30am</option>
-                  <option>9:00am</option>
-                  <option>9:30am</option>
-                  <option>10:00am</option>
-                  <option>10:30am</option>
-                  <option>11:00am</option>
-                  <option>11:30am</option>
-                  <option>12:00pm</option>
-                  <option>12:30pm</option>
-                  <option>1:00pm</option>
-                  <option>1:30pm</option>
-                  <option>2:00pm</option>
-                  <option>2:30pm</option>
-                  <option>3:00pm</option>
-                  <option>3:30pm</option>
-                  <option>4:00pm</option>
-                  <option>4:30pm</option>
-                  <option>5:00pm</option>
-                  <option>5:30pm</option>
-                  <option>6:00pm</option>
-                  <option>6:30pm</option>
-                  <option>7:00pm</option>
-                  <option>7:30pm</option>
-                  <option>8:00pm</option>
-                  <option>8:30pm</option>
-                  <option>9:00pm</option>
-                  <option>9:30pm</option>
+              </p>
+              <p className=''>End Time:
+                <select className="form-control" onChange={handleInputChange} name ="endDate" id="exampleFormControlSelect1">
+                  <option value={`05:30:00`}>5:00am</option>
+                  <option value={`05:30:00`}>5:30am</option>
+                  <option value={`06:00:00`}>6:00am</option>
+                  <option value={`06:30:00`}>6:30am</option>
+                  <option value={`07:30:00`}>7:00am</option>
+                  <option value={`07:30:00`}>7:30am</option>
+                  <option value={`08:30:00`}>8:00am</option>
+                  <option value={`08:30:00`}>8:30am</option>
+                  <option value={`09:30:00`}>9:00am</option>
+                  <option value={`09:30:00`}>9:30am</option>
+                  <option value={`10:30:00`}>10:00am</option>
+                  <option value={`10:30:00`}>10:30am</option>
                 </select>
-              </div>
-              <div className="input-group">
-                <span className="input-group-text" id="basic-addon3">Location</span>
+              </p>
+              <p className=''>Location:
                 <input
+                  // value={location} 
                   name="location"
                   onChange={handleInputChange}
                   type="text"
-                  className="form-control" />
-              </div>
+                  placeholder="Location"
+                  className='inputStyle'
+                /></p>
             </form>
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button className= "btn onWhite" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button className = "btn onWhite" onClick={handleFormSubmit}>
+          <Button variant="primary" onClick={handleFormSubmit}>
             Save Changes
           </Button>
         </Modal.Footer>

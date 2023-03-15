@@ -9,13 +9,14 @@ import {useParams} from "react-router-dom";
 import UpdateTraineeModal from '../UpdateClientModal/UpdateTraineeModal'
 import ScheduleAppointmentModal from "../ScheduleAppointmentModal/ScheduleAppointmentModal";
 import EditWorkoutPlanModal from "../EditWorkoutPlanModal/EditWorkoutPlanModal";
-
+import UpdateClientModal from "../../components/UpdateClientModal/UpdateTraineeModal"
 // import { QUERY_SCHEDULES } from "../../utils/queries";
 // import { QUERY_TRAINEE } from '../../utils/queries';
 
 function SingleTraineeContainer(props) {
   const [trainee, setTrainee] = useState();
   const [traineeAppts, setTraineeAppts] = useState();
+
 
 
   const { data, error } = useQuery(QUERY_TRAINEE, {
@@ -42,11 +43,20 @@ useEffect(() => {
   // console.log(singleTraineeAppts);
   // create state of index of selected appt
   const [apptIndex, setApptIndex] = useState(0);
-
+  const firstName = data?.trainee.firstName || "";
+  const lastName = data?.trainee.lastName || "";
   return (
-    <div className="container singleTrainee-container text-start">
+  <main>
+    <h1 className="oneTrainee">{firstName} {lastName}</h1>
+    <div class="singleTrainee-container">
+    {/* <div class="container singleTrainee-container text-start"> */}
       {/* <h1>{trainee.firstName}</h1> */}
-      <div className="row">
+
+      {/* <div class="row"> */}
+
+      <aside className="col-md-4 mb-auto mx-auto">
+       <div className="clientinfo-container">
+
         <div className="col card">
          {trainee && (<UpdateTraineeModal trainee = {trainee} />)}
           <h5 className="card-title">Trainee Info</h5>
@@ -54,7 +64,13 @@ useEffect(() => {
             <SingleTraineeInfo trainee={trainee} />
           )}
           {/* <SingleTraineeInfo trainee={singleTraineeData}/> */}
+          <UpdateClientModal />
+         </div>
+
         </div>
+       </aside>
+
+       <aside className="col-md-4 mb-auto mx-auto">
         <div className="col card overflow-scroll">
           {trainee && (<ScheduleAppointmentModal trainee = {trainee} />)}
           <h5 className="card-title">Upcoming Appointments</h5>
@@ -63,6 +79,9 @@ useEffect(() => {
             setApptIndex={setApptIndex}
           />)}
         </div>
+        </aside>
+
+      <aside className="col-md-4 mb-auto mx-auto">
         <div className="col card">
           {trainee && (<EditWorkoutPlanModal trainee = {trainee} />)}
           <h5 className="card-title">Workout Plan</h5>
@@ -76,8 +95,12 @@ useEffect(() => {
           />)}
           
         </div>
+      </aside>
+
       </div>
-    </div>
+
+    {/* </div> */}
+  </main>
   );
 }
 

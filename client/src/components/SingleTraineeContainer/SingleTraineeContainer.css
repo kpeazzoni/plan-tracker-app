@@ -1,3 +1,39 @@
 /* .singleTrainee-container {
     height: 50%;
 } */
+
+a:Link, a:active, a:hover, a:focus, a:visited {
+    text-decoration: none;
+    color: black
+  }
+.oneTrainee{
+    color: white;
+    text-align: center;
+}
+.singleTrainee-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card{
+    width: 20rem;
+    /* height: 12rem; */
+    /* padding: 0.25rem; */
+    background: white;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 3rem;
+    margin: auto;
+}
+
+.card-title{
+    color: #0A99B1;
+    text-align: center;
+}
+
+.card-text{
+    font-size: x-large;
+    margin-top: 1.5rem;
+    list-style-type: none;
+}

@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import Logo from "../../assets/logoGray.png";
 import "./Header.css";
-// import Bars from "../../assets/PlanTracker.png";
 import { Link, useNavigate } from 'react-router-dom';
 import Auth from '../../utils/auth';
-// import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -56,12 +54,32 @@ const Header = () => {
             </Container>
           </Navbar>
           ) : (
-            <>
-            <button onClick={(event) => navigate('/register')} className='btn'>Register</button>
-            <button onClick={(event) => navigate('/login')} className='btn'>Login</button>
-            </>
+            <Navbar expand="md" expanded={expanded} className="mb-3">
+            <Container fluid>
+              <Navbar.Toggle aria-controls="offcanvasNavbar-expand-md"  onClick={() => setExpanded(expanded ? false : "expanded")} />
+              <Navbar.Offcanvas
+                id="offcanvasNavbar-expand-md"
+                aria-labelledby="offcanvasNavbarLabel-expand-md"
+                placement="end"
+              >
+                <Offcanvas.Header>
+                  <Offcanvas.Title id="offcanvasNavbarLabel-expand-md">
+                    Welcome!
+                  </Offcanvas.Title>
+                  <button className="btn-close" onClick={() => setExpanded(false)} />
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                  <Nav className="justify-content-end flex-grow-1 pe-3" onClick={() => setExpanded(false)}>
+                    <div>
+                    <Link to="/register"><button className='btn'>Register</button></Link>
+                    <Link to="/login"><button className='btn'>Login</button></Link>
+                    </div>
+                  </Nav>
+                </Offcanvas.Body>
+              </Navbar.Offcanvas>
+            </Container>
+          </Navbar>
           )}
-      
     </div>
   )
 }

@@ -75,7 +75,7 @@ export default function HomepageContainer() {
     <h3 className="date">{currentTime}</h3>
     <div className="homepageContainer-wrapper ">
       
-      <aside className="col-md-4 mb-auto mx-auto">
+      <aside className="col-lg-4 mx-auto">
       {/* <div className="col-align-self-center"> */}
         <div className="appointments-container">
           
@@ -86,7 +86,7 @@ export default function HomepageContainer() {
       </aside>
 
 
-      <aside className="col-md-4 mb-auto mx-auto">
+      <aside className="col-lg-4 mx-auto">
         <div className="trainees-container">
          
           <h3 className="card-heading">Clients</h3>
@@ -100,16 +100,18 @@ export default function HomepageContainer() {
       
       
       
-      <aside className="col-md-4 mb-auto mx-auto">
+      <aside className="col-lg-4 mx-auto">
        <div className= "action-container">
 
         <h3 className="card-heading">Action Center</h3>
-          
-          <div className="links">
-           <Link to="/schedule"><FullscheduleButtons /></Link>
-           <Link to="/newclientform"><AddTraineeButtons /></Link>
-           <Link to="/AllTraineesContainer"><ViewallTraineesButtons /></Link>
-          </div>
+        <div className = "cardBtn">
+          {/* <div className="links"> */}
+           <Link to="/schedule"><FullscheduleButtons /></Link></div>
+           <div className = "cardBtn">
+           <Link to="/newclientform"><AddTraineeButtons /></Link></div>
+           <div className = "cardBtn">
+           <Link to="/AllTraineesContainer"><ViewallTraineesButtons /></Link></div>
+          {/* </div> */}
 
        </div>
 

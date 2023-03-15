@@ -78,6 +78,9 @@
     transition: all 150ms ease-in-out;
   }
 
+  .actionCenter {
+    width: 13rem;
+  }
   .show-on-md {
     display: none;
 }

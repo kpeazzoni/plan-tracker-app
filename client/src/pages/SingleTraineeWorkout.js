@@ -4,7 +4,7 @@ function SingleTraineeWorkout({traineeAppts, apptIndex}) {
     const appt = traineeAppts && traineeAppts [apptIndex];
 // console.log(appt);
     return (
-    <div className='overflow-auto'style={{height: 540}}>
+    <div className='overflow-auto scroll'>
         {/* <h5>{appt.startDate}</h5> */}
         
             {appt?.workouts.map((workout) => (

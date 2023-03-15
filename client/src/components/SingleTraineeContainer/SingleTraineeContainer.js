@@ -9,7 +9,7 @@ import {useParams} from "react-router-dom";
 import UpdateTraineeModal from '../UpdateClientModal/UpdateTraineeModal'
 import ScheduleAppointmentModal from "../ScheduleAppointmentModal/ScheduleAppointmentModal";
 import EditWorkoutPlanModal from "../EditWorkoutPlanModal/EditWorkoutPlanModal";
-import UpdateClientModal from "../../components/UpdateClientModal/UpdateTraineeModal"
+
 // import { QUERY_SCHEDULES } from "../../utils/queries";
 // import { QUERY_TRAINEE } from '../../utils/queries';
 

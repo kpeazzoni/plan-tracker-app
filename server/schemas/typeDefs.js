@@ -134,7 +134,6 @@ type Mutation {
       startDate: String!,
       endDate: String!,
       location: String,
-      trainerId: ID!,
       traineeId: ID!,
       ) : Schedules
    

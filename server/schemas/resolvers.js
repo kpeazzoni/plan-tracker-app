@@ -149,18 +149,18 @@ const resolvers = {
       // throw new AuthenticationError('You need to be logged in!');
       },
 
-      addAppointment: async (parent, { startDate, endDate, location, trainerId, traineeId }, context) => {
-        if (context) {
+      addAppointment: async (parent, { startDate, endDate, location, traineeId }, context) => {
+        if (context.user) {
           const appointment = await Schedules.create({
             startDate,
             endDate,
             location,
-            trainerId, 
+            trainerId: context.user._id, 
             traineeId
           });
   
           await Trainers.findOneAndUpdate(
-            { _id: trainerId },
+            { _id: context.user._id },
             { $addToSet: { trainerSchedule: appointment._id } }
           );
           await Trainees.findOneAndUpdate(

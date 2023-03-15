@@ -66,38 +66,9 @@ mutation Mutation($firstName: String!, $lastName: String!, $dob: String!,  $goal
 }
 `;
 export const ADD_APPOINTMENT = gql`
-mutation Mutation($traineeId: ID!, $startDate: String!, $endDate: String!, $trainerId: ID!, $traineeId: ID!) {
-  addAppointment(traineeId: $traineeId, startDate: $startDate, endDate: $endDate, trainerId: $trainerId, traineeId: $traineeId) {
+mutation Mutation($startDate: String!, $endDate: String!, $traineeId: ID!) {
+  addAppointment(startDate: $startDate, endDate: $endDate, traineeId: $traineeId) {
     _id
-    endDate
-    location
-    startDate
-    traineeId {
-      _id
-    }
-    trainerId {
-      _id
-      trainerSchedule {
-        _id
-        endDate
-        location
-        startDate
-        traineeId {
-          _id
-        }
-      }
-    }
-    workouts {
-      _id
-      distanceOrTime
-      equipmentReq
-      exerciseName
-      muscleGroup
-      notes
-      reps
-      sets
-      weight
-    }
   }
 }
 `;

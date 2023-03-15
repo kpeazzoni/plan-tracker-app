@@ -18,7 +18,6 @@ function SingleTraineeContainer(props) {
   const [traineeAppts, setTraineeAppts] = useState();
 
 
-
   const { data, error } = useQuery(QUERY_TRAINEE, {
     variables: {
       traineeId: useParams().traineeId
@@ -43,62 +42,42 @@ useEffect(() => {
   // console.log(singleTraineeAppts);
   // create state of index of selected appt
   const [apptIndex, setApptIndex] = useState(0);
-  const firstName = data?.trainee.firstName || "";
-  const lastName = data?.trainee.lastName || "";
+
   return (
-  <main>
-    <h1 className="oneTrainee">{firstName} {lastName}</h1>
-    <div class="singleTrainee-container">
-    {/* <div class="container singleTrainee-container text-start"> */}
+    <div className="container singleTrainee-container text-start">
       {/* <h1>{trainee.firstName}</h1> */}
-
-      {/* <div class="row"> */}
-
-      <aside className="col-md-4 mb-auto mx-auto">
-       <div className="clientinfo-container">
-
-        {/* <div className="col card"> */}
-        <UpdateTraineeModal />
-          <h3 className="card-title">Trainee Info</h3>
+      <div className="row">
+        <div className="col card">
+         {trainee && (<UpdateTraineeModal trainee = {trainee} />)}
+          <h5 className="card-title">Trainee Info</h5>
           {trainee && (
             <SingleTraineeInfo trainee={trainee} />
           )}
           {/* <SingleTraineeInfo trainee={singleTraineeData}/> */}
-          {/* <UpdateClientModal /> */}
-         {/* </div> */}
-
         </div>
-       </aside>
-
-       <aside className="col-md-4 mb-auto mx-auto">
-        {/* <div className="col card overflow-scroll"> */}
-         <div className="clientAppt-container">
-          <ScheduleAppointmentModal />
-          <h3 className="card-title">Upcoming Appointments</h3>
-          <SingleTraineeAppts
+        <div className="col card overflow-scroll">
+          {trainee && (<ScheduleAppointmentModal trainee = {trainee} />)}
+          <h5 className="card-title">Upcoming Appointments</h5>
+          {trainee && (<SingleTraineeAppts
             traineeAppts={traineeAppts}
             setApptIndex={setApptIndex}
-          />
-        {/* </div> */}
-         </div> 
-        </aside>
-
-      <aside className="col-md-4 mb-auto mx-auto">
-        {/* <div className="col card"> */}
-        <div className="clientWorkOuts-container">
-          <h3 className="card-title">Workout Plan</h3>
-          <SingleTraineeWorkout
+          />)}
+        </div>
+        <div className="col card">
+          {trainee && (<EditWorkoutPlanModal trainee = {trainee} />)}
+          <h5 className="card-title">Workout Plan</h5>
+         {trainee && (<SingleTraineeWorkout
             traineeAppts={traineeAppts}
             apptIndex={apptIndex}
-          />
-        {/* </div> */}
+          />)}
+          {trainee && (<SingleTraineeWorkout
+            traineeAppts={traineeAppts}
+            apptIndex={apptIndex}
+          />)}
+          
         </div>
-      </aside>
-
       </div>
-
-    {/* </div> */}
-  </main>
+    </div>
   );
 }
 

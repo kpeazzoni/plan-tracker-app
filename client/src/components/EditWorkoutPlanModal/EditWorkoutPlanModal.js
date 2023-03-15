@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { QUERY_EXERCISES } from '../../utils/queries'
+import { QUERY_EXERCISES, QUERY_TRAINEE } from '../../utils/queries';
+import { useMutation } from '@apollo/client';
+import { useParams } from 'react-router-dom';
+import {UPDATE_WORKOUTS} from "../../utils/mutations"
+
 
 function EditWorkoutPlanModal(props) {
   const [show, setShow] = useState(false);
   const { loading, data } = useQuery(QUERY_EXERCISES);
+
   const exerciseList = data?.exercises || [];
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -15,10 +20,7 @@ function EditWorkoutPlanModal(props) {
   exerciseList.map((exercise) => {
     return (muscleGroups.push(exercise.muscleGroup))
   });
-
   const isolatedGroups = [...new Set(muscleGroups)];
-
-
   const [selectedGroup, setSelectedGroup] = useState("");
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -32,7 +34,6 @@ function EditWorkoutPlanModal(props) {
     return (exercisesArr.push(exercise)
     );
   });
-
   populateExercises(selectedGroup)
 
 
@@ -126,19 +127,54 @@ function EditWorkoutPlanModal(props) {
       optionsArr.push(options.exerciseName)
     })
   };
+  const [trainee, setTrainee] = useState();
+  const [updateWorkouts] = useMutation(UPDATE_WORKOUTS);
 
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+  const [formState, setFormState] = useState({
+    muscleGroup: '',
+    exerciseName: '',
+    sets: '',
+    reps: '',
+    weight: '',
+    distanceOrTime: '',
+    equipmentReq: '',
+    notes: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    let intValue = value;
+
+    setFormState({
+      ...formState,
+      [name]: intValue,
+    });
   };
-  // const muscleGroup = ""      
-  // const exerciseName = ""
-  // const sets = ""
-  // const reps =""
-  // const weight = ""
-  // const distance = ""
-  // const equipmentReq = ""
-  // const notes = ""
+  const {traineeSchedule} = props.trainee
+console.log(traineeSchedule);
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await updateWorkouts({
+        variables: { scheduleId: traineeSchedule._id, ...formState },
+      }); 
+
+      setFormState({
+        muscleGroup: '',
+        exerciseName: '',
+        sets: '',
+        reps: '',
+        weight: '',
+        distanceOrTime: '',
+        equipmentReq: '',
+        notes: '',
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
   return (
     <>
       <Button className='btn onWhite' onClick={handleShow}>
@@ -265,4 +301,3 @@ function EditWorkoutPlanModal(props) {
 }
 
 export default EditWorkoutPlanModal;
-

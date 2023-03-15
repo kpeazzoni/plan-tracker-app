@@ -2,29 +2,27 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { ADD_DEMOGRAPHICS } from '../../utils/mutations';
-import {useMutation} from '@apollo/client'
-import Auth from '../../utils/auth'
-
+import {useMutation} from '@apollo/client';
+// import Auth from '../../utils/auth';
+import {useParams} from 'react-router-dom';
+import {useQuery} from '@apollo/client';
+import {QUERY_TRAINEE} from '../../utils/queries';
 
 function UpdateTraineeModal(props) {
+  console.log(props);
+  const [trainee, setTrainee] = useState();
+
   const [formState, setFormState] = useState({
-    firstName: '',      
-    lastName: '',
-    dob: '',
+    goals: '',      
     height: '',
-    weight: '',
-    goals: '',
     injuryHistory: '',
     notes: '',
+    weight: '',
   });
-  
+  const {_id} = props.trainee
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  // const handleInputChange = (e) => {
-  //   // Getting the value and name of the input which triggered the change
-  //   // const { name, value } = e.target;
-  // }
   const [addDemographics] = useMutation(ADD_DEMOGRAPHICS)
   
   const handleChange = (e) => {
@@ -42,25 +40,22 @@ function UpdateTraineeModal(props) {
   };
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    console.log(formState);
+    event.preventDefault();  
+  console.log(_id)
 
     try {
       const { data } = await addDemographics({
-        variables: { ...formState },
+        variables: {traineeId:_id, ...formState },
       });
 
       console.log(data);
     // Reset the form state to clear the input data
     setFormState({
-      firstName: '',      
-      lastName: '',
-      dob: '',
-      height: '',
-      weight: '',
-      goals: '',
-      injuryHistory: '',
-      notes: '',
+    goals: '',      
+    height: '',
+    injuryHistory: '',
+    notes: '',
+    weight: '',
     });
 
     } catch (e) {
@@ -145,4 +140,3 @@ function UpdateTraineeModal(props) {
 }
 
 export default UpdateTraineeModal;
-

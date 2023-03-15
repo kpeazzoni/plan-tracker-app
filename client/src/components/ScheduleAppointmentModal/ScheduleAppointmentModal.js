@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import {useMutation, useQuery} from '@apollo/client';
@@ -43,6 +43,25 @@ function ScheduleAppointmentModal(props) {
   // const {_id} = props.trainee
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    try {
+      const { data } = await addAppointment({
+        variables: { 
+          // traineeId:_id,
+           ...formState }
+      })
+      setFormState({
+        muscleGroup: '',
+        exerciseName: '',
+        sets: '',
+        reps: '',
+        weight: '',
+        distanceOrTime: '',
+        equipmentReq: '',
+        notes: '',  
+      });
+    } catch (error) {
+      console.log(error);
+    }
     try {
       const { data } = await addAppointment({
         variables: { 

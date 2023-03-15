@@ -30,6 +30,10 @@ useEffect( () => populateExercises(selectedGroup),[selectedGroup])
     const { name, value } = e.target;
     await setSelectedGroup({ [name]: value });
     optionsArr.length = 0;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
 // populateExercises(selectedGroup);
   }
   const exercisesArr = [];
@@ -150,22 +154,24 @@ switch (selectedGroup.muscleGroup) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    let intValue = value;
+    let intValue = value; 
 
     setFormState({
       ...formState,
       [name]: intValue,
     });
   };
-  const {traineeSchedule} = props.trainee
-console.log(traineeSchedule);
+  const {_id} = props.trainee
+  const appointment = props.traineeAppts[props.traineeApptIndex]
+  console.log(appointment);
+console.log(_id);
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await updateWorkouts({
-        variables: { scheduleId: traineeSchedule._id, ...formState },
+      const { data ,error } = await updateWorkouts({
+        variables: { scheduleId: appointment._id, traineeId: _id, ...formState },
       }); 
-
+console.log(error)
       setFormState({
         muscleGroup: '',
         exerciseName: '',
@@ -177,7 +183,7 @@ console.log(traineeSchedule);
         notes: '',
       });
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   };
   
@@ -204,23 +210,22 @@ console.log(traineeSchedule);
                   <option>Muscle Group</option>
                   {isolatedGroups.map((group) => {
                     return (
-
-                      <option key={group} value={group}>
+                      <option key={group} name= 'muscleGroup' value={group}>
                         {group}
                       </option>
                     );
                   })}
                 </select>
                 <select
-                  name="exercises"
-                  // onChange={handleInputChange}
+                  name="exerciseName"
+                  onChange={handleChange}
                   className="form-control"
                 >
                   <option>Exercises</option>
-                  {optionsArr.sort()}
+                  {/* {optionsArr.sort()} */}
                   {optionsArr.map((option) => {
                     return (
-                      <option key={option} value={option}>
+                      <option key={option} name='exerciseName' value={option}>
                         {option}
                       </option>
                     );
@@ -230,17 +235,17 @@ console.log(traineeSchedule);
               <div className="input-group">
                 <span className="input-group-text">Sets x Reps</span>
                 <input
-                  // value={sets} 
+                  value={formState.sets} 
                   name="sets"
-                  // onChange={handleInputChange} 
+                  onChange={handleChange} 
                   type="number"
                   placeholder="sets"
                   className='form-control'
                 />
                 <input
-                  // value={reps} 
+                  value={formState.reps} 
                   name="reps"
-                  // onChange={handleInputChange}
+                  onChange={handleChange}
                   type="number"
                   placeholder="reps"
                   className='form-control'
@@ -249,9 +254,9 @@ console.log(traineeSchedule);
               <div className="input-group">
                 <span className="input-group-text">Weight</span>
                 <input
-                  // value={weight} 
+                  value={formState.weight} 
                   name="weight"
-                  // onChange={handleInputChange} 
+                  onChange={handleChange} 
                   type="Number"
                   placeholder="lbs"
                   className='form-control'
@@ -260,9 +265,9 @@ console.log(traineeSchedule);
               <div className="input-group">
                 <span className="input-group-text">Distance/Time</span>
                 <input
-                  // value={weight} 
-                  name="distanceTime"
-                  // onChange={handleInputChange} 
+                  value={formState.distanceOrTime} 
+                  name="distanceOrTime"
+                  onChange={handleChange} 
                   type="text"
                   placeholder=""
                   className='form-control'
@@ -271,9 +276,9 @@ console.log(traineeSchedule);
               <div className="input-group">
                 <span className="input-group-text">Equipment Required</span>
                 <input
-                  // value={weight} 
+                  value={formState.equipmentReq} 
                   name="equipmentReq"
-                  // onChange={handleInputChange} 
+                  onChange={handleChange} 
                   type="text"
                   placeholder=""
                   className='form-control'
@@ -282,9 +287,9 @@ console.log(traineeSchedule);
               <div className="input-group">
                 <span className="input-group-text">Notes</span>
                 <input
-                  // value={weight} 
+                  value={formState.notes} 
                   name="notes"
-                  // onChange={handleInputChange} 
+                  onChange={handleChange} 
                   type="text"
                   placeholder="instructions, focus points"
                   className='form-control'

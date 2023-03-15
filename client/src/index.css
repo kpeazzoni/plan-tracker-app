@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=M+PLUS+2:wght@300;400;500&display=swap');
 
 body {
+  min-height: 100vh;
   margin: 0;
   font-family: 'M PLUS 2', sans-serif;
   -webkit-font-smoothing: antialiased;

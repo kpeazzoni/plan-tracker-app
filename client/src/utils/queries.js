@@ -43,8 +43,8 @@ export const QUERY_TRAINER = gql `
 `
 
 export const QUERY_TRAINEES = gql `
-query Trainees($trainerId: ID!) {
-  trainees(trainerId: $trainerId) {
+query Trainees {
+  trainees {
     _id
     firstName
     lastName

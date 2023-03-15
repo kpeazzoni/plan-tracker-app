@@ -9,11 +9,12 @@ import { useParams } from 'react-router-dom';
 function AllTraineesContainer() {
     // const [allTrainees, setAllTrainees] = useState([]);
 
-    const { loading, data } = useQuery(QUERY_TRAINEES, {
-        variables: {
-            trainerId: localStorage.getItem("trainer_id"),
-        }
-    })
+    const { loading, data } = useQuery(QUERY_TRAINEES) 
+    //     {
+    //     variables: {
+    //         trainerId: localStorage.getItem("trainer_id"),
+    //     }
+    // })
 //    useEffect(() =>{
 //     setAllTrainees(data?.trainees)
 //     return

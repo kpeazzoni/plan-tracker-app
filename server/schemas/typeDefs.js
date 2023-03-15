@@ -9,7 +9,7 @@ const typeDefs = gql`
     password: String!
     trainees: [Trainees]!
     trainerSchedule: [Schedules]!
- }
+}
  type Trainees {
     _id: ID!
     firstName: String!
@@ -18,14 +18,14 @@ const typeDefs = gql`
     trainerId: Trainers
     demographics:[Demographics]!
     traineeSchedule:[Schedules]!
- }
+}
  type Demographics {
     height: Int!
     weight: Int!
     goals: String!
     injuryHistory: String!
     notes: String!
- }
+}
  type Schedules {
     _id: ID!
     startDate: String!
@@ -34,7 +34,7 @@ const typeDefs = gql`
     trainerId:Trainers!
     traineeId: Trainees!
     workouts:[Workouts]!
- }
+}
  type Workouts {
    _id: ID!
    muscleGroup: String!
@@ -45,27 +45,27 @@ const typeDefs = gql`
    distanceOrTime: String
    equipmentReq: String 
    notes: String
- }
+}
  type Exercises {
     _id: ID!
     muscleGroup: String!
     exerciseName: String!
- }
+}
  type Auth {
     token: ID!
     user: Trainers
-  }
+}
 
-   type Query {
-      trainers: [Trainers]
-      trainer(trainerId: ID!) : Trainers
-      trainees(trainerId: ID!): [Trainees]
-      trainee(traineeId: ID!): Trainees
-      me: Trainers
-      schedules(trainerId: ID, traineeId: ID): [Schedules]
-      schedule(scheduleId: ID!): Schedules
-      exercises: [Exercises]
-   }
+type Query {
+   trainers: [Trainers]
+   trainer(trainerId: ID!) : Trainers
+   trainees: [Trainees]
+   trainee(traineeId: ID!): Trainees
+   me: Trainers
+   schedules(trainerId: ID, traineeId: ID): [Schedules]
+   schedule(scheduleId: ID!): Schedules
+   exercises: [Exercises]
+}
 
 type Mutation {
    addTrainer(
@@ -73,11 +73,9 @@ type Mutation {
       lastName: String!
       email: String!
       password: String!
-      ) : Auth
+   ) : Auth
     
    login(email: String!, password: String!): Auth
-
-
 
    addTrainee (
       firstName: String!, 
@@ -88,7 +86,7 @@ type Mutation {
       injuryHistory: String!
       notes: String!
       weight: Int!
-      ) : Trainees   
+   ) : Trainees   
    
    addDemographics(
       traineeId: ID!
@@ -97,8 +95,7 @@ type Mutation {
       goals: String!,
       injuryHistory: String!,
       notes: String!
-      ) : Trainees
-      
+   ) : Trainees
    
    removeTrainee(traineeId: ID!) : Trainees
    
@@ -113,7 +110,7 @@ type Mutation {
       distanceOrTime: String,
       equipmentReq: String,
       notes: String
-      ) : Schedules
+   ) : Schedules
 
    addWorkouts(
       traineeId: ID!
@@ -126,7 +123,7 @@ type Mutation {
       distanceOrTime: String,
       equipmentReq: String,
       notes: String
-      ) : Schedules
+   ) : Schedules
    
    removeWorkouts(scheduleId: ID!, workoutId: ID!) : Schedules
    
@@ -135,19 +132,18 @@ type Mutation {
       endDate: String!,
       location: String,
       traineeId: ID!,
-      ) : Schedules
+   ) : Schedules
    
    updateAppointment(
       scheduleId: ID!
       startDate: String!,
       endDate: String!,
       location: String,
-      trainerId: ID!,
       traineeId: ID!,
-      ) : Schedules
+   ) : Schedules
 
    removeAppointment(scheduleId: ID!) : Schedules
-   }
+}
 `;
 
 module.exports = typeDefs;

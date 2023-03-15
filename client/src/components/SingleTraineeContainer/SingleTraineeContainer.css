@@ -2,12 +2,13 @@
     height: 50%;
 } */
 
-a:Link, a:active, a:hover, a:focus, a:visited {
-    text-decoration: none;
-    color: black
-  }
+
 .oneTrainee{
     color: white;
+    text-align: center;
+}
+.card-title{
+    color: #0A99B1;
     text-align: center;
 }
 .singleTrainee-container{
@@ -15,25 +16,68 @@ a:Link, a:active, a:hover, a:focus, a:visited {
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-
-.card{
-    width: 20rem;
-    /* height: 12rem; */
-    /* padding: 0.25rem; */
+.clientinfo-container{
     background: white;
+    width: 20rem;
     border: 1px solid black;
     border-radius: 30px;
-    padding: 3rem;
+    padding: 2.25rem;
     margin: auto;
 }
 
-.card-title{
-    color: #0A99B1;
-    text-align: center;
+.singleTraineeCards{
+    width: 15rem;
+    /* height: 12rem; */
+    padding: 0.25rem;
+    background: white;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+.clientAppt-container{
+    background: white;
+    width: 20rem;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 2.25rem;
+    margin: auto;
+}
+.clientAppt-card{
+    background: white;
+    width: 12rem;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 2.25rem;
+    margin: 1.75rem;
+
 }
 
-.card-text{
+
+
+.clientWorkOuts-container{
+    background: white;
+    width: 20rem;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 2.25rem;
+    margin: auto;
+}
+
+.clientWorkOuts-cards{
+    background: white;
+    width: 12rem;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 2.25rem;
+    margin: 1.75rem;
+
+}
+
+
+/* .card-text{
     font-size: x-large;
     margin-top: 1.5rem;
-    list-style-type: none;
+} */
+
+ul{
+ list-style-type: none;
 }

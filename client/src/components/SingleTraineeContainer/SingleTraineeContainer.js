@@ -78,13 +78,9 @@ useEffect(() => {
 
         <aside className="col-md-4 mb-auto mx-auto">
         <div className="trainees-container">
-          {trainee && (<EditWorkoutPlanModal trainee = {trainee} />)}
+          {trainee && (<EditWorkoutPlanModal trainee = {trainee} traineeAppts = {traineeAppts} traineeApptIndex ={apptIndex} />)}
           <h3 className="card-title">Workout Plan</h3>
          {trainee && (<SingleTraineeWorkout
-            traineeAppts={traineeAppts}
-            apptIndex={apptIndex}
-          />)}
-          {trainee && (<SingleTraineeWorkout
             traineeAppts={traineeAppts}
             apptIndex={apptIndex}
           />)}

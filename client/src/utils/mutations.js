@@ -184,8 +184,8 @@ mutation Mutation($traineeId: ID!, $startDate: String!, $endDate: String!, $trai
 }
 `;
 export const UPDATE_WORKOUTS = gql`
-mutation updateWorkouts($scheduleId: ID!, $muscleGroup: String!, $exerciseName: String!, $sets: String, $reps: String, $weight: String, $distanceOrTime: String, $equipmentReq: String, $notes: String) {
-  updateWorkouts(scheduleId: $scheduleId, muscleGroup: $muscleGroup, exerciseName: $exerciseName, sets: $sets, reps: $reps, weight: $weight, distanceOrTime: $distanceOrTime, equipmentReq: $equipmentReq, notes: $notes) {
+mutation updateWorkouts($traineeId: ID!,$scheduleId: ID!, $muscleGroup: String!, $exerciseName: String!, $sets: String, $reps: String, $weight: String, $distanceOrTime: String, $equipmentReq: String, $notes: String) {
+  updateWorkouts(traineeId: $traineeId, scheduleId: $scheduleId, muscleGroup: $muscleGroup, exerciseName: $exerciseName, sets: $sets, reps: $reps, weight: $weight, distanceOrTime: $distanceOrTime, equipmentReq: $equipmentReq, notes: $notes) {
     _id
     traineeId {
       _id

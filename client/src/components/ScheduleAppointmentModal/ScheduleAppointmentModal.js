@@ -64,7 +64,9 @@ function ScheduleAppointmentModal(props) {
     }
     try {
       const { data } = await addAppointment({
-        variables: { traineeId:_id, ...formState }
+        variables: { 
+          // traineeId:_id,
+           ...formState }
       })
       setFormState({
         muscleGroup: '',

@@ -31,19 +31,20 @@ const resolvers = {
         .populate('trainees')
     },
     //trainees:[Trainees]
-    trainees: async (parent, { trainerId }) => {
-      return Trainees.find({ trainerId: trainerId }).populate('demographics')
-        .populate('traineeSchedule')
-        .populate({
-          path: 'traineeSchedule',
-          populate: [
-            { path: 'trainerId' },
-            { path: 'traineeId' },
-            { path: 'workouts'}
-          ]
-        })
-        // console.log(trainees[0].traineeSchedule)
-        // return trainees
+    trainees: async (parent, args, context) => {
+      if(context.user) {
+        return Trainees.find({ trainerId: context.user._id }).populate('demographics')
+          .populate('traineeSchedule')
+          .populate({
+            path: 'traineeSchedule',
+            populate: [
+              { path: 'trainerId' },
+              { path: 'traineeId' },
+              { path: 'workouts'}
+            ]
+          })
+      }
+      throw new AuthenticationError('You need to be logged in!');
     },
     //trainee:Trainees
     trainee: async (parent, { traineeId }) => {
@@ -62,6 +63,7 @@ const resolvers = {
 
     
     schedules: async (parent, { traineeId, trainerId }) => {
+      if (context.user) {
         let params = {};
 
         if(traineeId) {
@@ -76,6 +78,8 @@ const resolvers = {
         .populate('workouts')
         .populate('trainerId')
         .populate('traineeId');
+      }
+      throw new AuthenticationError('You need to be logged in!');
     },
 
     me: async (parent, arg, context) => {
@@ -92,16 +96,12 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    // trainerSchedules: async () => {
-    //     return Schedules.find().populate('workouts');
-    // },
-    // traineeSchedules: async () => {
-    //     return Schedules.find().populate('workouts');
-    // },    
+
     exercises: async () => {
         return Exercises.find();
     },
   },
+
   Mutation: {
     addTrainer: async (parent, { lastName, firstName, email, password }) => {
       const user = await Trainers.create({ lastName, firstName,  email, password });
@@ -146,7 +146,7 @@ const resolvers = {
         });
         return trainee;
       }
-      // throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError('You need to be logged in!');
       },
 
       addAppointment: async (parent, { startDate, endDate, location, traineeId }, context) => {
@@ -188,7 +188,7 @@ const resolvers = {
             }
           );
         }
-        // throw new AuthenticationError('You need to be logged in!');
+        throw new AuthenticationError('You need to be logged in!');
       },
 
       
@@ -206,7 +206,7 @@ const resolvers = {
 
         return trainee;
       }
-      // throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError('You need to be logged in!');
     },
 
     addWorkouts: async (parent, { traineeId, scheduleId, muscleGroup, exerciseName, sets, reps, weight, distanceOrTime, equipmentReq, notes }, context) => {
@@ -224,7 +224,7 @@ const resolvers = {
           }
         );
       }
-      // throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError('You need to be logged in!');
     },
 
     removeAppointment: async (parent, { scheduleId }, context) => {
@@ -247,8 +247,8 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
 
-    updateAppointment: async (parent, { scheduleId, startDate, endDate, location, trainerId, traineeId }, context) => {
-      if (context) {
+    updateAppointment: async (parent, { scheduleId, startDate, endDate, location, traineeId }, context) => {
+      if (context.user) {
         return Schedules.findOneAndUpdate(
           { _id: scheduleId },
           {
@@ -256,14 +256,13 @@ const resolvers = {
               startDate,
               endDate,
               location,
-              trainerId,
+              trainerId: context.user._id,
               traineeId
-//make trainerId and traineeId not required???
             },
           },
         );
       }
-      // throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError('You need to be logged in!');
     },
 
     removeWorkouts:  async (parent, { scheduleId, workoutId }, context) => {
@@ -280,7 +279,7 @@ const resolvers = {
           { new: true }
         );
       }
-      // throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError('You need to be logged in!');
     },
     
     updateWorkouts: async (parent, { traineeId, scheduleId, muscleGroup, exerciseName, sets, reps, weight, distanceOrTime, equipmentReq, notes }, context) => {
@@ -306,7 +305,7 @@ const resolvers = {
           }
         );
       }
-      // throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError('You need to be logged in!');
     },
 
 

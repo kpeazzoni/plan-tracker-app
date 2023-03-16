@@ -86,20 +86,25 @@ function ScheduleAppointmentModal(props) {
           <Modal.Title>Schedule Appointment</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className='container col-8'>
+          <div className='container col-12'>
             <form className="row justify-content-center formCard" >
-              <p className=''>Date:
+              <div className='input-group'>
+                <span className='input-group-text' id-='basic-addon3'>Date</span>
                 <input
                   value={dayState}
                   name="dayState"
                   onChange={handleInputChange}
                   type="Date"
                   placeholder="Date"
-                  className='inputStyle'
-                /></p>
-
-              <p className=''>Start Time:
-                <select className="form-control" onChange={handleInputChange} name="startDate" id="exampleFormControlSelect1">
+                  className='form-control'
+                /></div>
+                <div className='input-group'>
+                  <span className="input-group-text">Time</span>
+                <select 
+                className="form-control" 
+                onChange={handleInputChange} 
+                name="startDate" 
+                id="exampleFormControlSelect1">
                   <option value={`05:00:00`}>5:00am</option>
                   <option value={`05:30:00`}>5:30am</option>
                   <option value={`06:00:00`}>6:00am</option>
@@ -134,8 +139,7 @@ function ScheduleAppointmentModal(props) {
                   <option value={`08:30:00`}>8:30pm</option>
                   <option value={`09:00:00`}>9:00pm</option>
                 </select>
-              </p>
-              <p className=''>End Time:
+
                 <select className="form-control" onChange={handleInputChange} name="endDate" id="exampleFormControlSelect1">
                 <option value={`05:00:00`}>5:00am</option>
                   <option value={`05:30:00`}>5:30am</option>
@@ -171,16 +175,17 @@ function ScheduleAppointmentModal(props) {
                   <option value={`08:30:00`}>8:30pm</option>
                   <option value={`09:00:00`}>9:00pm</option>
                 </select>
-              </p>
-              <p className=''>Location:
+              </div>
+              <div className='input-group'>
+                <span className="input-group-text">Location</span>
                 <input
                   // value={location} 
                   name="location"
                   onChange={handleInputChange}
                   type="text"
                   placeholder="Location"
-                  className='inputStyle'
-                /></p>
+                  className='form-control'
+                /></div>
             </form>
           </div>
         </Modal.Body>

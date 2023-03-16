@@ -25,6 +25,7 @@ Just use this link to get started! https://plan-tracker-app.herokuapp.com/
   * [Original Idea](#originalidea)
   * [Ideas for Future Development](#ideasforfuturedevelopment)
   * [Credits](#credits)
+  * [Questions](#questions)
   * [License](#license)
 
 
@@ -97,8 +98,12 @@ Have additional ideas for improving this site? Please first discuss the change y
 - Megan Meyers one of the UTA tutors for this bootcamp that has provided a wealth of knowledge about practically everything. Thank you so much for your support. 
 Microsoft Visual Studio: <https://code.visualstudio.com/> \
 GitHub: <https://github.com/>
-Stack Overflow: <https://stackoverflow.com
+Stack Overflow: https://stackoverflow.com
 Mozilla https://developer.mozilla.org/
+
+## Questions
+
+For Questions or more informtion, please contact the contributors of this project. 
 
 ## License
 

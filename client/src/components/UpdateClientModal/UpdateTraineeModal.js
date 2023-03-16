@@ -2,37 +2,37 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { ADD_DEMOGRAPHICS } from '../../utils/mutations';
-import {useMutation} from '@apollo/client';
+import { useMutation } from '@apollo/client';
 // import Auth from '../../utils/auth';
-import {useParams} from 'react-router-dom';
-import {useQuery} from '@apollo/client';
-import {QUERY_TRAINEE} from '../../utils/queries';
+import { useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+import { QUERY_TRAINEE } from '../../utils/queries';
 
 function UpdateTraineeModal(props) {
   console.log(props);
   const [trainee, setTrainee] = useState();
 
   const [formState, setFormState] = useState({
-    goals: '',      
+    goals: '',
     height: '',
     injuryHistory: '',
     notes: '',
     weight: '',
   });
-  const {_id} = props.trainee
+  const { _id } = props.trainee
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [addDemographics] = useMutation(ADD_DEMOGRAPHICS)
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     let intValue = value;
-  
+
     if (name === 'weight' || name === 'height') {
       intValue = parseInt(value);
     }
-  
+
     setFormState({
       ...formState,
       [name]: intValue,
@@ -40,24 +40,24 @@ function UpdateTraineeModal(props) {
   };
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault();  
-  console.log(_id)
+    event.preventDefault();
+    console.log(_id)
 
     try {
       const { data } = await addDemographics({
-        variables: {traineeId:_id, ...formState },
+        variables: { traineeId: _id, ...formState },
       });
 
       console.log(data);
-    // Reset the form state to clear the input data
-    setFormState({
-    goals: '',      
-    height: '',
-    injuryHistory: '',
-    notes: '',
-    weight: '',
-    });
-
+      // Reset the form state to clear the input data
+      setFormState({
+        goals: '',
+        height: '',
+        injuryHistory: '',
+        notes: '',
+        weight: '',
+      });
+      setShow(false); // Close the modal after form submission
     } catch (e) {
       console.error(e);
     }
@@ -65,7 +65,7 @@ function UpdateTraineeModal(props) {
 
   return (
     <>
-      <Button className = "btn onWhite" onClick={handleShow}>
+      <Button className="btn onWhite" onClick={handleShow}>
         Update Client
       </Button>
 
@@ -130,7 +130,7 @@ function UpdateTraineeModal(props) {
           <Button className="btn onWhite" variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button className="btn onWhite"  variant="primary" onClick={handleFormSubmit}>
+          <Button className="btn onWhite" variant="primary" onClick={handleFormSubmit}>
             Save Changes
           </Button>
         </Modal.Footer>

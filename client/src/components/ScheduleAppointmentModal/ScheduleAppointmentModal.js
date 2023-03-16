@@ -70,6 +70,7 @@ function ScheduleAppointmentModal(props) {
         start: '',
         end: '',
       });
+      setShow(false); // Close the modal after form submission
     } catch (e) {
       console.error(e);
     }
@@ -179,7 +180,7 @@ function ScheduleAppointmentModal(props) {
               <div className='input-group'>
                 <span className="input-group-text">Location</span>
                 <input
-                  // value={location} 
+                  value={formState.location} 
                   name="location"
                   onChange={handleInputChange}
                   type="text"

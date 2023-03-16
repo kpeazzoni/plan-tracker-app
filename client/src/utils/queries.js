@@ -89,6 +89,7 @@ query Trainees($traineeId: ID!) {
       _id
       startDate
       endDate
+      location
       workouts {
         _id
         distanceOrTime

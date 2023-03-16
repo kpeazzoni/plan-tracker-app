@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import { QUERY_EXERCISES, QUERY_TRAINEE } from '../../utils/queries';
 import { useMutation } from '@apollo/client';
 import { useParams } from 'react-router-dom';
-import {ADD_WORKOUTS} from "../../utils/mutations"
+import { ADD_WORKOUTS } from "../../utils/mutations"
 
 
 function EditWorkoutPlanModal(props) {
@@ -23,8 +23,8 @@ function EditWorkoutPlanModal(props) {
   const isolatedGroups = [...new Set(muscleGroups)];
   const [selectedGroup, setSelectedGroup] = useState("");
   const optionsArr = [];
-  
-useEffect( () => populateExercises(selectedGroup),[selectedGroup])
+
+  useEffect(() => populateExercises(selectedGroup), [selectedGroup])
 
   const handleInputChange = async (e) => {
     const { name, value } = e.target;
@@ -34,7 +34,7 @@ useEffect( () => populateExercises(selectedGroup),[selectedGroup])
       ...formState,
       [name]: value,
     });
-// populateExercises(selectedGroup);
+    // populateExercises(selectedGroup);
   }
   const exercisesArr = [];
 
@@ -43,12 +43,12 @@ useEffect( () => populateExercises(selectedGroup),[selectedGroup])
     );
   });
 
-populateExercises(selectedGroup)
+  populateExercises(selectedGroup)
 
 
   function populateExercises(selectedGroup) {
-// console.log("44", selectedGroup.muscleGroup)
-switch (selectedGroup.muscleGroup) {
+    // console.log("44", selectedGroup.muscleGroup)
+    switch (selectedGroup.muscleGroup) {
       case 'Arms':
         isArms();
         optionsArr.sort()
@@ -154,24 +154,24 @@ switch (selectedGroup.muscleGroup) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    let intValue = value; 
+    let intValue = value;
 
     setFormState({
       ...formState,
       [name]: intValue,
     });
   };
-  const {_id} = props.trainee
+  const { _id } = props.trainee
   const appointment = props.traineeAppts[props.traineeApptIndex]
   console.log(appointment);
-console.log(_id);
+  console.log(_id);
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data ,error } = await addWorkouts({
+      const { data, error } = await addWorkouts({
         variables: { scheduleId: appointment._id, traineeId: _id, ...formState },
-      }); 
-console.log(error)
+      });
+      console.log(error)
       setFormState({
         muscleGroup: '',
         exerciseName: '',
@@ -182,11 +182,12 @@ console.log(error)
         equipmentReq: '',
         notes: '',
       });
+      setShow(false); // Close the modal after form submission
     } catch (error) {
       console.log(error.message);
     }
   };
-  
+
   return (
     <>
       <Button className='btn onWhite' onClick={handleShow}>
@@ -210,7 +211,7 @@ console.log(error)
                   <option>Muscle Group</option>
                   {isolatedGroups.map((group) => {
                     return (
-                      <option key={group} name= 'muscleGroup' value={group}>
+                      <option key={group} name='muscleGroup' value={group}>
                         {group}
                       </option>
                     );
@@ -235,15 +236,15 @@ console.log(error)
               <div className="input-group">
                 <span className="input-group-text">Sets x Reps</span>
                 <input
-                  value={formState.sets} 
+                  value={formState.sets}
                   name="sets"
-                  onChange={handleChange} 
+                  onChange={handleChange}
                   type="number"
                   placeholder="sets"
                   className='form-control'
                 />
                 <input
-                  value={formState.reps} 
+                  value={formState.reps}
                   name="reps"
                   onChange={handleChange}
                   type="number"
@@ -254,9 +255,9 @@ console.log(error)
               <div className="input-group">
                 <span className="input-group-text">Weight</span>
                 <input
-                  value={formState.weight} 
+                  value={formState.weight}
                   name="weight"
-                  onChange={handleChange} 
+                  onChange={handleChange}
                   type="Number"
                   placeholder="lbs"
                   className='form-control'
@@ -265,9 +266,9 @@ console.log(error)
               <div className="input-group">
                 <span className="input-group-text">Distance/Time</span>
                 <input
-                  value={formState.distanceOrTime} 
+                  value={formState.distanceOrTime}
                   name="distanceOrTime"
-                  onChange={handleChange} 
+                  onChange={handleChange}
                   type="text"
                   placeholder=""
                   className='form-control'
@@ -276,9 +277,9 @@ console.log(error)
               <div className="input-group">
                 <span className="input-group-text">Equipment Required</span>
                 <input
-                  value={formState.equipmentReq} 
+                  value={formState.equipmentReq}
                   name="equipmentReq"
-                  onChange={handleChange} 
+                  onChange={handleChange}
                   type="text"
                   placeholder=""
                   className='form-control'
@@ -287,9 +288,9 @@ console.log(error)
               <div className="input-group">
                 <span className="input-group-text">Notes</span>
                 <input
-                  value={formState.notes} 
+                  value={formState.notes}
                   name="notes"
-                  onChange={handleChange} 
+                  onChange={handleChange}
                   type="text"
                   placeholder="instructions, focus points"
                   className='form-control'
@@ -302,8 +303,8 @@ console.log(error)
           <Button className='btn onWhite' onClick={handleClose}>
             Close
           </Button>
-          <Button className='btn onWhite' 
-          onClick={handleFormSubmit}
+          <Button className='btn onWhite'
+            onClick={handleFormSubmit}
           >
             Add Exercise
           </Button>

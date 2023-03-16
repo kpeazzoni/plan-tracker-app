@@ -1,13 +1,18 @@
 import React from 'react';
+import dayjs from "dayjs";
 
 function SingleTraineeWorkout({traineeAppts, apptIndex}) {
     const appt = traineeAppts && traineeAppts [apptIndex];
-// console.log(appt);
+    const apptDay = dayjs(appt.startDate).format('MM/DD/YYYY');
+
     return (
-    <div className='overflow-auto scroll'>
-        {/* <h5>{appt.startDate}</h5> */}
+        <>
+        <h5><b>Selected Appointment: </b>{apptDay}</h5>
         
-            {appt?.workouts.map((workout) => (
+        <div className='overflow-auto scroll'>
+        
+        
+            {appt.workouts.length ? appt.workouts.map((workout) => (
             <div className='clientWorkOuts-cards'>     
             
                 <h4 className="card-text">{workout.exerciseName}</h4>
@@ -18,8 +23,13 @@ function SingleTraineeWorkout({traineeAppts, apptIndex}) {
 
         
             </div>
-            ))}
+            )) : (
+                <>
+                <h3><i>No Workouts Added!</i></h3>
+                </>
+            )}
     </div>
+    </>
     );
 };
 

@@ -80,7 +80,7 @@ export default function HomepageContainer() {
         <div className="appointments-container">
           
           <h3 className="card-heading">Today's Appointments</h3>
-          {todaysSchedule ? (<AppointmentsCards appointments={todaysSchedule} />) : (<h2>Your Schedule is Clear!</h2>)}
+          {todaysSchedule ? (<AppointmentsCards appointments={todaysSchedule} />) : (<h3>Your Schedule is Clear!</h3>)}
         </div>
       {/* </div> */}
       </aside>

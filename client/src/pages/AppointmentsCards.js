@@ -5,7 +5,7 @@ import '../components/HomepageContainer/HomepageContainer.css'
 
 function AppointmentsCards({appointments}) {
   return (<div className ='overflow-auto scrollHP'> 
-  {appointments?.map ((appointment, i)=>(
+  {appointments.length ? appointments.map ((appointment, i)=>(
     <div className='card appointmentsCards'key={i}>
       <div className='card-body'>
       <Link to={`/SingleTraineeContainer/${appointment.traineeId._id}`} > 
@@ -16,7 +16,9 @@ function AppointmentsCards({appointments}) {
       </Link>
       </div>
     </div>
-  ))}
+  )) : (
+    <h3><i>Your Schedule is Clear!</i></h3>
+  )}
   </div> )
 }
 

@@ -66,8 +66,8 @@ mutation Mutation($firstName: String!, $lastName: String!, $dob: String!,  $goal
 }
 `;
 export const ADD_APPOINTMENT = gql`
-mutation Mutation($startDate: String!, $endDate: String!, $traineeId: ID!) {
-  addAppointment(startDate: $startDate, endDate: $endDate, traineeId: $traineeId) {
+mutation Mutation($startDate: String!, $endDate: String!, $location: String, $traineeId: ID!) {
+  addAppointment(startDate: $startDate, endDate: $endDate, location: $location, traineeId: $traineeId) {
     _id
   }
 }

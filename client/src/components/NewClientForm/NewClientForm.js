@@ -62,13 +62,10 @@ const NewClientForm = () => {
 
   return (
     <div className='formPlacement'>
-      <p className='pStyle'>
-        Add new client information:
-      </p>
-
-
       <div className='container col-8'>
+        
         <form className="row justify-content-center formCard" >
+          <h1>Add new client information:</h1>
           <div className="input-group">
             <span className="input-group-text">Full Name</span>
             <input

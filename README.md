@@ -19,7 +19,6 @@ Just use this link to get started! https://plan-tracker-app.herokuapp.com/
 
 
 ## Table of Contents  
-  * [Features](#features)
   * [Built Using](#builtusing)
   * [Screenshots](#screenshots)
   * [Origianl Contributors](#origianlcontributors)
@@ -28,9 +27,11 @@ Just use this link to get started! https://plan-tracker-app.herokuapp.com/
   * [Credits](#credits)
   * [License](#license)
 
-## Features
 
 ## Built Using
+
+![Alt text](client/src/assets/Technologies%20used.png)
+
 
 ## Screenshots
 

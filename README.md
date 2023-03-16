@@ -8,29 +8,54 @@ Contributors: Rebecca Girndt, Karen Peazonni, Jose Myeonghun Jeong, Erin Peifer,
 
 # Purpose
 
-Plan Tracker is a app for personal trainers to manage their trainees. This simple application is meant to help the personal trainer maximize their trainees and help them succeed in meeting their fitness goals. 
+Plan Tracker is a web based application offering client management services to personal trainers  with features to plan their  schedules, store, track, manage client information. 
 
 
 # Getting Started
 
-In order to use our application all you need is the browser of your choice.
+Behind Our thought Process for our Final Project 3, Team Power-Haus,  brought our A game. We are showcasing the skills and talents to bring this app to life. We wanted to pick a project idea that we were passionate and in this process we made a full stack application that would solve a problem. Our group’s synergy was in creating an app that would take the organizational work flow to the next level for a trainer in maintaining his clientele. This is the simple overview of the application design, thought process and fruition brought together in one app called PlanTracker. 
+
+Just use this link to get started! https://plan-tracker-app.herokuapp.com/
+
 
 ## Table of Contents  
-  * [Features](#features)
   * [Built Using](#builtusing)
   * [Screenshots](#screenshots)
   * [Origianl Contributors](#origianlcontributors)
   * [Original Idea](#originalidea)
-  * [Porject Design](#porjectdesign)
   * [Ideas for Future Development](#ideasforfuturedevelopment)
   * [Credits](#credits)
   * [License](#license)
 
-## Features
 
 ## Built Using
 
+![Alt text](client/src/assets/Technologies%20used.png)
+
+
 ## Screenshots
+
+![Alt text](client/src/assets/homepage1.png)
+
+![Alt text](client/src/assets/homepage2.png)
+
+![Alt text](client/src/assets/login.png)
+
+![Alt text](client/src/assets/dashboard.png)
+
+![Alt text](client/src/assets/single%20client.png)
+
+![Alt text](client/src/assets/update%20client.png)
+
+![Alt text](client/src/assets/schedule%20appt.png)
+
+![Alt text](client/src/assets/add%20workout.png)
+
+![Alt text](client/src/assets/workout%20added.png)
+
+![Alt text](client/src/assets/all%20clients.png)
+
+![Alt text](client/src/assets/full%20schedule.png)
 
 
 
@@ -43,30 +68,37 @@ Myeonghun Jeong: https://github.com/mjtic \
 Erin Peifer: https://github.com/Erinpeifer \
 Christopher Zavala: <https://github.com/ChrisZavala> 
 
+![Alt text](client/src/assets/Rebecca.png)
+
+![Alt text](client/src/assets/karen.png)
+
+![Alt text](client/src/assets/MJ.png)
+
+![Alt text](client/src/assets/Erin.png)
+
+![Alt text](client/src/assets/Chris.png)
 
 ## Original Idea
 
 \
 The idea originally began with Erin Peifer, she is the master mind for this application. 
+Web based application for personal trainers to track, plan, schedule, and update their trainees.
 
-
-## Project Design
-
-\
-There are several ideas pending for possible future development.
-
-1) A User side for this application. 
+Erin Saw a need for personal trainer who was storing client data as individual notes in her phone. 
 
 
 ## Ideas for Future Development:
 \
 Have additional ideas for improving this site? Please first discuss the change you wish to make via email with the owners of this repository. Email addresses can be found on the contributor's gitHub pages (links above).
 
+![Alt text](client/src/assets/future%20dev.png)
 
 ## Credits:
 - Megan Meyers one of the UTA tutors for this bootcamp that has provided a wealth of knowledge about practically everything. Thank you so much for your support. 
 Microsoft Visual Studio: <https://code.visualstudio.com/> \
 GitHub: <https://github.com/>
+Stack Overflow: <https://stackoverflow.com
+Mozilla https://developer.mozilla.org/
 
 ## License
 

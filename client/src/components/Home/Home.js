@@ -1,10 +1,13 @@
 import React from "react";
 // import Join from "./Join";
 import "./Home.css";
-import logo from "../../assets/ssPlaceholder.png"
+import dashboard from "../../assets/DashboardSS.png"
+import singleClientSS from "../../assets/SingleClientSS.png"
+import allClientsSS from "../../assets/AllClientsSS.png"
+import scheduleSS from "../../assets/ScheduleSS.png"
 // import hero_image from "../../assets/hero_image.png";
 // import { motion } from "framer-motion";
-import NumberCounter from "number-counter";
+// import NumberCounter from "number-counter";
 // import {Link} from 'react-scroll'
 
 // import { useState } from 'react';
@@ -37,9 +40,8 @@ const Home = () => {
                       Plan Tracker is a web-based client management platform for personal trainers. This is an all-in-one space to track clients, schedule appointments, and build workout plans. The efficient layout allows for quick and easy navigation for the busy personal trainer.
                     </p>
                   </div>
-                  <div className="col">                    <div className="">
-                    <img src={logo}></img>
-                  </div>
+                  <div className="col">
+                    <img src={dashboard}></img>
                   </div>
                 </div>
               </div>
@@ -47,16 +49,28 @@ const Home = () => {
                 <div className="row">
                   <div className="col">
                     <h3>Tracking with Ease</h3>
-                    <ul>
-                      <li>Take the thought out of picking exercises for the day. Exercises are preloaded to choose from based on the muscle group the client is focusing on. </li>
-                      <li>Utilize the dashboard which will show a summary of your day with all scheduled appointments and clients.</li>
-                      <li>On each client page you will be able to edit demographics (such as goals, injury history, weight, etc.), schedule a new appointment, and create a workout plan for each scheduled appointment. </li>
-                    </ul>
+                    
+                      <p>Take the thought out of picking exercises for the day. Exercises are preloaded to choose from based on the muscle group the client is focusing on. </p>
+                      <br></br>
+
+                      <p>Utilize the dashboard which will show a summary of your day with all scheduled appointments and clients.</p>
+                      <br></br>
+                      <p>On each client page you will be able to edit demographics (such as goals, injury history, weight, etc.), schedule a new appointment, and create a workout plan for each scheduled appointment. </p>
+                    
+                    
                   </div>
                   <div className="col">
-                    <div className="">
-                      <img src={logo}></img>
+                    {/* <div className="">
+                      <img src={allClientsSS}/>
+                    </div> */}
+                    <div className = "row"></div>
+                    <div className="row">
+                      <img src={scheduleSS}/>
                     </div>
+                    {/* <div className="row">
+                      <img src={singleClientSS}/>
+                    </div> */}
+
                   </div>
                 </div>
               </div>

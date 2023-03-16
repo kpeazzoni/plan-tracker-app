@@ -17,7 +17,7 @@ import {
   MDBInput
 }
   from 'mdb-react-ui-kit';
-import logo from '../assets/workout2.jpg';
+import pt1 from '../assets/PT1.jpg';
 import Auth from '../utils/auth';
 
 const Register = () => {
@@ -60,7 +60,7 @@ const Register = () => {
         <MDBRow className='g-0'>
 
           <MDBCol md='6'>
-            <MDBCardImage src={logo} width="600" height="600" />
+            <MDBCardImage src={pt1} width="200" height="200" />
           </MDBCol>
 
           <MDBCol md='6'>

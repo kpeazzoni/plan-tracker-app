@@ -23,6 +23,7 @@ function SingleTraineeContainer(props) {
       traineeId: useParams().traineeId
       //  props.trainerId
     },
+    pollInterval: 5000 // refetch the query every 5 seconds
   });
 useEffect(() => {
   setTrainee(data?.trainee)

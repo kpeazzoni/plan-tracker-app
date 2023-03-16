@@ -1,5 +1,5 @@
 .formPlacement {
-    margin: auto
+    margin: 1rem
     }
 
 .formCard {
@@ -8,7 +8,7 @@
     padding: 1rem;
     border-radius: 1rem;
 }
-.pStyle {
+h1 {
     line-height: 2rem;
     color: white;
     font-size: 1.5rem;

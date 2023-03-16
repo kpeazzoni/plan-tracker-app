@@ -15,7 +15,7 @@ import {
 }
 from 'mdb-react-ui-kit';
 
-import logo from '../assets/workout.jpg';
+import pt2 from '../assets/PT2.jpg';
 import Auth from '../utils/auth';
 
 const Login = (props) => {
@@ -65,9 +65,9 @@ const Login = (props) => {
       <MDBCard>
         <MDBRow className='g-0'>
 
-          <MDBCol md='6'>
-            <MDBCardImage src= {logo} width="600" height="600"/>
-          </MDBCol>
+          {/* <MDBCol md='6'> */}
+            <MDBCardImage src= {pt2} width="600" height="600"/>
+          {/* </MDBCol> */}
 
           <MDBCol md='6'>
             <MDBCardBody className='d-flex flex-column'>

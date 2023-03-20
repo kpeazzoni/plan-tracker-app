@@ -16,7 +16,7 @@ import {
   MDBIcon,
   MDBInput
 }
-  from 'mdb-react-ui-kit';
+from 'mdb-react-ui-kit';
 import pt1 from '../assets/PT1.jpg';
 import Auth from '../utils/auth';
 
@@ -40,7 +40,7 @@ const Register = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
+    // console.log(formState);
 
     try {
       const { data } = await addTrainer({
@@ -79,7 +79,7 @@ const Register = () => {
                 <p>
                   Success! You may now head{' '}
                   {/* the link is actually getting handled in auth and changing the route there.  */}
-                  <Link to="./homepagecontainer">Thanks for registering!</Link>
+                  <Link to="/homepagecontainer">to your DASHBOARD!</Link>
                 </p>
               ) : (
                 <form onSubmit={handleFormSubmit}>

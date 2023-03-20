@@ -46,7 +46,7 @@ const Login = (props) => {
         variables: { ...formState },
       });
       console.log("data", data);
-      Auth.login(data);
+      Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
     }
@@ -81,7 +81,8 @@ const Login = (props) => {
 
             {data ? (
               <p>
-                Success! Logging you in!
+                Success! Logging you in! 
+                {/* { window.location.assign("/homepagecontainer")} */}
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>

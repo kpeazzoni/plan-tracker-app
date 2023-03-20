@@ -26,17 +26,17 @@ class AuthService {
     // If the expiration time is less than the current time (in seconds), the token is expired and we return `true`
     if (decoded.exp < Date.now() / 1000) {
       localStorage.removeItem("id_token");
-      window.location.assign("/login")
+    
       return true;
     }
     // If token hasn't passed its expiration time, return `false`
     return false;
   }
 
-  login(data) {
-    console.log(data);
+  login(idToken) {
+    // console.log(data);
     // Saves user token to localStorage and reloads the application for logged in status to take effect
-    localStorage.setItem("id_token", data.login.token);
+    localStorage.setItem("id_token", idToken);
     // localStorage.setItem("trainer_id", data.login.user._id);
     //if we have issues deploying to the heroku server it might start here with /homepagecontainer and not using / 
     window.location.assign("/homepagecontainer");

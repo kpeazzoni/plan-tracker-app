@@ -1,4 +1,5 @@
 import React from 'react';
+import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
 
 import '../components/HomepageContainer/HomepageContainer.css'
@@ -11,8 +12,8 @@ function AppointmentsCards({appointments}) {
       <Link to={`/SingleTraineeContainer/${appointment.traineeId._id}`} > 
       <h3>Trainee: {appointment.traineeId.firstName} {appointment.traineeId.lastName}</h3>
       {/* <h3>Date: {appointment.startDate}</h3> */}
-      <h3>Start Time: {appointment.startDate}</h3>
-      <h3>End Time: {appointment.endDate}</h3>
+      <h3>Start Time: {dayjs(appointment.startDate).format('h:mm A')}</h3>
+      <h3>End Time: {dayjs(appointment.endDate).format('h:mm A')}</h3>
       </Link>
       </div>
     </div>

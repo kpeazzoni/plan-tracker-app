@@ -1,7 +1,10 @@
 import React from 'react';
 import dayjs from "dayjs";
+import ScheduleAppointmentModal from "../components/ScheduleAppointmentModal/ScheduleAppointmentModal";
 
 function SingleTraineeWorkout({traineeAppts, apptIndex}) {
+    console.log ("traineeAppts", traineeAppts.length)
+    if (traineeAppts.length > 0) {
     const appt = traineeAppts && traineeAppts [apptIndex];
     const apptDay = dayjs(appt.startDate).format('MM/DD/YYYY');
 
@@ -30,7 +33,8 @@ function SingleTraineeWorkout({traineeAppts, apptIndex}) {
             )}
     </div>
     </>
-    );
+    );} else {return <> <h3><i>No Appointments Scheduled!</i></h3>
+    </>}
 };
 
     // function SingleTraineeWorkout({traineeAppts, apptIndex}) {

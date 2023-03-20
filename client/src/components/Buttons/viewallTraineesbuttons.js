@@ -1,6 +1,6 @@
 import React from 'react';
 import './buttons.css';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, Link} from 'react-router-dom';
 
 // const styles = {
 //     buttonStyle: {
@@ -25,16 +25,19 @@ import {useNavigate} from 'react-router-dom';
 
 
 function ViewallTraineesButtons() {
-    let navigate = useNavigate(); 
-    const routeChange = () =>{ 
-      let path = `AllTraineesContainer`; 
-      navigate(path);
-    }
+    // let navigate = useNavigate(); 
+    // const routeChange = () =>{ 
+    //   let path = `AllTraineesContainer`; 
+    //   navigate(path);
+    // }
     return (
         <div>
-          <button className='btn onWhite actionCenter' onClick={routeChange}>
+        <Link to="/AllTraineesContainer" > <button className='btn onWhite actionCenter' 
+        // onClick={routeChange}
+        >
           View All Clients
-          </button> 
+          </button>
+          </Link>
         </div>
     )
 }

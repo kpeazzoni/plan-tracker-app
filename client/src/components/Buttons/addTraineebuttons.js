@@ -1,6 +1,6 @@
 import React from 'react';
 import './buttons.css';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, Link} from 'react-router-dom';
 
 // const styles = {
 //     buttonStyle: {
@@ -25,16 +25,18 @@ import {useNavigate} from 'react-router-dom';
 
 
 function AddTraineeButtons() {
-    let navigate = useNavigate(); 
-    const routeChange = () =>{ 
-      let path = `NewClientForm`; 
-      navigate(path);
-    }
+    // let navigate = useNavigate(); 
+    // const routeChange = () =>{ 
+    //   let path = `NewClientForm`; 
+    //   navigate(path);
+    // }
     return (
         <div>
-          <button className='btn onWhite actionCenter'  onClick={routeChange}>
+         <Link to= "/NewClientForm"> <button className='btn onWhite actionCenter'  
+          // onClick={routeChange}
+          >
           Add Client
-          </button> 
+          </button> </Link>
         </div>
     )
 }

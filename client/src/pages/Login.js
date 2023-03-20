@@ -81,7 +81,8 @@ const Login = (props) => {
 
             {data ? (
               <p>
-                Success! Logging you in!
+                Success! Logging you in! 
+                {/* { window.location.assign("/homepagecontainer")} */}
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>

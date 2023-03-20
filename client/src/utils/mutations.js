@@ -22,7 +22,6 @@ export const ADD_TRAINER = gql`
         _id
         firstName
         lastName
-
       }
     }
   }

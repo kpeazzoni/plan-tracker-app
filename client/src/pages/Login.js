@@ -16,6 +16,7 @@ import {
 from 'mdb-react-ui-kit';
 
 import pt2 from '../assets/PT2.jpg';
+import Logo from "../assets/logoWhite.png";
 import Auth from '../utils/auth';
 
 const Login = (props) => {
@@ -65,16 +66,21 @@ const Login = (props) => {
       <MDBCard>
         <MDBRow className='g-0'>
 
-          {/* <MDBCol md='6'> */}
-            <MDBCardImage src= {pt2} width="600" height="600"/>
-          {/* </MDBCol> */}
+          <MDBCol>
+            <MDBCardImage src= {pt2} style={{width: ''}}/>
+          </MDBCol>
 
           <MDBCol md='6'>
             <MDBCardBody className='d-flex flex-column'>
 
-              <div className='d-flex flex-row mt-2'>
-                <MDBIcon fas icon="cubes fa-3x me-3" style={{ color: '#ff6219' }}/>
-                <span className="h1 fw-bold mb-0">Plan Tracker</span>
+            <div className='d-flex flex-row mt-2 justify-content-center'>
+              <div className= ''>
+                {/* <MDBIcon fas icon="cubes fa-3x me-3" style={{ color: '#ff6219' }} /> */}
+                < img src={Logo} alt="logo" className="logo"
+                  style={{ cursor: "pointer" }}
+                  // onClick={() => navigate('/')}
+                />
+                </div>
               </div>
 
               <h5 className="fw-normal my-4 pb-3" style={{letterSpacing: '1px'}}>Sign into your account</h5>

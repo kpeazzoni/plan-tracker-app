@@ -60,13 +60,13 @@ const Register = () => {
         <MDBRow className='g-0'>
 
           <MDBCol md='6'>
-            <MDBCardImage src={pt1} width="200" height="200" />
+            <MDBCardImage src={pt1}/>
           </MDBCol>
 
           <MDBCol md='6'>
             <MDBCardBody className='d-flex flex-column'>
 
-              <div className='d-flex flex-row mt-2'>
+              <div className='d-flex flex-row mt-2 justify-content-center'>
                 {/* <MDBIcon fas icon="cubes fa-3x me-3" style={{ color: '#ff6219' }} /> */}
                 < img src={Logo} alt="logo" className="logo"
                   style={{ cursor: "pointer" }}

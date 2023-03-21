@@ -60,7 +60,7 @@ const Register = () => {
         <MDBRow className='g-0'>
 
           <MDBCol md='6'>
-            <MDBCardImage src={pt1} width="200" height="200" />
+            <MDBCardImage src={pt1}/>
           </MDBCol>
 
           <MDBCol md='6'>

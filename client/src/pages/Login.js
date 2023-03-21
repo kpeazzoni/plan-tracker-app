@@ -66,21 +66,19 @@ const Login = (props) => {
       <MDBCard>
         <MDBRow className='g-0'>
 
-          <MDBCol>
-            <MDBCardImage src= {pt2} style={{width: ''}}/>
+          <MDBCol md='6'>
+            <MDBCardImage src= {pt2}/>
           </MDBCol>
 
           <MDBCol md='6'>
             <MDBCardBody className='d-flex flex-column'>
 
             <div className='d-flex flex-row mt-2 justify-content-center'>
-              <div className= ''>
                 {/* <MDBIcon fas icon="cubes fa-3x me-3" style={{ color: '#ff6219' }} /> */}
                 < img src={Logo} alt="logo" className="logo"
                   style={{ cursor: "pointer" }}
                   // onClick={() => navigate('/')}
                 />
-                </div>
               </div>
 
               <h5 className="fw-normal my-4 pb-3" style={{letterSpacing: '1px'}}>Sign into your account</h5>

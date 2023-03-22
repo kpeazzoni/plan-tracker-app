@@ -2,12 +2,30 @@ import React, { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
 import { Button } from 'react-bootstrap';
 import { UPDATE_APPOINTMENT } from '../utils/mutations';
+import { REMOVE_APPOINTMENT } from "./../utils/mutations"
 import { useMutation } from '@apollo/client';
 
-function SingleTraineeAppts({ traineeAppts }) {
+function SingleTraineeAppts({ traineeAppts, setApptIndex, apptIndex, trainee }) {
   const [editableAppt, setEditableAppt] = useState(null);
   const [updateAppointment, { error }] = useMutation(UPDATE_APPOINTMENT);
+  const [appt, setAppt] = useState();
+  const [deleteAppt] = useMutation(REMOVE_APPOINTMENT);
+  const { _id } = trainee
+  const appointment = traineeAppts[apptIndex];
+  
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { data, error } = await deleteAppt({
+        variables: { scheduleId: e.target.id, traineeId: _id},
 
+      });
+     window.location.reload();
+    } catch (err) {
+      console.error(err);
+    }
+  }
+  
   const handleEdit = (appt) => {
     setEditableAppt(appt);
   };
@@ -61,7 +79,7 @@ const formattedEnd = dayjs(editableAppt.endDate).format('YYYY-MM-DDTHH:mm:ss');
       {traineeAppts?.length > 0 && (
         <div>
           <h3 className="card-title"></h3>
-          {traineeAppts.map((appt) => (
+          {traineeAppts?.map((appt, i) => (
             <div className="clientAppt-card" key={appt._id}>
               {editableAppt?._id === appt._id ? (
                 <div className="card-body">
@@ -103,7 +121,7 @@ const formattedEnd = dayjs(editableAppt.endDate).format('YYYY-MM-DDTHH:mm:ss');
                   {error && <p className="text-danger">{error.message}</p>}
                 </div>
               ) : (
-                <div className="card-body" onClick={() => handleEdit(appt)}>
+                <div className="card-body" id={i} onClick={() => handleEdit(appt)}>
                   <h4>
                     <b>Date: </b>
                     {dayjs(appt.startDate).format('MM/DD')}
@@ -120,6 +138,9 @@ const formattedEnd = dayjs(editableAppt.endDate).format('YYYY-MM-DDTHH:mm:ss');
                     <b>Location: </b>
                     {appt.location}
                   </h4>
+                  <Button className='btn onWhite' id={appt._id} onClick={handleFormSubmit}>
+          Delete Appt
+        </Button>
                 </div>
               )
               }

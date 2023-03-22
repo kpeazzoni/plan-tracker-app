@@ -4,6 +4,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_TRAINEE } from '../../utils/mutations';
 
 import Auth from '../../utils/auth'
+import { Link } from 'react-router-dom';
 
 const NewClientForm = () => {
   const [formState, setFormState] = useState({
@@ -54,10 +55,11 @@ const NewClientForm = () => {
       injuryHistory: '',
       notes: '',
     });
-
+    window.location.href='/homepagecontainer'
     } catch (e) {
       console.error(e);
     }
+
   };
 
   return (
@@ -142,8 +144,6 @@ const NewClientForm = () => {
               className="form-control"
             />
           </div>
-
-
           <button type="btn" onClick={handleFormSubmit} className='btn onWhite'>
             Submit
           </button>

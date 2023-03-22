@@ -13,7 +13,14 @@ const [schedules, setSchedules] = useState([]);
 
 const { data, error } = useQuery(QUERY_ME);
 useEffect(() => {
-    setSchedules(data?.me.trainerSchedule)
+    const trainerScheduleArr = data?.me.trainerSchedule || [];
+
+    const editedScheduleArr = trainerScheduleArr.map((appt)=> ({
+        ...appt, 
+        text: appt.traineeId.firstName.concat(' ',appt.traineeId.lastName)
+    }));
+
+    setSchedules(editedScheduleArr);
 }, [data]);
 
 console.log(schedules);

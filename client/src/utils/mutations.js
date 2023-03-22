@@ -120,11 +120,16 @@ mutation Mutation($scheduleId: ID!) {
 `;
 export const REMOVE_TRAINEE = gql`
 mutation Mutation($traineeId: ID!) {
-  removeTrainee(traineeId: $traineeId) {
-    _id
+removeTrainee(traineeId: $traineeId) {
+  _id 
+    traineeSchedule {
+      _id
+    }
   }
 }
 `;
+
+
 export const REMOVE_WORKOUTS = gql`
 mutation Mutation($scheduleId: ID!, $workoutId: ID!) {
   removeWorkouts(scheduleId: $scheduleId, workoutId: $workoutId) {

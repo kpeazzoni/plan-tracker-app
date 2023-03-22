@@ -1,8 +1,18 @@
 import React from 'react';
-
+import { useMutation } from '@apollo/client';
+import {REMOVE_TRAINEE} from '../utils/mutations'
+import { Link } from 'react-router-dom';
 function SingleTraineeInfo({trainee},{traineeDemo}) {
-    console.log(trainee, "====")
+    const [removeTrainee] = useMutation(REMOVE_TRAINEE);
+    // console.log(me, "====")
     const demo= trainee.demographics.length-1
+    async function handleDelete(e) {
+        e.preventDefault()
+      await  removeTrainee({variables: {traineeId: trainee._id}})
+      window.location.href='/homepagecontainer'
+    console.log("This is singletraineeInfo, trainee ID",trainee._id);
+    }
+      
     return (
         <div className='card singleTraineeCards overflow-auto scroll'>
             <div className='card-body'>
@@ -14,6 +24,10 @@ function SingleTraineeInfo({trainee},{traineeDemo}) {
                 <h4 className="card-text"><b>Goals:</b> {trainee.demographics[demo].goals}</h4>
                 <h4 className="card-text"><b>Injury History:</b> {trainee.demographics[demo].injuryHistory}</h4>
                 <h4 className="card-text"><b>Notes:</b> {trainee.demographics[demo].notes}</h4>
+                <Link to='/homepagecontainer'>
+                <button onClick={handleDelete}>Delete</button>
+                </Link> 
+               {/* {/* {console.log(trainee._id )} */}
                 </div>
         </div>
     )

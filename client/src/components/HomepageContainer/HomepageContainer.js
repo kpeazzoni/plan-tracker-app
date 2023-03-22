@@ -14,7 +14,7 @@ import dayjs from "dayjs";
 
 export default function HomepageContainer() {
   const { loading, data } = useQuery(QUERY_ME);
-
+console.log(data, "this is query_me data");
   const schedules = data?.me.trainerSchedule || [];
   const trainees = data?.me.trainees || [];
   const firstName = data?.me.firstName || "";

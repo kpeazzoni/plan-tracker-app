@@ -6,32 +6,24 @@ import Button from 'react-bootstrap/Button';
 
 
 
-function SingleTraineeAppts({ traineeAppts, setApptIndex, trainee }) {
+function SingleTraineeAppts({ traineeAppts, setApptIndex, apptIndex, trainee }) {
   const [appt, setAppt] = useState();
-  // const [formState, setFormState] = useState({
-  //   scheduleId: '',
-  // });
   const [deleteAppt] = useMutation(REMOVE_APPOINTMENT);
   const { _id } = trainee
-  const appointment = traineeAppts[0]
-  console.log("appointment", traineeAppts[0])
+  const appointment = traineeAppts[apptIndex];
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log("appointment.id", appointment._id)
     try {
       const { data, error } = await deleteAppt({
-        variables: { scheduleId: appointment._id, traineeId: _id},
+        variables: { scheduleId: e.target.id, traineeId: _id},
        
       });
-     
+     window.location.reload();
     } catch (err) {
       console.error(err);
     }
   }
-  // const apptDay = dayjs(traineeAppts[].startDate).format('MM/DD/YYYY');
-  // const timeStart = dayjs(appt.startDate).format('hh:mm A');
-  // const timeEnd = dayjs(appt.startDate).format('MM/DD/YYYY');
 
   return (<div className='overflow-auto scroll'>{traineeAppts?.map((appt, i) => (
 
@@ -43,8 +35,8 @@ function SingleTraineeAppts({ traineeAppts, setApptIndex, trainee }) {
         <h4 className="card-text">
           <b>location:</b> {appt.location}
         </h4>
-        <Button className='btn onWhite' onClick={handleFormSubmit}>
-          Delete Appoitment
+        <Button className='btn onWhite' id={appt._id} onClick={handleFormSubmit}>
+          Delete Appt
         </Button>
       </div>
     </div>
@@ -55,22 +47,3 @@ function SingleTraineeAppts({ traineeAppts, setApptIndex, trainee }) {
 
 
 export default SingleTraineeAppts;
-
-// import React from 'react';
-// import DeleteButton from './DeleteButton';
-
-// const Appointment = ({ appointment, onDelete }) => {
-//   const handleDelete = () => {
-//     onDelete(appointment.id);
-//   };
-
-//   return (
-//     <div>
-//       <h2>{appointment.title}</h2>
-//       <p>{appointment.description}</p>
-//       <DeleteButton onClick={handleDelete} />
-//     </div>
-//   );
-// };
-
-// export default Appointment;

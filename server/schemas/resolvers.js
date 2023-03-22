@@ -282,6 +282,7 @@ const resolvers = {
           { _id: appointment.trainerId },
           { $pull: { trainerSchedule: appointment._id } }
         );
+        
         await Trainees.findOneAndUpdate(
           { _id: appointment.traineeId },
           { $pull: { traineeSchedule: appointment._id } }

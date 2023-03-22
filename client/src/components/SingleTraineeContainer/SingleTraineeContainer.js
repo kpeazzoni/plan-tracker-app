@@ -77,6 +77,7 @@ useEffect(() => {
             traineeAppts={traineeAppts}
             setApptIndex={setApptIndex}
             trainee = {trainee}
+            apptIndex= {apptIndex}
           />)}
          </div>
         </aside>

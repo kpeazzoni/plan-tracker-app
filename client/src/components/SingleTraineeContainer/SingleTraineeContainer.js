@@ -76,6 +76,7 @@ useEffect(() => {
           {trainee && (<SingleTraineeAppts
             traineeAppts={traineeAppts}
             setApptIndex={setApptIndex}
+            trainee = {trainee}
           />)}
          </div>
         </aside>

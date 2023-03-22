@@ -22,7 +22,6 @@ function SingleTraineeContainer(props) {
     variables: {
       traineeId: traineeId
     },
-    pollInterval: 5000 // refetch the query every 5 seconds
   });
 
   useEffect(() => {
@@ -95,7 +94,9 @@ function SingleTraineeContainer(props) {
         <aside className="col-md-4 mb-auto mx-auto">
           <div className="clientAppt-container">
             <div className="cardBtn">
-              {trainee && (<ScheduleAppointmentModal trainee={trainee} />)}
+              {trainee && (<ScheduleAppointmentModal trainee={trainee}
+              traineeAppts = {traineeAppts}
+              setTraineeAppts = {setTraineeAppts} />)}
             </div>
             <h3 className="card-title">Upcoming Appointments</h3>
             {trainee && (<SingleTraineeAppts

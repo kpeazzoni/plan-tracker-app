@@ -60,6 +60,7 @@ function ScheduleAppointmentModal(props) {
         },
       });
       console.log('data', data);
+      props.setTraineeAppts([... props.traineeAppts, data.addAppointment])
       setFormState({
         startDate: '',
         endDate: '',

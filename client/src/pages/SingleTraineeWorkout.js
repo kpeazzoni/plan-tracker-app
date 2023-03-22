@@ -1,11 +1,27 @@
 import React, {useState} from 'react';
 import dayjs from "dayjs";
+import Modal from 'react-bootstrap/Modal';
 import {useMutation } from '@apollo/client';
 import {REMOVE_WORKOUTS} from "../utils/mutations";
+import {UPDATE_WORKOUTS} from "../utils/mutations";
 
 function SingleTraineeWorkout({ traineeAppts, apptIndex}) {
 
     const [removeWorkouts] = useMutation(REMOVE_WORKOUTS)
+    const [updateWorkouts] = useMutation(UPDATE_WORKOUTS)
+
+    const [formState, setFormState] = useState({
+      muscleGroup: '',
+      exerciseName: '',
+      sets: '',
+      reps: '',
+      weight: '',
+      distanceOrTime: '',
+      equipmentReq: '',
+      notes: '',
+    });
+
+
 
     if (traineeAppts.length > 0) {
     const appt = traineeAppts && traineeAppts [apptIndex];
@@ -21,6 +37,15 @@ function SingleTraineeWorkout({ traineeAppts, apptIndex}) {
           console.error(err);
         }
       }
+
+    const handleUpdateWorkouts = async(e) => {
+      e.preventDefaule();
+
+    }
+
+
+
+
     return (
         <>
         <h5><b>Selected Appointment: </b>{apptDay}</h5>
@@ -39,8 +64,7 @@ function SingleTraineeWorkout({ traineeAppts, apptIndex}) {
                  <button className= 'btn onWhite' id={workout._id}
                  onClick= {handleRemoveWorkouts}
                 >Delete</button>
-
-
+                <button className = 'btn onWhite' id={workout._id} onClick={handleUpdateWorkouts}>Edit</button>
             </div>
             )) : (
                 <>

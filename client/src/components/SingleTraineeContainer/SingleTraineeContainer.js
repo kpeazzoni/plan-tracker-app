@@ -37,7 +37,6 @@ function SingleTraineeContainer(props) {
   const singleTraineeSchedule = data?.trainee.traineeSchedule || {};
   const firstName = data?.trainee.firstName || "";
   const lastName = data?.trainee.lastName || "";
-  const [apptIndex, setApptIndex] = useState(0)
   const handleEditAppointment = (index, scheduleId, updatedFields) => {
     console.log(`Editing appointment at index ${index}`);
     updateAppointment({
@@ -48,7 +47,7 @@ function SingleTraineeContainer(props) {
       update: (cache, { data: { updateAppointment } }) => {
         const dataInCache = cache.readQuery({
           query: QUERY_TRAINEE,
-          variables: { traineeId: useParams().traineeId }
+          variables: { traineeId: traineeId }
         });
 
         const updatedAppts = dataInCache.trainee.traineeSchedule.map((appt) => {

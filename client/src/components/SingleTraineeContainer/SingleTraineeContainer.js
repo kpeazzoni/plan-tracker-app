@@ -45,6 +45,7 @@ useEffect(() => {
   const firstName = data?.trainee.firstName || "";
   const lastName = data?.trainee.lastName || "";
   const [apptIndex, setApptIndex] = useState(0);
+  // const [workoutIndex, setWorkoutIndex] = useState(0);
 
   return (
     <main>
@@ -92,6 +93,8 @@ useEffect(() => {
          {trainee && (<SingleTraineeWorkout
             traineeAppts={traineeAppts}
             apptIndex={apptIndex}
+            // setWorkoutIndex={setWorkoutIndex}
+            // workoutIndex={workoutIndex}
           />)}
           
         </div>

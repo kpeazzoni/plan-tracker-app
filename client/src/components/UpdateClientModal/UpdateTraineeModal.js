@@ -9,7 +9,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_TRAINEE } from '../../utils/queries';
 
 function UpdateTraineeModal(props) {
-  console.log(props);
+  // console.log(props);
   const [trainee, setTrainee] = useState();
 
   const [formState, setFormState] = useState({

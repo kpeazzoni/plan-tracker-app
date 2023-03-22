@@ -161,10 +161,10 @@ function EditWorkoutPlanModal(props) {
       [name]: intValue,
     });
   };
-  const { _id } = props.trainee
+  const { _id } = props.trainee //props.trainee.traineeSchedule
   const appointment = props.traineeAppts[props.traineeApptIndex]
-  console.log(appointment);
-  console.log(_id);
+  // console.log(appointment);
+  // console.log(_id);
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {

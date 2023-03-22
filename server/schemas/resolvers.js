@@ -293,11 +293,7 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
 
-    updateAppointment: async (
-      parent,
-      { scheduleId, startDate, endDate, location, traineeId },
-      context
-    ) => {
+    updateAppointment: async (parent, { scheduleId, startDate, endDate, location }, context) => {
       if (context.user) {
         return Schedules.findOneAndUpdate(
           { _id: scheduleId },
@@ -306,13 +302,11 @@ const resolvers = {
               startDate,
               endDate,
               location,
-              trainerId: context.user._id,
-              traineeId,
             },
-          }
+          },
         );
       }
-      throw new AuthenticationError("You need to be logged in!");
+      throw new AuthenticationError('You need to be logged in!');
     },
 
     removeWorkouts: async (parent, { scheduleId, workoutId }, context) => {

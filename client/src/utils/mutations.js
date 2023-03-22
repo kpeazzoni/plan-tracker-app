@@ -141,15 +141,12 @@ mutation Mutation($scheduleId: ID!, $workoutId: ID!) {
 }
 `;
 export const UPDATE_APPOINTMENT = gql`
-mutation Mutation($traineeId: ID!, $startDate: String!, $endDate: String!, $traineeId: ID!) {
-  updateAppointment(startDate: $startDate, endDate: $endDate, traineeId: $traineeId) {
+mutation Mutation($scheduleId: ID!, $startDate: String!, $endDate: String!, $location: String) {
+  updateAppointment(scheduleId: $scheduleId, startDate: $startDate, endDate: $endDate, location: $location) {
     _id
-    traineeId {
-      _id
-    }
-    trainerId {
-      _id
-    }
+    startDate
+    endDate
+    location
   }
 }
 `;

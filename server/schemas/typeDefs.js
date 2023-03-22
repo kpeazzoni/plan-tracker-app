@@ -139,7 +139,6 @@ type Mutation {
       startDate: String!,
       endDate: String!,
       location: String,
-      traineeId: ID!,
    ) : Schedules
 
    removeAppointment(scheduleId: ID!) : Schedules

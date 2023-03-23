@@ -101,6 +101,7 @@ function SingleTraineeContainer(props) {
             <h3 className="card-title">Upcoming Appointments</h3>
             {trainee && (<SingleTraineeAppts
               traineeAppts={traineeAppts}
+              setTraineeAppts={setTraineeAppts}
               setApptIndex={setApptIndex}
               trainee = {trainee}
               apptIndex= {apptIndex}

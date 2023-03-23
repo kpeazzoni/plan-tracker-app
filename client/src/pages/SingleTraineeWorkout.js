@@ -247,7 +247,7 @@ function SingleTraineeWorkout({ traineeAppts, apptIndex, refetch}) {
                   onChange={handleInputChange}
                   className="form-control"
                 >
-                  <option value={formState.muscleGroup}>Muscle Group</option>
+                  <option value={formState.muscleGroup}>{formState.muscleGroup}</option>
                   {isolatedGroups.map((group) => {
                     return (
                       <option key={group} name='muscleGroup' value={group}>
@@ -261,7 +261,7 @@ function SingleTraineeWorkout({ traineeAppts, apptIndex, refetch}) {
                   onChange={handleChange}
                   className="form-control"
                 >
-                  <option value={formState.exerciseName}>Exercises</option>
+                  <option value={formState.exerciseName}>{formState.exerciseName}</option>
                   {/* {optionsArr.sort()} */}
                   {optionsArr.map((option) => {
                     return (

@@ -217,7 +217,8 @@ function SingleTraineeWorkout({ traineeAppts, apptIndex, refetch}) {
 
                 <h4 className="card-text">{workout.exerciseName}</h4>
                 <h5 className="card-text">Reps: {workout.reps} Sets: {workout.sets}</h5>
-                <h5 className="card-text">Weight: {workout.weight} Equipment: {workout.equipmentReq}</h5>
+                <h5 className="card-text">Weight: {workout.weight}</h5>
+                <h5 className="card-text"> Equipment: {workout.equipmentReq}</h5>
                 <h5 className="card-text">Distance/Time: {workout.distanceOrTime}</h5>
                 <h5 className="card-text">Notes: {workout.notes}</h5>
                  <button className= 'btn onWhite' id={workout._id}

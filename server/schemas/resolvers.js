@@ -282,7 +282,7 @@ const resolvers = {
           { _id: appointment.trainerId },
           { $pull: { trainerSchedule: appointment._id } }
         );
-        
+
         await Trainees.findOneAndUpdate(
           { _id: appointment.traineeId },
           { $pull: { traineeSchedule: appointment._id } }
@@ -304,6 +304,10 @@ const resolvers = {
               location,
             },
           },
+          {
+            new: true,
+            runValidators: true,
+          }
         );
       }
       throw new AuthenticationError('You need to be logged in!');

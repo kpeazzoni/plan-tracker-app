@@ -5,7 +5,7 @@ import { UPDATE_APPOINTMENT } from '../utils/mutations';
 import { REMOVE_APPOINTMENT } from './../utils/mutations';
 import { useMutation } from '@apollo/client';
 
-function SingleTraineeAppts({ traineeAppts, setApptIndex, apptIndex, trainee, setTraineeAppts }) {
+function SingleTraineeAppts({ traineeAppts, setApptIndex, apptIndex, trainee, setTraineeAppts, refetch }) {
   const [updateAppointment, { error }] = useMutation(UPDATE_APPOINTMENT);
   const [deleteAppt] = useMutation(REMOVE_APPOINTMENT);
   const [showModal, setShowModal] = useState(false);
@@ -24,7 +24,9 @@ function SingleTraineeAppts({ traineeAppts, setApptIndex, apptIndex, trainee, se
       const { data, error } = await deleteAppt({
         variables: { scheduleId: e.target.id, traineeId: _id },
       });
-      window.location.reload();
+      // window.location.reload();
+      setApptIndex(0);
+      refetch();
     } catch (err) {
       console.error(err);
     }
@@ -49,11 +51,7 @@ function SingleTraineeAppts({ traineeAppts, setApptIndex, apptIndex, trainee, se
       const { data } = await updateAppointment({
         variables: payload,
       });
-      console.log('data', data.updateAppointment);
-      const apptArray = [...traineeAppts]
-      const updatedAppt = apptArray.splice(e.target.id, 1, data.updateAppointment)
-      console.log('updated', updatedAppt);
-      // setTraineeAppts([...traineeAppts, data.updateAppointment])
+      
       setShowModal(false);
       setEditedAppt(null);
     } catch (e) {

@@ -333,7 +333,7 @@ const resolvers = {
     updateWorkouts: async (
       parent,
       {
-        traineeId,
+        workoutId,
         scheduleId,
         muscleGroup,
         exerciseName,
@@ -348,10 +348,11 @@ const resolvers = {
     ) => {
       if (context) {
         return Schedules.findOneAndUpdate(
-          { _id: scheduleId },
+          { _id: scheduleId, "workouts._id": workoutId},
           {
             $set: {
-              workouts: {
+              "workouts.$": {
+                _id: workoutId,
                 muscleGroup,
                 exerciseName,
                 sets,

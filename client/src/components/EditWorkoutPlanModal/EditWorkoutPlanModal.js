@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom';
 import { ADD_WORKOUTS } from "../../utils/mutations"
 
 
-function EditWorkoutPlanModal(props) {
+function EditWorkoutPlanModal({ trainee, traineeAppts, setTraineeAppts, refetch, traineeApptIndex }) {
   const [show, setShow] = useState(false);
   const { loading, data } = useQuery(QUERY_EXERCISES);
 
@@ -137,7 +137,7 @@ function EditWorkoutPlanModal(props) {
       optionsArr.push(options.exerciseName)
     })
   };
-  const [trainee, setTrainee] = useState();
+  // const [trainee, setTrainee] = useState();
   const [addWorkouts] = useMutation(ADD_WORKOUTS);
 
 
@@ -161,8 +161,8 @@ function EditWorkoutPlanModal(props) {
       [name]: intValue,
     });
   };
-  const { _id } = props.trainee //props.trainee.traineeSchedule
-  const appointment = props.traineeAppts[props.traineeApptIndex]
+  const { _id } = trainee; //trainee.traineeSchedule
+  const appointment = traineeAppts[traineeApptIndex]
   // console.log(appointment);
   // console.log(_id);
   const handleFormSubmit = async (e) => {
@@ -171,7 +171,9 @@ function EditWorkoutPlanModal(props) {
       const { data, error } = await addWorkouts({
         variables: { scheduleId: appointment._id, traineeId: _id, ...formState },
       });
-      console.log(error)
+
+      refetch();
+      
       setFormState({
         muscleGroup: '',
         exerciseName: '',
@@ -191,7 +193,7 @@ function EditWorkoutPlanModal(props) {
   return (
     <>
       <Button className='btn onWhite' onClick={handleShow}>
-        Edit Workout Plan
+        Add Workout
       </Button>
 
       <Modal show={show} onHide={handleClose}>

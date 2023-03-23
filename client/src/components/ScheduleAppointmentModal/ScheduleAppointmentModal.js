@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import { ADD_APPOINTMENT } from '../../utils/mutations';
 import { useMutation } from '@apollo/client';
 
-function ScheduleAppointmentModal(props) {
+function ScheduleAppointmentModal({ trainee, traineeAppts, setTraineeAppts, refetch }) {
   const [formState, setFormState] = useState({
     startDate: '',
     endDate: '',
@@ -51,16 +51,18 @@ function ScheduleAppointmentModal(props) {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await addAppointment({
+      const { data } = await addAppointment(
+        {
         variables: {
           ...formState,
           startDate: formattedTimestamps.start,
           endDate: formattedTimestamps.end,
-          traineeId: props.trainee._id
+          traineeId: trainee._id
         },
       });
       console.log('data', data);
-      props.setTraineeAppts([... props.traineeAppts, data.addAppointment])
+
+      refetch();
       setFormState({
         startDate: '',
         endDate: '',

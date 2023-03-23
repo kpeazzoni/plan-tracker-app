@@ -8,9 +8,9 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_TRAINEE } from '../../utils/queries';
 
-function UpdateTraineeModal(props) {
+function UpdateTraineeModal({ trainee }) {
   // console.log(props);
-  const [trainee, setTrainee] = useState();
+  // const [trainee, setTrainee] = useState();
 
   const [formState, setFormState] = useState({
     goals: '',
@@ -19,7 +19,7 @@ function UpdateTraineeModal(props) {
     notes: '',
     weight: '',
   });
-  const { _id } = props.trainee
+  const { _id } = trainee
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);

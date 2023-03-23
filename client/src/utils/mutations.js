@@ -71,6 +71,17 @@ mutation Mutation($startDate: String!, $endDate: String!, $location: String, $tr
     startDate
     endDate
     location
+    workouts {
+      _id
+      distanceOrTime
+      equipmentReq
+      exerciseName
+      muscleGroup
+      notes
+      reps
+      sets
+      weight
+    }
   }
 }
 `;
@@ -98,7 +109,11 @@ export const ADD_WORKOUTS = gql`
 mutation AddWorkouts($traineeId: ID!, $scheduleId: ID!, $muscleGroup: String!, $exerciseName: String!, $sets: String, $reps: String, $weight: String, $distanceOrTime: String, $equipmentReq: String, $notes: String) {
   addWorkouts(traineeId: $traineeId, scheduleId: $scheduleId, muscleGroup: $muscleGroup, exerciseName: $exerciseName, sets: $sets, reps: $reps, weight: $weight, distanceOrTime: $distanceOrTime, equipmentReq: $equipmentReq, notes: $notes) {
     _id
+    startDate
+    endDate
+    location
     workouts {
+      _id
       distanceOrTime
       equipmentReq
       exerciseName
@@ -137,7 +152,21 @@ export const REMOVE_WORKOUTS = gql`
 mutation Mutation($scheduleId: ID!, $workoutId: ID!) {
   removeWorkouts(scheduleId: $scheduleId, workoutId: $workoutId) {
     _id
+    startDate
+    endDate
+    location
     workouts {
+      _id
+      distanceOrTime
+      equipmentReq
+      exerciseName
+      muscleGroup
+      notes
+      reps
+      sets
+      weight
+    }
+    traineeId {
       _id
     }
   }

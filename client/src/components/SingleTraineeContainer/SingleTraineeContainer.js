@@ -14,24 +14,24 @@ import EditWorkoutPlanModal from "../EditWorkoutPlanModal/EditWorkoutPlanModal";
 function SingleTraineeContainer(props) {
   const [trainee, setTrainee] = useState();
   const [traineeAppts, setTraineeAppts] = useState();
-  const [apptIndex, setApptIndex] = useState(null);
+  const [apptIndex, setApptIndex] = useState(0);
   const [updateAppointment] = useMutation(UPDATE_APPOINTMENT);
   const { traineeId } = useParams();
 
-  const { data, error } = useQuery(QUERY_TRAINEE, {
+  const { data, error, refetch } = useQuery(QUERY_TRAINEE, 
+    {
     variables: {
       traineeId: traineeId
     },
   });
-
   useEffect(() => {
     setTrainee(data?.trainee)
     setTraineeAppts(data?.trainee.traineeSchedule)
 
-    if (data?.trainee.traineeSchedule && apptIndex === null) {
-      setApptIndex(0);
-    }
-  },[data, apptIndex]);
+    // if (data?.trainee.traineeSchedule && apptIndex === null) {
+    //   setApptIndex(0);
+    // }
+  },[data]);
 
   const singleTraineeSchedule = data?.trainee.traineeSchedule || {};
   const firstName = data?.trainee.firstName || "";
@@ -82,7 +82,7 @@ function SingleTraineeContainer(props) {
         <aside className="col-md-4 mb-auto mx-auto">
           <div className="clientinfo-container">
             <div className="cardBtn">
-              {trainee && (<UpdateTraineeModal trainee={trainee} />)}
+              {trainee && (<UpdateTraineeModal trainee={trainee} refetch={refetch} />)}
             </div>
             <h3 className="card-title">Client Info</h3>
             {trainee && (
@@ -96,13 +96,15 @@ function SingleTraineeContainer(props) {
             <div className="cardBtn">
               {trainee && (<ScheduleAppointmentModal trainee={trainee}
               traineeAppts = {traineeAppts}
-              setTraineeAppts = {setTraineeAppts} />)}
+              setTraineeAppts = {setTraineeAppts}
+              refetch={refetch} />)}
             </div>
             <h3 className="card-title">Upcoming Appointments</h3>
             {trainee && (<SingleTraineeAppts
               traineeAppts={traineeAppts}
               setTraineeAppts={setTraineeAppts}
               setApptIndex={setApptIndex}
+              refetch={refetch}
               trainee = {trainee}
               apptIndex= {apptIndex}
               handleEditAppointment={handleEditAppointment}
@@ -113,11 +115,15 @@ function SingleTraineeContainer(props) {
         <aside className="col-md-4 mb-auto mx-auto">
           <div className="clientWorkOuts-container">
             <div className="cardBtn">
-              {trainee && (<EditWorkoutPlanModal trainee={trainee} traineeAppts={traineeAppts} traineeApptIndex={apptIndex} />)}
+              {trainee && (<EditWorkoutPlanModal trainee={trainee} traineeAppts={traineeAppts} setTraineeAppts={setTraineeAppts} 
+               refetch={refetch}
+               traineeApptIndex={apptIndex} />)}
             </div>
             <h3 className="card-title">Workout Plan</h3>
             {trainee && (<SingleTraineeWorkout
+              setTraineeAppts={setTraineeAppts}
               traineeAppts={traineeAppts}
+              refetch={refetch}
               apptIndex={apptIndex}
               onEditAppointment={handleEditAppointment}
             />)}

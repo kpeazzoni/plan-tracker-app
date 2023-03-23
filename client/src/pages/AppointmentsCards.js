@@ -10,10 +10,10 @@ function AppointmentsCards({appointments}) {
     <div className='card appointmentsCards'key={i}>
       <div className='card-body'>
       <Link to={`/SingleTraineeContainer/${appointment.traineeId._id}`} > 
-      <h3>Trainee: {appointment.traineeId.firstName} {appointment.traineeId.lastName}</h3>
+      <h3> {appointment.traineeId.firstName} {appointment.traineeId.lastName}</h3>
       {/* <h3>Date: {appointment.startDate}</h3> */}
-      <h3>Start Time: {dayjs(appointment.startDate).format('h:mm A')}</h3>
-      <h3>End Time: {dayjs(appointment.endDate).format('h:mm A')}</h3>
+      <h3> {dayjs(appointment.startDate).format('h:mm A')} - {dayjs(appointment.endDate).format('h:mm A')}</h3>
+      {/* <h3> {dayjs(appointment.endDate).format('h:mm A')}</h3> */}
       </Link>
       </div>
     </div>

@@ -26,3 +26,8 @@ p, ul, li {
 /* code {
   font-family:'Fredoka One' !important;
 } */
+@media screen and (max-width: 1024px) {
+  h3 {
+    font-size: 24px !important;
+  }
+}

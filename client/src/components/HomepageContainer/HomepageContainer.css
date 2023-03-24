@@ -3,12 +3,11 @@ a:Link, a:active, a:hover, a:focus, a:visited {
   color: black
 }
 
-
 .homepageContainer-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    height: 30rem;
     /* margin-left: 7rem; */
     /* justify-items: center; */
     /* gap: 0.5px; */
@@ -30,17 +29,21 @@ a:Link, a:active, a:hover, a:focus, a:visited {
   }
 
 .scrollHP {
-  height: 28vw;
+  height: 90%;
 }
 
 .appointments-container{
+  display: flex;
+  flex-direction: column;
   background: white;
-    width: 70%;
-    border: 1px solid black;
-    border-radius: 30px;
-    padding: 2.25rem;
-    margin: auto;
-    height: auto;
+  min-width: 15rem;
+  max-width: 30rem;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 2.25rem;
+  margin: auto;
+  height: 100%;
 
 }
 
@@ -56,13 +59,17 @@ a:Link, a:active, a:hover, a:focus, a:visited {
 
 
 .trainees-container{
+  display: flex;
+  flex-direction: column;
   background: white;
-  width: 70%;
+  min-width: 15rem;
+  max-width: 30rem;
+  width: 80%;
   border: 1px solid black;
   border-radius: 30px;
   padding: 2.25rem;
   margin: auto;
-  height: auto;
+  height: 100%;
 }
 
 .traineesCards {
@@ -76,12 +83,14 @@ a:Link, a:active, a:hover, a:focus, a:visited {
 
 .action-container{
   background: white;
-    width: 70%;
-    border: 1px solid black;
-    border-radius: 30px;
-    padding: 2.25rem;
-    margin: auto;
-    height: auto; 
+  min-width: 15rem;
+  max-width: 30rem;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 2.25rem;
+  margin: auto;
+  height: 100%; 
 }
 
 .links{
@@ -94,8 +103,13 @@ a:Link, a:active, a:hover, a:focus, a:visited {
   margin-bottom: 1rem;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   .homepageContainer-wrapper {
     flex-direction: column;
+    height: auto;
+  }
+
+  aside {
+    height: 21rem;
   }
 }

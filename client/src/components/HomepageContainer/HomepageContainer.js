@@ -75,7 +75,7 @@ console.log(data, "this is query_me data");
     <h3 className="date">{currentTime}</h3>
     <div className="homepageContainer-wrapper ">
       
-      <aside className="col-lg-4 mx-auto">
+      <aside className="col-lg-4">
       {/* <div className="col-align-self-center"> */}
         <div className="appointments-container">
           
@@ -86,7 +86,7 @@ console.log(data, "this is query_me data");
       </aside>
 
 
-      <aside className="col-lg-4 mx-auto">
+      <aside className="col-lg-4">
         <div className="trainees-container">
          
           <h3 className="card-heading">Clients</h3>
@@ -100,7 +100,7 @@ console.log(data, "this is query_me data");
       
       
       
-      <aside className="col-lg-4 mx-auto">
+      <aside className="col-lg-4">
        <div className= "action-container">
 
         <h3 className="card-heading">Action Center</h3>

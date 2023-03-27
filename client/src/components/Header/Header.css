@@ -43,7 +43,7 @@
     transition: all 150ms ease-in-out;
   }
 
-.btn {
+.header-btn {
     background-color: #0A99B1;
     border: 2px solid #0A99B1;
     color: white;
@@ -60,7 +60,7 @@
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
     
   }
-  .btn:hover {
+  .header-btn:hover {
     cursor: pointer;
     background-color: transparent;
     color: white;
@@ -78,9 +78,7 @@
     transition: all 150ms ease-in-out;
   }
 
-  .actionCenter {
-    width: 13rem;
-  }
+  
   .show-on-md {
     display: none;
 }
@@ -93,7 +91,7 @@
 #logout:hover {
     cursor: pointer;
     background-color: transparent;
-    color: white;
+    /* color: white; */
     border: 2px solid rgb(210, 82, 82);
     box-shadow: 0 0 10px 0 rgb(210, 82, 82) inset, 0 0 10px 4px rgb(210, 82, 82);
 }

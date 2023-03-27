@@ -37,7 +37,7 @@ a:Link, a:active, a:hover, a:focus, a:visited {
   flex-direction: column;
   background: white;
   min-width: 15rem;
-  max-width: 30rem;
+  /* max-width: 30rem; */
   width: 80%;
   border: 1px solid black;
   border-radius: 30px;
@@ -63,7 +63,7 @@ a:Link, a:active, a:hover, a:focus, a:visited {
   flex-direction: column;
   background: white;
   min-width: 15rem;
-  max-width: 30rem;
+  /* max-width: 30rem; */
   width: 80%;
   border: 1px solid black;
   border-radius: 30px;
@@ -82,9 +82,11 @@ a:Link, a:active, a:hover, a:focus, a:visited {
 }
 
 .action-container{
+  display: flex;
+  flex-direction: column;
   background: white;
   min-width: 15rem;
-  max-width: 30rem;
+  /* max-width: 30rem; */
   width: 80%;
   border: 1px solid black;
   border-radius: 30px;
@@ -103,13 +105,17 @@ a:Link, a:active, a:hover, a:focus, a:visited {
   margin-bottom: 1rem;
 }
 
+@media screen and (max-width: 1024px) {
+
+}
+
 @media screen and (max-width: 768px) {
   .homepageContainer-wrapper {
     flex-direction: column;
     height: auto;
   }
 
-  aside {
-    height: 21rem;
+  .col-lg-4 {
+    width: auto;
   }
 }

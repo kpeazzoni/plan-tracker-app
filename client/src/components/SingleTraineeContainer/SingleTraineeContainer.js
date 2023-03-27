@@ -78,8 +78,8 @@ function SingleTraineeContainer(props) {
   return (
     <main>
       <h1 className="oneTrainee">{firstName} {lastName}</h1>
-      <div className="singleTrainee-container">
-        <aside className="col-md-4 mb-auto mx-auto">
+      <div className="singleTraineeContainer-wrapper">
+        <aside className="col-lg-4">
           <div className="clientinfo-container">
             <div className="cardBtn">
               {trainee && (<UpdateTraineeModal trainee={trainee} refetch={refetch} />)}
@@ -91,7 +91,7 @@ function SingleTraineeContainer(props) {
           </div>
         </aside>
   
-        <aside className="col-md-4 mb-auto mx-auto">
+        <aside className="col-lg-4">
           <div className="clientAppt-container">
             <div className="cardBtn">
               {trainee && (<ScheduleAppointmentModal trainee={trainee}
@@ -112,7 +112,7 @@ function SingleTraineeContainer(props) {
           </div>
         </aside>
   
-        <aside className="col-md-4 mb-auto mx-auto">
+        <aside className="col-lg-4">
           <div className="clientWorkOuts-container">
             <div className="cardBtn">
               {trainee && (<EditWorkoutPlanModal trainee={trainee} traineeAppts={traineeAppts} setTraineeAppts={setTraineeAppts} 

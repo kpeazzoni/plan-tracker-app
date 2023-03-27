@@ -31,14 +31,14 @@ function ViewallTraineesButtons() {
     //   navigate(path);
     // }
     return (
-        <div>
-        <Link to="/AllTraineesContainer" > <button className='btn onWhite actionCenter' 
+        <>
+        <Link to="/AllTraineesContainer" > <button className='btn btn-lg onWhite actionCenter' 
         // onClick={routeChange}
         >
           View All Clients
           </button>
           </Link>
-        </div>
+        </>
     )
 }
 

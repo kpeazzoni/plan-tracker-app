@@ -106,11 +106,11 @@ console.log(data, "this is query_me data");
         <h3 className="card-heading">Action Center</h3>
         <div className = "cardBtn">
           {/* <div className="links"> */}
-           <Link to="/schedule"><FullscheduleButtons /></Link></div>
+           <FullscheduleButtons /></div>
            <div className = "cardBtn">
-           <Link to="/newclientform"><AddTraineeButtons /></Link></div>
+           <AddTraineeButtons /></div>
            <div className = "cardBtn">
-           <Link to="/AllTraineesContainer"><ViewallTraineesButtons /></Link></div>
+           <ViewallTraineesButtons /></div>
           {/* </div> */}
 
        </div>

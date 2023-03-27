@@ -13,7 +13,7 @@
 }
 
 .scroll {
-    height: 42vh;
+    height: 90%;
 }
 
 .cardBtn {
@@ -21,38 +21,57 @@
     justify-content: center;
 }
 
-.singleTrainee-container{
+.singleTraineeContainer-wrapper{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    height: 35rem;
 }
+
+/* .container-stack {
+    display: flex;
+    flex-grow: 2;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 35rem;
+} */
+
 .clientinfo-container{
+    display: flex;
+    flex-direction: column;
     background: white;
-    width: 70%;
+    min-width: 15rem;
+    /* max-width: 30rem; */
+    width: 80%;
     border: 1px solid black;
     border-radius: 30px;
     padding: 2.25rem;
     margin: auto;
-    height: auto;   
+    height: 100%; 
 }
 
 .singleTraineeCards{
-    width: auto;
+    overflow: auto;
+    /* width: auto; */
     /* height: 12rem; */
-    padding: 0.25rem;
+    /* padding: 0.25rem; */
     background: white;
     border: 1px solid black;
     border-radius: 30px;
-    margin:auto;
+    /* margin:auto; */
 }
 .clientAppt-container{
+    display: flex;
+    flex-direction: column;
     background: white;
-    width: 70%;
+    min-width: 15rem;
+    /* max-width: 30rem; */
+    width: 80%;
     border: 1px solid black;
     border-radius: 30px;
     padding: 2.25rem;
     margin: auto;
-    height: auto;
+    height: 100%;
 }
 .clientAppt-card{
     background: white;
@@ -65,13 +84,17 @@
 }
 
 .clientWorkOuts-container{
+    display: flex;
+    flex-direction: column;
     background: white;
-    width: 70%;
+    min-width: 15rem;
+    /* max-width: 30rem; */
+    width: 80%;
     border: 1px solid black;
     border-radius: 30px;
     padding: 2.25rem;
     margin: auto;
-    height: auto;
+    height: 100%;
 }
 
 .clientWorkOuts-cards{
@@ -93,3 +116,33 @@
 ul{
  list-style-type: none;
 }
+
+@media screen and (max-width: 1024px) {
+    /* .container-stack {
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .col-lg-6 {
+        width: auto;
+    } */
+  }
+
+  @media screen and (max-width: 768px) {
+    .singleTraineeContainer-wrapper {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .cardBtn {
+        font-size: 15px;
+    }
+
+    .col-lg-4 {
+        width: auto;
+    }
+
+    /* .col-lg-6 {
+        width: auto;
+    } */
+  }

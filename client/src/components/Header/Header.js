@@ -25,8 +25,8 @@ const Header = () => {
           {Auth.loggedIn() ? (
             <Navbar expand="false" expanded={expanded} className="mb-3">
             <Container fluid>
-              <button onClick={(event) => navigate('/homepagecontainer')} className='btn hide-on-md'>Home</button>
-              <button onClick={Auth.logout} className='btn hide-on-md' id="logout">Logout</button>
+              <button onClick={(event) => navigate('/homepagecontainer')} className='header-btn hide-on-md'>Home</button>
+              <button onClick={Auth.logout} className='header-btn hide-on-md' id="logout">Logout</button>
               <Navbar.Toggle aria-controls="offcanvasNavbar-expand-false"  onClick={() => setExpanded(expanded ? false : "expanded")} />
               <Navbar.Offcanvas
                 id="offcanvasNavbar-expand-false"
@@ -45,8 +45,8 @@ const Header = () => {
                     <Nav.Link as={Link} to="/alltraineescontainer">View All Clients</Nav.Link>
                     <Nav.Link as={Link} to="/schedule">View Full Schedule</Nav.Link>
                     <div>
-                    <Link to="/homepagecontainer"><button className='btn show-on-md'>Home</button></Link>
-                    <button onClick={Auth.logout} className='btn show-on-md' id="logout">Logout</button>
+                    <Link to="/homepagecontainer"><button className='header-btn onWhite show-on-md'>Home</button></Link>
+                    <button onClick={Auth.logout} className='header-btn onWhite show-on-md' id="logout">Logout</button>
                     </div>
                   </Nav>
                 </Offcanvas.Body>
@@ -71,8 +71,8 @@ const Header = () => {
                 <Offcanvas.Body>
                   <Nav className="justify-content-end flex-grow-1 pe-3" onClick={() => setExpanded(false)}>
                     <div>
-                    <Link to="/register"><button className='btn'>Register</button></Link>
-                    <Link to="/login"><button className='btn'>Login</button></Link>
+                    <Link to="/register"><button className='header-btn onWhite'>Register</button></Link>
+                    <Link to="/login"><button className='header-btn onWhite'>Login</button></Link>
                     </div>
                   </Nav>
                 </Offcanvas.Body>

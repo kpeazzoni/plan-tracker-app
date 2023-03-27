@@ -25,7 +25,7 @@ function SingleTraineeInfo({trainee},{traineeDemo}) {
                 <h4 className="card-text"><b>Injury History:</b> {trainee.demographics[demo].injuryHistory}</h4>
                 <h4 className="card-text"><b>Notes:</b> {trainee.demographics[demo].notes}</h4>
                 <Link to='/homepagecontainer'>
-                <button onClick={handleDelete}>Delete</button>
+                <button className='btn btn-sm btn-danger onWhite' onClick={handleDelete}>Delete</button>
                 </Link> 
                {/* {/* {console.log(trainee._id )} */}
                 </div>

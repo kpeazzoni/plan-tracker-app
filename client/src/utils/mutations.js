@@ -28,8 +28,8 @@ export const ADD_TRAINER = gql`
 `;
 
 export const ADD_TRAINEE = gql`
-mutation Mutation($firstName: String!, $lastName: String!, $dob: String!,  $goals: String!, $height: Int!, $injuryHistory: String!, $notes: String!, $weight: Int!) {
-  addTrainee(firstName: $firstName, lastName: $lastName, dob: $dob, goals: $goals, height: $height, injuryHistory: $injuryHistory, notes: $notes, weight: $weight) {
+mutation Mutation($firstName: String!, $lastName: String!, $dob: String!,  $goals: String!, $height: Int!, $injuryHistory: String!, $notes: String!, $weight: Int!,  $email: String) {
+  addTrainee(firstName: $firstName, lastName: $lastName, dob: $dob, goals: $goals, height: $height, injuryHistory: $injuryHistory, notes: $notes, weight: $weight, email: $email) {
     _id
     firstName
     lastName
@@ -40,6 +40,7 @@ mutation Mutation($firstName: String!, $lastName: String!, $dob: String!,  $goal
       injuryHistory
       notes
       weight
+      email
     }
     traineeSchedule {
       _id
@@ -86,8 +87,8 @@ mutation Mutation($startDate: String!, $endDate: String!, $location: String, $tr
 }
 `;
 export const ADD_DEMOGRAPHICS = gql`
-mutation Mutation($traineeId: ID!, $height: Int!, $weight: Int!, $goals: String!, $injuryHistory: String!, $notes: String!) {
-  addDemographics(traineeId: $traineeId, height: $height, weight: $weight, goals: $goals, injuryHistory: $injuryHistory, notes: $notes) {
+mutation Mutation($traineeId: ID!, $height: Int!, $weight: Int!, $goals: String!, $injuryHistory: String!, $notes: String!, $email: String) {
+  addDemographics(traineeId: $traineeId, height: $height, weight: $weight, goals: $goals, injuryHistory: $injuryHistory, notes: $notes, email: $email) {
     _id
     demographics {
       goals
@@ -95,6 +96,7 @@ mutation Mutation($traineeId: ID!, $height: Int!, $weight: Int!, $goals: String!
       injuryHistory
       notes
       weight
+      email
     }
     dob
     firstName

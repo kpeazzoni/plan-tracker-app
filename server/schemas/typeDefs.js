@@ -25,6 +25,7 @@ const typeDefs = gql`
     goals: String!
     injuryHistory: String!
     notes: String!
+    email: String
 }
  type Schedules {
     _id: ID!
@@ -86,6 +87,7 @@ type Mutation {
       injuryHistory: String!
       notes: String!
       weight: Int!
+      email: String
    ) : Trainees   
    
    addDemographics(
@@ -94,7 +96,8 @@ type Mutation {
       weight: Int!,
       goals: String!,
       injuryHistory: String!,
-      notes: String!
+      notes: String!,
+      email: String
    ) : Trainees
    
    removeTrainee(traineeId: ID!) : Trainees

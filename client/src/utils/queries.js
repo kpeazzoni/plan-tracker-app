@@ -74,6 +74,7 @@ query Trainees {
       goals
       notes
       injuryHistory
+      email
     }
   }
 }
@@ -111,6 +112,7 @@ query Trainees($traineeId: ID!) {
       goals
       notes
       injuryHistory
+      email
     }
   }
 }

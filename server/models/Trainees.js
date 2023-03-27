@@ -36,7 +36,11 @@ const traineesSchema = Schema({
             notes:{
                 type: String,
                 required: true,
-            }
+            },
+            email: {
+                type: String,
+                required: true,
+              },
         }
     ],
     trainerId: {

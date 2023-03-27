@@ -96,10 +96,10 @@ function SingleTraineeAppts({ traineeAppts, setApptIndex, apptIndex, trainee, se
                   {appt.location}
                 </h4>
                 <Button className='btn btn-sm onWhite' id={appt._id} onClick={() => handleEdit(appt)}>
-                  Edit Appt
+                  Edit
                 </Button>
                 <Button className='btn btn-sm btn-danger onWhite' id={appt._id} onClick={handleFormSubmit}>
-                  Delete Appt
+                  Delete
                 </Button>
               </div>
               <Modal show={showModal} onHide={handleCloseModal}>

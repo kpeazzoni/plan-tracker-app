@@ -1,4 +1,4 @@
-.buttons {
+/* .buttons {
     background: #0A99B1;
     color: white;
     font-size: 16px;
@@ -7,9 +7,77 @@
     margin: 10px 0;
     outline:  none;
     /* boxShadow: 0 2px 2px 0 lightgray */
-    cursor: pointer;
+    /* cursor: pointer;
     text-transform: uppercase;
 }
 .buttons:hover {
     background: #006d77;
-}
+} */
+
+.btn {
+    background-color: #0A99B1;
+    border: 2px solid #0A99B1;
+    color: white;
+    /* width: 109px; */
+    width: auto;
+    font-size: 16px;
+    font-weight: 600;
+    /* padding: 10px 20px; */
+    border-radius: 5px;
+    margin: 1rem;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+  }
+
+  .btn:hover {
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #0A99B1;
+    box-shadow: 0 0 10px 0 #0A99B1 inset, 0 0 10px 4px #0A99B1;
+    transition: all 150ms ease-in-out;
+  }
+
+  .btn-danger {
+    background-color: rgb(210, 82, 82);
+    border: 2px solid rgb(210, 82, 82);
+  }
+
+  .btn-danger:hover {
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid rgb(210, 82, 82);
+    box-shadow: 0 0 10px 0 rgb(210, 82, 82) inset, 0 0 10px 4px rgb(210, 82, 82);
+  }
+
+  .btn-lg {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .btn-sm {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 5px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.6);
+  }
+
+  .actionCenter {
+    width: 13rem !important;
+  }
+
+  .onWhite:hover {
+    color: black;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .btn {
+        font-size: 12px;
+    }
+
+    .btn-sm {
+        font-size: 10px;
+        padding: 2px;
+    }
+  }

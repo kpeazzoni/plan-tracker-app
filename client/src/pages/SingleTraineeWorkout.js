@@ -221,12 +221,12 @@ function SingleTraineeWorkout({ traineeAppts, apptIndex, refetch}) {
                 <h5 className="card-text"> Equipment: {workout.equipmentReq}</h5>
                 <h5 className="card-text">Distance/Time: {workout.distanceOrTime}</h5>
                 <h5 className="card-text">Notes: {workout.notes}</h5>
-                 <button className= 'btn onWhite' id={workout._id}
-                 onClick= {handleRemoveWorkouts}
-                >Delete</button>
-                <Button className='btn onWhite' id={workout._id} onClick={() => handleEdit(workout)}>
+                <Button className='btn btn-sm onWhite' id={workout._id} onClick={() => handleEdit(workout)}>
                   Edit
                 </Button>
+                <button className= 'btn btn-sm btn-danger onWhite' id={workout._id}
+                 onClick= {handleRemoveWorkouts}
+                >Delete</button>
             </div>
             )) : (
                 <>

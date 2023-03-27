@@ -76,6 +76,7 @@ function UpdateTraineeModal({ trainee }) {
           <Modal.Title>Update Client</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+        <p>All fields are required - enter N/A for fields that do not have information</p>
           <div className='container col-12'>
             <form className="row formCard" >
               {/* <div className="mb-3"> */}
@@ -83,20 +84,22 @@ function UpdateTraineeModal({ trainee }) {
                 <span className="input-group-text" id="basic-addon3">Height</span>
                 <input onChange={handleChange}
                   placeholder="in"
-                  type="text"
+                  type="Number"
                   className="form-control"
                   name="height"
                 />
+                <span className="input-group-text">in</span>
               </div>
               {/* </div> */}
               <div className="input-group">
                 <span className="input-group-text" id="basic-addon3">Weight</span>
                 <input onChange={handleChange}
                   placeholder="lbs"
-                  type="text"
+                  type="Number"
                   className="form-control"
                   name="weight"
                 />
+                <span className="input-group-text">lbs</span>
               </div>
               <div className="input-group">
                 <span className="input-group-text" >Goals</span>

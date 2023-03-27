@@ -95,10 +95,10 @@ function SingleTraineeAppts({ traineeAppts, setApptIndex, apptIndex, trainee, se
                   <b>Location: </b>
                   {appt.location}
                 </h4>
-                <Button className='btn onWhite' id={appt._id} onClick={() => handleEdit(appt)}>
+                <Button className='btn btn-sm onWhite' id={appt._id} onClick={() => handleEdit(appt)}>
                   Edit
                 </Button>
-                <Button className='btn onWhite' id={appt._id} onClick={handleFormSubmit}>
+                <Button className='btn btn-sm btn-danger onWhite' id={appt._id} onClick={handleFormSubmit}>
                   Delete
                 </Button>
               </div>

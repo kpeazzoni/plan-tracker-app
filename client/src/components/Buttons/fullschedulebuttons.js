@@ -30,7 +30,7 @@ function FullscheduleButtons() {
     
     return (
         <div>
-          <Link to ="/Schedule"><button className='btn onWhite actionCenter' 
+          <Link to ="/Schedule"><button className='btn btn-lg onWhite actionCenter' 
           // onClick={routeChange}
           >
           Full Schedule

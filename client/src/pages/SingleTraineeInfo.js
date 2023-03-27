@@ -31,8 +31,12 @@ function SingleTraineeInfo({ trainee }, { traineeDemo }) {
                 </a>
               </h4>
             }
-            <button className='btn onWhite' onClick={handleDelete}>Delete</button>
+            <Link to='/homepagecontainer'>
+                <button className='btn btn-sm btn-danger onWhite' onClick={handleDelete}>Delete</button>
+                </Link> 
+               {/* {/* {console.log(trainee._id )} */}
           </div>
+
         </div>
       );
     };

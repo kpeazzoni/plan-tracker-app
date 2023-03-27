@@ -70,6 +70,7 @@ const NewClientForm = () => {
         
         <form className="row justify-content-center formCard" >
           <h1 className='textWhite'>Add new client information:</h1>
+          <p className ="textWhite">All fields are required - enter N/A for fields that do not have information</p>
           <div className="input-group">
             <span className="input-group-text">Full Name</span>
             <input
@@ -78,7 +79,7 @@ const NewClientForm = () => {
               onChange={handleChange}
               type="text"
               placeholder="First"
-              className="form-control" />
+              className="form-control" required/>
             <input
               value={formState.lastName}
               name="lastName"
@@ -97,15 +98,16 @@ const NewClientForm = () => {
               placeholder="DOB"
               className="form-control" />
           </div>
-          <div className="input-group">
+          <div className="input-group mb-3">
             <span className="input-group-text" id="basic-addon3">Height</span>
             <input
               value={formState.height}
               name="height"
               onChange={handleChange}
-              type="text"
+              type="Number"
               placeholder="in"
               className="form-control" />
+              <span className="input-group-text">in</span>
           </div>
           <div className="input-group">
             <span className="input-group-text" id="basic-addon3">Weight</span>
@@ -113,9 +115,10 @@ const NewClientForm = () => {
               value={formState.weight}
               name="weight"
               onChange={handleChange}
-              type="text"
+              type="Number"
               placeholder="lbs"
               className="form-control" />
+              <span className="input-group-text">lbs</span>
           </div>
           <div className="input-group">
             <span className="input-group-text" >Goals</span>

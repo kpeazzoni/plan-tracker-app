@@ -32,7 +32,7 @@ function AddTraineeButtons() {
     // }
     return (
         <div>
-         <Link to= "/NewClientForm"> <button className='btn onWhite actionCenter'  
+         <Link to= "/NewClientForm"> <button className='btn btn-lg onWhite actionCenter'  
           // onClick={routeChange}
           >
           Add Client

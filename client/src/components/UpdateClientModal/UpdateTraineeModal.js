@@ -9,16 +9,17 @@ import { useQuery } from '@apollo/client';
 import { QUERY_TRAINEE } from '../../utils/queries';
 
 function UpdateTraineeModal({ trainee }) {
-  // console.log(props);
+  console.log(trainee);
   // const [trainee, setTrainee] = useState();
-
+const demoLength = trainee.demographics.length - 1
+console.log (demoLength)
   const [formState, setFormState] = useState({
-    goals: '',
-    height: '',
-    injuryHistory: '',
-    notes: '',
-    weight: '',
-    // email: '',
+    goals: trainee.demographics[demoLength].goals,
+    height: trainee.demographics[demoLength].height,
+    injuryHistory: trainee.demographics[demoLength].injuryHistory,
+    notes: trainee.demographics[demoLength].notes,
+    weight: trainee.demographics[demoLength].weight,
+    email: trainee.demographics[demoLength].email,
   });
   const { _id } = trainee
   const [show, setShow] = useState(false);
@@ -57,7 +58,7 @@ function UpdateTraineeModal({ trainee }) {
         injuryHistory: '',
         notes: '',
         weight: '',
-        // email: '',
+        email: '',
       });
       setShow(false); // Close the modal after form submission
     } catch (e) {
@@ -83,8 +84,9 @@ function UpdateTraineeModal({ trainee }) {
               <div className="input-group">
                 <span className="input-group-text" id="basic-addon3">Height</span>
                 <input onChange={handleChange}
-                  placeholder="in"
+                  // placeholder="in"
                   type="Number"
+                  value={formState.height}
                   className="form-control"
                   name="height"
                 />
@@ -94,7 +96,7 @@ function UpdateTraineeModal({ trainee }) {
               <div className="input-group">
                 <span className="input-group-text" id="basic-addon3">Weight</span>
                 <input onChange={handleChange}
-                  placeholder="lbs"
+                  value={formState.weight}
                   type="Number"
                   className="form-control"
                   name="weight"
@@ -104,7 +106,7 @@ function UpdateTraineeModal({ trainee }) {
               <div className="input-group">
                 <span className="input-group-text" >Goals</span>
                 <textarea onChange={handleChange}
-                  placeholder=""
+                  value={formState.goals}
                   type="text"
                   className="form-control"
                   name="goals"
@@ -113,7 +115,7 @@ function UpdateTraineeModal({ trainee }) {
               <div className="input-group">
                 <span className="input-group-text" id="basic-addon3">Injury History</span>
                 <textarea onChange={handleChange}
-                  placeholder=""
+                  value={formState.injuryHistory}
                   type="text"
                   className="form-control"
                   name="injuryHistory"
@@ -122,22 +124,22 @@ function UpdateTraineeModal({ trainee }) {
               <div className="input-group">
                 <span className="input-group-text" id="basic-addon3">Notes</span>
                 <textarea onChange={handleChange}
-                  placeholder=""
+                  value={formState.notes}
                   type="text"
                   className="form-control"
                   name="notes"
                 />
               </div>
-              {/* <div className="input-group">
+              <div className="input-group">
                 <span className="input-group-text" id="basic-addon3">Email</span>
                 <input
                   onChange={handleChange}
-                  placeholder="email@example.com"
+                  value={formState.email}
                   type="email"
                   className="form-control"
                   name="email"
                 />
-              </div> */}
+              </div>
 
             </form>
           </div>

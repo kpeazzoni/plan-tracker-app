@@ -127,7 +127,7 @@ const resolvers = {
 
     addTrainee: async (
       parent,
-      { firstName, lastName, dob, goals, height, injuryHistory, notes, weight },
+      { firstName, lastName, dob, email, goals, height, injuryHistory, notes, weight },
       context
     ) => {
       if (context.user) {
@@ -135,6 +135,7 @@ const resolvers = {
           firstName,
           lastName,
           dob,
+        
           trainerId: context.user._id,
         });
         await Trainers.findOneAndUpdate(
@@ -146,7 +147,7 @@ const resolvers = {
 
           {
             $push: {
-              demographics: { goals, height, injuryHistory, notes, weight },
+              demographics: { goals, height, injuryHistory, notes, weight, email },
             },
           }
         );
@@ -185,7 +186,7 @@ const resolvers = {
 
     addDemographics: async (
       parent,
-      { traineeId, height, weight, goals, injuryHistory, notes },
+      { traineeId, height, weight, goals, injuryHistory, notes, email },
       context
     ) => {
       if (context) {
@@ -193,7 +194,7 @@ const resolvers = {
           { _id: traineeId },
           {
             $addToSet: {
-              demographics: { height, weight, goals, injuryHistory, notes },
+              demographics: { height, weight, goals, injuryHistory, notes, email  },
             },
           },
           {

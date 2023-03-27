@@ -16,6 +16,7 @@ const NewClientForm = () => {
     goals: '',
     injuryHistory: '',
     notes: '',
+    email: ''
   });
 
   const [addTrainee] = useMutation(ADD_TRAINEE);
@@ -44,18 +45,19 @@ const NewClientForm = () => {
       });
 
       console.log(data);
-    // Reset the form state to clear the input data
-    setFormState({
-      firstName: '',      
-      lastName: '',
-      dob: '',
-      height: '',
-      weight: '',
-      goals: '',
-      injuryHistory: '',
-      notes: '',
-    });
-    window.location.href='/homepagecontainer'
+      // Reset the form state to clear the input data
+      setFormState({
+        firstName: '',      
+        lastName: '',
+        dob: '',
+        height: '',
+        weight: '',
+        goals: '',
+        injuryHistory: '',
+        notes: '',
+        email: ''
+      });
+      window.location.href='/homepagecontainer'
     } catch (e) {
       console.error(e);
     }
@@ -143,6 +145,16 @@ const NewClientForm = () => {
               placeholder="Notes: (lifestyle, fun facts, etc.)"
               className="form-control"
             />
+          </div>
+          <div className="input-group">
+            <span className="input-group-text" id="basic-addon3">Email</span>
+            <input
+              value={formState.email}
+              name="email"
+              onChange={handleChange}
+              type="email"
+              placeholder="example@example.com"
+              className="form-control" />
           </div>
           <button type="btn" onClick={handleFormSubmit} className='btn onWhite'>
             Submit

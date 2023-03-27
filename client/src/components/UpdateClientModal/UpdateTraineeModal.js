@@ -18,6 +18,7 @@ function UpdateTraineeModal({ trainee }) {
     injuryHistory: '',
     notes: '',
     weight: '',
+    // email: '',
   });
   const { _id } = trainee
   const [show, setShow] = useState(false);
@@ -56,6 +57,7 @@ function UpdateTraineeModal({ trainee }) {
         injuryHistory: '',
         notes: '',
         weight: '',
+        // email: '',
       });
       setShow(false); // Close the modal after form submission
     } catch (e) {
@@ -123,6 +125,17 @@ function UpdateTraineeModal({ trainee }) {
                   name="notes"
                 />
               </div>
+              {/* <div className="input-group">
+                <span className="input-group-text" id="basic-addon3">Email</span>
+                <input
+                  onChange={handleChange}
+                  placeholder="email@example.com"
+                  type="email"
+                  className="form-control"
+                  name="email"
+                />
+              </div> */}
+
             </form>
           </div>
         </Modal.Body>

@@ -85,13 +85,12 @@ function SingleTraineeAppts({ traineeAppts, setApptIndex, apptIndex, trainee, se
                   {dayjs(appt.startDate).format('MM/DD')}
                 </h4>
                 <h4>
-                  <b>Start: </b>
-                  {dayjs(appt.startDate).format('h:mm A')}
+               <b> {dayjs(appt.startDate).format('h:mm A')} - {dayjs(appt.endDate).format('h:mm A')}</b>
                 </h4>
-                <h4 className="card-text">
+                {/* <h4 className="card-text">
                   <b>End: </b>
                   {dayjs(appt.endDate).format('h:mm A')}
-                </h4>
+                </h4> */}
                 <h4 className="card-text">
                   <b>Location: </b>
                   {appt.location}

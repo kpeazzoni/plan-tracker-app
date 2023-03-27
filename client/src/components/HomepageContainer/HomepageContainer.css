@@ -14,19 +14,21 @@ a:Link, a:active, a:hover, a:focus, a:visited {
     /* width: 90vw; */
     /* align-self: center; */
   }
-.welcome{
+/* .welcome{
   text-align: center;
   color: white;
-}
+  font-size: 2rem;
+} */
+
   .card-heading{
     color: #0A99B1;
     text-align: center;
     
   }
-  .date{
+  /* .date{
     color: white;
     text-align: center;
-  }
+  } */
 
 .scrollHP {
   height: 90%;

@@ -14,7 +14,7 @@ import dayjs from "dayjs";
 
 export default function HomepageContainer() {
   const { loading, data } = useQuery(QUERY_ME);
-console.log(data, "this is query_me data");
+// console.log(data, "this is query_me data");
   const schedules = data?.me.trainerSchedule || [];
   const trainees = data?.me.trainees || [];
   const firstName = data?.me.firstName || "";
@@ -43,9 +43,9 @@ console.log(data, "this is query_me data");
 //  setInterval(displayTime, 1000); 
 
 
-  console.log(data);
-  console.log('schedules', schedules)
-  console.log('trainees', trainees)
+  // console.log(data);
+  // console.log('schedules', schedules)
+  // console.log('trainees', trainees)
   //   const [trainees, setTrainees] = useState(
   //     []
   //         [
@@ -71,8 +71,11 @@ console.log(data, "this is query_me data");
 
   return (
    <main>
-    <h1 className="welcome">Welcome, {firstName}!</h1>
-    <h3 className="date">{currentTime}</h3>
+    {/* <div className="justify-content-center"> */}
+    <h1 className="textWhite d-flex justify-content-center">Welcome, {firstName}!</h1>
+    <h3 className="textWhite d-flex justify-content-center">{currentTime}</h3>
+    {/* </div> */}
+
     <div className="homepageContainer-wrapper ">
       
       <aside className="col-lg-4">
@@ -83,6 +86,7 @@ console.log(data, "this is query_me data");
           {todaysSchedule ? (<AppointmentsCards appointments={todaysSchedule} />) : (<h3>Your Schedule is Clear!</h3>)}
         </div>
       {/* </div> */}
+
       </aside>
 
 

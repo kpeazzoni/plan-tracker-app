@@ -15,7 +15,7 @@ Plan Tracker is a web based application offering client management services to p
 
 Behind Our thought Process for our Final Project 3, Team Power-Haus,  brought our A game. We are showcasing the skills and talents to bring this app to life. We wanted to pick a project idea that we were passionate and in this process we made a full stack application that would solve a problem. Our group’s synergy was in creating an app that would take the organizational work flow to the next level for a trainer in maintaining his clientele. This is the simple overview of the application design, thought process and fruition brought together in one app called PlanTracker. 
 
-Just use this link to get started! https://plan-tracker-app.herokuapp.com/
+Just use this link to get started! [https://plantracker-app.herokuapp.com/](https://plantracker-app-78aeec5d26bd.herokuapp.com/)
 
 
 ## Table of Contents  
